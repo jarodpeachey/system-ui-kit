@@ -229,8 +229,9 @@ const App = ({}) => (
       <Row breakpoints={[769]} spacing={[24]}>
         <div widths={['auto']}>
           <h3>Checkboxes</h3>
-          <Checkbox>Unchecked</Checkbox>
+          <Checkbox value="unchecked">Unchecked</Checkbox>
           <Checkbox
+            value="checked"
             checked
             onChange={(e) => {
               console.log('Target from parent: ', e.target);
@@ -238,12 +239,14 @@ const App = ({}) => (
           >
             Checked
           </Checkbox>
-          <Checkbox>Random Checkbox</Checkbox>
-          <Checkbox disabled>Disabled</Checkbox>
+          <Checkbox value="random">Random Checkbox</Checkbox>
+          <Checkbox value="disabled" disabled>
+            Disabled
+          </Checkbox>
         </div>
         <div widths={['auto']}>
           <h3>Radio Buttons</h3>
-          <form
+          {/* <form
             className="form"
             onSubmit={(e) => {
               e.preventDefault();
@@ -252,14 +255,16 @@ const App = ({}) => (
 
               Object.values(x).forEach((item) => console.log(item.checked));
             }}
-          >
-            <RadioButtons name="test">
-              <RadioButton>One</RadioButton>
-              <RadioButton>Two</RadioButton>
-              <RadioButton>Two</RadioButton>
-            </RadioButtons>
-            <button type="submit">Submit</button>
-          </form>
+          > */}
+          <RadioButtons name="radio-buttons">
+            <RadioButton value="one">Radio button</RadioButton>
+            <RadioButton value="two">Another radio button</RadioButton>
+            <RadioButton disabled value="three">
+              Disabled. Go ahead, try and click me 😉
+            </RadioButton>
+          </RadioButtons>
+          {/* <button type="submit">Submit</button>
+          </form> */}
         </div>
       </Row>
     </Section>

@@ -37,7 +37,7 @@ export const theme = {
   },
   color: {
     success: '#00ab66',
-    error: '#FB3400',
+    error: '#f33b1a',
     text: {
       dark: {
         one: '#2c2f3b',

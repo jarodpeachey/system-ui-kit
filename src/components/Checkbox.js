@@ -3,7 +3,13 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
-const Checkbox = ({ onChange, children, disabled, checked = false }) => {
+const Checkbox = ({
+  onChange,
+  children,
+  disabled,
+  checked = false,
+  value = '',
+}) => {
   const [inputChecked, setInputChecked] = useState(checked);
 
   const name = (Math.random() / 32) * 2.34;
@@ -57,7 +63,7 @@ const Checkbox = ({ onChange, children, disabled, checked = false }) => {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 4px 0;
+  margin: ${(props) => props.theme.spacing.two} 0;
 `;
 
 const CheckboxWrapper = styled.label`
@@ -78,8 +84,8 @@ const CheckboxWrapper = styled.label`
     height: 100%;
   }
   .checkmark {
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     background-color: #eee;
     display: flex;
     position: relative;
@@ -88,16 +94,16 @@ const CheckboxWrapper = styled.label`
     border-radius: 2px;
     border: 1px solid
       ${(props) =>
-    props.disabled ? 'rgb(230, 230, 230)' : 'rgb(195, 195, 195)'};
+        props.disabled ? 'rgb(230, 230, 230)' : 'rgb(195, 195, 195)'};
     background: #ffffff;
     transition: 0.1s;
   }
   input:checked ~ .checkmark {
     background: ${(props) =>
-    props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
+      props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
     border: 1px solid
       ${(props) =>
-    props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
+        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
   }
   .icon {
     display: none;

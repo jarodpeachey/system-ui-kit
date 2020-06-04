@@ -89,7 +89,8 @@ const Wrapper = styled.div`
   font-weight: 600;
   top: 0;
   width: 100%;
-  a:hover {
+  a:hover, :focus
+ {
     background: ${(props) =>
     props.primary ?
       '#ffffff20' :

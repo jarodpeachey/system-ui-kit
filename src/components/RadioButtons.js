@@ -13,7 +13,9 @@ const RadioButtons = ({ children, name = 'default' }) => {
         console.log(child);
 
         newChildren.push(
-          <RadioButton name={name}>{child.props.children}</RadioButton>,
+          <RadioButton {...child.props} name={name}>
+            {child.props.children}
+          </RadioButton>,
         );
       })}
       {newChildren}
@@ -21,9 +23,7 @@ const RadioButtons = ({ children, name = 'default' }) => {
   );
 };
 
-const Wrapper = styled.div`
-
-`;
+const Wrapper = styled.div``;
 
 RadioButtons.propTypes = {
   children: PropTypes.object,

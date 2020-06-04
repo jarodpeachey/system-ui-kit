@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
-const RadioButton = ({ onChange, children, disabled, name }) => {
+const RadioButton = ({ onChange, children, disabled, name, value }) => {
   const customOnChange = (e) => {
     console.log('Target from component: ', e.target);
 
@@ -14,7 +14,7 @@ const RadioButton = ({ onChange, children, disabled, name }) => {
     <Wrapper>
       <RadioButtonWrapper disabled={disabled} htmlFor={name}>
         <input
-          id={name}
+          value={value}
           onChange={customOnChange}
           disabled={disabled}
           name={name}
@@ -32,7 +32,7 @@ const RadioButton = ({ onChange, children, disabled, name }) => {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 4px 0;
+  margin: ${(props) => props.theme.spacing.two} 0;
 `;
 
 const RadioButtonWrapper = styled.label`

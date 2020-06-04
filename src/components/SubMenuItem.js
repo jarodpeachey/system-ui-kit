@@ -17,7 +17,8 @@ const Wrapper = styled.div`
     color: initial !important;
     font-weight: normal !important;
     border-radius: 0 !important;
-    :hover {
+    :hover, :focus
+ {
       color: ${(props) => props.theme.color.primary.main} !important;
     }
   }
