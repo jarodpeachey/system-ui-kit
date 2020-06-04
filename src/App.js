@@ -28,6 +28,7 @@ import {
   faChevronDown,
   faQuoteLeft,
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme } from './theme';
 import Header from './components/Header';
 import FixedHeader from './components/FixedHeader';
@@ -45,7 +46,6 @@ import Input from './components/Input';
 import OutlinedInput from './components/OutlinedInput';
 import Checkbox from './components/Checkbox';
 import Row from './components/Row';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import RadioButtons from './components/RadioButtons';
 import RadioButton from './components/RadioButton';
 
@@ -74,7 +74,7 @@ library.add(
   faChevronDown,
   faChevronRight,
   faChevronLeft,
-  faQuoteLeft
+  faQuoteLeft,
 );
 
 const App = ({}) => (
@@ -243,10 +243,23 @@ const App = ({}) => (
         </div>
         <div widths={['auto']}>
           <h3>Radio Buttons</h3>
-          <RadioButtons name="test">
-            <RadioButton>One</RadioButton>
-            <RadioButton>Two</RadioButton>
-          </RadioButtons>
+          <form
+            className="form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const x = document.querySelector('form.form').elements;
+              console.log(x);
+
+              Object.values(x).forEach((item) => console.log(item.checked));
+            }}
+          >
+            <RadioButtons name="test">
+              <RadioButton>One</RadioButton>
+              <RadioButton>Two</RadioButton>
+              <RadioButton>Two</RadioButton>
+            </RadioButtons>
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </Row>
     </Section>
