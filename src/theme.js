@@ -13,9 +13,9 @@ export const theme = {
       '0 4px 24px 8px rgba(17,22,26,0.08), 0 8px 16px 0 rgba(17,22,26, 0.03), 0 32px 40px 0 rgba(17,22,26, 0.03)',
   },
   radius: {
-    one: '4px',
-    two: '10.5px',
-    three: '27.5px',
+    one: '3px',
+    two: '6px',
+    three: '16px',
     four: '999px',
   },
   spacing: {
@@ -37,7 +37,7 @@ export const theme = {
   },
   color: {
     success: '#00ab66',
-    error: '#ff6347',
+    error: '#FB3400',
     text: {
       dark: {
         one: '#2c2f3b',
@@ -57,7 +57,7 @@ export const theme = {
     },
     secondary: {
       // light: '#fab86c',
-      main: '#632695',
+      main: '#04B1D1',
       // dark: '#f76b2b',
     },
     gray: {
