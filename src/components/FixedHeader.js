@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const FixedHeader = ({ children, primary, transparent, secondary }) => {
   const [scroll, setScroll] = useState(0);
@@ -37,36 +38,36 @@ const Wrapper = styled.div`
   width: 100%;
   z-index: 999;
   background: ${(props) =>
-    props.primary
-      ? props.theme.color.primary.main
-      : props.secondary
-      ? props.theme.color.secondary.main
-      : props.transparent
-      ? props.scrolled
-        ? 'white'
-        : 'transparent'
-      : 'white'};
+    props.primary ?
+      props.theme.color.primary.main :
+      props.secondary ?
+        props.theme.color.secondary.main :
+        props.transparent ?
+          props.scrolled ?
+            'white' :
+            'transparent' :
+          'white'};
   color: ${(props) =>
-    props.primary
-      ? 'white'
-      : props.secondary
-      ? 'white'
-      : props.transparent
-      ? props.scrolled
-        ? 'inherit'
-        : 'white'
-      : 'inherit'};
+    props.primary ?
+      'white' :
+      props.secondary ?
+        'white' :
+        props.transparent ?
+          props.scrolled ?
+            'inherit' :
+            'white' :
+          'inherit'};
   a {
     color: ${(props) =>
-      props.primary
-        ? 'white'
-        : props.secondary
-        ? 'white'
-        : props.transparent
-        ? props.scrolled
-          ? 'inherit'
-          : 'white'
-        : 'inherit'};
+    props.primary ?
+      'white' :
+      props.secondary ?
+        'white' :
+        props.transparent ?
+          props.scrolled ?
+            'inherit' :
+            'white' :
+          'inherit'};
   }
   h1,
   h2,
@@ -75,30 +76,30 @@ const Wrapper = styled.div`
   h5,
   h6 {
     color: ${(props) =>
-      props.primary
-        ? 'white'
-        : props.secondary
-        ? 'white'
-        : props.transparent
-        ? props.scrolled
-          ? props.theme.color.primary.main
-          : 'white'
-        : 'inherit'};
+    props.primary ?
+      'white' :
+      props.secondary ?
+        'white' :
+        props.transparent ?
+          props.scrolled ?
+            props.theme.color.primary.main :
+            'white' :
+          'inherit'};
   }
   font-weight: 600;
   top: 0;
   width: 100%;
   a:hover {
     background: ${(props) =>
-      props.primary
-        ? '#ffffff20'
-        : props.secondary
-        ? '#ffffff20'
-        : props.transparent
-        ? props.scrolled
-          ? '#88888820'
-          : '#ffffff20'
-        : '#88888820'};
+    props.primary ?
+      '#ffffff20' :
+      props.secondary ?
+        '#ffffff20' :
+        props.transparent ?
+          props.scrolled ?
+            '#88888820' :
+            '#ffffff20' :
+          '#88888820'};
   }
   h1,
   h2,
@@ -123,5 +124,12 @@ const Close = styled.div`
   font-weight: 600;
   color: white;
 `;
+
+FixedHeader.propTypes = {
+  children: PropTypes.object,
+  primary: PropTypes.bool,
+  transparent: PropTypes.bool,
+  secondary: PropTypes.bool,
+};
 
 export default FixedHeader;

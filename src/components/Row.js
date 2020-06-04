@@ -14,9 +14,8 @@ const Row = ({
   vertical,
   flexDirections,
   customStyles,
-}) => {
-  return (
-    <Wrapper
+}) => (
+  <Wrapper
       standardWidth={standardWidth}
       className={className || ''}
       breakpoint={breakpoints[0]}
@@ -26,33 +25,30 @@ const Row = ({
       vertical={vertical}
       flexDirections={flexDirections || null}
       customStyles={customStyles}
-    >
-      {React.Children.toArray(children).map((item) => {
-        return item ? (
-          <>
-            {item.props && item.props.noGrid ? (
-              <>{item}</>
-            ) : (
-              <Column
+  >
+    {React.Children.toArray(children).map((item) => item ? (
+      <>
+        {item.props && item.props.noGrid ? (
+          <>{item}</>
+        ) : (
+          <Column
                 demo={demo}
                 maxColumnSize={maxColumnSize}
-                key='column'
+                key="column"
                 breakpoints={breakpoints}
                 spacingX={spacing[0]}
                 spacingY={
                   typeof spacing[1] === 'number' ? spacing[1] : spacing[0]
                 }
                 widths={item.props.widths}
-              >
-                {item}
-              </Column>
-            )}
-          </>
-        ) : null;
-      })}
-    </Wrapper>
-  );
-};
+          >
+            {item}
+          </Column>
+        )}
+      </>
+    ) : null)}
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
   ${(props) =>
@@ -61,20 +57,20 @@ const Wrapper = styled.div`
       ${props.customStyles}
     `};
   margin: -${(props) => props.spacingY}px -${(props) => props.spacingX}px -${(
-      props
-    ) => props.spacingY}px -${(props) => props.spacingX}px;
+  props,
+) => props.spacingY}px -${(props) => props.spacingX}px;
   width: ${(props) =>
     props.standardWidth ? '100%' : `calc(100% + ${props.spacingX * 2}px)`};
   @media (min-width: ${(props) => props.breakpoint}px) {
     flex-direction: ${(props) =>
-      props.flexDirections ? props.flexDirections[0] || 'row' : 'row'};
+    props.flexDirections ? props.flexDirections[0] || 'row' : 'row'};
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: ${(props) =>
-      props.standardWidth
-        ? '0'
-        : `-${props.spacingY}px -${props.spacingX}px -${props.spacingY}px -${props.spacingX}px`};
+    props.standardWidth ?
+      '0' :
+      `-${props.spacingY}px -${props.spacingX}px -${props.spacingY}px -${props.spacingX}px`};
   }
   ${(props) =>
     props.flexDirections &&
@@ -82,16 +78,16 @@ const Wrapper = styled.div`
     css`
   @media (min-width: ${props.breakpointTwo}px) {
     flex-direction: ${
-      props.flexDirections ? props.flexDirections[1] || 'row' : 'row'
-    };
+  props.flexDirections ? props.flexDirections[1] || 'row' : 'row'
+};
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: ${
-      props.standardWidth
-        ? '0'
-        : `-${props.spacingY}px -${props.spacingX}px -${props.spacingY}px -${props.spacingX}px`
-    };
+  props.standardWidth ?
+    '0' :
+    `-${props.spacingY}px -${props.spacingX}px -${props.spacingY}px -${props.spacingX}px`
+};
   `};
 `;
 

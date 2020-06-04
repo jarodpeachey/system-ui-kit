@@ -3,53 +3,28 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
-const Checkbox = ({ onChange, children, disabled, checked = false }) => {
-  const [inputChecked, setInputChecked] = useState(checked);
-
-  const name = (Math.random() / 32) * 2.34;
-
+const RadioButton = ({ onChange, children, disabled, name }) => {
   const customOnChange = (e) => {
-    setInputChecked(!inputChecked);
-    console.log(inputChecked);
-
     console.log('Target from component: ', e.target);
-    e.target.checked = !inputChecked;
-    onChange &&
-      onChange({
-        ...e,
-        target: {
-          ...e.target,
-          checked: !inputChecked,
-        },
-      });
-  };
 
-  useEffect(() => {
-    document.getElementById(name).setAttribute('checked', inputChecked);
-  }, [inputChecked]);
+    onChange && onChange(e);
+  };
 
   return (
     <Wrapper>
-      <CheckboxWrapper
-        checked={inputChecked}
-        disabled={disabled}
-        htmlFor={name}
-      >
+      <RadioButtonWrapper disabled={disabled} htmlFor={name}>
         <input
           id={name}
           onChange={customOnChange}
           disabled={disabled}
           name={name}
-          type="checkbox"
-          checked={inputChecked}
+          type="radio"
         />
         <span className="checkmark mr-2">
-          <div className="icon">
-            <FontAwesomeIcon icon="check" />
-          </div>
+          <div className="icon" />
         </span>
         {children}
-      </CheckboxWrapper>
+      </RadioButtonWrapper>
     </Wrapper>
   );
 };
@@ -60,7 +35,7 @@ const Wrapper = styled.div`
   margin: 4px 0;
 `;
 
-const CheckboxWrapper = styled.label`
+const RadioButtonWrapper = styled.label`
   color: ${(props) => (props.disabled ? 'rgb(190, 190, 190)' : '')};
   display: block;
   position: relative;
@@ -78,48 +53,52 @@ const CheckboxWrapper = styled.label`
     height: 100%;
   }
   .checkmark {
-    height: 20px;
-    width: 20px;
-    background-color: #eee;
+    height: 18px;
+    width: 18px;
+    padding: 3px;
     display: flex;
     position: relative;
     align-items: center;
+    transition: all 0.1s;
     justify-content: center;
-    border-radius: 2px;
+    border-radius: 500px;
     border: 1px solid
       ${(props) =>
-    props.disabled ? 'rgb(230, 230, 230)' : 'rgb(195, 195, 195)'};
+        props.disabled ? 'rgb(230, 230, 230)' : 'rgb(195, 195, 195)'};
     background: #ffffff;
-    transition: 0.1s;
   }
   input:checked ~ .checkmark {
-    background: ${(props) =>
-    props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
+    transition: all 0.1s;
     border: 1px solid
       ${(props) =>
-    props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
+        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
   }
   .icon {
-    display: none;
+    background: white;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 500px;
+    transition: all 0.1s;
   }
   // input:checked ~ .icon {
   //   display: block;
   // }
   input:checked ~ .checkmark > .icon {
-    font-size: 11px;
-    color: white;
-    top: 0px;
-    position: relative;
+    background: ${(props) => props.theme.color.primary.main};
+    width: 100%;
+    height: 100%;
     display: block;
-    transition: 0.1s;
+    border-radius: 500px;
+    transition: all 0.1s;
   }
 `;
 
-Checkbox.propTypes = {
+RadioButton.propTypes = {
   children: PropTypes.object,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
   checked: PropTypes.bool,
 };
 
-export default Checkbox;
+export default RadioButton;

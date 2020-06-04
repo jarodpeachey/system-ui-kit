@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import SubMenu from './SubMenu';
 
-const SubMenuItem = ({ children, submenu }) => {
-  return <Wrapper>{children}</Wrapper>;
-};
+const SubMenuItem = ({ children, submenu }) => <Wrapper>{children}</Wrapper>;
 
 const Wrapper = styled.div`
   width: 100%;

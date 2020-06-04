@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import SubMenu from './SubMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SubMenu from './SubMenu';
 
 const MenuItem = ({ children, submenu }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
@@ -18,7 +18,7 @@ const MenuItem = ({ children, submenu }) => {
             transform: `${showSubMenu ? 'rotate(180deg)' : 'none'}`,
             transition: 'all .1s ease-in-out',
           }}
-          icon='chevron-down'
+          icon="chevron-down"
         />
       </a>
     );

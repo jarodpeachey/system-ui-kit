@@ -1,6 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { theme } from '../theme';
 
 const Button = ({
@@ -11,36 +12,34 @@ const Button = ({
   color,
   variant = '',
   size,
-}) => {
-  return (
-    <span>
-      {link ? (
-        <a className="no-styling" href={link}>
-          <StyledButton
-            color={color}
-            size={size}
-            variant={variant}
-            className={className}
-            onClick={onClick || null}
-            link
-          >
-            {children}
-          </StyledButton>
-        </a>
-      ) : (
+}) => (
+  <span>
+    {link ? (
+      <a className="no-styling" href={link}>
         <StyledButton
           color={color}
           size={size}
           variant={variant}
           className={className}
           onClick={onClick || null}
+          link
         >
           {children}
         </StyledButton>
-      )}
-    </span>
-  );
-};
+      </a>
+    ) : (
+      <StyledButton
+        color={color}
+        size={size}
+        variant={variant}
+        className={className}
+        onClick={onClick || null}
+      >
+        {children}
+      </StyledButton>
+    )}
+  </span>
+);
 
 const StyledButton = styled.button`
   outline: none;
@@ -50,11 +49,11 @@ const StyledButton = styled.button`
   font-size: 16px;
 
   padding: ${(props) =>
-    props.size === 'small'
-      ? '7px 20px'
-      : props.size === 'large'
-      ? '14px 29px'
-      : '10px 28px'};
+    props.size === 'small' ?
+      '7px 20px' :
+      props.size === 'large' ?
+        '14px 29px' :
+        '10px 28px'};
   font-size: ${(props) =>
     props.size === 'small' ? '12px' : props.size === 'large' ? '16px' : '14px'};
   text-transform: uppercase;
@@ -68,37 +67,47 @@ const StyledButton = styled.button`
     transform: scale(1.02);
   }
   background: ${(props) =>
-    props.color === 'primary'
-      ? props.theme.color.primary.main
-      : props.color === 'secondary'
-      ? props.theme.color.secondary.main
-      : props.color === 'error'
-      ? props.theme.color.error
-      : props.color === 'success'
-      ? props.theme.color.success
-      : props.color === 'white'
-      ? '#ffffff'
-      : ''};
+    props.color === 'primary' ?
+      props.theme.color.primary.main :
+      props.color === 'secondary' ?
+        props.theme.color.secondary.main :
+        props.color === 'error' ?
+          props.theme.color.error :
+          props.color === 'success' ?
+            props.theme.color.success :
+            props.color === 'white' ?
+              '#ffffff' :
+              ''};
   color: ${(props) =>
     props.color === 'primary' ||
     props.color === 'secondary' ||
     props.color === 'error' ||
-    props.color === 'success'
-      ? 'white'
-      : ''};
+    props.color === 'success' ?
+      'white' :
+      ''};
   border: 2px solid
     ${(props) =>
-      props.color === 'primary'
-        ? props.theme.color.primary.main
-        : props.color === 'secondary'
-        ? props.theme.color.secondary.main
-        : props.color === 'error'
-        ? props.theme.color.error
-        : props.color === 'success'
-        ? props.theme.color.success
-        : props.color === 'white'
-        ? '#ffffff'
-        : '#efefef'};
+    props.color === 'primary' ?
+      props.theme.color.primary.main :
+      props.color === 'secondary' ?
+        props.theme.color.secondary.main :
+        props.color === 'error' ?
+          props.theme.color.error :
+          props.color === 'success' ?
+            props.theme.color.success :
+            props.color === 'white' ?
+              '#ffffff' :
+              '#efefef'};
 `;
+
+Button.propTypes = {
+  children: PropTypes.object,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  link: PropTypes.string,
+  color: PropTypes.string,
+  variant: PropTypes.string,
+  size: PropTypes.string,
+};
 
 export default Button;

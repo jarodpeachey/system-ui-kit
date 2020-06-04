@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SubMenu = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
-};
+const SubMenu = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 const Wrapper = styled.div`
   border-radius: ${(props) => props.theme.radius.one};

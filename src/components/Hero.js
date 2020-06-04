@@ -1,18 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Hero = ({ children, background }) => {
-  return (
-    <Wrapper>
-      <Background background={background}>
-        <div></div>
-      </Background>
-      <Container className='container'>
-        <div>{children}</div>
-      </Container>
-    </Wrapper>
-  );
-};
+const Hero = ({ children, background }) => (
+  <Wrapper>
+    <Background background={background}>
+      <div />
+    </Background>
+    <Container className="container">
+      <div>{children}</div>
+    </Container>
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
   position: relative;

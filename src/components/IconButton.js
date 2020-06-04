@@ -10,34 +10,32 @@ const IconButton = ({
   link,
   color,
   variant = '',
-}) => {
-  return (
-    <span>
-      {link ? (
-        <a className="no-styling" href={link}>
-          <StyledIconButton
+}) => (
+  <span>
+    {link ? (
+      <a className="no-styling" href={link}>
+        <StyledIconButton
             color={color}
             variant={variant}
             className={className}
             onClick={onClick || null}
             link
-          >
-            {children}
-          </StyledIconButton>
-        </a>
-      ) : (
-        <StyledIconButton
+        >
+          {children}
+        </StyledIconButton>
+      </a>
+    ) : (
+      <StyledIconButton
           color={color}
           variant={variant}
           className={className}
           onClick={onClick || null}
-        >
-          {children}
-        </StyledIconButton>
-      )}
-    </span>
-  );
-};
+      >
+        {children}
+      </StyledIconButton>
+    )}
+  </span>
+);
 
 const StyledIconButton = styled.button`
   outline: none;
@@ -58,57 +56,57 @@ const StyledIconButton = styled.button`
     box-shadow: 0px 8px 26px -14px ${(props) => (props.color === 'primary' ? props.theme.color.primary.main : props.color === 'secondary' ? props.theme.color.secondary.main : props.color === 'error' ? props.theme.color.error : props.color === 'success' ? props.theme.color.success : '#aaa')};
     transform: scale(1.02);
     background: ${(props) =>
-      props.color === 'primary'
-        ? props.theme.color.primary.main
-        : props.color === 'secondary'
-        ? props.theme.color.secondary.main
-        : props.color === 'error'
-        ? props.theme.color.error
-        : props.color === 'success'
-        ? props.theme.color.success
-        : props.color === 'white'
-        ? '#ffffff'
-        : ''};
+    props.color === 'primary' ?
+      props.theme.color.primary.main :
+      props.color === 'secondary' ?
+        props.theme.color.secondary.main :
+        props.color === 'error' ?
+          props.theme.color.error :
+          props.color === 'success' ?
+            props.theme.color.success :
+            props.color === 'white' ?
+              '#ffffff' :
+              ''};
     color: ${(props) =>
-      props.color === 'primary' ||
+    props.color === 'primary' ||
       props.color === 'secondary' ||
       props.color === 'error' ||
-      props.color === 'success'
-        ? 'white'
-        : ''};
+      props.color === 'success' ?
+      'white' :
+      ''};
   }
   background: ${(props) =>
-    props.color === 'primary'
-      ? props.theme.color.primary.main
-      : props.color === 'secondary'
-      ? props.theme.color.secondary.main
-      : props.color === 'error'
-      ? props.theme.color.error
-      : props.color === 'success'
-      ? props.theme.color.success
-      : props.color === 'white'
-      ? '#ffffff'
-      : ''};
+    props.color === 'primary' ?
+      props.theme.color.primary.main :
+      props.color === 'secondary' ?
+        props.theme.color.secondary.main :
+        props.color === 'error' ?
+          props.theme.color.error :
+          props.color === 'success' ?
+            props.theme.color.success :
+            props.color === 'white' ?
+              '#ffffff' :
+              ''};
   color: ${(props) =>
     props.color === 'primary' ||
     props.color === 'secondary' ||
     props.color === 'error' ||
-    props.color === 'success'
-      ? 'white'
-      : ''};
+    props.color === 'success' ?
+      'white' :
+      ''};
   border: 2px solid
     ${(props) =>
-      props.color === 'primary'
-        ? props.theme.color.primary.main
-        : props.color === 'secondary'
-        ? props.theme.color.secondary.main
-        : props.color === 'error'
-        ? props.theme.color.error
-        : props.color === 'success'
-        ? props.theme.color.success
-        : props.color === 'white'
-        ? '#ffffff'
-        : '#efefef'};
+    props.color === 'primary' ?
+      props.theme.color.primary.main :
+      props.color === 'secondary' ?
+        props.theme.color.secondary.main :
+        props.color === 'error' ?
+          props.theme.color.error :
+          props.color === 'success' ?
+            props.theme.color.success :
+            props.color === 'white' ?
+              '#ffffff' :
+              '#efefef'};
 `;
 
 export default IconButton;

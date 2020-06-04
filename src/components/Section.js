@@ -7,7 +7,7 @@ const Section = ({ children, background, className = '' }) => {
 
   return (
     <StyledSection className={className} background={background}>
-      <div className='container'>{children}</div>
+      <div className="container">{children}</div>
     </StyledSection>
   );
 };

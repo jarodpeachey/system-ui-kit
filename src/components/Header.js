@@ -1,31 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Header = ({ children, primary, transparent, secondary }) => {
-  return (
-    <Wrapper primary={primary} transparent={transparent} secondary={secondary}>
-      <Container className='container wide'>{children}</Container>
-    </Wrapper>
-  );
-};
+const Header = ({ children, primary, transparent, secondary }) => (
+  <Wrapper primary={primary} transparent={transparent} secondary={secondary}>
+    <Container className="container wide">{children}</Container>
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
   background: ${(props) =>
-    props.primary
-      ? props.theme.color.primary.main
-      : props.secondary
-      ? props.theme.color.secondary.main
-      : props.transparent
-      ? 'transparent'
-      : 'white'};
+    props.primary ?
+      props.theme.color.primary.main :
+      props.secondary ?
+        props.theme.color.secondary.main :
+        props.transparent ?
+          'transparent' :
+          'white'};
   color: ${(props) =>
-    props.primary
-      ? 'white'
-      : props.secondary
-      ? 'white'
-      : props.transparent
-      ? 'inherit'
-      : 'inherit'};
+    props.primary ?
+      'white' :
+      props.secondary ?
+        'white' :
+        props.transparent ?
+          'inherit' :
+          'inherit'};
   a,
   h1,
   h2,
@@ -34,26 +32,26 @@ const Wrapper = styled.div`
   h5,
   h6 {
     color: ${(props) =>
-      props.primary
-        ? 'white'
-        : props.secondary
-        ? 'white'
-        : props.transparent
-        ? 'white'
-        : 'inherit'};
+    props.primary ?
+      'white' :
+      props.secondary ?
+        'white' :
+        props.transparent ?
+          'white' :
+          'inherit'};
   }
   font-weight: 600;
   top: 0;
   width: 100%;
   a:hover {
     background: ${(props) =>
-      props.primary
-        ? '#ffffff20'
-        : props.secondary
-        ? '#ffffff20'
-        : props.transparent
-        ? '#ffffff20'
-        : '#66666620'};
+    props.primary ?
+      '#ffffff20' :
+      props.secondary ?
+        '#ffffff20' :
+        props.transparent ?
+          '#ffffff20' :
+          '#66666620'};
   }
   h1,
   h2,

@@ -46,6 +46,8 @@ import OutlinedInput from './components/OutlinedInput';
 import Checkbox from './components/Checkbox';
 import Row from './components/Row';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import RadioButtons from './components/RadioButtons';
+import RadioButton from './components/RadioButton';
 
 library.add(
   faBars,
@@ -239,7 +241,13 @@ const App = ({}) => (
           <Checkbox>Random Checkbox</Checkbox>
           <Checkbox disabled>Disabled</Checkbox>
         </div>
-        <div widths={['auto']}></div>
+        <div widths={['auto']}>
+          <h3>Radio Buttons</h3>
+          <RadioButtons name="test">
+            <RadioButton>One</RadioButton>
+            <RadioButton>Two</RadioButton>
+          </RadioButtons>
+        </div>
       </Row>
     </Section>
   </ThemeProvider>
