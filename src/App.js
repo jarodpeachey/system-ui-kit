@@ -48,6 +48,7 @@ import Checkbox from './components/Checkbox';
 import Row from './components/Row';
 import RadioButtons from './components/RadioButtons';
 import RadioButton from './components/RadioButton';
+import Toggle from './components/Toggle';
 
 library.add(
   faBars,
@@ -220,12 +221,30 @@ const App = ({}) => (
       </div>
       <h3>Inputs</h3>
       <h5>Sizes</h5>
-      <Input size="small" placeholder="Small" />
-      <Input placeholder="Default" />
-      <Input size="large" placeholder="Large" />
+      <Row spacing={[12]} breakpoints={[576, 769]}>
+        <div widths={[6, 3]}>
+          <Input fullWidth size="small" placeholder="Small" />
+        </div>
+        <div widths={[6, 3]}>
+          <Input fullWidth placeholder="Default" />
+        </div>
+        <div widths={[6, 3]}>
+          <Input fullWidth size="large" placeholder="Large" />
+        </div>
+      </Row>
+
       <h5>Variants</h5>
-      <Input placeholder="Default" />
-      <Input variant="filled" placeholder="Filled" />
+      <Row spacing={[12]} breakpoints={[576, 769]}>
+        <div widths={[6, 3]}>
+          <Input fullWidth placeholder="Default" />
+        </div>
+        <div widths={[6, 3]}>
+          <Input fullWidth variant="filled" placeholder="Filled" />
+        </div>
+        <div widths={[6, 3]}>
+          <Input fullWidth label="With label" placeholder="With label" />
+        </div>
+      </Row>
       <Row breakpoints={[769]} spacing={[24]}>
         <div widths={['auto']}>
           <h3>Checkboxes</h3>
@@ -265,6 +284,18 @@ const App = ({}) => (
           </RadioButtons>
           {/* <button type="submit">Submit</button>
           </form> */}
+        </div>
+        <div widths={['auto']}>
+          <h3 color="primary">Toggle Switches</h3>
+          <Toggle
+            onChange={(e) => {
+              console.log(e);
+            }}
+            checked
+          >
+            Checked
+          </Toggle>
+          <Toggle>Unchecked</Toggle>
         </div>
       </Row>
     </Section>

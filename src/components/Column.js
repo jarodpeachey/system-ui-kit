@@ -29,16 +29,14 @@ const Column = ({
           <strong>
             {breakpoints[0]}
             px:
-          </strong>
-          {' '}
+          </strong>{' '}
           {widths[0]}
         </Info>
         <Info>
           <strong>
             {breakpoints[1]}
             px:
-          </strong>
-          {' '}
+          </strong>{' '}
           {widths[1]}
         </Info>
       </Demo>
@@ -58,6 +56,7 @@ const Demo = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  align-items: flex-end;
 `;
 
 const Info = styled.div``;
@@ -72,68 +71,71 @@ const Wrapper = styled.div`
   padding: ${(props) => props.spacingY}px ${(props) => props.spacingX}px;
 
   ${(props) =>
-    props.widthOne !== 'auto' ?
-      `
+    props.widthOne !== 'auto'
+      ? `
     @media (min-width: ${props.breakpointOne}px) and (max-width: ${
-  props.breakpointTwo || 9999
-}px) {
+          props.breakpointTwo || 9999
+        }px) {
     width: ${(props.widthOne / 12) * 100}% !important;
     padding: ${props.spacingY}px ${props.spacingX}px !important;
     margin: 0 !important;
     display: flex !important;
+    align-items: flex-end;
     flex: none !important;
   }
-  ` :
-      ''}
+  `
+      : ''}
 
   ${(props) =>
-    props.widthTwo !== 'auto' ?
-      `
+    props.widthTwo !== 'auto'
+      ? `
         @media (min-width: ${props.breakpointTwo}px) {
           width: ${(props.widthTwo / 12) * 100}% !important;
           padding: ${props.spacingY}px ${props.spacingX}px!important;
           margin: 0 !important;
           display: flex !important;
+          align-items: flex-end;
           flex: none !important;
         }
-      ` :
-      ''}
+      `
+      : ''}
 
   ${(props) =>
-    props.widthThree !== 'auto' ?
-      `
+    props.widthThree !== 'auto'
+      ? `
         @media (min-width: ${props.breakpointThree}px) {
           width: ${(props.widthThree / 12) * 100}% !important;
           padding: ${props.spacingY}px ${props.spacingX}px !important;
           margin: 0 !important;
           display: flex !important;
+          align-items: flex-end;
           flex: none !important;
         }
-      ` :
-      ''}
+      `
+      : ''}
 
   ${(props) =>
-    props.widthOne === 'auto' ?
-      `
+    props.widthOne === 'auto'
+      ? `
     @media (min-width: ${props.breakpointOne}px) and (max-width: ${
-  props.breakpointTwo !== undefined ? props.breakpointTwo : 2400
-}px) {
+          props.breakpointTwo !== undefined ? props.breakpointTwo : 2400
+        }px) {
     // min-width: 50%;
     flex: 1 1 0;
   }
-  ` :
-      ''}
+  `
+      : ''}
 
   ${(props) =>
-    props.widthTwo === 'auto' ?
-      `
+    props.widthTwo === 'auto'
+      ? `
     @media (min-width: ${props.breakpointTwo}px) {
     // max-width: 50% !important;
     min-width: 50%;
     flex: 1 1 0;
   }
-  ` :
-      ''}
+  `
+      : ''}
 `;
 
 Column.propTypes = {
