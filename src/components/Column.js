@@ -94,7 +94,6 @@ const Wrapper = styled.div`
           padding: ${props.spacingY}px ${props.spacingX}px!important;
           margin: 0 !important;
           display: flex !important;
-          align-items: flex-end;
           flex: none !important;
         }
       `
@@ -108,7 +107,6 @@ const Wrapper = styled.div`
           padding: ${props.spacingY}px ${props.spacingX}px !important;
           margin: 0 !important;
           display: flex !important;
-          align-items: flex-end;
           flex: none !important;
         }
       `

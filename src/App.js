@@ -49,6 +49,8 @@ import Row from './components/Row';
 import RadioButtons from './components/RadioButtons';
 import RadioButton from './components/RadioButton';
 import Toggle from './components/Toggle';
+import Select from './components/Select';
+import Option from './components/Option';
 
 library.add(
   faBars,
@@ -232,7 +234,6 @@ const App = ({}) => (
           <Input fullWidth size="large" placeholder="Large" />
         </div>
       </Row>
-
       <h5>Variants</h5>
       <Row spacing={[12]} breakpoints={[576, 769]}>
         <div widths={[6, 3]}>
@@ -245,8 +246,8 @@ const App = ({}) => (
           <Input fullWidth label="With label" placeholder="With label" />
         </div>
       </Row>
-      <Row breakpoints={[769]} spacing={[24]}>
-        <div widths={['auto']}>
+      <Row breakpoints={[476, 960]} spacing={[24]}>
+        <div widths={[6, 4]}>
           <h3>Checkboxes</h3>
           <Checkbox value="unchecked">Unchecked</Checkbox>
           <Checkbox
@@ -263,7 +264,7 @@ const App = ({}) => (
             Disabled
           </Checkbox>
         </div>
-        <div widths={['auto']}>
+        <div widths={[6, 4]}>
           <h3>Radio Buttons</h3>
           {/* <form
             className="form"
@@ -285,7 +286,7 @@ const App = ({}) => (
           {/* <button type="submit">Submit</button>
           </form> */}
         </div>
-        <div widths={['auto']}>
+        <div widths={[6, 4]}>
           <h3 color="primary">Toggle Switches</h3>
           <Toggle
             onChange={(e) => {
@@ -297,7 +298,24 @@ const App = ({}) => (
           </Toggle>
           <Toggle>Unchecked</Toggle>
         </div>
+        <div widths={[6, 4]}>
+          <h3>Selects</h3>
+          <Select>
+            <Option value="one">One</Option>
+            <Option value="two">Two</Option>
+            <Option value="three">Three</Option>
+          </Select>
+        </div>
       </Row>
+      asteljkbr
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </Section>
   </ThemeProvider>
 );
