@@ -276,7 +276,7 @@ const App = ({}) => (
               Object.values(x).forEach((item) => console.log(item.checked));
             }}
           > */}
-          <RadioButtons name="radio-buttons">
+          <RadioButtons onChange={(e) => console.log(e)} name="radio-buttons">
             <RadioButton value="one">Radio button</RadioButton>
             <RadioButton value="two">Another radio button</RadioButton>
             <RadioButton disabled value="three">

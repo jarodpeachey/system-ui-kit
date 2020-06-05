@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 
 const RadioButton = ({ onChange, children, disabled, name, value }) => {
   const customOnChange = (e) => {
-    console.log('Target from component: ', e.target);
-
     onChange && onChange(e);
   };
 
