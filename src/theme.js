@@ -28,12 +28,12 @@ export const theme = {
     seven: 60,
   },
   heading: {
-    one: 46,
+    one: 53,
     two: 36,
     three: 27,
-    four: 21,
+    four: 18,
     five: 16,
-    six: 13,
+    six: 14,
   },
   color: {
     success: '#00ab66',
@@ -52,7 +52,7 @@ export const theme = {
     },
     primary: {
       // light: '#fab86c',
-      main: '#b4267c',
+      main: '#3164d5',
       // dark: '#f76b2b',
     },
     secondary: {

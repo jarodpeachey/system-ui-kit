@@ -90,6 +90,9 @@ const RadioButtonWrapper = styled.label`
     border-radius: 500px;
     transition: all 0.1s;
   }
+  input:focus ~ .checkmark {
+    box-shadow: 0px 0px 0px 3px ${(props) => props.theme.color.primary.main}30 !important;
+  }
 `;
 
 RadioButton.propTypes = {

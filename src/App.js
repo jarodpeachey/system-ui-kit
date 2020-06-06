@@ -51,6 +51,12 @@ import RadioButton from './components/RadioButton';
 import Toggle from './components/Toggle';
 import Select from './components/Select';
 import Option from './components/Option';
+import H1 from './components/H1';
+import H2 from './components/H2';
+import H3 from './components/H3';
+import H4 from './components/H4';
+import H5 from './components/H5';
+import H6 from './components/H6';
 
 library.add(
   faBars,
@@ -78,6 +84,7 @@ library.add(
   faChevronRight,
   faChevronLeft,
   faQuoteLeft,
+  faBars,
 );
 
 const App = ({}) => (
@@ -188,9 +195,32 @@ const App = ({}) => (
       <h5>Colors</h5> */}
     {/* </Section> */}
     <Section>
-      <h2>Basic Components</h2>
-      <h3>Buttons</h3>
-      <h5>Sizes</h5>
+      <H2 className="m-none">Basic Components</H2>
+      <p>
+        System comes with hundreds of elements. Here are a few of the most
+        important.
+      </p>
+      {/* 
+      <H3>
+        <FontAwesomeIcon
+          icon="bars"
+          style={{
+            position: 'relative',
+            top: 0,
+            fontSize: 28,
+            marginRight: 6,
+          }}
+        />{' '}
+        Typography
+      </H3>
+      <H1>This is an h1</H1>
+      <H2>This is an h2</H2>
+      <H3>This is an h3</H3>
+      <H4>This is an h4</H4>
+      <H5>This is an h5</H5>
+      <H6>YThis is an h6</H6> */}
+      <H3>Buttons</H3>
+      <p>Sizes</p>
       <Button color="primary" size="small">
         Small
       </Button>
@@ -198,18 +228,20 @@ const App = ({}) => (
       <Button color="primary" size="large">
         Large
       </Button>
-      <h5>Colors</h5>
+      <p>Colors</p>
       <Button>Default</Button>
       <Button color="primary">Primary</Button>
       <Button color="secondary">Secondary</Button>
       <Button color="success">Success</Button>
       <Button color="error">Error</Button>
-      <h5 style={{ marginBottom: 8 }}>Variants</h5>
+      <p style={{ marginBottom: 8 }}>Variants</p>
       <Button color="primary">Filled</Button>
-      <Button variant="rounded" color="primary">
-        Rounded
+      <Button variant="secondary" color="primary">
+        Secondary
       </Button>
-      <OutlinedButton color="primary">Outlined</OutlinedButton>
+      <Button color="primary" variant="outlined">
+        Outlined
+      </Button>
       <div
         style={{
           display: 'inline-block',
@@ -221,28 +253,37 @@ const App = ({}) => (
           <FontAwesomeIcon icon="dollar-sign" />
         </IconButton>
       </div>
-      <h3>Inputs</h3>
-      <h5>Sizes</h5>
+      <br />
+      <br />
+      <br />
+      <H3>Inputs</H3>
       <Row spacing={[12]} breakpoints={[576, 769]}>
-        <div widths={[6, 3]}>
-          <Input fullWidth size="small" placeholder="Small" />
-        </div>
         <div widths={[6, 3]}>
           <Input fullWidth placeholder="Default" />
         </div>
         <div widths={[6, 3]}>
-          <Input fullWidth size="large" placeholder="Large" />
+          <Input fullWidth state="success" placeholder="Success" />
+        </div>
+        <div widths={[6, 3]}>
+          <Input fullWidth state="error" placeholder="Error" />
+        </div>
+        <div widths={[6, 3]}>
+          <Input
+            fullWidth
+            icon={<FontAwesomeIcon icon="check" />}
+            placeholder="With icon"
+          />
         </div>
       </Row>
-      <h5>Variants</h5>
+      <p className="mb-none">Styles</p>
       <Row spacing={[12]} breakpoints={[576, 769]}>
-        <div widths={[6, 3]}>
+        <div widths={[6, 3]} alignBottom>
           <Input fullWidth placeholder="Default" />
         </div>
-        <div widths={[6, 3]}>
-          <Input fullWidth variant="filled" placeholder="Filled" />
+        <div widths={[6, 3]} alignBottom>
+          <Input fullWidth variant="raised" placeholder="Raised" />
         </div>
-        <div widths={[6, 3]}>
+        <div widths={[6, 3]} alignBottom>
           <Input fullWidth label="With label" placeholder="With label" />
         </div>
       </Row>
@@ -307,7 +348,6 @@ const App = ({}) => (
           </Select>
         </div>
       </Row>
-      asteljkbr
       <br />
       <br />
       <br />

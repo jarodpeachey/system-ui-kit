@@ -33,6 +33,7 @@ const Row = ({
             <>{item}</>
           ) : (
             <Column
+              {...item.props}
               demo={demo}
               maxColumnSize={maxColumnSize}
               key="column"

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Column = ({
   children,
@@ -10,6 +10,7 @@ const Column = ({
   widths,
   maxColumnSize,
   demo,
+  alignBottom,
 }) => (
   <Wrapper
     demo={demo}
@@ -22,6 +23,7 @@ const Column = ({
     widthOne={widths[0]}
     widthTwo={widths[1] && widths[1]}
     widthThree={widths[2] && widths[2]}
+    alignBottom={alignBottom}
   >
     {demo ? (
       <Demo>
@@ -69,6 +71,11 @@ const Wrapper = styled.div`
   }
   flex: 1;
   padding: ${(props) => props.spacingY}px ${(props) => props.spacingX}px;
+  ${(props) =>
+    props.alignBottom &&
+    css`
+      align-items: flex-end;
+    `}
 
   ${(props) =>
     props.widthOne !== 'auto'
@@ -80,7 +87,6 @@ const Wrapper = styled.div`
     padding: ${props.spacingY}px ${props.spacingX}px !important;
     margin: 0 !important;
     display: flex !important;
-    align-items: flex-end;
     flex: none !important;
   }
   `
