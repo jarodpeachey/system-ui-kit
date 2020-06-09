@@ -27,6 +27,7 @@ import {
   faChevronLeft,
   faChevronDown,
   faQuoteLeft,
+  faBell,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme } from './theme';
@@ -57,6 +58,7 @@ import H3 from './components/H3';
 import H4 from './components/H4';
 import H5 from './components/H5';
 import H6 from './components/H6';
+import Alert from './components/Alert';
 
 library.add(
   faBars,
@@ -85,6 +87,7 @@ library.add(
   faChevronLeft,
   faQuoteLeft,
   faBars,
+  faBell,
 );
 
 const App = ({}) => (
@@ -351,6 +354,42 @@ const App = ({}) => (
       <br />
       <br />
       <br />
+      <H3>Alerts</H3>
+      <p className="mb-none">Colors</p>
+      {/* <Row spacing={[12]} breakpoints={[960]}>
+        <div widths={[6]}> */}
+      <Alert>This is a primary alert. It tells you something.</Alert>
+      {/* </div>
+        <div widths={[6]}> */}
+      <Alert color="secondary">
+        This is a secondary alert. It tells you something else.
+      </Alert>
+      {/* </div>
+        <div widths={[6]}> */}
+      <Alert color="success">
+        This is a success alert. It means you did something right.
+      </Alert>
+      {/* </div>
+        <div widths={[6]}> */}
+      <Alert color="error">
+        This is an error alert. Something went wrong if you see this.
+      </Alert>
+      {/* </div>
+      </Row> */}
+      <p className="mb-none">Variants</p>
+      {/* <Row spacing={[12]} breakpoints={[960]}>
+        <div widths={[6]}> */}
+      <Alert>A default alert is solid, with white text. It stands out.</Alert>
+      {/* </div>
+        <div widths={[6]}> */}
+      <Alert variant="light">
+        A light alert has a light background so it's not as intrusive.
+      </Alert>
+      <Alert icon={<FontAwesomeIcon icon="bell" />}>
+        This one has an icon to indicate something.
+      </Alert>
+      {/* </div>
+      </Row> */}
       <br />
       <br />
       <br />

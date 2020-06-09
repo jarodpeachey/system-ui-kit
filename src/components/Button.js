@@ -59,6 +59,54 @@ const StyledButton = styled.button`
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
+  background: ${(props) =>
+    props.variant === 'secondary'
+      ? 'white'
+      : props.variant === 'outlined'
+      ? 'transparent'
+      : props.color === 'primary'
+      ? props.theme.color.primary.main
+      : props.color === 'secondary'
+      ? props.theme.color.secondary.main
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.color === 'success'
+      ? props.theme.color.success
+      : ''};
+  color: ${(props) =>
+    props.variant === 'outlined' || props.variant === 'secondary'
+      ? props.color === 'primary'
+        ? props.theme.color.primary.main
+        : props.color === 'secondary'
+        ? props.theme.color.secondary.main
+        : props.color === 'error'
+        ? props.theme.color.error
+        : props.color === 'success'
+        ? props.theme.color.success
+        : ''
+      : props.color === 'primary' ||
+        props.color === 'secondary' ||
+        props.color === 'error' ||
+        props.color === 'success'
+      ? 'white'
+      : ''};
+  border: 2px solid
+    ${(props) =>
+      props.variant === 'secondary'
+        ? 'transparent'
+        : props.color === 'primary'
+        ? props.theme.color.primary.main
+        : props.color === 'secondary'
+        ? props.theme.color.secondary.main
+        : props.color === 'error'
+        ? props.theme.color.error
+        : props.color === 'success'
+        ? props.theme.color.success
+        : props.color === 'white'
+        ? '#ffffff'
+        : '#efefef'};
+  box-shadow: ${(props) =>
+    props.variant === 'secondary' ? '0 1px 4px 0 rgba(0, 0, 0, 0.14)' : 'none'};
   :hover,
   :focus,
   :focus {
@@ -91,26 +139,40 @@ const StyledButton = styled.button`
           ? props.theme.color.success
           : '#efefef'
         : props.variant === 'secondary'
-
         ? 'white'
         : props.variant === 'outlined'
         ? 'transparent'
-        : props.color === 'primary'
-        ? props.theme.color.primary.main
-        : props.color === 'secondary'
-        ? props.theme.color.secondary.main
-        : props.color === 'error'
-        ? props.theme.color.error
-        : props.color === 'success'
-        ? props.theme.color.success
-        : ''};
+        : `${
+            props.color === 'primary'
+              ? props.theme.color.primary.main
+              : props.color === 'secondary'
+              ? props.theme.color.secondary.main
+              : props.color === 'error'
+              ? props.theme.color.error
+              : props.color === 'success'
+              ? props.theme.color.success
+              : ''
+          }dd`};
+    border: 2px solid
+      ${(props) =>
+        props.variant === 'secondary'
+          ? 'transparent'
+          : `${
+              props.color === 'primary'
+                ? props.theme.color.primary.main
+                : props.color === 'secondary'
+                ? props.theme.color.secondary.main
+                : props.color === 'error'
+                ? props.theme.color.error
+                : props.color === 'success'
+                ? props.theme.color.success
+                : '#efefef'
+            }00`} !important;
     box-shadow: ${(props) =>
       props.variant === 'secondary'
-
         ? '2px 5px 8px -2px rgba(0, 0, 0, 0.2)'
         : `0px 8px 26px -14px ${
             props.variant === 'secondary'
-
               ? 'rgba(0, 0, 0, .4)'
               : props.color === 'primary'
               ? props.theme.color.primary.main
@@ -122,60 +184,8 @@ const StyledButton = styled.button`
               ? props.theme.color.success
               : '#aaa'
           }`};
-    transform: translateY(-1px);
+    // transform: translateY(-1px);
   }
-  background: ${(props) =>
-    props.variant === 'secondary'
-
-      ? 'white'
-      : props.variant === 'outlined'
-      ? 'transparent'
-      : props.color === 'primary'
-      ? props.theme.color.primary.main
-      : props.color === 'secondary'
-      ? props.theme.color.secondary.main
-      : props.color === 'error'
-      ? props.theme.color.error
-      : props.color === 'success'
-      ? props.theme.color.success
-      : ''};
-  color: ${(props) =>
-    props.variant === 'outlined' || props.variant === 'secondary'
-
-      ? props.color === 'primary'
-        ? props.theme.color.primary.main
-        : props.color === 'secondary'
-        ? props.theme.color.secondary.main
-        : props.color === 'error'
-        ? props.theme.color.error
-        : props.color === 'success'
-        ? props.theme.color.success
-        : ''
-      : props.color === 'primary' ||
-        props.color === 'secondary' ||
-        props.color === 'error' ||
-        props.color === 'success'
-      ? 'white'
-      : ''};
-  border: 2px solid
-    ${(props) =>
-      props.variant === 'secondary'
-
-        ? 'transparent'
-        : props.color === 'primary'
-        ? props.theme.color.primary.main
-        : props.color === 'secondary'
-        ? props.theme.color.secondary.main
-        : props.color === 'error'
-        ? props.theme.color.error
-        : props.color === 'success'
-        ? props.theme.color.success
-        : props.color === 'white'
-        ? '#ffffff'
-        : '#efefef'};
-  box-shadow: ${(props) =>
-    props.variant === 'secondary'
- ? '0 1px 4px 0 rgba(0, 0, 0, 0.14)' : 'none'};
 `;
 
 Button.propTypes = {
