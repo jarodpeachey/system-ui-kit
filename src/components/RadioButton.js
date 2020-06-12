@@ -91,7 +91,12 @@ const RadioButtonWrapper = styled.label`
     transition: all 0.1s;
   }
   input:focus ~ .checkmark {
-    box-shadow: 0px 0px 0px 3px ${(props) => props.theme.color.primary.main}30 !important;
+    // box-shadow: 0px 0px 0px 3px ${(props) =>
+      props.theme.color.primary.main}30 !important;
+  }
+  input:hover ~ .checkmark {
+    border: 1px solid ${(props) =>
+      props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
   }
 `;
 

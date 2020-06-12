@@ -35,20 +35,18 @@ const Wrapper = styled.div`
         ? props.theme.color.success
         : props.color === 'error'
         ? props.theme.color.error
-        : props.theme.color.primary.main}${(props) => (props.variant === 'light' ? '30' : '')};
+        : props.theme.color.primary.main}20;
   div {
     color: ${(props) =>
-      props.variant === 'light'
-        ? props.color === 'primary'
-          ? props.theme.color.primary.main
-          : props.color === 'secondary'
-          ? props.theme.color.secondary.main
-          : props.color === 'success'
-          ? props.theme.color.success
-          : props.color === 'error'
-          ? props.theme.color.error
-          : props.theme.color.primary.main
-        : 'white'};
+      props.color === 'primary'
+        ? props.theme.color.primary.main
+        : props.color === 'secondary'
+        ? props.theme.color.secondary.main
+        : props.color === 'success'
+        ? props.theme.color.success
+        : props.color === 'error'
+        ? props.theme.color.error
+        : props.theme.color.primary.main};
   }
   border-radius: ${(props) => props.theme.radius.one};
   padding-right: 0;

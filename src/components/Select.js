@@ -24,7 +24,7 @@ const Select = ({ children, name = 'default' }) => {
 
   return (
     <Wrapper>
-      <SelectWrapper onClick={toggleOpen}>
+      <SelectWrapper open={open} onClick={toggleOpen}>
         {selectedLabel || 'Select a value'}
         <FontAwesomeIcon
           style={{
@@ -63,17 +63,23 @@ const Wrapper = styled.div`
 `;
 
 const SelectWrapper = styled.div`
-  padding: 14px 14px;
-  font-size: 14px;
+  padding: ${(props) => (props.open ? '13px 13px' : '14px 14px')};
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
   border-radius: 3px;
   width: 100%;
-  border: 1px solid rgb(195, 195, 195);
-  :focus {
-    outline: ${(props) => props.theme.color.primary.main} auto 1px;
+  transition-duration: 0.15s;
+  border: ${(props) =>
+    props.open
+      ? `2px solid ${props.theme.color.primary.main}`
+      : '1px solid rgb(195, 195, 195)'};
+  :hover {
+    border: ${(props) =>
+      props.open
+        ? `2px solid ${props.theme.color.primary.main}`
+        : `1px solid ${props.theme.color.primary.main}`};
   }
 `;
 

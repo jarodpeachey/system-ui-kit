@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SubMenu = ({ children }) => <Wrapper>{children}</Wrapper>;
+const Mobile = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 const Wrapper = styled.div`
   border-radius: ${(props) => props.theme.radius.one};
@@ -11,4 +11,4 @@ const Wrapper = styled.div`
   // box-shadow: ${(props) => props.theme.shadow.one};
 `;
 
-export default SubMenu;
+export default Mobile;

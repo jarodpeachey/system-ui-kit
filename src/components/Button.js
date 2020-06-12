@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { theme } from '../theme';
+import { pSBC } from '../utils/color';
 
 const Button = ({
   children,
@@ -42,20 +43,24 @@ const Button = ({
 );
 
 const StyledButton = styled.button`
+  box-shadow: ${(props) =>
+    props.variant === 'secondary' ? props.theme.shadow.two : 'none'};
+
   outline: none;
   margin-right: 12px;
   padding: 12px 24px;
   border: none;
   font-size: 16px;
+  // font-weight: 500;
+  letter-spacing: 1.1px;
   padding: ${(props) =>
     props.size === 'small'
-      ? '7px 20px'
+      ? '8px 12px'
       : props.size === 'large'
       ? '14px 29px'
-      : '12px 28px'};
+      : '12px 18px'};
   font-size: ${(props) =>
-    props.size === 'small' ? '12px' : props.size === 'large' ? '16px' : '14px'};
-  text-transform: uppercase;
+    props.size === 'small' ? '14px' : props.size === 'large' ? '18px' : '16px'};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
@@ -105,8 +110,6 @@ const StyledButton = styled.button`
         : props.color === 'white'
         ? '#ffffff'
         : '#efefef'};
-  box-shadow: ${(props) =>
-    props.variant === 'secondary' ? '0 1px 4px 0 rgba(0, 0, 0, 0.14)' : 'none'};
   :hover,
   :focus,
   :focus {
@@ -144,15 +147,15 @@ const StyledButton = styled.button`
         ? 'transparent'
         : `${
             props.color === 'primary'
-              ? props.theme.color.primary.main
+              ? pSBC(props.theme.color.primary.main, -25)
               : props.color === 'secondary'
-              ? props.theme.color.secondary.main
+              ? pSBC(props.theme.color.secondary.main, -25)
               : props.color === 'error'
-              ? props.theme.color.error
+              ? pSBC(props.theme.color.error, -25)
               : props.color === 'success'
-              ? props.theme.color.success
-              : ''
-          }dd`};
+              ? pSBC(props.theme.color.success, -25)
+              : pSBC('#efefef', -10)
+          }`};
     border: 2px solid
       ${(props) =>
         props.variant === 'secondary'
@@ -170,21 +173,13 @@ const StyledButton = styled.button`
             }00`} !important;
     box-shadow: ${(props) =>
       props.variant === 'secondary'
-        ? '2px 5px 8px -2px rgba(0, 0, 0, 0.2)'
-        : `0px 8px 26px -14px ${
-            props.variant === 'secondary'
-              ? 'rgba(0, 0, 0, .4)'
-              : props.color === 'primary'
-              ? props.theme.color.primary.main
-              : props.color === 'secondary'
-              ? props.theme.color.secondary.main
-              : props.color === 'error'
-              ? props.theme.color.error
-              : props.color === 'success'
-              ? props.theme.color.success
-              : '#aaa'
-          }`};
+        ? props.theme.shadow.three
+        : 'none'};
+
     // transform: translateY(-1px);
+  }
+  :active {
+    box-shadow: none !important;
   }
 `;
 

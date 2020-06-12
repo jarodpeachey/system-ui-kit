@@ -16,10 +16,9 @@ const FixedHeader = ({ children, primary, transparent, secondary }) => {
     };
   });
 
-  console.log(scroll);
-
   return (
     <Wrapper
+      id="header"
       scrolled={scroll > 50}
       primary={primary}
       transparent={transparent}
@@ -37,71 +36,58 @@ const Wrapper = styled.div`
   top: 0;
   width: 100%;
   z-index: 999;
+  box-shadow ${(props) =>
+    props.scrolled
+      ? '0 0 4px 0 rgba(17,22,26,0.08), 0 2px 4px 0 rgba(17,22,26, 0.03), 0 4px 8px 0 rgba(17,22,26, 0.03)'
+      : 'none'};
   background: ${(props) =>
-    props.primary ?
-      props.theme.color.primary.main :
-      props.secondary ?
-        props.theme.color.secondary.main :
-        props.transparent ?
-          props.scrolled ?
-            'white' :
-            'transparent' :
-          'white'};
+    props.primary
+      ? props.theme.color.primary.main
+      : props.secondary
+      ? props.theme.color.secondary.main
+      : props.transparent
+      ? props.scrolled
+        ? 'white'
+        : 'transparent'
+      : 'white'};
   color: ${(props) =>
-    props.primary ?
-      'white' :
-      props.secondary ?
-        'white' :
-        props.transparent ?
-          props.scrolled ?
-            'inherit' :
-            'white' :
-          'inherit'};
-  a {
-    color: ${(props) =>
-    props.primary ?
-      'white' :
-      props.secondary ?
-        'white' :
-        props.transparent ?
-          props.scrolled ?
-            'inherit' :
-            'white' :
-          'inherit'};
+    props.primary
+      ? 'white'
+      : props.secondary
+      ? 'white'
+      : props.transparent
+      ? props.scrolled
+        ? 'inherit'
+        : 'white'
+      : 'inherit'};
+  &.open {
+    * {
+      color: ${(props) => props.theme.color.text.dark.one} !important;
+    }
+    color: ${(props) => props.theme.color.text.dark.one} !important;
   }
-  h1,
+  transition: .15s;
+  a, h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
     color: ${(props) =>
-    props.primary ?
-      'white' :
-      props.secondary ?
-        'white' :
-        props.transparent ?
-          props.scrolled ?
-            props.theme.color.primary.main :
-            'white' :
-          'inherit'};
+      props.primary
+        ? 'white'
+        : props.secondary
+        ? 'white'
+        : props.transparent
+        ? props.scrolled
+          ? props.theme.color.primary.main
+          : 'white'
+        : 'inherit'};
+    transition: .15s;
   }
   font-weight: 600;
   top: 0;
   width: 100%;
-  a:hover, :focus
- {
-    background: ${(props) =>
-    props.primary ?
-      '#ffffff20' :
-      props.secondary ?
-        '#ffffff20' :
-        props.transparent ?
-          props.scrolled ?
-            '#88888820' :
-            '#ffffff20' :
-          '#88888820'};
-  }
   h1,
   h2,
   h3,

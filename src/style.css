@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;900&display=swap');
 
 :root {
   --spacing-one: 4px;
@@ -28,6 +28,7 @@
 }
 * {
   box-sizing: border-box;
+  transition-delay: 0s !important;
 }
 html,
 body {
@@ -35,7 +36,6 @@ body {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 .container,
 .container-xs {
@@ -92,6 +92,11 @@ body {
     padding-right: calc(100vw * 0.25);
   }
 }
+
+.transition {
+  transition-duration: 0.15s;
+}
+
 label,
 input,
 div {
@@ -147,7 +152,7 @@ h4,
 h5,
 h6 {
   color: var(--dark-one);
-  font-weight: 800;
+  font-weight: 700;
 }
 h1,
 h2 {

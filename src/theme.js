@@ -3,14 +3,10 @@ import React from 'react';
 
 export const theme = {
   shadow: {
-    one:
-      '0 0 4px 0 rgba(17,22,26,0.08), 0 2px 4px 0 rgba(17,22,26, 0.03), 0 4px 8px 0 rgba(17,22,26, 0.03)',
-    two:
-      '0 0 8px 0 rgba(17,22,26,0.08), 0 4px 8px 0 rgba(17,22,26, 0.03), 0 8px 16px 0 rgba(17,22,26, 0.03)',
-    three:
-      '0 4px 16px 4px rgba(17,22,26,0.08), 0 4px 8px 0 rgba(17,22,26, 0.03), 0 16px 24px 0 rgba(17,22,26, 0.03)',
-    four:
-      '0 4px 24px 8px rgba(17,22,26,0.08), 0 8px 16px 0 rgba(17,22,26, 0.03), 0 32px 40px 0 rgba(17,22,26, 0.03)',
+    one: '0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)',
+    two: '0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.18)',
+    three: '0 4px 12px rgba(50,50,93,.25), 0 1px 3px rgba(0,0,0,.18)',
+    four: '0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)',
   },
   radius: {
     one: '3px',
@@ -36,8 +32,8 @@ export const theme = {
     six: 14,
   },
   color: {
-    success: '#00ab66',
-    error: '#f33b1a',
+    success: '#36ca6a',
+    error: '#f14941',
     text: {
       dark: {
         one: '#2c2f3b',
@@ -52,12 +48,12 @@ export const theme = {
     },
     primary: {
       // light: '#fab86c',
-      main: '#3164d5',
+      main: '#8731d5',
       // dark: '#f76b2b',
     },
     secondary: {
       // light: '#fab86c',
-      main: '#04B1D1',
+      main: '#4197f1',
       // dark: '#f76b2b',
     },
     gray: {

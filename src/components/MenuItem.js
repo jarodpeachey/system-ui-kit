@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SubMenu from './SubMenu';
 
-const MenuItem = ({ children, submenu }) => {
+const MenuItem = ({ children, submenu, square, align }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   if (submenu) {
     const link = (
@@ -16,7 +16,7 @@ const MenuItem = ({ children, submenu }) => {
             top: 1,
             left: 6,
             transform: `${showSubMenu ? 'rotate(180deg)' : 'none'}`,
-            transition: 'all .1s ease-in-out',
+            transitionDuration: '.15s',
           }}
           icon="chevron-down"
         />
@@ -25,21 +25,24 @@ const MenuItem = ({ children, submenu }) => {
     return (
       <>
         <Wrapper
+          square={square}
           onMouseEnter={() => {
             setShowSubMenu(true);
           }}
           onMouseLeave={() => {
             setShowSubMenu(false);
           }}
+          open={showSubMenu}
         >
           {link}
-
-          <SubMenuWrapper open={showSubMenu}>{children[1]}</SubMenuWrapper>
+          <SubMenuWrapper align={align} open={showSubMenu}>
+            {children[1]}
+          </SubMenuWrapper>
         </Wrapper>
       </>
     );
   } else {
-    return <Wrapper>{children}</Wrapper>;
+    return <Wrapper square={square}>{children}</Wrapper>;
   }
 };
 
@@ -47,14 +50,19 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  transition-duration: 0.15s !important;
   a {
     display: block;
     width: fit-content;
-    padding: 8px 16px;
+    padding: ${(props) => (props.square ? 12 : '12px 16px')};
     text-decoration: none;
     cursor: pointer;
+    background: ${(props) => (props.open ? '#00000010' : 'transparent')};
     border-radius: ${(props) => props.theme.radius.one};
-    transition-duration: 0.15s;
+    transition-duration: 0.15s !important;
+    :hover {
+      background: #00000010;
+    }
   }
 `;
 
@@ -66,11 +74,26 @@ const SubMenuWrapper = styled.div`
       ${(props) => (props.open ? ', visibility 0s 0s' : ', visibility 0s .1s')};
   transform: ${(props) => (props.open ? 'scale(1)' : 'scale(.95)')};
   position: absolute;
-  min-width: 200px;
+  min-width: calc(100% + 40px);
   top: calc(100%);
-  left: 16px;
-  // padding-top: 20px;
+  padding-top: 14px;
+  margin: 0 auto;
+  left: ${(props) => (props.align !== 'right' ? 0 : null)};
+  right: ${(props) => (props.align === 'right' ? 0 : null)};
   z-index: 999;
+  filter: drop-shadow(0px 0px 5px #00000010);
+  ::after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: ${(props) => (props.align === 'right' ? '20px' : null)};
+    left: ${(props) => (props.align !== 'right' ? '20px' : null)};
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    background: white;
+  }
 `;
 
 export default MenuItem;

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const SubMenuItem = ({ children }) => <Wrapper>{children}</Wrapper>;
+const MobileSubMenuItem = ({ children }) => (
+  <Wrapper>{children}</Wrapper>
+);
 
 const Wrapper = styled.div`
   width: 100%;
@@ -23,4 +25,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default SubMenuItem;
+export default MobileSubMenuItem;

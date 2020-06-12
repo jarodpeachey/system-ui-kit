@@ -1,29 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Header = ({ children, primary, transparent, secondary }) => (
-  <Wrapper primary={primary} transparent={transparent} secondary={secondary}>
+const Header = ({ children, color }) => (
+  <Wrapper color={color}>
     <Container className="container wide">{children}</Container>
   </Wrapper>
 );
 
 const Wrapper = styled.div`
   background: ${(props) =>
-    props.primary ?
-      props.theme.color.primary.main :
-      props.secondary ?
-        props.theme.color.secondary.main :
-        props.transparent ?
-          'transparent' :
-          'white'};
+    props.color === 'primary'
+      ? props.theme.color.primary.main
+      : props.color === 'secondary'
+      ? props.theme.color.secondary.main
+      : props.color === 'transparent'
+      ? 'transparent'
+      : 'white'};
   color: ${(props) =>
-    props.primary ?
-      'white' :
-      props.secondary ?
-        'white' :
-        props.transparent ?
-          'inherit' :
-          'inherit'};
+    props.color === 'primary'
+      ? 'white'
+      : props.color === 'secondary'
+      ? 'white'
+      : props.color === 'transparent'
+      ? null
+      : null};
   a,
   h1,
   h2,
@@ -32,28 +32,23 @@ const Wrapper = styled.div`
   h5,
   h6 {
     color: ${(props) =>
-    props.primary ?
-      'white' :
-      props.secondary ?
-        'white' :
-        props.transparent ?
-          'white' :
-          'inherit'};
+      props.color === 'primary'
+        ? 'white'
+        : props.color === 'secondary'
+        ? 'white'
+        : props.color === 'transparent'
+        ? 'white'
+        : props.theme.color.text.dark.one};
+        transition: .15s;
   }
+  // a {
+  //   background: transparent;
+  //   transition-duration: 0.15s !important;
+  //   display: block !important;
+  // }
   font-weight: 600;
   top: 0;
   width: 100%;
-  a:hover, :focus
- {
-    background: ${(props) =>
-    props.primary ?
-      '#ffffff20' :
-      props.secondary ?
-        '#ffffff20' :
-        props.transparent ?
-          '#ffffff20' :
-          '#66666620'};
-  }
   h1,
   h2,
   h3,
@@ -62,6 +57,7 @@ const Wrapper = styled.div`
   h6 {
     font-size: 26px !important;
   }
+  transition: 0.15s;
 `;
 
 const Container = styled.div`
@@ -70,6 +66,7 @@ const Container = styled.div`
   padding-top: 18px;
   padding-bottom: 18px;
   justify-content: space-between;
+  transition: 0.15s;
 `;
 
 const Close = styled.div`

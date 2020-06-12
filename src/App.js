@@ -1,4 +1,7 @@
 import React from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/scale.css';
 import { ThemeProvider } from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -37,6 +40,10 @@ import Menu from './components/Menu';
 import SubMenu from './components/SubMenu';
 import MenuItem from './components/MenuItem';
 import SubMenuItem from './components/SubMenuItem';
+import MobileMenu from './components/MobileMenu';
+import MobileSubMenu from './components/MobileSubMenu';
+import MobileMenuItem from './components/MobileMenuItem';
+import MobileSubMenuItem from './components/MobileSubMenuItem';
 import Hero from './components/Hero';
 import Section from './components/Section';
 import Button from './components/Button';
@@ -59,6 +66,9 @@ import H4 from './components/H4';
 import H5 from './components/H5';
 import H6 from './components/H6';
 import Alert from './components/Alert';
+import Badge from './components/Badge';
+import Mobile from './components/Mobile';
+import Tablet from './components/Tablet';
 
 library.add(
   faBars,
@@ -132,22 +142,50 @@ const App = ({}) => (
       </Header> */}
     <FixedHeader transparent>
       <h1 style={{ margin: '0' }}>Website</h1>
-      <Menu>
-        <MenuItem>
-          <a href="/">Home</a>
-        </MenuItem>
-        <MenuItem submenu>
-          <a href="/">About</a>
-          <SubMenu>
-            <SubMenuItem>
-              <a href="/">More</a>
-            </SubMenuItem>
-            <SubMenuItem>
-              <a href="/">Team</a>
-            </SubMenuItem>
-          </SubMenu>
-        </MenuItem>
-      </Menu>
+      <Mobile>
+        <MobileMenu>
+          <MobileMenuItem>
+            <a href="/">Home</a>
+          </MobileMenuItem>
+          <MobileMenuItem submenu>
+            <a href="/">About</a>
+            <MobileSubMenu>
+              <MobileSubMenuItem>
+                <a href="/">More</a>
+              </MobileSubMenuItem>
+              <MobileSubMenuItem>
+                <a href="/">Team</a>
+              </MobileSubMenuItem>
+            </MobileSubMenu>
+          </MobileMenuItem>
+        </MobileMenu>
+      </Mobile>
+      <Tablet>
+        <Menu>
+          <MenuItem>
+            <a href="/">Home</a>
+          </MenuItem>
+          <MenuItem submenu>
+            <a href="/">About</a>
+            <SubMenu>
+              <SubMenuItem>
+                <a href="/">More</a>
+              </SubMenuItem>
+              <SubMenuItem>
+                <a href="/">Team</a>
+              </SubMenuItem>
+            </SubMenu>
+          </MenuItem>
+          <MenuItem square>
+            <a href="/">
+              <FontAwesomeIcon
+                icon="user"
+                style={{ width: 20, height: 20, fontSize: 24 }}
+              />
+            </a>
+          </MenuItem>
+        </Menu>
+      </Tablet>
     </FixedHeader>
     <Hero
       background={`linear-gradient(
@@ -162,8 +200,10 @@ const App = ({}) => (
       <h3 style={{ color: '#ffffff90' }}>
         A modern website that kicks the other websites into the street.
       </h3>
-      <Button color="white">Learn More</Button>
-      <OutlinedButton color="white">Click Me</OutlinedButton>
+      <Button color="secondary">Learn More</Button>
+      <Button variant="outlined" color="white">
+        Click Me
+      </Button>
     </Hero>
     {/* <Section center>
       <h2 className="m-none">Components</h2>
@@ -197,7 +237,7 @@ const App = ({}) => (
       <h3>Buttons</h3>
       <h5>Colors</h5> */}
     {/* </Section> */}
-    <Section>
+    <Section className="pb-none">
       <H2 className="m-none">Basic Components</H2>
       <p>
         System comes with hundreds of elements. Here are a few of the most
@@ -239,9 +279,6 @@ const App = ({}) => (
       <Button color="error">Error</Button>
       <p style={{ marginBottom: 8 }}>Variants</p>
       <Button color="primary">Filled</Button>
-      <Button variant="secondary" color="primary">
-        Secondary
-      </Button>
       <Button color="primary" variant="outlined">
         Outlined
       </Button>
@@ -284,7 +321,7 @@ const App = ({}) => (
           <Input fullWidth placeholder="Default" />
         </div>
         <div widths={[6, 3]} alignBottom>
-          <Input fullWidth variant="raised" placeholder="Raised" />
+          <Input fullWidth variant="filled" placeholder="Filled" />
         </div>
         <div widths={[6, 3]} alignBottom>
           <Input fullWidth label="With label" placeholder="With label" />
@@ -332,15 +369,12 @@ const App = ({}) => (
         </div>
         <div widths={[6, 4]}>
           <h3 color="primary">Toggle Switches</h3>
-          <Toggle
-            onChange={(e) => {
-              console.log(e);
-            }}
-            checked
-          >
-            Checked
-          </Toggle>
-          <Toggle>Unchecked</Toggle>
+          <p className="mb-none">Variants</p>
+          <Toggle>Default</Toggle>
+          <Toggle variant="filled">Filled</Toggle>
+          <p className="mb-none">Sizes</p>
+          <Toggle size="small">Small</Toggle>
+          <Toggle>Normal</Toggle>
         </div>
         <div widths={[6, 4]}>
           <h3>Selects</h3>
@@ -379,12 +413,9 @@ const App = ({}) => (
       <p className="mb-none">Variants</p>
       {/* <Row spacing={[12]} breakpoints={[960]}>
         <div widths={[6]}> */}
-      <Alert>A default alert is solid, with white text. It stands out.</Alert>
       {/* </div>
         <div widths={[6]}> */}
-      <Alert variant="light">
-        A light alert has a light background so it's not as intrusive.
-      </Alert>
+      <Alert variant="light">This is an alert. It's the default style.</Alert>
       <Alert icon={<FontAwesomeIcon icon="bell" />}>
         This one has an icon to indicate something.
       </Alert>
@@ -393,9 +424,94 @@ const App = ({}) => (
       <br />
       <br />
       <br />
+      <h3>Badges</h3>
+      <Badge>Default</Badge>
+      <Badge color="primary">Primary</Badge>
+      <Badge color="secondary">Secondary</Badge>
+      <Badge color="success">Success</Badge>
+      <Badge color="error">Error</Badge>
       <br />
       <br />
+      <br />
+      <H3>Headers</H3>
     </Section>
+    <Header color="primary">
+      <h1 style={{ margin: '0' }}>Website</h1>
+      <Mobile>
+        <MobileMenu>
+          <MobileMenuItem>
+            <a href="/">Home</a>
+          </MobileMenuItem>
+          <MobileMenuItem submenu>
+            <a href="/">About</a>
+            <MobileSubMenu>
+              <MobileSubMenuItem>
+                <a href="/">More</a>
+              </MobileSubMenuItem>
+              <MobileSubMenuItem>
+                <a href="/">Team</a>
+              </MobileSubMenuItem>
+            </MobileSubMenu>
+          </MobileMenuItem>
+        </MobileMenu>
+      </Mobile>
+      <Tablet>
+        <Menu>
+          <MenuItem>
+            <a href="/">Home</a>
+          </MenuItem>
+          <MenuItem submenu>
+            <a href="/">About</a>
+            <SubMenu>
+              <SubMenuItem>
+                <a href="/">More</a>
+              </SubMenuItem>
+              <SubMenuItem>
+                <a href="/">Team</a>
+              </SubMenuItem>
+            </SubMenu>
+          </MenuItem>
+          <MenuItem square>
+            <a href="/">
+              <FontAwesomeIcon
+                icon="user"
+                style={{ width: 20, height: 20, fontSize: 24 }}
+              />
+            </a>
+          </MenuItem>
+        </Menu>
+      </Tablet>
+    </Header>
+    <Header color="white">
+      <h1 style={{ margin: '0' }}>Website</h1>
+      <Menu>
+        <MenuItem>
+          <a href="/">Home</a>
+        </MenuItem>
+        <MenuItem submenu>
+          <a href="/">About</a>
+          <SubMenu>
+            <SubMenuItem>
+              <a href="/">More</a>
+            </SubMenuItem>
+            <SubMenuItem>
+              <a href="/">Team</a>
+            </SubMenuItem>
+          </SubMenu>
+        </MenuItem>
+        <MenuItem square>
+          <a href="/">
+            <FontAwesomeIcon
+              icon="user"
+              style={{ width: 20, height: 20, fontSize: 24 }}
+            />
+          </a>
+        </MenuItem>
+      </Menu>
+    </Header>
+    <br />
+    <br />
+    <br />
   </ThemeProvider>
 );
 
