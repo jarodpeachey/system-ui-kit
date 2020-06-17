@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ThemeContext } from '../theme';
 
 const MobileMenuItem = ({ children, submenu, align, icon }) => {
   const [showMobileSubMenu, setShowMobileSubMenu] = useState(false);
@@ -27,6 +28,7 @@ const MobileMenuItem = ({ children, submenu, align, icon }) => {
                 left: 6,
                 transform: `${showMobileSubMenu ? 'rotate(180deg)' : 'none'}`,
                 transitionDuration: '.15s',
+                color: 'inherit',
               }}
               icon="chevron-down"
             />
@@ -48,6 +50,11 @@ const Wrapper = styled.div`
   align-items: center;
   transition-duration: 0.15s !important;
   width: 100%;
+  svg {
+    color: ${(props) => props.theme.color.text.dark.one} !important;
+    fill: ${(props) => props.theme.color.text.dark.one} !important;
+  }
+  color: ${(props) => props.theme.color.text.dark.one};
   ${(props) =>
     props.submenu &&
     css`
@@ -58,6 +65,10 @@ const Wrapper = styled.div`
       :hover {
         background: #00000010;
       }
+      svg {
+        color: ${props.theme.color.text.dark.one} !important;
+        fill: ${props.theme.color.text.dark.one} !important;
+      }
     `};
   a {
     display: ${(props) => (props.submenu ? 'inline-block' : 'block')};
@@ -65,6 +76,7 @@ const Wrapper = styled.div`
     padding: ${(props) => (props.submenu ? 0 : '12px 16px')};
     text-decoration: none;
     cursor: pointer;
+    color: ${(props) => props.theme.color.text.dark.one};
     background: ${(props) =>
       props.submenu ? 'transparent' : props.open ? '#00000010' : 'transparent'};
     border-radius: ${(props) => props.theme.radius.one};
@@ -82,7 +94,7 @@ const MobileSubMenuWrapper = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  transition: all .15s;
+  transition: all 0.15s;
   padding: 0;
   height: ${(props) => (props.open ? 'fit-content' : 0)};
   z-index: -1;

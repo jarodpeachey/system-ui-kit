@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Menu = ({ children }) => <Wrapper>{children}</Wrapper>;
+const Menu = ({ children }) => <Wrapper id="menu">{children}</Wrapper>;
 
 const Wrapper = styled.div`
   display: flex;

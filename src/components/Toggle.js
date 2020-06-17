@@ -49,7 +49,7 @@ const Toggle = ({
           boxShadow="none"
           activeBoxShadow="none"
           id="material-switch"
-          offColor={background || `${theme.color.primary.main}60`}
+          offColor={background || `${theme.color.primary.main}aa`}
           onColor={activeBackground || theme.color.primary.main}
           offHandleColor={handleColor || '#ffffff'}
           onHandleColor={handleColor || '#ffffff'}
@@ -68,7 +68,7 @@ const Toggle = ({
           width={width ? width : size === 'small' ? 32 : 38}
           id="material-switch"
           offColor={background || '#bdbdbd'}
-          onColor={activeBackground || `${theme.color.primary.main}60`}
+          onColor={activeBackground || `${theme.color.primary.main}aa`}
           offHandleColor={handleColor || '#ffffff'}
           onHandleColor={handleColor || theme.color.primary.main}
           className="mr-2 react-switch transition"

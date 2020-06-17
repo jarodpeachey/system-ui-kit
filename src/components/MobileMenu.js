@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const MobileMenu = ({ children }) => {
   const [open, setOpen] = useState(false);
+  const [scroll, setScroll] = useState(0);
 
   const toggleFunction = () => {
     if (open) {
+      console.log('removing');
       document.getElementById('header').classList.remove('open');
     } else {
       document.getElementById('header').classList.add('open');
@@ -13,9 +15,25 @@ const MobileMenu = ({ children }) => {
     setOpen(!open);
   };
 
+  const onScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  });
+
   return (
     <>
-      <MobileMenuToggle onClick={toggleFunction} open={open}>
+      <MobileMenuToggle
+        scrolled={scroll}
+        onClick={() => toggleFunction()}
+        open={open}
+      >
         <MobileMenuRotate open={open}>
           <span />
           <span />
@@ -31,7 +49,7 @@ const MobileMenu = ({ children }) => {
 
 const Wrapper = styled.div`
   visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
-  background: ${(props) => (props.open ? 'white' : 'transparent')};
+  background: ${(props) => (props.open ? '#ffffff' : 'transparent')};
   opacity: ${(props) => (props.open ? 1 : 0)};
   position: absolute;
   top: 0;
@@ -44,6 +62,17 @@ const Wrapper = styled.div`
   padding-bottom: ${(props) => (props.open ? '27.5px' : '0px')};
   height: fit-content;
   z-index: -1;
+  backdrop-filter: blur(10px);
+  ::after {
+    height: 71px;
+    width: 100%;
+    position: absolute;
+    content: '';
+    display: block;
+    background: ${(props) => props.theme.color.primary.main};
+    top: 0;
+    left: 0;
+  }
 `;
 
 const MobileMenuToggle = styled.div`
@@ -55,7 +84,7 @@ const MobileMenuToggle = styled.div`
     display: block;
   }
   transform: rotate(0deg);
-    transition: all .25s ease-out;
+    transition: all .15s ease-out;
   cursor: pointer;
   margin-left: auto;
   position: ${(props) => (props.open ? 'relative' : 'static')};
@@ -63,34 +92,36 @@ const MobileMenuToggle = styled.div`
   span {
     display: block;
     position: absolute;
-    height: 4px;
+    height: 2px;
     width: 100%;
     background: ${(props) =>
       props.open ? props.theme.color.text.dark.one : 'white'};
-    border-radius: 10px;
+    border-radius: 20px;
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
     transition: ${(props) =>
-      props.open ? 'all 0.25s ease-in' : 'all 0.25s ease-out'};
+      props.open ? 'all 0.15s ease-in' : 'all 0.15s ease-out'};
   }
 
   span:nth-child(1) {
-    top: ${(props) => (props.open ? 'calc(50% - 2px)' : '10%')};
-    transform-origin: left center;
+    top: ${(props) => (props.open ? 'calc(50% - 1px)' : '10%')};
   }
   span:nth-child(2) {
-    top: ${(props) => (props.open ? 0 : 'calc(50% - 2px)')};
-    left: ${(props) => (props.open ? 'calc(50% - 2px)' : '4px')};
-    width: ${(props) => (props.open ? '4px' : '100%')};
-    height: ${(props) => (props.open ? '100%' : '4px')};
+    top: calc(50% - 2px);
+    left: 0;
     transform-origin: left center;
+        opacity: ${(props) => (props.open ? 0 : 1)};
   }
   span:nth-child(3) {
-    top: calc(90% - 4px);
+    top: ${(props) => (props.open ? '0' : 'calc(90% - 4px)')};
+    left: ${(props) => (props.open ? 'calc(50% - 1px)' : '0')};
     transform-origin: left center;
-    width: ${(props) => (props.open ? 0 : '100%')};
-    opacity: ${(props) => (props.open ? 0 : 1)};
+    width: 100%;
+    height: ${(props) => (props.open ? '100%' : '2px')};
+    width: ${(props) => (props.open ? '2px' : '100%')};
+    transform-origin: left center;
+    // transform: ${(props) => (props.open ? 'rotate(90deg)' : 'none')};
   }
 `;
 
@@ -98,7 +129,7 @@ const MobileMenuRotate = styled.div`
   height: 100%;
   width: 100%;
   transition: ${(props) =>
-    props.open ? 'all 0.25s ease-in-out' : 'all 0.25s ease-in-out'};
+    props.open ? 'all 0.15s ease-in-out' : 'all 0.15s ease-in-out'};
   transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'none')};
 `;
 export default MobileMenu;

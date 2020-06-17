@@ -134,7 +134,7 @@ textarea {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 p {
-  line-height: var(--spacing-five);
+  line-height: calc(var(--spacing-four) + 4px);
   font-size: 20px;
   color: var(--dark-two);
 }

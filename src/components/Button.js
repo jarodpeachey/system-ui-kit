@@ -65,7 +65,9 @@ const StyledButton = styled.button`
   cursor: pointer;
   transition: all 0.25s;
   background: ${(props) =>
-    props.variant === 'secondary'
+    props.variant === 'plain'
+      ? 'transparent'
+      : props.variant === 'secondary'
       ? 'white'
       : props.variant === 'outlined'
       ? 'transparent'
@@ -97,7 +99,9 @@ const StyledButton = styled.button`
       : ''};
   border: 2px solid
     ${(props) =>
-      props.variant === 'secondary'
+      props.variant === 'plain'
+        ? 'transparent'
+        : props.variant === 'secondary'
         ? 'transparent'
         : props.color === 'primary'
         ? props.theme.color.primary.main
@@ -131,7 +135,19 @@ const StyledButton = styled.button`
         ? props.theme.color.success
         : ''};
     background: ${(props) =>
-      props.variant === 'outlined'
+      props.variant === 'plain'
+        ? `${
+            props.color === 'primary'
+              ? props.theme.color.primary.main
+              : props.color === 'secondary'
+              ? props.theme.color.secondary.main
+              : props.color === 'success'
+              ? props.theme.color.success
+              : props.color === 'error'
+              ? props.theme.color.error
+              : '#000000'
+          }10`
+        : props.variant === 'outlined'
         ? props.color === 'primary'
           ? props.theme.color.primary.main
           : props.color === 'secondary'
@@ -172,9 +188,7 @@ const StyledButton = styled.button`
                 : '#efefef'
             }00`} !important;
     box-shadow: ${(props) =>
-      props.variant === 'secondary'
-        ? props.theme.shadow.three
-        : 'none'};
+      props.variant === 'secondary' ? props.theme.shadow.three : 'none'};
 
     // transform: translateY(-1px);
   }

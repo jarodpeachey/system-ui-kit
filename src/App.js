@@ -35,7 +35,6 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme } from './theme';
 import Header from './components/Header';
-import FixedHeader from './components/FixedHeader';
 import Menu from './components/Menu';
 import SubMenu from './components/SubMenu';
 import MenuItem from './components/MenuItem';
@@ -69,6 +68,7 @@ import Alert from './components/Alert';
 import Badge from './components/Badge';
 import Mobile from './components/Mobile';
 import Tablet from './components/Tablet';
+import Info from './components/Info';
 
 library.add(
   faBars,
@@ -140,7 +140,7 @@ const App = ({}) => (
           </MenuItem>
         </Menu>
       </Header> */}
-    <FixedHeader transparent>
+    <Header fixed color="primary">
       <h1 style={{ margin: '0' }}>Website</h1>
       <Mobile>
         <MobileMenu>
@@ -186,7 +186,7 @@ const App = ({}) => (
           </MenuItem>
         </Menu>
       </Tablet>
-    </FixedHeader>
+    </Header>
     <Hero
       background={`linear-gradient(
         to right,
@@ -282,6 +282,7 @@ const App = ({}) => (
       <Button color="primary" variant="outlined">
         Outlined
       </Button>
+      <Button variant="plain">Plain</Button>
       <div
         style={{
           display: 'inline-block',
@@ -482,36 +483,189 @@ const App = ({}) => (
         </Menu>
       </Tablet>
     </Header>
+    <Header color="secondary">
+      <h1 style={{ margin: '0' }}>Website</h1>
+      <Mobile>
+        <MobileMenu>
+          <MobileMenuItem>
+            <a href="/">Home</a>
+          </MobileMenuItem>
+          <MobileMenuItem submenu>
+            <a href="/">About</a>
+            <MobileSubMenu>
+              <MobileSubMenuItem>
+                <a href="/">More</a>
+              </MobileSubMenuItem>
+              <MobileSubMenuItem>
+                <a href="/">Team</a>
+              </MobileSubMenuItem>
+            </MobileSubMenu>
+          </MobileMenuItem>
+        </MobileMenu>
+      </Mobile>
+      <Tablet>
+        <Menu>
+          <MenuItem>
+            <a href="/">Home</a>
+          </MenuItem>
+          <MenuItem submenu>
+            <a href="/">About</a>
+            <SubMenu>
+              <SubMenuItem>
+                <a href="/">More</a>
+              </SubMenuItem>
+              <SubMenuItem>
+                <a href="/">Team</a>
+              </SubMenuItem>
+            </SubMenu>
+          </MenuItem>
+          <MenuItem square>
+            <a href="/">
+              <FontAwesomeIcon
+                icon="user"
+                style={{ width: 20, height: 20, fontSize: 24 }}
+              />
+            </a>
+          </MenuItem>
+        </Menu>
+      </Tablet>
+    </Header>
     <Header color="white">
       <h1 style={{ margin: '0' }}>Website</h1>
-      <Menu>
-        <MenuItem>
-          <a href="/">Home</a>
-        </MenuItem>
-        <MenuItem submenu>
-          <a href="/">About</a>
-          <SubMenu>
-            <SubMenuItem>
-              <a href="/">More</a>
-            </SubMenuItem>
-            <SubMenuItem>
-              <a href="/">Team</a>
-            </SubMenuItem>
-          </SubMenu>
-        </MenuItem>
-        <MenuItem square>
-          <a href="/">
-            <FontAwesomeIcon
-              icon="user"
-              style={{ width: 20, height: 20, fontSize: 24 }}
-            />
-          </a>
-        </MenuItem>
-      </Menu>
+      <Mobile>
+        <MobileMenu>
+          <MobileMenuItem>
+            <a href="/">Home</a>
+          </MobileMenuItem>
+          <MobileMenuItem submenu>
+            <a href="/">About</a>
+            <MobileSubMenu>
+              <MobileSubMenuItem>
+                <a href="/">More</a>
+              </MobileSubMenuItem>
+              <MobileSubMenuItem>
+                <a href="/">Team</a>
+              </MobileSubMenuItem>
+            </MobileSubMenu>
+          </MobileMenuItem>
+        </MobileMenu>
+      </Mobile>
+      <Tablet>
+        <Menu>
+          <MenuItem>
+            <a href="/">Home</a>
+          </MenuItem>
+          <MenuItem submenu>
+            <a href="/">About</a>
+            <SubMenu>
+              <SubMenuItem>
+                <a href="/">More</a>
+              </SubMenuItem>
+              <SubMenuItem>
+                <a href="/">Team</a>
+              </SubMenuItem>
+            </SubMenu>
+          </MenuItem>
+          <MenuItem square>
+            <a href="/">
+              <FontAwesomeIcon
+                icon="user"
+                style={{ width: 20, height: 20, fontSize: 24 }}
+              />
+            </a>
+          </MenuItem>
+        </Menu>
+      </Tablet>
     </Header>
     <br />
     <br />
     <br />
+    <Section className="pt-none">
+      <h3>Information Boxes</h3>
+      <Row spacing={[18]} breakpoints={[769, 960]}>
+        <div widths={[6, 4]}>
+          <Info
+            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="check" />}
+            title="Default"
+          >
+            <p>
+              The info box comes in many different styles and colors. This one
+              is a vertical info box with an icon. You can also make the box
+              smaller and larger if you'd like.
+            </p>
+            <p>You've never seen anything like it. Try it out today.</p>
+          </Info>
+        </div>
+        <div widths={[6, 4]}>
+          <Info
+            icon={<FontAwesomeIcon icon="check" />}
+            color="primary"
+            title="Primary"
+          >
+            <p>
+              The info box comes in many different styles and colors. This one
+              is a vertical info box with an icon. You can also make the box
+              smaller and larger if you'd like.
+            </p>
+            <p>You've never seen anything like it. Try it out today.</p>
+          </Info>
+        </div>
+        <div widths={[6, 4]}>
+          <Info
+            icon={<FontAwesomeIcon icon="check" />}
+            color="secondary"
+            title="Secondary"
+            variant="light"
+            layout="horizontal"
+          >
+            <p>
+              The info box comes in many different styles and colors. This one
+              is a vertical info box with an icon. You can also make the box
+              smaller and larger if you'd like.
+            </p>
+            <p>You've never seen anything like it. Try it out today.</p>
+          </Info>
+        </div>
+        <div widths={[6, 4]}>
+          <Info
+            icon={<FontAwesomeIcon icon="check" />}
+            color="success"
+            title="Success"
+          >
+            <p>
+              The info box comes in many different styles and colors. This one
+              is a vertical info box with an icon. You can also make the box
+              smaller and larger if you'd like.
+            </p>
+            <p>You've never seen anything like it. Try it out today.</p>
+          </Info>
+        </div>
+        <div widths={[6, 4]}>
+          <Info
+            icon={<FontAwesomeIcon icon="check" />}
+            color="error"
+            title="Error"
+          >
+            <p>
+              The info box comes in many different styles and colors. This one
+              is a vertical info box with an icon. You can also make the box
+              smaller and larger if you'd like.
+            </p>
+            <p>You've never seen anything like it. Try it out today.</p>
+          </Info>
+        </div>
+        <div widths={[6, 4]}>
+          <Info icon={<FontAwesomeIcon icon="check" />} title="Some Info">
+            <p>
+              The info box comes in many different styles and colors. This one
+              is a vertical info box with an icon. You can also make the box
+              smaller and larger if you'd like.
+            </p>
+            <p>You've never seen anything like it. Try it out today.</p>
+          </Info>
+        </div>
+      </Row>
+    </Section>
   </ThemeProvider>
 );
 

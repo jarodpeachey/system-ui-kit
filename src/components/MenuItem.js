@@ -7,7 +7,7 @@ const MenuItem = ({ children, submenu, square, align }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   if (submenu) {
     const link = (
-      <a href={children[0].props.href}>
+      <a className="menu-item" href={children[0].props.href}>
         {children[0].props.children}
         <FontAwesomeIcon
           style={{
@@ -25,6 +25,7 @@ const MenuItem = ({ children, submenu, square, align }) => {
     return (
       <>
         <Wrapper
+          className="menu-item"
           square={square}
           onMouseEnter={() => {
             setShowSubMenu(true);
@@ -42,7 +43,7 @@ const MenuItem = ({ children, submenu, square, align }) => {
       </>
     );
   } else {
-    return <Wrapper square={square}>{children}</Wrapper>;
+    return <Wrapper className="menu-item" square={square}>{children}</Wrapper>;
   }
 };
 
