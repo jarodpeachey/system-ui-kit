@@ -31,6 +31,11 @@ import {
   faChevronDown,
   faQuoteLeft,
   faBell,
+  faFill,
+  faFeather,
+  faArrowsAltH,
+  faAlignLeft,
+  faAlignRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme } from './theme';
@@ -98,6 +103,11 @@ library.add(
   faQuoteLeft,
   faBars,
   faBell,
+  faFill,
+  faFeather,
+  faArrowsAltH,
+  faAlignLeft,
+  faAlignRight,
 );
 
 const App = ({}) => (
@@ -311,7 +321,7 @@ const App = ({}) => (
         <div widths={[6, 3]}>
           <Input
             fullWidth
-            icon={<FontAwesomeIcon icon="check" />}
+            icon={<FontAwesomeIcon icon="user" />}
             placeholder="With icon"
           />
         </div>
@@ -582,41 +592,78 @@ const App = ({}) => (
     <br />
     <Section className="pt-none">
       <h3>Information Boxes</h3>
-      <Row spacing={[18]} breakpoints={[769, 960]}>
-        <div widths={[6, 4]}>
+      <p className="mb-none">Variants</p>
+      <Row spacing={[18]} breakpoints={[769, 960, 9999999]}>
+        <div widths={[6, 4, 3]}>
+          <Info
+            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="check" />}
+            title="Default/White"
+            color="primary"
+          >
+            <p>
+              The info box comes in many different styles and colors. This one
+              is a vertical info box with an icon. You can also make the box
+              smaller and larger if you'd like.
+            </p>
+            <p>You've never seen anything like it. Try it out today.</p>
+          </Info>
+        </div>
+        <div widths={[6, 4, 3]}>
+          <Info
+            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="fill" />}
+            color="primary"
+            title="Filled"
+            variant="filled"
+          >
+            <p>
+              The info box comes in many different styles and colors. This one
+              is a vertical info box with an icon. You can also make the box
+              smaller and larger if you'd like.
+            </p>
+            <p>You've never seen anything like it. Try it out today.</p>
+          </Info>
+        </div>
+        <div widths={[6, 4, 3]}>
+          <Info
+            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="feather" />}
+            color="primary"
+            title="Light"
+            variant="light"
+          >
+            <p>
+              This info box is horizontal, and is a light variant. It's color is
+              the secondary color.
+            </p>
+            <p>You've never seen anything like it. Try it out today.</p>
+          </Info>
+        </div>
+      </Row>
+      <p className="mb-none">Layouts</p>
+      <Row spacing={[18]} breakpoints={[769, 960, 9999999]}>
+        <div widths={[6, 4, 3]}>
           <Info
             icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="check" />}
             title="Default"
-          >
-            <p>
-              The info box comes in many different styles and colors. This one
-              is a vertical info box with an icon. You can also make the box
-              smaller and larger if you'd like.
-            </p>
-            <p>You've never seen anything like it. Try it out today.</p>
-          </Info>
-        </div>
-        <div widths={[6, 4]}>
-          <Info
-            icon={<FontAwesomeIcon icon="check" />}
             color="primary"
-            title="Primary"
-          >
-            <p>
-              The info box comes in many different styles and colors. This one
-              is a vertical info box with an icon. You can also make the box
-              smaller and larger if you'd like.
-            </p>
-            <p>You've never seen anything like it. Try it out today.</p>
-          </Info>
-        </div>
-        <div widths={[6, 4]}>
-          <Info
-            icon={<FontAwesomeIcon icon="check" />}
-            color="secondary"
-            title="Secondary"
             variant="light"
+          >
+            <p>
+              The info box comes in many different styles and colors. This one
+              is a vertical info box with an icon. You can also make the box
+              smaller and larger if you'd like.
+            </p>
+            <p>You've never seen anything like it. Try it out today.</p>
+          </Info>
+        </div>
+        <div widths={[6, 4, 3]}>
+          <Info
+            icon={
+              <FontAwesomeIcon style={{ fontSize: 48 }} icon="arrows-alt-h" />
+            }
+            color="primary"
+            title="Horizontal"
             layout="horizontal"
+            variant="light"
           >
             <p>
               The info box comes in many different styles and colors. This one
@@ -626,40 +673,32 @@ const App = ({}) => (
             <p>You've never seen anything like it. Try it out today.</p>
           </Info>
         </div>
-        <div widths={[6, 4]}>
+        <div widths={[6, 4, 3]}>
           <Info
-            icon={<FontAwesomeIcon icon="check" />}
-            color="success"
-            title="Success"
+            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="align-left" />}
+            color="primary"
+            title="Left"
+            variant="light"
+            align="left"
           >
             <p>
-              The info box comes in many different styles and colors. This one
-              is a vertical info box with an icon. You can also make the box
-              smaller and larger if you'd like.
+              This info box is horizontal, and is a light variant. It's color is
+              the secondary color.
             </p>
             <p>You've never seen anything like it. Try it out today.</p>
           </Info>
         </div>
-        <div widths={[6, 4]}>
+        <div widths={[6, 4, 3]}>
           <Info
-            icon={<FontAwesomeIcon icon="check" />}
-            color="error"
-            title="Error"
+            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="align-right" />}
+            color="primary"
+            title="Right"
+            variant="light"
+            align="right"
           >
             <p>
-              The info box comes in many different styles and colors. This one
-              is a vertical info box with an icon. You can also make the box
-              smaller and larger if you'd like.
-            </p>
-            <p>You've never seen anything like it. Try it out today.</p>
-          </Info>
-        </div>
-        <div widths={[6, 4]}>
-          <Info icon={<FontAwesomeIcon icon="check" />} title="Some Info">
-            <p>
-              The info box comes in many different styles and colors. This one
-              is a vertical info box with an icon. You can also make the box
-              smaller and larger if you'd like.
+              This info box is horizontal, and is a light variant. It's color is
+              the secondary color.
             </p>
             <p>You've never seen anything like it. Try it out today.</p>
           </Info>

@@ -68,12 +68,12 @@ const Wrapper = styled.div`
         ? 'white'
         : props.theme.color.text.dark.one};
   }
-    span {
-      background: ${(props) =>
-        props.color === 'primary' || props.color === 'secondary'
-          ? 'white'
-          : props.theme.color.text.dark.one} !important;
-    }
+  span {
+    background: ${(props) =>
+      props.color === 'primary' || props.color === 'secondary'
+        ? 'white'
+        : props.theme.color.text.dark.one} !important;
+  }
 
   h1,
   h2,
@@ -85,6 +85,8 @@ const Wrapper = styled.div`
   }
 
   &.scrolled {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .05),
+      0 2px 4px 0 rgba(0, 0, 0, .03), 0 4px 16px -6px rgba(0, 0, 0, .5);
     background: ${(props) =>
       props.color === 'transparent' ? '#ffffffee' : null};
     h1,
