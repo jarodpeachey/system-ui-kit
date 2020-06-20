@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import Container from './Container';
 
 const Header = ({ children, color, scrollColor, fixed }) => {
   const [scroll, setScroll] = useState(0);
@@ -30,8 +31,8 @@ const Header = ({ children, color, scrollColor, fixed }) => {
       fixed={fixed}
       scrollColor={scrollColor}
     >
-      <Container scrolled={scroll > 50} className="container wide">
-        {children}
+      <Container>
+        <InnerContainer scrolled={scroll > 50}>{children}</InnerContainer>
       </Container>
     </Wrapper>
   );
@@ -85,8 +86,8 @@ const Wrapper = styled.div`
   }
 
   &.scrolled {
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .05),
-      0 2px 4px 0 rgba(0, 0, 0, .03), 0 4px 16px -6px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.03),
+      0 4px 16px -6px rgba(0, 0, 0, 0.5);
     background: ${(props) =>
       props.color === 'transparent' ? '#ffffffee' : null};
     h1,
@@ -116,7 +117,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Container = styled.div`
+const InnerContainer = styled.div`
   display: flex;
   align-items: center;
   padding-top: ${(props) => (props.scrolled ? '16px' : '32px')};

@@ -7,7 +7,7 @@ const Section = ({ children, background, className = '' }) => {
 
   return (
     <StyledSection className={className} background={background}>
-      <div className="container">{children}</div>
+      {children}
     </StyledSection>
   );
 };
@@ -15,8 +15,8 @@ const Section = ({ children, background, className = '' }) => {
 const StyledSection = styled.section`
   text-align: ${(props) => (props.center ? 'center' : 'inherit')};
   z-index: 1;
-  background: ${(props) => props.color};
-  padding: 64px 0;
+  background: ${(props) => props.background};
+  padding: 54px 0;
 `;
 
 export default Section;

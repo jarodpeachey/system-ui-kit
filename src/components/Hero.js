@@ -14,7 +14,7 @@ const Hero = ({ children, background }) => (
 
 const Wrapper = styled.div`
   position: relative;
-  padding-top: 120px;
+  padding: 120px 0;
   p {
     line-height: 30px;
     font-size: 24px !important;
@@ -39,7 +39,6 @@ const Background = styled.div`
 
 const Container = styled.div`
   overflow: hidden;
-  min-height: 420px !important;
   margin: 0 auto;
   z-index: 0;
 `;

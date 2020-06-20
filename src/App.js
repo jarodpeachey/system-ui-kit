@@ -74,6 +74,8 @@ import Badge from './components/Badge';
 import Mobile from './components/Mobile';
 import Tablet from './components/Tablet';
 import Info from './components/Info';
+import { Link } from '@reach/router';
+import Container from './components/Container';
 
 library.add(
   faBars,
@@ -176,13 +178,13 @@ const App = ({}) => (
             <a href="/">Home</a>
           </MenuItem>
           <MenuItem submenu>
-            <a href="/">About</a>
+            <Link to="components">Components</Link>
             <SubMenu>
               <SubMenuItem>
-                <a href="/">More</a>
+                <Link to="components">Layout</Link>
               </SubMenuItem>
               <SubMenuItem>
-                <a href="/">Team</a>
+                <Link to="components">Elements</Link>
               </SubMenuItem>
             </SubMenu>
           </MenuItem>
@@ -248,12 +250,13 @@ const App = ({}) => (
       <h5>Colors</h5> */}
     {/* </Section> */}
     <Section className="pb-none">
-      <H2 className="m-none">Basic Components</H2>
-      <p>
-        System comes with hundreds of elements. Here are a few of the most
-        important.
-      </p>
-      {/* 
+      <Container>
+        <H2 className="m-none">Basic Components</H2>
+        <p>
+          System comes with hundreds of elements. Here are a few of the most
+          important.
+        </p>
+        {/* 
       <H3>
         <FontAwesomeIcon
           icon="bars"
@@ -272,93 +275,93 @@ const App = ({}) => (
       <H4>This is an h4</H4>
       <H5>This is an h5</H5>
       <H6>YThis is an h6</H6> */}
-      <H3>Buttons</H3>
-      <p>Sizes</p>
-      <Button color="primary" size="small">
-        Small
-      </Button>
-      <Button color="primary">Default</Button>
-      <Button color="primary" size="large">
-        Large
-      </Button>
-      <p>Colors</p>
-      <Button>Default</Button>
-      <Button color="primary">Primary</Button>
-      <Button color="secondary">Secondary</Button>
-      <Button color="success">Success</Button>
-      <Button color="error">Error</Button>
-      <p style={{ marginBottom: 8 }}>Variants</p>
-      <Button color="primary">Filled</Button>
-      <Button color="primary" variant="outlined">
-        Outlined
-      </Button>
-      <Button variant="plain">Plain</Button>
-      <div
-        style={{
-          display: 'inline-block',
-          position: 'relative',
-          top: 6,
-        }}
-      >
-        <IconButton variant="rounded" color="primary">
-          <FontAwesomeIcon icon="dollar-sign" />
-        </IconButton>
-      </div>
-      <br />
-      <br />
-      <br />
-      <H3>Inputs</H3>
-      <Row spacing={[12]} breakpoints={[576, 769]}>
-        <div widths={[6, 3]}>
-          <Input fullWidth placeholder="Default" />
+        <H3>Buttons</H3>
+        <p>Sizes</p>
+        <Button color="primary" size="small">
+          Small
+        </Button>
+        <Button color="primary">Default</Button>
+        <Button color="primary" size="large">
+          Large
+        </Button>
+        <p>Colors</p>
+        <Button>Default</Button>
+        <Button color="primary">Primary</Button>
+        <Button color="secondary">Secondary</Button>
+        <Button color="success">Success</Button>
+        <Button color="error">Error</Button>
+        <p style={{ marginBottom: 8 }}>Variants</p>
+        <Button color="primary">Filled</Button>
+        <Button color="primary" variant="outlined">
+          Outlined
+        </Button>
+        <Button variant="plain">Plain</Button>
+        <div
+          style={{
+            display: 'inline-block',
+            position: 'relative',
+            top: 6,
+          }}
+        >
+          <IconButton variant="rounded" color="primary">
+            <FontAwesomeIcon icon="dollar-sign" />
+          </IconButton>
         </div>
-        <div widths={[6, 3]}>
-          <Input fullWidth state="success" placeholder="Success" />
-        </div>
-        <div widths={[6, 3]}>
-          <Input fullWidth state="error" placeholder="Error" />
-        </div>
-        <div widths={[6, 3]}>
-          <Input
-            fullWidth
-            icon={<FontAwesomeIcon icon="user" />}
-            placeholder="With icon"
-          />
-        </div>
-      </Row>
-      <p className="mb-none">Styles</p>
-      <Row spacing={[12]} breakpoints={[576, 769]}>
-        <div widths={[6, 3]} alignBottom>
-          <Input fullWidth placeholder="Default" />
-        </div>
-        <div widths={[6, 3]} alignBottom>
-          <Input fullWidth variant="filled" placeholder="Filled" />
-        </div>
-        <div widths={[6, 3]} alignBottom>
-          <Input fullWidth label="With label" placeholder="With label" />
-        </div>
-      </Row>
-      <Row breakpoints={[476, 960]} spacing={[24]}>
-        <div widths={[6, 4]}>
-          <h3>Checkboxes</h3>
-          <Checkbox value="unchecked">Unchecked</Checkbox>
-          <Checkbox
-            value="checked"
-            checked
-            onChange={(e) => {
-              console.log('Target from parent: ', e.target);
-            }}
-          >
-            Checked
-          </Checkbox>
-          <Checkbox value="random">Random Checkbox</Checkbox>
-          <Checkbox value="disabled" disabled>
-            Disabled
-          </Checkbox>
-        </div>
-        <div widths={[6, 4]}>
-          <h3>Radio Buttons</h3>
-          {/* <form
+        <br />
+        <br />
+        <br />
+        <H3>Inputs</H3>
+        <Row spacing={[12]} breakpoints={[576, 769]}>
+          <div widths={[6, 3]}>
+            <Input fullWidth placeholder="Default" />
+          </div>
+          <div widths={[6, 3]}>
+            <Input fullWidth state="success" placeholder="Success" />
+          </div>
+          <div widths={[6, 3]}>
+            <Input fullWidth state="error" placeholder="Error" />
+          </div>
+          <div widths={[6, 3]}>
+            <Input
+              fullWidth
+              icon={<FontAwesomeIcon icon="user" />}
+              placeholder="With icon"
+            />
+          </div>
+        </Row>
+        <p className="mb-none">Styles</p>
+        <Row spacing={[12]} breakpoints={[576, 769]}>
+          <div widths={[6, 3]} alignBottom>
+            <Input fullWidth placeholder="Default" />
+          </div>
+          <div widths={[6, 3]} alignBottom>
+            <Input fullWidth variant="filled" placeholder="Filled" />
+          </div>
+          <div widths={[6, 3]} alignBottom>
+            <Input fullWidth label="With label" placeholder="With label" />
+          </div>
+        </Row>
+        <Row breakpoints={[476, 960]} spacing={[24]}>
+          <div widths={[6, 4]}>
+            <h3>Checkboxes</h3>
+            <Checkbox value="unchecked">Unchecked</Checkbox>
+            <Checkbox
+              value="checked"
+              checked
+              onChange={(e) => {
+                console.log('Target from parent: ', e.target);
+              }}
+            >
+              Checked
+            </Checkbox>
+            <Checkbox value="random">Random Checkbox</Checkbox>
+            <Checkbox value="disabled" disabled>
+              Disabled
+            </Checkbox>
+          </div>
+          <div widths={[6, 4]}>
+            <h3>Radio Buttons</h3>
+            {/* <form
             className="form"
             onSubmit={(e) => {
               e.preventDefault();
@@ -368,83 +371,84 @@ const App = ({}) => (
               Object.values(x).forEach((item) => console.log(item.checked));
             }}
           > */}
-          <RadioButtons onChange={(e) => console.log(e)} name="radio-buttons">
-            <RadioButton value="one">Radio button</RadioButton>
-            <RadioButton value="two">Another radio button</RadioButton>
-            <RadioButton disabled value="three">
-              Disabled. Go ahead, try and click me 😉
-            </RadioButton>
-          </RadioButtons>
-          {/* <button type="submit">Submit</button>
+            <RadioButtons onChange={(e) => console.log(e)} name="radio-buttons">
+              <RadioButton value="one">Radio button</RadioButton>
+              <RadioButton value="two">Another radio button</RadioButton>
+              <RadioButton disabled value="three">
+                Disabled. Go ahead, try and click me 😉
+              </RadioButton>
+            </RadioButtons>
+            {/* <button type="submit">Submit</button>
           </form> */}
-        </div>
-        <div widths={[6, 4]}>
-          <h3 color="primary">Toggle Switches</h3>
-          <p className="mb-none">Variants</p>
-          <Toggle>Default</Toggle>
-          <Toggle variant="filled">Filled</Toggle>
-          <p className="mb-none">Sizes</p>
-          <Toggle size="small">Small</Toggle>
-          <Toggle>Normal</Toggle>
-        </div>
-        <div widths={[6, 4]}>
-          <h3>Selects</h3>
-          <Select>
-            <Option value="one">One</Option>
-            <Option value="two">Two</Option>
-            <Option value="three">Three</Option>
-          </Select>
-        </div>
-      </Row>
-      <br />
-      <br />
-      <br />
-      <H3>Alerts</H3>
-      <p className="mb-none">Colors</p>
-      {/* <Row spacing={[12]} breakpoints={[960]}>
+          </div>
+          <div widths={[6, 4]}>
+            <h3 color="primary">Toggle Switches</h3>
+            <p className="mb-none">Variants</p>
+            <Toggle>Default</Toggle>
+            <Toggle variant="filled">Filled</Toggle>
+            <p className="mb-none">Sizes</p>
+            <Toggle size="small">Small</Toggle>
+            <Toggle>Normal</Toggle>
+          </div>
+          <div widths={[6, 4]}>
+            <h3>Selects</h3>
+            <Select>
+              <Option value="one">One</Option>
+              <Option value="two">Two</Option>
+              <Option value="three">Three</Option>
+            </Select>
+          </div>
+        </Row>
+        <br />
+        <br />
+        <br />
+        <H3>Alerts</H3>
+        <p className="mb-none">Colors</p>
+        {/* <Row spacing={[12]} breakpoints={[960]}>
         <div widths={[6]}> */}
-      <Alert>This is a primary alert. It tells you something.</Alert>
-      {/* </div>
+        <Alert>This is a primary alert. It tells you something.</Alert>
+        {/* </div>
         <div widths={[6]}> */}
-      <Alert color="secondary">
-        This is a secondary alert. It tells you something else.
-      </Alert>
-      {/* </div>
+        <Alert color="secondary">
+          This is a secondary alert. It tells you something else.
+        </Alert>
+        {/* </div>
         <div widths={[6]}> */}
-      <Alert color="success">
-        This is a success alert. It means you did something right.
-      </Alert>
-      {/* </div>
+        <Alert color="success">
+          This is a success alert. It means you did something right.
+        </Alert>
+        {/* </div>
         <div widths={[6]}> */}
-      <Alert color="error">
-        This is an error alert. Something went wrong if you see this.
-      </Alert>
-      {/* </div>
+        <Alert color="error">
+          This is an error alert. Something went wrong if you see this.
+        </Alert>
+        {/* </div>
       </Row> */}
-      <p className="mb-none">Variants</p>
-      {/* <Row spacing={[12]} breakpoints={[960]}>
+        <p className="mb-none">Variants</p>
+        {/* <Row spacing={[12]} breakpoints={[960]}>
         <div widths={[6]}> */}
-      {/* </div>
+        {/* </div>
         <div widths={[6]}> */}
-      <Alert variant="light">This is an alert. It's the default style.</Alert>
-      <Alert icon={<FontAwesomeIcon icon="bell" />}>
-        This one has an icon to indicate something.
-      </Alert>
-      {/* </div>
+        <Alert variant="light">This is an alert. It's the default style.</Alert>
+        <Alert icon={<FontAwesomeIcon icon="bell" />}>
+          This one has an icon to indicate something.
+        </Alert>
+        {/* </div>
       </Row> */}
-      <br />
-      <br />
-      <br />
-      <h3>Badges</h3>
-      <Badge>Default</Badge>
-      <Badge color="primary">Primary</Badge>
-      <Badge color="secondary">Secondary</Badge>
-      <Badge color="success">Success</Badge>
-      <Badge color="error">Error</Badge>
-      <br />
-      <br />
-      <br />
-      <H3>Headers</H3>
+        <br />
+        <br />
+        <br />
+        <h3>Badges</h3>
+        <Badge>Default</Badge>
+        <Badge color="primary">Primary</Badge>
+        <Badge color="secondary">Secondary</Badge>
+        <Badge color="success">Success</Badge>
+        <Badge color="error">Error</Badge>
+        <br />
+        <br />
+        <br />
+        <H3>Headers</H3>
+      </Container>
     </Section>
     <Header color="primary">
       <h1 style={{ margin: '0' }}>Website</h1>
@@ -591,119 +595,125 @@ const App = ({}) => (
     <br />
     <br />
     <Section className="pt-none">
-      <h3>Information Boxes</h3>
-      <p className="mb-none">Variants</p>
-      <Row spacing={[18]} breakpoints={[769, 960, 9999999]}>
-        <div widths={[6, 4, 3]}>
-          <Info
-            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="check" />}
-            title="Default/White"
-            color="primary"
-          >
-            <p>
-              The info box comes in many different styles and colors. This one
-              is a vertical info box with an icon. You can also make the box
-              smaller and larger if you'd like.
-            </p>
-            <p>You've never seen anything like it. Try it out today.</p>
-          </Info>
-        </div>
-        <div widths={[6, 4, 3]}>
-          <Info
-            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="fill" />}
-            color="primary"
-            title="Filled"
-            variant="filled"
-          >
-            <p>
-              The info box comes in many different styles and colors. This one
-              is a vertical info box with an icon. You can also make the box
-              smaller and larger if you'd like.
-            </p>
-            <p>You've never seen anything like it. Try it out today.</p>
-          </Info>
-        </div>
-        <div widths={[6, 4, 3]}>
-          <Info
-            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="feather" />}
-            color="primary"
-            title="Light"
-            variant="light"
-          >
-            <p>
-              This info box is horizontal, and is a light variant. It's color is
-              the secondary color.
-            </p>
-            <p>You've never seen anything like it. Try it out today.</p>
-          </Info>
-        </div>
-      </Row>
-      <p className="mb-none">Layouts</p>
-      <Row spacing={[18]} breakpoints={[769, 960, 9999999]}>
-        <div widths={[6, 4, 3]}>
-          <Info
-            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="check" />}
-            title="Default"
-            color="primary"
-            variant="light"
-          >
-            <p>
-              The info box comes in many different styles and colors. This one
-              is a vertical info box with an icon. You can also make the box
-              smaller and larger if you'd like.
-            </p>
-            <p>You've never seen anything like it. Try it out today.</p>
-          </Info>
-        </div>
-        <div widths={[6, 4, 3]}>
-          <Info
-            icon={
-              <FontAwesomeIcon style={{ fontSize: 48 }} icon="arrows-alt-h" />
-            }
-            color="primary"
-            title="Horizontal"
-            layout="horizontal"
-            variant="light"
-          >
-            <p>
-              The info box comes in many different styles and colors. This one
-              is a vertical info box with an icon. You can also make the box
-              smaller and larger if you'd like.
-            </p>
-            <p>You've never seen anything like it. Try it out today.</p>
-          </Info>
-        </div>
-        <div widths={[6, 4, 3]}>
-          <Info
-            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="align-left" />}
-            color="primary"
-            title="Left"
-            variant="light"
-            align="left"
-          >
-            <p>
-              This info box is horizontal, and is a light variant. It's color is
-              the secondary color.
-            </p>
-            <p>You've never seen anything like it. Try it out today.</p>
-          </Info>
-        </div>
-        <div widths={[6, 4, 3]}>
-          <Info
-            icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="align-right" />}
-            color="primary"
-            title="Right"
-            variant="light"
-            align="right"
-          >
-            <p>
-              This info box is horizontal, and is a light variant. It's color is
-              the secondary color.
-            </p>
-            <p>You've never seen anything like it. Try it out today.</p>
-          </Info>
-        </div>
-      </Row>
+      <Container>
+        <h3>Information Boxes</h3>
+        <p className="mb-none">Variants</p>
+        <Row spacing={[18]} breakpoints={[769, 960, 9999999]}>
+          <div widths={[6, 4, 3]}>
+            <Info
+              icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="check" />}
+              title="Default/White"
+              color="primary"
+            >
+              <p>
+                The info box comes in many different styles and colors. This one
+                is a vertical info box with an icon. You can also make the box
+                smaller and larger if you'd like.
+              </p>
+              <p>You've never seen anything like it. Try it out today.</p>
+            </Info>
+          </div>
+          <div widths={[6, 4, 3]}>
+            <Info
+              icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="fill" />}
+              color="primary"
+              title="Filled"
+              variant="filled"
+            >
+              <p>
+                The info box comes in many different styles and colors. This one
+                is a vertical info box with an icon. You can also make the box
+                smaller and larger if you'd like.
+              </p>
+              <p>You've never seen anything like it. Try it out today.</p>
+            </Info>
+          </div>
+          <div widths={[6, 4, 3]}>
+            <Info
+              icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="feather" />}
+              color="primary"
+              title="Light"
+              variant="light"
+            >
+              <p>
+                This info box is horizontal, and is a light variant. It's color
+                is the secondary color.
+              </p>
+              <p>You've never seen anything like it. Try it out today.</p>
+            </Info>
+          </div>
+        </Row>
+        <p className="mb-none">Layouts</p>
+        <Row spacing={[18]} breakpoints={[769, 960, 9999999]}>
+          <div widths={[6, 4, 3]}>
+            <Info
+              icon={<FontAwesomeIcon style={{ fontSize: 48 }} icon="check" />}
+              title="Default"
+              color="primary"
+              variant="light"
+            >
+              <p>
+                The info box comes in many different styles and colors. This one
+                is a vertical info box with an icon. You can also make the box
+                smaller and larger if you'd like.
+              </p>
+              <p>You've never seen anything like it. Try it out today.</p>
+            </Info>
+          </div>
+          <div widths={[6, 4, 3]}>
+            <Info
+              icon={
+                <FontAwesomeIcon style={{ fontSize: 48 }} icon="arrows-alt-h" />
+              }
+              color="primary"
+              title="Horizontal"
+              layout="horizontal"
+              variant="light"
+            >
+              <p>
+                The info box comes in many different styles and colors. This one
+                is a vertical info box with an icon. You can also make the box
+                smaller and larger if you'd like.
+              </p>
+              <p>You've never seen anything like it. Try it out today.</p>
+            </Info>
+          </div>
+          <div widths={[6, 4, 3]}>
+            <Info
+              icon={
+                <FontAwesomeIcon style={{ fontSize: 48 }} icon="align-left" />
+              }
+              color="primary"
+              title="Left"
+              variant="light"
+              align="left"
+            >
+              <p>
+                This info box is horizontal, and is a light variant. It's color
+                is the secondary color.
+              </p>
+              <p>You've never seen anything like it. Try it out today.</p>
+            </Info>
+          </div>
+          <div widths={[6, 4, 3]}>
+            <Info
+              icon={
+                <FontAwesomeIcon style={{ fontSize: 48 }} icon="align-right" />
+              }
+              color="primary"
+              title="Right"
+              variant="light"
+              align="right"
+            >
+              <p>
+                This info box is horizontal, and is a light variant. It's color
+                is the secondary color.
+              </p>
+              <p>You've never seen anything like it. Try it out today.</p>
+            </Info>
+          </div>
+        </Row>
+      </Container>
     </Section>
   </ThemeProvider>
 );

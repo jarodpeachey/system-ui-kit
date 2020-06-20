@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import Switch from 'react-switch';
+import Switch from './Switch';
 import { theme } from '../theme';
 import { pSBC } from '../utils/color';
 
