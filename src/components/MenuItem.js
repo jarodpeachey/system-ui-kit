@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SubMenu from './SubMenu';
+import { Link } from '@reach/router';
 
 const MenuItem = ({ children, submenu, square, align }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   if (submenu) {
+    console.log(children[0].props);
     const link = (
-      <a className="menu-item" href={children[0].props.href}>
+      <Link
+        to={children[0].props.to}
+        className="menu-item"
+      >
         {children[0].props.children}
         <FontAwesomeIcon
           style={{
@@ -20,7 +25,7 @@ const MenuItem = ({ children, submenu, square, align }) => {
           }}
           icon="chevron-down"
         />
-      </a>
+      </Link>
     );
     return (
       <>
@@ -43,7 +48,11 @@ const MenuItem = ({ children, submenu, square, align }) => {
       </>
     );
   } else {
-    return <Wrapper className="menu-item" square={square}>{children}</Wrapper>;
+    return (
+      <Wrapper className="menu-item" square={square}>
+        {children}
+      </Wrapper>
+    );
   }
 };
 

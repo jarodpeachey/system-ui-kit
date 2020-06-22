@@ -59,6 +59,7 @@ const Input = ({
     <Wrapper
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      fullWidth={fullWidth}
     >
       {label && (
         <Label state={state} size={size}>
@@ -144,6 +145,7 @@ const Wrapper = styled.div`
   /* Rules below not implemented in browsers yet */
   -o-user-select: none;
   user-select: none;
+  width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
 `;
 
 const NumberButtons = styled.div`
@@ -221,7 +223,7 @@ const Icon = styled.div`
 
 const Label = styled.label`
   display: block;
-  width: fit-content;
+  width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
   margin-bottom: 8px;
   font-weight: 600;
   color: ${(props) =>
@@ -240,6 +242,7 @@ const StyledInput = styled.input`
   /* Rules below not implemented in browsers yet */
   -o-user-select: none;
   user-select: none;
+  display: inline-block;
   padding: ${(props) =>
     props.size === 'xs'
       ? '4px 8px'

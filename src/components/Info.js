@@ -45,10 +45,14 @@ const StyledInfo = styled.div`
       display: flex;
       align-items: flex-start;
     `};
-  padding: ${(props) => props.theme.spacing.five + 8}px
-    ${(props) => props.theme.spacing.five}px
-    ${(props) => props.theme.spacing.five}px
-    ${(props) => props.theme.spacing.five}px;
+
+  ${(props) =>
+    props.variant === 'filled' ||
+    (props.variant === 'light' &&
+      css`
+        padding: ${props.theme.spacing.five + 8}px ${props.theme.spacing.five}px
+          ${props.theme.spacing.five}px ${props.theme.spacing.five}px;
+      `)};
   text-align: ${(props) =>
     props.align === 'left' || props.layout === 'horizontal'
       ? 'left'

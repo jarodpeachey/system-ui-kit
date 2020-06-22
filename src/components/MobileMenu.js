@@ -40,7 +40,7 @@ const MobileMenu = ({ children }) => {
           <span />
         </MobileMenuRotate>
       </MobileMenuToggle>
-      <Wrapper className="container" open={open}>
+      <Wrapper id="mobile-menu" className="container" open={open}>
         {children}
       </Wrapper>
     </>
@@ -54,6 +54,8 @@ const Wrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.03),
+      0 4px 16px -6px rgba(0, 0, 0, 0.5);
   width: 100%;
   transition: all 0.3s, background 0.3s;
   overflow: hidden;
@@ -64,12 +66,10 @@ const Wrapper = styled.div`
   z-index: -1;
   backdrop-filter: blur(10px);
   ::after {
-    height: 71px;
     width: 100%;
     position: absolute;
     content: '';
     display: block;
-    background: ${(props) => props.theme.color.primary.main};
     top: 0;
     left: 0;
   }

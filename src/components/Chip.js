@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Badge = ({ children, color = '', icon }) => {
+const Chip = ({ children, color = '', icon }) => {
   return (
     <Wrapper icon={!!icon} color={color}>
       {icon && <Icon>{icon}</Icon>}
@@ -64,4 +64,4 @@ const Icon = styled.div`
   padding-left: 14px;
 `;
 
-export default Badge;
+export default Chip;

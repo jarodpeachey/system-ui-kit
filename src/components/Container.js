@@ -2,7 +2,13 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { ThemeContext } from '../theme';
 
-const Container = ({ children, background, className = '', maxWidth }) => {
+const Container = ({
+  children,
+  background,
+  className = '',
+  maxWidth,
+  style,
+}) => {
   const theme = useContext(ThemeContext);
 
   return (
@@ -10,6 +16,7 @@ const Container = ({ children, background, className = '', maxWidth }) => {
       maxWidth={maxWidth}
       className={className}
       background={background}
+      style={style}
     >
       {children}
     </StyledContainer>

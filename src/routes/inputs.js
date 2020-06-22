@@ -39,45 +39,45 @@ import {
   faHeart,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { theme } from './theme';
-import Header from './components/Header';
-import Menu from './components/Menu';
-import SubMenu from './components/SubMenu';
-import MenuItem from './components/MenuItem';
-import SubMenuItem from './components/SubMenuItem';
-import MobileMenu from './components/MobileMenu';
-import MobileSubMenu from './components/MobileSubMenu';
-import MobileMenuItem from './components/MobileMenuItem';
-import MobileSubMenuItem from './components/MobileSubMenuItem';
-import Hero from './components/Hero';
-import Section from './components/Section';
-import Button from './components/Button';
-import OutlinedButton from './components/OutlinedButton';
-import IconButton from './components/IconButton';
-import OutlinedIconButton from './components/OutlinedIconButton';
-import Input from './components/Input';
-import OutlinedInput from './components/OutlinedInput';
-import Checkbox from './components/Checkbox';
-import Row from './components/Row';
-import RadioButtons from './components/RadioButtons';
-import RadioButton from './components/RadioButton';
-import Toggle from './components/Toggle';
-import Select from './components/Select';
-import Option from './components/Option';
-import H1 from './components/H1';
-import H2 from './components/H2';
-import H3 from './components/H3';
-import H4 from './components/H4';
-import H5 from './components/H5';
-import H6 from './components/H6';
-import Alert from './components/Alert';
-import Badge from './components/Badge';
-import Mobile from './components/Mobile';
-import Tablet from './components/Tablet';
-import Info from './components/Info';
+import { theme } from '../theme';
+import Header from '../components/Header';
+import Menu from '../components/Menu';
+import SubMenu from '../components/SubMenu';
+import MenuItem from '../components/MenuItem';
+import SubMenuItem from '../components/SubMenuItem';
+import MobileMenu from '../components/MobileMenu';
+import MobileSubMenu from '../components/MobileSubMenu';
+import MobileMenuItem from '../components/MobileMenuItem';
+import MobileSubMenuItem from '../components/MobileSubMenuItem';
+import Hero from '../components/Hero';
+import Section from '../components/Section';
+import Button from '../components/Button';
+import OutlinedButton from '../components/OutlinedButton';
+import IconButton from '../components/IconButton';
+import OutlinedIconButton from '../components/OutlinedIconButton';
+import Input from '../components/Input';
+import OutlinedInput from '../components/OutlinedInput';
+import Checkbox from '../components/Checkbox';
+import Row from '../components/Row';
+import RadioButtons from '../components/RadioButtons';
+import RadioButton from '../components/RadioButton';
+import Toggle from '../components/Toggle';
+import Select from '../components/Select';
+import Option from '../components/Option';
+import H1 from '../components/H1';
+import H2 from '../components/H2';
+import H3 from '../components/H3';
+import H4 from '../components/H4';
+import H5 from '../components/H5';
+import H6 from '../components/H6';
+import Alert from '../components/Alert';
+import Badge from '../components/Chip';
+import Mobile from '../components/Mobile';
+import Tablet from '../components/Tablet';
+import Info from '../components/Info';
 import { Link } from '@reach/router';
-import Container from './components/Container';
-import Hidden from './components/Hidden';
+import Container from '../components/Container';
+import Hidden from '../components/Hidden';
 
 library.add(
   faBars,
@@ -115,7 +115,7 @@ library.add(
   faHeart,
 );
 
-const Components = ({}) => (
+const Inputs = ({}) => (
   <ThemeProvider theme={theme}>
     {/* <Header primary>
         <h1 style={{ margin: '0' }}>Primary Header</h1>
@@ -156,20 +156,23 @@ const Components = ({}) => (
         </Menu>
       </Header> */}
     <Header fixed color="transparent">
-      <h1 style={{ margin: '0' }}>Website</h1>
+      <h1 style={{ margin: '0' }}>System</h1>
       <Mobile>
         <MobileMenu>
           <MobileMenuItem>
             <a href="/">Home</a>
           </MobileMenuItem>
           <MobileMenuItem submenu>
-            <a href="/">About</a>
+            <Link to="/components">Components</Link>
             <MobileSubMenu>
               <MobileSubMenuItem>
-                <a href="/">More</a>
+                <Link to="/layout">Layout</Link>
               </MobileSubMenuItem>
               <MobileSubMenuItem>
-                <a href="/">Team</a>
+                <Link to="/components/inputs">Inputs</Link>
+              </MobileSubMenuItem>
+              <MobileSubMenuItem>
+                <Link to="/components/display">Display</Link>
               </MobileSubMenuItem>
             </MobileSubMenu>
           </MobileMenuItem>
@@ -181,13 +184,16 @@ const Components = ({}) => (
             <a href="/">Home</a>
           </MenuItem>
           <MenuItem submenu>
-            <Link to="components">Components</Link>
+            <Link to="/components">Components</Link>
             <SubMenu>
               <SubMenuItem>
-                <Link to="components">Layout</Link>
+                <Link to="/layout">Layout</Link>
               </SubMenuItem>
               <SubMenuItem>
-                <Link to="inputs">Inputs</Link>
+                <Link to="/components/inputs">Inputs</Link>
+              </SubMenuItem>
+              <SubMenuItem>
+                <Link to="/components/display">Display</Link>
               </SubMenuItem>
             </SubMenu>
           </MenuItem>
@@ -222,11 +228,11 @@ const Components = ({}) => (
         <p className="mt-2">
           The variant prop is used to change the appearance of a button.
         </p>
-        <Button color="primary">Filled</Button>
-        <Button color="primary" variant="outlined">
+        <Button className="mr-2" color="primary">Filled</Button>
+        <Button className="mr-2" color="primary" variant="outlined">
           Outlined
         </Button>
-        <Button variant="plain" color="primary">
+        <Button className="mr-2" variant="plain" color="primary">
           Plain
         </Button>
         <br />
@@ -235,11 +241,11 @@ const Components = ({}) => (
         <p className="mt-2">
           The size prop is used to change the size of a button.
         </p>
-        <Button color="primary" size="large">
+        <Button className="mr-2" color="primary" size="large">
           Large
         </Button>
-        <Button color="primary">Default</Button>
-        <Button color="primary" size="small">
+        <Button className="mr-2" color="primary">Default</Button>
+        <Button className="mr-2" color="primary" size="small">
           Small
         </Button>
         <br />
@@ -248,37 +254,37 @@ const Components = ({}) => (
         <p className="mt-2">
           The color prop is used to change the color of a button.
         </p>
-        <Button>Default</Button>
-        <Button color="primary">Primary</Button>
-        <Button color="secondary">Secondary</Button>
-        <Button color="success">Success</Button>
-        <Button color="error">Error</Button>
+        <Button className="mr-2">Default</Button>
+        <Button className="mr-2" color="primary">Primary</Button>
+        <Button className="mr-2" color="secondary">Secondary</Button>
+        <Button className="mr-2" color="success">Success</Button>
+        <Button className="mr-2" color="error">Error</Button>
         <div style={{ height: 8 }} />
-        <Button variant="outlined">Default</Button>
-        <Button variant="outlined" color="primary">
+        <Button className="mr-2" variant="outlined">Default</Button>
+        <Button className="mr-2" variant="outlined" color="primary">
           Primary
         </Button>
-        <Button variant="outlined" color="secondary">
+        <Button className="mr-2" variant="outlined" color="secondary">
           Secondary
         </Button>
-        <Button variant="outlined" color="success">
+        <Button className="mr-2" variant="outlined" color="success">
           Success
         </Button>
-        <Button variant="outlined" color="error">
+        <Button className="mr-2" variant="outlined" color="error">
           Error
         </Button>
         <div style={{ height: 8 }} />
-        <Button variant="plain">Default</Button>
-        <Button variant="plain" color="primary">
+        <Button className="mr-2" variant="plain">Default</Button>
+        <Button className="mr-2" variant="plain" color="primary">
           Primary
         </Button>
-        <Button variant="plain" color="secondary">
+        <Button className="mr-2" variant="plain" color="secondary">
           Secondary
         </Button>
-        <Button variant="plain" color="success">
+        <Button className="mr-2" variant="plain" color="success">
           Success
         </Button>
-        <Button variant="plain" color="error">
+        <Button className="mr-2" variant="plain" color="error">
           Error
         </Button>
         <div
@@ -289,41 +295,41 @@ const Components = ({}) => (
             borderRadius: 3,
           }}
         >
-          <Button color="white">White</Button>
-          <Button color="primary">Primary</Button>
-          <Button color="secondary">Secondary</Button>
-          <Button color="success">Success</Button>
-          <Button color="error">Error</Button>
+          <Button className="mr-2" color="white">White</Button>
+          <Button className="mr-2" color="primary">Primary</Button>
+          <Button className="mr-2" color="secondary">Secondary</Button>
+          <Button className="mr-2" color="success">Success</Button>
+          <Button className="mr-2" color="error">Error</Button>
           <div style={{ height: 8 }} />
-          <Button variant="outlined" color="white">
+          <Button className="mr-2" variant="outlined" color="white">
             White
           </Button>
-          <Button variant="outlined" color="primary">
+          <Button className="mr-2" variant="outlined" color="primary">
             Primary
           </Button>
-          <Button variant="outlined" color="secondary">
+          <Button className="mr-2" variant="outlined" color="secondary">
             Secondary
           </Button>
-          <Button variant="outlined" color="success">
+          <Button className="mr-2" variant="outlined" color="success">
             Success
           </Button>
-          <Button variant="outlined" color="error">
+          <Button className="mr-2" variant="outlined" color="error">
             Error
           </Button>
           <div style={{ height: 8 }} />
-          <Button variant="plain" color="white">
+          <Button className="mr-2" variant="plain" color="white">
             White
           </Button>
-          <Button variant="plain" color="primary">
+          <Button className="mr-2" variant="plain" color="primary">
             Primary
           </Button>
-          <Button variant="plain" color="secondary">
+          <Button className="mr-2" variant="plain" color="secondary">
             Secondary
           </Button>
-          <Button variant="plain" color="success">
+          <Button className="mr-2" variant="plain" color="success">
             Success
           </Button>
-          <Button variant="plain" color="error">
+          <Button className="mr-2" variant="plain" color="error">
             Error
           </Button>
         </div>
@@ -542,4 +548,4 @@ const Demo = styled.div`
   background: ${(props) => props.theme.color.primary.main};
 `;
 
-export default Components;
+export default Inputs;

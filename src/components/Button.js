@@ -47,7 +47,6 @@ const StyledButton = styled.button`
     props.variant === 'secondary' ? props.theme.shadow.two : 'none'};
 
   outline: none;
-  margin-right: 12px;
   padding: 12px 24px;
   border: none;
   font-size: 16px;

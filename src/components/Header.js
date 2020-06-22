@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import Container from './Container';
 
 const Header = ({ children, color, scrollColor, fixed }) => {
-  const [scroll, setScroll] = useState(0);
+  const [scroll, setScroll] = useState(
+    typeof window !== 'undefined' && window.scrollY,
+  );
   const onScroll = () => {
     setScroll(window.scrollY);
 
@@ -16,6 +18,12 @@ const Header = ({ children, color, scrollColor, fixed }) => {
   };
 
   useEffect(() => {
+    if (window.scrollY > 50) {
+      document.getElementById('header').classList.add('scrolled');
+    } else {
+      document.getElementById('header').classList.remove('scrolled');
+    }
+
     window.addEventListener('scroll', onScroll);
 
     return () => {
@@ -26,13 +34,15 @@ const Header = ({ children, color, scrollColor, fixed }) => {
   return (
     <Wrapper
       id="header"
-      scrolled={scroll > 50}
+      scrolled={window.scrollY > 50}
       color={color}
       fixed={fixed}
       scrollColor={scrollColor}
     >
       <Container>
-        <InnerContainer scrolled={scroll > 50}>{children}</InnerContainer>
+        <InnerContainer color={color} scrolled={window.scrollY > 50}>
+          {children}
+        </InnerContainer>
       </Container>
     </Wrapper>
   );
@@ -60,18 +70,23 @@ const Wrapper = styled.div`
   h6,
   .menu-item,
   .menu-item a,
-  span,
   div {
     color: ${(props) =>
-      props.color === 'primary' ||
-      props.color === 'secondary' ||
-      props.color === 'transparent'
+      props.color === 'primary'
         ? 'white'
-        : props.theme.color.text.dark.one};
+        : props.color === 'secondary'
+        ? 'white'
+        : props.color === 'transparent'
+        ? 'white'
+        : null};
   }
   span {
     background: ${(props) =>
-      props.color === 'primary' || props.color === 'secondary'
+      props.color === 'primary'
+        ? 'white'
+        : props.color === 'secondary'
+        ? 'white'
+        : props.color === 'transparent'
         ? 'white'
         : props.theme.color.text.dark.one} !important;
   }
@@ -85,7 +100,25 @@ const Wrapper = styled.div`
     font-size: 32px !important;
   }
 
+  #mobile-menu::after {
+    background: ${(props) =>
+      props.color === 'primary'
+        ? props.theme.color.primary.main
+        : props.color === 'secondary'
+        ? props.theme.color.secondary.main
+        : props.color === 'transparent'
+        ? 'transparent'
+        : 'white'};
+  }
+  #mobile-menu {
+    padding-top: 103px;
+  }
+
   &.scrolled {
+    #mobile-menu {
+      padding-top: 71px;
+    }
+
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.03),
       0 4px 16px -6px rgba(0, 0, 0, 0.5);
     background: ${(props) =>
@@ -113,15 +146,34 @@ const Wrapper = styled.div`
     }
   }
   &.open {
-    // background: transparent;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    div,
+    .menu-item,
+    .menu-item a {
+      color: ${(props) =>
+        props.color === 'transparent' ? props.theme.color.text.dark.one : null};
+    }
+    span {
+      background: ${(props) =>
+        props.color === 'transparent'
+          ? props.theme.color.text.dark.one
+          : null} !important;
+    }
   }
 `;
 
 const InnerContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-top: ${(props) => (props.scrolled ? '16px' : '32px')};
-  padding-bottom: ${(props) => (props.scrolled ? '16px' : '32px')};
+  padding-top: ${(props) =>
+    props.scrolled || props.color !== 'transparent' ? '16px' : '32px'};
+  padding-bottom: ${(props) =>
+    props.scrolled || props.color !== 'transparent' ? '16px' : '32px'};
   justify-content: space-between;
   transition: 0.3s;
 `;
