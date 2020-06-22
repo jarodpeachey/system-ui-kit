@@ -16,12 +16,12 @@ const Wrapper = styled.div`
   width: fit-content;
   align-items: flex-start;
   font-size: 14px;
-  margin-top: ${(props) => props.theme.spacing.three};
-  margin-bottom: ${(props) => props.theme.spacing.three};
-  margin-left: ${(props) => props.theme.spacing.one};
-  margin-right: ${(props) => props.theme.spacing.one};
-  padding: ${(props) => props.theme.spacing.one}
-    ${(props) => props.theme.spacing.two};
+  margin-top: ${(props) => props.theme.spacing.three}px;
+  margin-bottom: ${(props) => props.theme.spacing.three}px;
+  margin-left: ${(props) => props.theme.spacing.one}px;
+  margin-right: ${(props) => props.theme.spacing.one}px;
+  padding: ${(props) => props.theme.spacing.one}px
+    ${(props) => props.theme.spacing.two}px;
   background: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary.main

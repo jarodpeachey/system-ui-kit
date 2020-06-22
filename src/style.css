@@ -36,6 +36,7 @@ body {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 .container,
 .container-xs {
@@ -250,6 +251,11 @@ p:last-child {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  width: fit-content;
+  display: block;
+}
+.no-styling {
+  text-decoration: none !important;
 }
 .width-auto {
   width: fit-content !important;

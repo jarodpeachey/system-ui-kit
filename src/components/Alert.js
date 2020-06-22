@@ -24,8 +24,8 @@ const Wrapper = styled.div`
   width: 100%;
   display: ${(props) => (props.show ? 'flex' : 'none')};
   align-items: flex-start;
-  margin: ${(props) => props.theme.spacing.three} 0;
-  padding: ${(props) => props.theme.spacing.three};
+  margin: ${(props) => props.theme.spacing.three}px 0;
+  padding: ${(props) => props.theme.spacing.three}px;
   background: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary.main

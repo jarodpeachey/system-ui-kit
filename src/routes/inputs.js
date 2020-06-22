@@ -2,44 +2,9 @@ import React from 'react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { Helmet } from 'react-helmet';
-import {
-  faBolt,
-  faDesktop,
-  faBars,
-  faPuzzlePiece,
-  faCog,
-  faUser,
-  faEnvelope,
-  faShapes,
-  faHome,
-  faDollarSign,
-  faTimes,
-  faComment,
-  faCommentAlt,
-  faCheck,
-  faTrash,
-  faCopy,
-  faSearch,
-  faBinoculars,
-  faPalette,
-  faPaintBrush,
-  faBrush,
-  faChevronRight,
-  faChevronLeft,
-  faChevronDown,
-  faQuoteLeft,
-  faBell,
-  faFill,
-  faFeather,
-  faArrowsAltH,
-  faAlignLeft,
-  faAlignRight,
-  faHeart,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme } from '../theme';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
@@ -79,45 +44,11 @@ import Info from '../components/Info';
 import { Link } from '@reach/router';
 import Container from '../components/Container';
 import Hidden from '../components/Hidden';
-
-library.add(
-  faBars,
-  faBolt,
-  faDesktop,
-  faPuzzlePiece,
-  faCog,
-  faEnvelope,
-  faUser,
-  faShapes,
-  faHome,
-  faDollarSign,
-  faTimes,
-  faComment,
-  faCommentAlt,
-  faCheck,
-  faTrash,
-  faCopy,
-  faSearch,
-  faBinoculars,
-  faPalette,
-  faBrush,
-  faPaintBrush,
-  faChevronDown,
-  faChevronRight,
-  faChevronLeft,
-  faQuoteLeft,
-  faBars,
-  faBell,
-  faFill,
-  faFeather,
-  faArrowsAltH,
-  faAlignLeft,
-  faAlignRight,
-  faHeart,
-);
+import Layout from '../Layout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Inputs = ({}) => (
-  <ThemeProvider theme={theme}>
+  <Layout>
     {/* <Header primary>
         <h1 style={{ margin: '0' }}>Primary Header</h1>
         <Menu>
@@ -159,59 +90,6 @@ const Inputs = ({}) => (
     <Helmet>
       <title>Input Components - System UI Kit</title>
     </Helmet>
-    <Header fixed color="transparent">
-      <h1 style={{ margin: '0' }}>System</h1>
-      <Mobile>
-        <MobileMenu>
-          <MobileMenuItem>
-            <a href="/">Home</a>
-          </MobileMenuItem>
-          <MobileMenuItem submenu>
-            <Link to="/components">Components</Link>
-            <MobileSubMenu>
-              <MobileSubMenuItem>
-                <Link to="/layout">Layout</Link>
-              </MobileSubMenuItem>
-              <MobileSubMenuItem>
-                <Link to="/components/inputs">Inputs</Link>
-              </MobileSubMenuItem>
-              <MobileSubMenuItem>
-                <Link to="/components/display">Display</Link>
-              </MobileSubMenuItem>
-            </MobileSubMenu>
-          </MobileMenuItem>
-        </MobileMenu>
-      </Mobile>
-      <Tablet>
-        <Menu>
-          <MenuItem>
-            <a href="/">Home</a>
-          </MenuItem>
-          <MenuItem submenu>
-            <Link to="/components">Components</Link>
-            <SubMenu>
-              <SubMenuItem>
-                <Link to="/layout">Layout</Link>
-              </SubMenuItem>
-              <SubMenuItem>
-                <Link to="/components/inputs">Inputs</Link>
-              </SubMenuItem>
-              <SubMenuItem>
-                <Link to="/components/display">Display</Link>
-              </SubMenuItem>
-            </SubMenu>
-          </MenuItem>
-          <MenuItem square>
-            <a href="/">
-              <FontAwesomeIcon
-                icon="heart"
-                style={{ width: 20, height: 20, fontSize: 24 }}
-              />
-            </a>
-          </MenuItem>
-        </Menu>
-      </Tablet>
-    </Header>
     <Hero
       background={`linear-gradient(
         to right,
@@ -232,13 +110,13 @@ const Inputs = ({}) => (
         <p className="mt-2">
           The variant prop is used to change the appearance of a button.
         </p>
-        <Button className="mr-2" color="primary">
+        <Button className="mr-2 mb-2" color="primary">
           Filled
         </Button>
-        <Button className="mr-2" color="primary" variant="outlined">
+        <Button className="mr-2 mb-2" color="primary" variant="outlined">
           Outlined
         </Button>
-        <Button className="mr-2" variant="plain" color="primary">
+        <Button className="mr-2 mb-2" variant="plain" color="primary">
           Plain
         </Button>
         <br />
@@ -247,13 +125,13 @@ const Inputs = ({}) => (
         <p className="mt-2">
           The size prop is used to change the size of a button.
         </p>
-        <Button className="mr-2" color="primary" size="large">
+        <Button className="mr-2 mb-2" color="primary" size="large">
           Large
         </Button>
-        <Button className="mr-2" color="primary">
+        <Button className="mr-2 mb-2" color="primary">
           Default
         </Button>
-        <Button className="mr-2" color="primary" size="small">
+        <Button className="mr-2 mb-2" color="primary" size="small">
           Small
         </Button>
         <br />
@@ -262,49 +140,49 @@ const Inputs = ({}) => (
         <p className="mt-2">
           The color prop is used to change the color of a button.
         </p>
-        <Button className="mr-2">Default</Button>
-        <Button className="mr-2" color="primary">
+        <Button className="mr-2 mb-2">Default</Button>
+        <Button className="mr-2 mb-2" color="primary">
           Primary
         </Button>
-        <Button className="mr-2" color="secondary">
+        <Button className="mr-2 mb-2" color="secondary">
           Secondary
         </Button>
-        <Button className="mr-2" color="success">
+        <Button className="mr-2 mb-2" color="success">
           Success
         </Button>
-        <Button className="mr-2" color="error">
+        <Button className="mr-2 mb-2" color="error">
           Error
         </Button>
-        <div style={{ height: 8 }} />
-        <Button className="mr-2" variant="outlined">
+        <div />
+        <Button className="mr-2 mb-2" variant="outlined">
           Default
         </Button>
-        <Button className="mr-2" variant="outlined" color="primary">
+        <Button className="mr-2 mb-2" variant="outlined" color="primary">
           Primary
         </Button>
-        <Button className="mr-2" variant="outlined" color="secondary">
+        <Button className="mr-2 mb-2" variant="outlined" color="secondary">
           Secondary
         </Button>
-        <Button className="mr-2" variant="outlined" color="success">
+        <Button className="mr-2 mb-2" variant="outlined" color="success">
           Success
         </Button>
-        <Button className="mr-2" variant="outlined" color="error">
+        <Button className="mr-2 mb-2" variant="outlined" color="error">
           Error
         </Button>
-        <div style={{ height: 8 }} />
-        <Button className="mr-2" variant="plain">
+        <div />
+        <Button className="mr-2 mb-2" variant="plain">
           Default
         </Button>
-        <Button className="mr-2" variant="plain" color="primary">
+        <Button className="mr-2 mb-2" variant="plain" color="primary">
           Primary
         </Button>
-        <Button className="mr-2" variant="plain" color="secondary">
+        <Button className="mr-2 mb-2" variant="plain" color="secondary">
           Secondary
         </Button>
-        <Button className="mr-2" variant="plain" color="success">
+        <Button className="mr-2 mb-2" variant="plain" color="success">
           Success
         </Button>
-        <Button className="mr-2" variant="plain" color="error">
+        <Button className="mr-2 mb-2" variant="plain" color="error">
           Error
         </Button>
         <div
@@ -315,51 +193,51 @@ const Inputs = ({}) => (
             borderRadius: 3,
           }}
         >
-          <Button className="mr-2" color="white">
+          <Button className="mr-2 mb-2" color="white">
             White
           </Button>
-          <Button className="mr-2" color="primary">
+          <Button className="mr-2 mb-2" color="primary">
             Primary
           </Button>
-          <Button className="mr-2" color="secondary">
+          <Button className="mr-2 mb-2" color="secondary">
             Secondary
           </Button>
-          <Button className="mr-2" color="success">
+          <Button className="mr-2 mb-2" color="success">
             Success
           </Button>
-          <Button className="mr-2" color="error">
+          <Button className="mr-2 mb-2" color="error">
             Error
           </Button>
-          <div style={{ height: 8 }} />
-          <Button className="mr-2" variant="outlined" color="white">
+          <div />
+          <Button className="mr-2 mb-2" variant="outlined" color="white">
             White
           </Button>
-          <Button className="mr-2" variant="outlined" color="primary">
+          <Button className="mr-2 mb-2" variant="outlined" color="primary">
             Primary
           </Button>
-          <Button className="mr-2" variant="outlined" color="secondary">
+          <Button className="mr-2 mb-2" variant="outlined" color="secondary">
             Secondary
           </Button>
-          <Button className="mr-2" variant="outlined" color="success">
+          <Button className="mr-2 mb-2" variant="outlined" color="success">
             Success
           </Button>
-          <Button className="mr-2" variant="outlined" color="error">
+          <Button className="mr-2 mb-2" variant="outlined" color="error">
             Error
           </Button>
-          <div style={{ height: 8 }} />
-          <Button className="mr-2" variant="plain" color="white">
+          <div />
+          <Button className="mr-2 mb-2" variant="plain" color="white">
             White
           </Button>
-          <Button className="mr-2" variant="plain" color="primary">
+          <Button className="mr-2 mb-2" variant="plain" color="primary">
             Primary
           </Button>
-          <Button className="mr-2" variant="plain" color="secondary">
+          <Button className="mr-2 mb-2" variant="plain" color="secondary">
             Secondary
           </Button>
-          <Button className="mr-2" variant="plain" color="success">
+          <Button className="mr-2 mb-2" variant="plain" color="success">
             Success
           </Button>
-          <Button className="mr-2" variant="plain" color="error">
+          <Button className="mr-2 mb-2" variant="plain" color="error">
             Error
           </Button>
         </div>
@@ -384,7 +262,7 @@ const Inputs = ({}) => (
         <IconButton color="primary" size="small">
           <FontAwesomeIcon icon="check" />
         </IconButton>
-        <div style={{ height: 8 }} />
+        <div />
         <IconButton color="primary" circle variant="filled">
           <FontAwesomeIcon icon="dollar-sign" />
         </IconButton>
@@ -400,25 +278,25 @@ const Inputs = ({}) => (
         <Row spacing={[12]} breakpoints={[576, 769]}>
           <div widths={[6, 3]}>
             <Input size="xs" fullWidth placeholder="X-Small" />
-            <div style={{ height: 8 }} />
+            <div />
             <Input size="small" fullWidth placeholder="Small" />
-            <div style={{ height: 8 }} />
+            <div />
             <Input fullWidth placeholder="Default" />
-            <div style={{ height: 8 }} />
+            <div />
             <Input size="large" fullWidth placeholder="Large" />
           </div>
           <div widths={[6, 3]}>
             <Input variant="filled" size="xs" fullWidth placeholder="X-Small" />
-            <div style={{ height: 8 }} />
+            <div />
             <Input
               variant="filled"
               size="small"
               fullWidth
               placeholder="Small"
             />
-            <div style={{ height: 8 }} />
+            <div />
             <Input variant="filled" fullWidth placeholder="Default" />
-            <div style={{ height: 8 }} />
+            <div />
             <Input
               variant="filled"
               size="large"
@@ -433,20 +311,20 @@ const Inputs = ({}) => (
               placeholder="X-Small"
               icon={<FontAwesomeIcon icon="heart" />}
             />
-            <div style={{ height: 8 }} />
+            <div />
             <Input
               size="small"
               fullWidth
               placeholder="Small"
               icon={<FontAwesomeIcon icon="heart" />}
             />
-            <div style={{ height: 8 }} />
+            <div />
             <Input
               fullWidth
               placeholder="Default"
               icon={<FontAwesomeIcon icon="heart" />}
             />
-            <div style={{ height: 8 }} />
+            <div />
             <Input
               size="large"
               fullWidth
@@ -459,21 +337,21 @@ const Inputs = ({}) => (
         <Row spacing={[12]} breakpoints={[576, 769]}>
           <div widths={[6, 3]}>
             <Input fullWidth placeholder="Default" />
-            <div style={{ height: 8 }} />
+            <div />
             <Input fullWidth placeholder="Success" state="success" />
-            <div style={{ height: 8 }} />
+            <div />
             <Input fullWidth placeholder="Error" state="error" />
           </div>
           <div widths={[6, 3]}>
             <Input variant="filled" fullWidth placeholder="Default" />
-            <div style={{ height: 8 }} />
+            <div />
             <Input
               variant="filled"
               fullWidth
               placeholder="Success"
               state="success"
             />
-            <div style={{ height: 8 }} />
+            <div />
             <Input
               variant="filled"
               fullWidth
@@ -487,14 +365,14 @@ const Inputs = ({}) => (
               fullWidth
               placeholder="Default"
             />
-            <div style={{ height: 8 }} />
+            <div />
             <Input
               icon={<FontAwesomeIcon icon="heart" />}
               fullWidth
               placeholder="Success"
               state="success"
             />
-            <div style={{ height: 8 }} />
+            <div />
             <Input
               icon={<FontAwesomeIcon icon="heart" />}
               fullWidth
@@ -563,7 +441,7 @@ const Inputs = ({}) => (
         </Row>
       </Container>
     </Section>
-  </ThemeProvider>
+  </Layout>
 );
 
 const Demo = styled.div`

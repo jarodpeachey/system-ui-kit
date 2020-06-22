@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { theme } from '../theme';
 import { pSBC } from '../utils/color';
+import { Link } from '@reach/router';
 
 const Button = ({
   children,
@@ -14,9 +15,9 @@ const Button = ({
   variant = '',
   size,
 }) => (
-  <span>
+  <>
     {link ? (
-      <a className="no-styling" href={link}>
+      <Link to={link} className={`${className} no-styling`}>
         <StyledButton
           color={color}
           size={size}
@@ -27,7 +28,7 @@ const Button = ({
         >
           {children}
         </StyledButton>
-      </a>
+      </Link>
     ) : (
       <StyledButton
         color={color}
@@ -39,7 +40,7 @@ const Button = ({
         {children}
       </StyledButton>
     )}
-  </span>
+  </>
 );
 
 const StyledButton = styled.button`

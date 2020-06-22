@@ -83,7 +83,7 @@ const Toggle = ({
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: ${(props) => props.theme.spacing.two} 0;
+  margin: ${(props) => props.theme.spacing.two}px 0;
 `;
 
 export default Toggle;
