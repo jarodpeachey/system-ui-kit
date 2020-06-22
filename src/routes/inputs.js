@@ -4,6 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
 import styled, { ThemeProvider } from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { Helmet } from 'react-helmet';
 import {
   faBolt,
   faDesktop,
@@ -155,6 +156,9 @@ const Inputs = ({}) => (
           </MenuItem>
         </Menu>
       </Header> */}
+    <Helmet>
+      <title>Input Components - System UI Kit</title>
+    </Helmet>
     <Header fixed color="transparent">
       <h1 style={{ margin: '0' }}>System</h1>
       <Mobile>
@@ -228,7 +232,9 @@ const Inputs = ({}) => (
         <p className="mt-2">
           The variant prop is used to change the appearance of a button.
         </p>
-        <Button className="mr-2" color="primary">Filled</Button>
+        <Button className="mr-2" color="primary">
+          Filled
+        </Button>
         <Button className="mr-2" color="primary" variant="outlined">
           Outlined
         </Button>
@@ -244,7 +250,9 @@ const Inputs = ({}) => (
         <Button className="mr-2" color="primary" size="large">
           Large
         </Button>
-        <Button className="mr-2" color="primary">Default</Button>
+        <Button className="mr-2" color="primary">
+          Default
+        </Button>
         <Button className="mr-2" color="primary" size="small">
           Small
         </Button>
@@ -255,12 +263,22 @@ const Inputs = ({}) => (
           The color prop is used to change the color of a button.
         </p>
         <Button className="mr-2">Default</Button>
-        <Button className="mr-2" color="primary">Primary</Button>
-        <Button className="mr-2" color="secondary">Secondary</Button>
-        <Button className="mr-2" color="success">Success</Button>
-        <Button className="mr-2" color="error">Error</Button>
+        <Button className="mr-2" color="primary">
+          Primary
+        </Button>
+        <Button className="mr-2" color="secondary">
+          Secondary
+        </Button>
+        <Button className="mr-2" color="success">
+          Success
+        </Button>
+        <Button className="mr-2" color="error">
+          Error
+        </Button>
         <div style={{ height: 8 }} />
-        <Button className="mr-2" variant="outlined">Default</Button>
+        <Button className="mr-2" variant="outlined">
+          Default
+        </Button>
         <Button className="mr-2" variant="outlined" color="primary">
           Primary
         </Button>
@@ -274,7 +292,9 @@ const Inputs = ({}) => (
           Error
         </Button>
         <div style={{ height: 8 }} />
-        <Button className="mr-2" variant="plain">Default</Button>
+        <Button className="mr-2" variant="plain">
+          Default
+        </Button>
         <Button className="mr-2" variant="plain" color="primary">
           Primary
         </Button>
@@ -295,11 +315,21 @@ const Inputs = ({}) => (
             borderRadius: 3,
           }}
         >
-          <Button className="mr-2" color="white">White</Button>
-          <Button className="mr-2" color="primary">Primary</Button>
-          <Button className="mr-2" color="secondary">Secondary</Button>
-          <Button className="mr-2" color="success">Success</Button>
-          <Button className="mr-2" color="error">Error</Button>
+          <Button className="mr-2" color="white">
+            White
+          </Button>
+          <Button className="mr-2" color="primary">
+            Primary
+          </Button>
+          <Button className="mr-2" color="secondary">
+            Secondary
+          </Button>
+          <Button className="mr-2" color="success">
+            Success
+          </Button>
+          <Button className="mr-2" color="error">
+            Error
+          </Button>
           <div style={{ height: 8 }} />
           <Button className="mr-2" variant="outlined" color="white">
             White

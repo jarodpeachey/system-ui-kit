@@ -4,6 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
 import { ThemeProvider } from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { Helmet } from 'react-helmet';
 import {
   faBolt,
   faDesktop,
@@ -160,6 +161,9 @@ const App = ({}) => (
           </MenuItem>
         </Menu>
       </Header> */}
+    <Helmet>
+      <title>System - React UI Kit</title>
+    </Helmet>
     <Header fixed color="transparent">
       <h1 style={{ margin: '0' }}>System</h1>
       <Mobile>
