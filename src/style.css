@@ -135,7 +135,7 @@ textarea {
 }
 p {
   line-height: calc(var(--spacing-four) + 4px);
-  font-size: 20px;
+  font-size: 18px;
   color: var(--dark-two);
 }
 ul,

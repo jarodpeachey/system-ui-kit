@@ -7,7 +7,7 @@ const Header = ({ children, color, scrollColor, fixed }) => {
   const [scroll, setScroll] = useState(0);
   const onScroll = () => {
     setScroll(window.scrollY);
-    console.log(window.scrollY);
+
     if (window.scrollY > 50) {
       document.getElementById('header').classList.add('scrolled');
     } else {

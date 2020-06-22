@@ -36,6 +36,7 @@ import {
   faArrowsAltH,
   faAlignLeft,
   faAlignRight,
+  faHeart,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme } from './theme';
@@ -111,6 +112,7 @@ library.add(
   faArrowsAltH,
   faAlignLeft,
   faAlignRight,
+  faHeart,
 );
 
 const Components = ({}) => (
@@ -185,14 +187,14 @@ const Components = ({}) => (
                 <Link to="components">Layout</Link>
               </SubMenuItem>
               <SubMenuItem>
-                <Link to="components">Elements</Link>
+                <Link to="inputs">Inputs</Link>
               </SubMenuItem>
             </SubMenu>
           </MenuItem>
           <MenuItem square>
             <a href="/">
               <FontAwesomeIcon
-                icon="user"
+                icon="heart"
                 style={{ width: 20, height: 20, fontSize: 24 }}
               />
             </a>
@@ -215,27 +217,116 @@ const Components = ({}) => (
     </Hero>
     <Section>
       <Container>
-        <H3>Button</H3>
-        <p>Sizes</p>
-        <Button color="primary" size="small">
-          Small
+        <H2>Button</H2>
+        <H4 className="mb-none">Variant</H4>
+        <p className="mt-2">
+          The variant prop is used to change the appearance of a button.
+        </p>
+        <Button color="primary">Filled</Button>
+        <Button color="primary" variant="outlined">
+          Outlined
         </Button>
-        <Button color="primary">Default</Button>
+        <Button variant="plain" color="primary">
+          Plain
+        </Button>
+        <br />
+        <br />
+        <H4 className="mb-none">Size</H4>
+        <p className="mt-2">
+          The size prop is used to change the size of a button.
+        </p>
         <Button color="primary" size="large">
           Large
         </Button>
-        <p>Colors</p>
+        <Button color="primary">Default</Button>
+        <Button color="primary" size="small">
+          Small
+        </Button>
+        <br />
+        <br />
+        <H4 className="mb-none">Color</H4>
+        <p className="mt-2">
+          The color prop is used to change the color of a button.
+        </p>
         <Button>Default</Button>
         <Button color="primary">Primary</Button>
         <Button color="secondary">Secondary</Button>
         <Button color="success">Success</Button>
         <Button color="error">Error</Button>
-        <p style={{ marginBottom: 8 }}>Variants</p>
-        <Button color="primary">Filled</Button>
-        <Button color="primary" variant="outlined">
-          Outlined
+        <div style={{ height: 8 }} />
+        <Button variant="outlined">Default</Button>
+        <Button variant="outlined" color="primary">
+          Primary
         </Button>
-        <Button variant="plain">Plain</Button>
+        <Button variant="outlined" color="secondary">
+          Secondary
+        </Button>
+        <Button variant="outlined" color="success">
+          Success
+        </Button>
+        <Button variant="outlined" color="error">
+          Error
+        </Button>
+        <div style={{ height: 8 }} />
+        <Button variant="plain">Default</Button>
+        <Button variant="plain" color="primary">
+          Primary
+        </Button>
+        <Button variant="plain" color="secondary">
+          Secondary
+        </Button>
+        <Button variant="plain" color="success">
+          Success
+        </Button>
+        <Button variant="plain" color="error">
+          Error
+        </Button>
+        <div
+          style={{
+            background: '#333',
+            padding: 16,
+            marginTop: 16,
+            borderRadius: 3,
+          }}
+        >
+          <Button color="white">White</Button>
+          <Button color="primary">Primary</Button>
+          <Button color="secondary">Secondary</Button>
+          <Button color="success">Success</Button>
+          <Button color="error">Error</Button>
+          <div style={{ height: 8 }} />
+          <Button variant="outlined" color="white">
+            White
+          </Button>
+          <Button variant="outlined" color="primary">
+            Primary
+          </Button>
+          <Button variant="outlined" color="secondary">
+            Secondary
+          </Button>
+          <Button variant="outlined" color="success">
+            Success
+          </Button>
+          <Button variant="outlined" color="error">
+            Error
+          </Button>
+          <div style={{ height: 8 }} />
+          <Button variant="plain" color="white">
+            White
+          </Button>
+          <Button variant="plain" color="primary">
+            Primary
+          </Button>
+          <Button variant="plain" color="secondary">
+            Secondary
+          </Button>
+          <Button variant="plain" color="success">
+            Success
+          </Button>
+          <Button variant="plain" color="error">
+            Error
+          </Button>
+        </div>
         <br />
         <br />
         <br />
@@ -243,51 +334,137 @@ const Components = ({}) => (
     </Section>
     <Section background="#f7f7f7">
       <Container>
-        <H3 className="mt-none">Icon Button</H3>
-        <div
-          style={{
-            display: 'inline-block',
-            position: 'relative',
-            top: 6,
-          }}
-        >
-          <IconButton color="primary">
-            <FontAwesomeIcon icon="dollar-sign" />
-          </IconButton>
-        </div>
+        <H2>IconButton</H2>
+        <p>
+          The IconButton element extends all the props from the Button
+          component. It also adds a new circle prop.
+        </p>
+        <IconButton color="primary" size="large">
+          <FontAwesomeIcon icon="check" />
+        </IconButton>
+        <IconButton color="primary">
+          <FontAwesomeIcon icon="check" />
+        </IconButton>
+        <IconButton color="primary" size="small">
+          <FontAwesomeIcon icon="check" />
+        </IconButton>
+        <div style={{ height: 8 }} />
+        <IconButton color="primary" circle variant="filled">
+          <FontAwesomeIcon icon="dollar-sign" />
+        </IconButton>
+        <IconButton color="secondary" circle variant="outlined">
+          <FontAwesomeIcon icon="heart" />
+        </IconButton>
       </Container>
     </Section>
     <Section>
       <Container>
-        <H3>Text Fields</H3>
+        <H2>Text Field</H2>
+        <H4>Size</H4>
         <Row spacing={[12]} breakpoints={[576, 769]}>
           <div widths={[6, 3]}>
+            <Input size="xs" fullWidth placeholder="X-Small" />
+            <div style={{ height: 8 }} />
+            <Input size="small" fullWidth placeholder="Small" />
+            <div style={{ height: 8 }} />
             <Input fullWidth placeholder="Default" />
+            <div style={{ height: 8 }} />
+            <Input size="large" fullWidth placeholder="Large" />
           </div>
           <div widths={[6, 3]}>
-            <Input fullWidth state="success" placeholder="Success" />
-          </div>
-          <div widths={[6, 3]}>
-            <Input fullWidth state="error" placeholder="Error" />
+            <Input variant="filled" size="xs" fullWidth placeholder="X-Small" />
+            <div style={{ height: 8 }} />
+            <Input
+              variant="filled"
+              size="small"
+              fullWidth
+              placeholder="Small"
+            />
+            <div style={{ height: 8 }} />
+            <Input variant="filled" fullWidth placeholder="Default" />
+            <div style={{ height: 8 }} />
+            <Input
+              variant="filled"
+              size="large"
+              fullWidth
+              placeholder="Large"
+            />
           </div>
           <div widths={[6, 3]}>
             <Input
+              size="xs"
               fullWidth
-              icon={<FontAwesomeIcon icon="user" />}
-              placeholder="With icon"
+              placeholder="X-Small"
+              icon={<FontAwesomeIcon icon="heart" />}
+            />
+            <div style={{ height: 8 }} />
+            <Input
+              size="small"
+              fullWidth
+              placeholder="Small"
+              icon={<FontAwesomeIcon icon="heart" />}
+            />
+            <div style={{ height: 8 }} />
+            <Input
+              fullWidth
+              placeholder="Default"
+              icon={<FontAwesomeIcon icon="heart" />}
+            />
+            <div style={{ height: 8 }} />
+            <Input
+              size="large"
+              fullWidth
+              placeholder="Large"
+              icon={<FontAwesomeIcon icon="heart" />}
             />
           </div>
         </Row>
-        <p className="mb-none">Styles</p>
+        <H4>State</H4>
         <Row spacing={[12]} breakpoints={[576, 769]}>
-          <div widths={[6, 3]} alignBottom>
+          <div widths={[6, 3]}>
             <Input fullWidth placeholder="Default" />
+            <div style={{ height: 8 }} />
+            <Input fullWidth placeholder="Success" state="success" />
+            <div style={{ height: 8 }} />
+            <Input fullWidth placeholder="Error" state="error" />
           </div>
-          <div widths={[6, 3]} alignBottom>
-            <Input fullWidth variant="filled" placeholder="Filled" />
+          <div widths={[6, 3]}>
+            <Input variant="filled" fullWidth placeholder="Default" />
+            <div style={{ height: 8 }} />
+            <Input
+              variant="filled"
+              fullWidth
+              placeholder="Success"
+              state="success"
+            />
+            <div style={{ height: 8 }} />
+            <Input
+              variant="filled"
+              fullWidth
+              placeholder="Error"
+              state="error"
+            />
           </div>
-          <div widths={[6, 3]} alignBottom>
-            <Input fullWidth label="With label" placeholder="With label" />
+          <div widths={[6, 3]}>
+            <Input
+              icon={<FontAwesomeIcon icon="heart" />}
+              fullWidth
+              placeholder="Default"
+            />
+            <div style={{ height: 8 }} />
+            <Input
+              icon={<FontAwesomeIcon icon="heart" />}
+              fullWidth
+              placeholder="Success"
+              state="success"
+            />
+            <div style={{ height: 8 }} />
+            <Input
+              icon={<FontAwesomeIcon icon="heart" />}
+              fullWidth
+              placeholder="Error"
+              state="error"
+            />
           </div>
         </Row>
         <Row breakpoints={[476, 960]} spacing={[24]}>

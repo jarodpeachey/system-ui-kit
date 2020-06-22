@@ -152,7 +152,7 @@ const App = ({}) => (
           </MenuItem>
         </Menu>
       </Header> */}
-    <Header fixed color="primary">
+    <Header fixed color="transparent">
       <h1 style={{ margin: '0' }}>Website</h1>
       <Mobile>
         <MobileMenu>
@@ -184,7 +184,7 @@ const App = ({}) => (
                 <Link to="components">Layout</Link>
               </SubMenuItem>
               <SubMenuItem>
-                <Link to="components">Elements</Link>
+                <Link to="inputs">Inputs</Link>
               </SubMenuItem>
             </SubMenu>
           </MenuItem>

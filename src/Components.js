@@ -185,7 +185,7 @@ const Components = ({}) => (
                 <Link to="components">Layout</Link>
               </SubMenuItem>
               <SubMenuItem>
-                <Link to="components">Elements</Link>
+                <Link to="inputs">Inputs</Link>
               </SubMenuItem>
             </SubMenu>
           </MenuItem>
