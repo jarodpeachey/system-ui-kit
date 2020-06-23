@@ -4517,6 +4517,18 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
+nouislider-react@^3.3.8:
+  version "3.3.8"
+  resolved "https://registry.yarnpkg.com/nouislider-react/-/nouislider-react-3.3.8.tgz#224540f39848e1a52070127f16460ef8f03152a7"
+  integrity sha512-Le0kUs29iaUEdaO3cdZcc7EXteFNpXVuasxz4F8Z520PUI17sJJAoggiScPu+Nz6vMx0o9SgK0v8bMXcePF20A==
+  dependencies:
+    nouislider "^14.5.0"
+
+nouislider@^14.5.0:
+  version "14.5.0"
+  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-14.5.0.tgz#36f9c30be39ff687deda42fd98ec36a5bfc45221"
+  integrity sha512-EzI2Y0pO+x20c8yHLvhmT9HXexkbncXHKcnNb6abN48a3F8QEGb73v2W6aPolQytoyjCalUrozSeHBTlpz2jfg==
+
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -5180,6 +5192,11 @@ range-parser@^1.2.1, range-parser@~1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
   integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
+
+rangeslider.js@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/rangeslider.js/-/rangeslider.js-2.3.3.tgz#281953334f94c85823713c00f7e816c770ed6cbc"
+  integrity sha512-FNpe62R6DfGRPAB5rpDKkZtaMDZ0CFqoLprXtNbYiincgld0bHm/Gs/7iuiSD/naM5C3sz+icY3jghKDcGR17g==
 
 raw-body@2.4.0:
   version "2.4.0"

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Code = ({ children, className = '', customStyles }) => {
+const Code = ({ children, className = '', customStyles, style }) => {
   return (
-    <Wrapper customStyles={customStyles} className={className}>
+    <Wrapper style={style} customStyles={customStyles} className={className}>
       {children}
     </Wrapper>
   );

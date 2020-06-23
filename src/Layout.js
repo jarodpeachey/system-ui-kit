@@ -18,12 +18,12 @@ import {
   faHeart,
   faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import MenuItem from './components/MenuItem';
+import NavbarItem from './components/NavbarItem';
 import SubMenuItem from './components/SubMenuItem';
 import SubMenu from './components/SubMenu';
 import Tablet from './components/Tablet';
 import Mobile from './components/Mobile';
-import Menu from './components/Menu';
+import Navbar from './components/Navbar';
 import MobileSubMenuItem from './components/MobileSubMenuItem';
 import MobileMenuItem from './components/MobileMenuItem';
 import MobileMenu from './components/MobileMenu';
@@ -72,11 +72,11 @@ const Layout = ({ children }) => (
         </MobileMenu>
       </Mobile>
       <Tablet>
-        <Menu>
-          <MenuItem>
+        <Navbar>
+          <NavbarItem>
             <a href="/">Home</a>
-          </MenuItem>
-          <MenuItem submenu>
+          </NavbarItem>
+          <NavbarItem submenu>
             <Link to="/components">Components</Link>
             <SubMenu>
               {/* <SubMenuItem>
@@ -89,16 +89,16 @@ const Layout = ({ children }) => (
                 <Link to="/components/display">Display</Link>
               </SubMenuItem>
             </SubMenu>
-          </MenuItem>
-          <MenuItem square>
+          </NavbarItem>
+          <NavbarItem square>
             <a href="/">
               <FontAwesomeIcon
                 icon="heart"
                 style={{ width: 20, height: 20, fontSize: 24 }}
               />
             </a>
-          </MenuItem>
-        </Menu>
+          </NavbarItem>
+        </Navbar>
       </Tablet>
     </Header>
     {children}

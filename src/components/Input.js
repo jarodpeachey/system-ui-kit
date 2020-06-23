@@ -57,6 +57,7 @@ const Input = ({
 
   return (
     <Wrapper
+      className={className}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       fullWidth={fullWidth}
@@ -204,12 +205,12 @@ const Icon = styled.div`
       : '16px'};
   top: ${(props) =>
     props.size === 'xs'
-      ? 'calc(50% - 7px)'
+      ? 'calc(50% - 9px)'
       : props.size === 'small'
-      ? 'calc(50% - 8px)'
-      : props.size === 'large'
       ? 'calc(50% - 11px)'
-      : 'calc(50% - 10px)'};
+      : props.size === 'large'
+      ? 'calc(50% - 14px)'
+      : 'calc(50% - 13px)'};
   font-size: ${(props) =>
     props.size === 'xs'
       ? '15px'
@@ -238,6 +239,7 @@ const StyledInput = styled.input`
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+ */
+  display: inline-block;
 
   /* Rules below not implemented in browsers yet */
   -o-user-select: none;
@@ -322,7 +324,7 @@ const StyledInput = styled.input`
       ? props.size === 'xs'
         ? '30px'
         : props.size === 'small'
-        ? '34px'
+        ? '37px'
         : props.size === 'large'
         ? '50px'
         : '46px'

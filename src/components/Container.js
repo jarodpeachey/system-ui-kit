@@ -8,6 +8,7 @@ const Container = ({
   className = '',
   maxWidth,
   style,
+  size,
 }) => {
   const theme = useContext(ThemeContext);
 
@@ -17,6 +18,7 @@ const Container = ({
       className={className}
       background={background}
       style={style}
+      size={size}
     >
       {children}
     </StyledContainer>
@@ -26,7 +28,16 @@ const Container = ({
 const StyledContainer = styled.div`
   width: 100%;
   margin: 0 auto;
-  max-width: ${(props) => props.maxWidth || '1300'}px;
+  max-width: ${(props) =>
+    props.maxWidth
+      ? props.maxWidth
+      : props.size === 'xs'
+      ? '576'
+      : props.size === 'sm'
+      ? '769'
+      : props.size === 'lg'
+      ? '1500'
+      : '1300'}px;
   padding-left: 16px;
   padding-right: 16px;
   padding: 0 12px;

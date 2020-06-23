@@ -1,20 +1,54 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Hidden = ({ children, show, hide }) => {
   return (
     <>
-      {show && <ShowWrapper show={show}>{children}</ShowWrapper>}
-      {hide && <HideWrapper hide={hide}>{children}</HideWrapper>}
+      <Wrapper show={show} hide={hide}>
+        {children}
+      </Wrapper>
     </>
   );
 };
 
-const ShowWrapper = styled.div`
-  display: none;
-  @media (min-width: ${(props) => props.show}px) {
-    display: block;
-  }
+const Wrapper = styled.div`
+  ${(props) =>
+    props.show &&
+    props.hide &&
+    props.show > props.hide &&
+    css`
+      display: block;
+      @media (min-width: ${props.hide}px) {
+        display: none;
+      }
+      @media (min-width: ${props.show}px) {
+        display: block;
+      }
+    `};
+  ${(props) =>
+    props.show &&
+    props.hide &&
+    props.show < props.hide &&
+    css`
+      display: none;
+      @media (min-width: ${props.show}px) {
+        display: block;
+      }
+      @media (min-width: ${props.hide}px) {
+        display: none;
+      }
+    `};
+  ${(props) =>
+    !(props.show && props.hide) &&
+    css`
+      display: ${props.hide ? 'block' : 'none'};
+      @media (min-width: ${(props) => props.show}px) {
+        display: block;
+      }
+      @media (min-width: ${(props) => props.hide}px) {
+        display: none;
+      }
+    `};
 `;
 const HideWrapper = styled.div`
   display: block;

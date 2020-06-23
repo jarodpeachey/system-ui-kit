@@ -7,9 +7,9 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { Helmet } from 'react-helmet';
 import { theme } from '../theme';
 import Header from '../components/Header';
-import Menu from '../components/Menu';
+import Menu from '../components/Navbar';
 import SubMenu from '../components/SubMenu';
-import MenuItem from '../components/MenuItem';
+import MenuItem from '../components/NavbarItem';
 import SubMenuItem from '../components/SubMenuItem';
 import MobileMenu from '../components/MobileMenu';
 import MobileSubMenu from '../components/MobileSubMenu';
@@ -46,6 +46,7 @@ import Container from '../components/Container';
 import Hidden from '../components/Hidden';
 import Layout from '../Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Slider from '../components/Slider';
 
 const Inputs = ({}) => (
   <Layout>
@@ -279,25 +280,48 @@ const Inputs = ({}) => (
           <div widths={[6, 3]}>
             <Input className="mb-2" size="xs" fullWidth placeholder="X-Small" />
             <div />
-            <Input className="mb-2" size="small" fullWidth placeholder="Small" />
+            <Input
+              className="mb-2"
+              size="small"
+              fullWidth
+              placeholder="Small"
+            />
             <div />
             <Input className="mb-2" fullWidth placeholder="Default" />
             <div />
-            <Input className="mb-2" size="large" fullWidth placeholder="Large" />
+            <Input
+              className="mb-2"
+              size="large"
+              fullWidth
+              placeholder="Large"
+            />
           </div>
           <div widths={[6, 3]}>
-            <Input className="mb-2" variant="filled" size="xs" fullWidth placeholder="X-Small" />
+            <Input
+              className="mb-2"
+              variant="filled"
+              size="xs"
+              fullWidth
+              placeholder="X-Small"
+            />
             <div />
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               variant="filled"
               size="small"
               fullWidth
               placeholder="Small"
             />
             <div />
-            <Input className="mb-2" variant="filled" fullWidth placeholder="Default" />
+            <Input
+              className="mb-2"
+              variant="filled"
+              fullWidth
+              placeholder="Default"
+            />
             <div />
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               variant="filled"
               size="large"
               fullWidth
@@ -305,27 +329,31 @@ const Inputs = ({}) => (
             />
           </div>
           <div widths={[6, 3]}>
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               size="xs"
               fullWidth
               placeholder="X-Small"
               icon={<FontAwesomeIcon icon="heart" />}
             />
             <div />
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               size="small"
               fullWidth
               placeholder="Small"
               icon={<FontAwesomeIcon icon="heart" />}
             />
             <div />
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               fullWidth
               placeholder="Default"
               icon={<FontAwesomeIcon icon="heart" />}
             />
             <div />
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               size="large"
               fullWidth
               placeholder="Large"
@@ -338,21 +366,38 @@ const Inputs = ({}) => (
           <div widths={[6, 3]}>
             <Input className="mb-2" fullWidth placeholder="Default" />
             <div />
-            <Input className="mb-2" fullWidth placeholder="Success" state="success" />
+            <Input
+              className="mb-2"
+              fullWidth
+              placeholder="Success"
+              state="success"
+            />
             <div />
-            <Input className="mb-2" fullWidth placeholder="Error" state="error" />
+            <Input
+              className="mb-2"
+              fullWidth
+              placeholder="Error"
+              state="error"
+            />
           </div>
           <div widths={[6, 3]}>
-            <Input className="mb-2" variant="filled" fullWidth placeholder="Default" />
+            <Input
+              className="mb-2"
+              variant="filled"
+              fullWidth
+              placeholder="Default"
+            />
             <div />
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               variant="filled"
               fullWidth
               placeholder="Success"
               state="success"
             />
             <div />
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               variant="filled"
               fullWidth
               placeholder="Error"
@@ -360,20 +405,23 @@ const Inputs = ({}) => (
             />
           </div>
           <div widths={[6, 3]}>
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               icon={<FontAwesomeIcon icon="heart" />}
               fullWidth
               placeholder="Default"
             />
             <div />
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               icon={<FontAwesomeIcon icon="heart" />}
               fullWidth
               placeholder="Success"
               state="success"
             />
             <div />
-            <Input className="mb-2"
+            <Input
+              className="mb-2"
               icon={<FontAwesomeIcon icon="heart" />}
               fullWidth
               placeholder="Error"
@@ -437,6 +485,13 @@ const Inputs = ({}) => (
               <Option value="two">Two</Option>
               <Option value="three">Three</Option>
             </Select>
+          </div>
+          <div widths={[6, 4]}>
+            <h3>Slider</h3>
+            <Slider initial={82} max={100} />
+            <Slider initial={28} color="secondary" max={100} />
+            <Slider initial={63} color="success" max={100} />
+            <Slider initial={47} color="error" max={100} />
           </div>
         </Row>
       </Container>

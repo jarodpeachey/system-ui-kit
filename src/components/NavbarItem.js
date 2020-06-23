@@ -1,35 +1,65 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import MenuItem from './MenuItem';
+// import Menu from './Menu';
 import { Link } from '@reach/router';
 
-const Menu = ({ children, align }) => {
-  const [show, setShow] = useState(false);
-
-  return (
-    <>
-      <Wrapper
-        onClick={() => {
-          setShow(!show);
-        }}
-        open={show}
+const NavbarItem = ({ children, submenu, square, align }) => {
+  const [showSubMenu, setShowSubMenu] = useState(false);
+  if (submenu) {
+    console.log(children[0].props);
+    const link = (
+      <Link
+        to={children[0].props.to}
+        className="menu-item"
       >
-        {children[0]}
-        <SubMenuWrapper align={align} open={show}>
-          <SubMenu>{children[1]}</SubMenu>
-        </SubMenuWrapper>
+        {children[0].props.children}
+        <FontAwesomeIcon
+          style={{
+            fontSize: 14,
+            position: 'relative',
+            top: 1,
+            left: 6,
+            transform: `${showSubMenu ? 'rotate(180deg)' : 'none'}`,
+            transitionDuration: '.15s',
+          }}
+          icon="chevron-down"
+        />
+      </Link>
+    );
+    return (
+      <>
+        <Wrapper
+          className="menu-item"
+          square={square}
+          onMouseEnter={() => {
+            setShowSubMenu(true);
+          }}
+          onMouseLeave={() => {
+            setShowSubMenu(false);
+          }}
+          open={showSubMenu}
+        >
+          {link}
+          <SubMenuWrapper align={align} open={showSubMenu}>
+            {children[1]}
+          </SubMenuWrapper>
+        </Wrapper>
+      </>
+    );
+  } else {
+    return (
+      <Wrapper className="menu-item" square={square}>
+        {children}
       </Wrapper>
-    </>
-  );
+    );
+  }
 };
 
 const Wrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  width: fit-content;
-  z-index: 999;
   transition-duration: 0.15s !important;
   a {
     display: block;
@@ -61,7 +91,7 @@ const SubMenuWrapper = styled.div`
   left: ${(props) => (props.align !== 'right' ? 0 : null)};
   right: ${(props) => (props.align === 'right' ? 0 : null)};
   z-index: 999;
-  filter: drop-shadow(0px 0px 3px #00000010);
+  filter: drop-shadow(0px 0px 5px #00000010);
   ::after {
     display: block;
     content: '';
@@ -73,24 +103,7 @@ const SubMenuWrapper = styled.div`
     height: 12px;
     transform: rotate(45deg);
     background: white;
-    border-top: 1px solid #efefef;
-    border-left: 1px solid #efefef;
-    z-index: 9999;
   }
 `;
 
-const SubMenu = styled.div`
-  position: absolute;
-  top: calc(100%);
-  // padding-top: 20px;
-  z-index: 999;
-  border-radius: ${(props) => props.theme.radius.one};
-  background: #ffffff;
-  padding: 8px 0;
-  width: 100%;
-  // box-shadow: ${(props) => props.theme.shadow.one};
-      border: 1px solid #efefef;
-
-`;
-
-export default Menu;
+export default NavbarItem;
