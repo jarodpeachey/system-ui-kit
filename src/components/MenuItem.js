@@ -64,7 +64,7 @@ const Wrapper = styled.div`
   a {
     display: block;
     width: fit-content;
-    padding: ${(props) => (props.square ? 12 : '12px 18px')};
+    padding: ${(props) => (props.square ? '12px' : '12px 18px')};
     text-decoration: none;
     cursor: pointer;
     background: ${(props) => (props.open ? '#00000008' : 'transparent')};
