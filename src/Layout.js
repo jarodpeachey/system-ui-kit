@@ -43,7 +43,7 @@ library.add(
   faBell,
   faDollarSign,
   faHeart,
-  faExclamationCircle
+  faExclamationCircle,
 );
 
 const Layout = ({ children }) => (
@@ -58,9 +58,9 @@ const Layout = ({ children }) => (
           <MobileMenuItem submenu>
             <Link to="/components">Components</Link>
             <MobileSubMenu>
-              {/* <MobileSubMenuItem>
-                  <Link to="/layout">Layout</Link>
-                </MobileSubMenuItem> */}
+              <MobileSubMenuItem>
+                <Link to="/components/layout">Layout</Link>
+              </MobileSubMenuItem>
               <MobileSubMenuItem>
                 <Link to="/components/inputs">Inputs</Link>
               </MobileSubMenuItem>
@@ -79,9 +79,9 @@ const Layout = ({ children }) => (
           <NavbarItem submenu>
             <Link to="/components">Components</Link>
             <SubMenu>
-              {/* <SubMenuItem>
-                  <Link to="/layout">Layout</Link>
-                </SubMenuItem> */}
+              <SubMenuItem>
+                <Link to="/components/layout">Layout</Link>
+              </SubMenuItem>
               <SubMenuItem>
                 <Link to="/components/inputs">Inputs</Link>
               </SubMenuItem>

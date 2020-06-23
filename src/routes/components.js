@@ -42,14 +42,14 @@ const Components = () => (
             <Info
               variant="light"
               color="primary"
-              title="Inputs"
+              title="Layout"
               icon={<FontAwesomeIcon icon="user" />}
             >
               <p>
-                Inputs allow users to interact with your website. This includes
-                buttons, text fields, checkboxes and more.
+                Layout components make it easy for you to create responsive
+                websites, grid systems and more.
               </p>
-              <Button link="/components/inputs" color="primary">
+              <Button link="/components/layout" color="primary">
                 See All
               </Button>
             </Info>
@@ -58,7 +58,23 @@ const Components = () => (
             <Info
               variant="light"
               color="secondary"
-              title="Displays"
+              title="Input"
+              icon={<FontAwesomeIcon icon="user" />}
+            >
+              <p>
+                Inputs allow users to interact with your website. This includes
+                buttons, text fields, checkboxes and more.
+              </p>
+              <Button link="/components/inputs" color="secondary">
+                See All
+              </Button>
+            </Info>
+          </div>
+          <div widths={[6, 4]}>
+            <Info
+              variant="light"
+              color="success"
+              title="Display"
               icon={<FontAwesomeIcon icon="user" />}
             >
               <p>
@@ -66,12 +82,11 @@ const Components = () => (
                 prominent fashion. This includes alerts, notifications, chips
                 and more.
               </p>
-              <Button link="/components/display" color="secondary">
+              <Button link="/components/display" color="success">
                 See All
               </Button>
             </Info>
           </div>
-          <div widths={[6, 4]} />
         </Row>
       </Container>
     </Section>
