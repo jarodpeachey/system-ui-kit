@@ -277,27 +277,27 @@ const Inputs = ({}) => (
         <H4>Size</H4>
         <Row spacing={[12]} breakpoints={[576, 769]}>
           <div widths={[6, 3]}>
-            <Input size="xs" fullWidth placeholder="X-Small" />
+            <Input className="mb-2" size="xs" fullWidth placeholder="X-Small" />
             <div />
-            <Input size="small" fullWidth placeholder="Small" />
+            <Input className="mb-2" size="small" fullWidth placeholder="Small" />
             <div />
-            <Input fullWidth placeholder="Default" />
+            <Input className="mb-2" fullWidth placeholder="Default" />
             <div />
-            <Input size="large" fullWidth placeholder="Large" />
+            <Input className="mb-2" size="large" fullWidth placeholder="Large" />
           </div>
           <div widths={[6, 3]}>
-            <Input variant="filled" size="xs" fullWidth placeholder="X-Small" />
+            <Input className="mb-2" variant="filled" size="xs" fullWidth placeholder="X-Small" />
             <div />
-            <Input
+            <Input className="mb-2"
               variant="filled"
               size="small"
               fullWidth
               placeholder="Small"
             />
             <div />
-            <Input variant="filled" fullWidth placeholder="Default" />
+            <Input className="mb-2" variant="filled" fullWidth placeholder="Default" />
             <div />
-            <Input
+            <Input className="mb-2"
               variant="filled"
               size="large"
               fullWidth
@@ -305,27 +305,27 @@ const Inputs = ({}) => (
             />
           </div>
           <div widths={[6, 3]}>
-            <Input
+            <Input className="mb-2"
               size="xs"
               fullWidth
               placeholder="X-Small"
               icon={<FontAwesomeIcon icon="heart" />}
             />
             <div />
-            <Input
+            <Input className="mb-2"
               size="small"
               fullWidth
               placeholder="Small"
               icon={<FontAwesomeIcon icon="heart" />}
             />
             <div />
-            <Input
+            <Input className="mb-2"
               fullWidth
               placeholder="Default"
               icon={<FontAwesomeIcon icon="heart" />}
             />
             <div />
-            <Input
+            <Input className="mb-2"
               size="large"
               fullWidth
               placeholder="Large"
@@ -336,23 +336,23 @@ const Inputs = ({}) => (
         <H4>State</H4>
         <Row spacing={[12]} breakpoints={[576, 769]}>
           <div widths={[6, 3]}>
-            <Input fullWidth placeholder="Default" />
+            <Input className="mb-2" fullWidth placeholder="Default" />
             <div />
-            <Input fullWidth placeholder="Success" state="success" />
+            <Input className="mb-2" fullWidth placeholder="Success" state="success" />
             <div />
-            <Input fullWidth placeholder="Error" state="error" />
+            <Input className="mb-2" fullWidth placeholder="Error" state="error" />
           </div>
           <div widths={[6, 3]}>
-            <Input variant="filled" fullWidth placeholder="Default" />
+            <Input className="mb-2" variant="filled" fullWidth placeholder="Default" />
             <div />
-            <Input
+            <Input className="mb-2"
               variant="filled"
               fullWidth
               placeholder="Success"
               state="success"
             />
             <div />
-            <Input
+            <Input className="mb-2"
               variant="filled"
               fullWidth
               placeholder="Error"
@@ -360,20 +360,20 @@ const Inputs = ({}) => (
             />
           </div>
           <div widths={[6, 3]}>
-            <Input
+            <Input className="mb-2"
               icon={<FontAwesomeIcon icon="heart" />}
               fullWidth
               placeholder="Default"
             />
             <div />
-            <Input
+            <Input className="mb-2"
               icon={<FontAwesomeIcon icon="heart" />}
               fullWidth
               placeholder="Success"
               state="success"
             />
             <div />
-            <Input
+            <Input className="mb-2"
               icon={<FontAwesomeIcon icon="heart" />}
               fullWidth
               placeholder="Error"
