@@ -20,6 +20,7 @@ import Code from '../components/Code';
 import Hidden from '../components/Hidden';
 import Flex from '../components/Flex';
 import Menu from '../components/Menu';
+import MenuItem from '../components/MenuItem';
 
 const NavigationComponents = ({}) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -48,18 +49,28 @@ const NavigationComponents = ({}) => {
       </Hero>
       <Section>
         <Container>
-          <H2>Menu</H2>
+          <H2 className="mt-none">Menu</H2>
           {/* <Menu>
             <MenuItem>Test</MenuItem>
           </Menu> */}
           <Menu align="left">
             <Button>Open Menu</Button>
-            <span>Test</span>
+            <span>
+              <MenuItem>Item One</MenuItem>
+              <MenuItem>Item Two</MenuItem>
+            </span>
           </Menu>
-          <br />
-          <br />
-          <br />
-          <br />
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          {/* <H2 className="mt-none">Tabs</H2>
+          <Tabs>
+            <Tab name="one">Tab One</Tab>
+            <Tab name="two">Tab Two</Tab>
+          </Tabs>
+          <Content name="one">Content One</Content>
+          <Content name="two">Content Two</Content> */}
         </Container>
       </Section>
     </Layout>

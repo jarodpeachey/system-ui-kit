@@ -14,6 +14,7 @@ const Button = ({
   color,
   variant = '',
   size,
+  customStyles,
 }) => (
   <>
     {link ? (
@@ -25,6 +26,7 @@ const Button = ({
           className={className}
           onClick={onClick || null}
           link
+          customStyles={customStyles}
         >
           {children}
         </StyledButton>
@@ -36,6 +38,7 @@ const Button = ({
         variant={variant}
         className={className}
         onClick={onClick || null}
+        customStyles={customStyles}
       >
         {children}
       </StyledButton>
@@ -194,6 +197,11 @@ const StyledButton = styled.button`
         // color: ${props.color === 'white' ? 'initial' : 'white'};
       }
     `};
+    ${(props) =>
+      props.customStyles &&
+      css`
+        ${props.customStyles}
+      `};
 `;
 
 Button.propTypes = {
