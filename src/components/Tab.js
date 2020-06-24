@@ -9,10 +9,12 @@ const Tab = ({
   customStyles,
   fullWidth,
   indicatorColor,
+  activeStyles,
 }) => {
   return (
     <Wrapper
       customStyles={customStyles}
+      activeStyles={activeStyles}
       onClick={() => onClick(name)}
       active={active}
       fullWidth={fullWidth}
@@ -40,8 +42,15 @@ const Wrapper = styled.div`
       border-bottom: 2px solid
         ${props.indicatorColor || props.theme.color.primary.main};
       color: ${props.theme.color.primary.main};
+      ${props.activeStyles};
     `};
   ${(props) => props.customStyles}
+  ${(props) =>
+    props.activeStyles &&
+    props.active &&
+    css`
+      ${props.activeStyles}
+    `};
 `;
 
 export default Tab;

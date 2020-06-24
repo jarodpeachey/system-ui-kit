@@ -26,7 +26,7 @@ const Tabs = ({
   };
 
   useEffect(() => {
-    console.log(value);
+    console.log('Value is: ', value);
     setSelectedTab(value);
   }, [value]);
 

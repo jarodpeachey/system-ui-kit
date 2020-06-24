@@ -31,6 +31,7 @@ import H3 from '../components/H3';
 const NavigationComponents = ({}) => {
   const [showMenu, setShowMenu] = useState(false);
   const [activeTab, setActiveTab] = useState('one');
+  const [activeTabTwo, setActiveTabTwo] = useState('html');
 
   return (
     <Layout>
@@ -90,7 +91,7 @@ const NavigationComponents = ({}) => {
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              paddingRight: 14
+              paddingRight: 14,
             }}
           >
             <Tabs
@@ -240,6 +241,64 @@ const NavigationComponents = ({}) => {
             >
               <FontAwesomeIcon icon="chevron-right" />
             </IconButton>
+          </TabContent>
+          <br />
+          <br />
+          <br />
+          <Tabs
+            onChange={(value) => {
+              console.log('New value: ', value);
+              setActiveTabTwo(value);
+            }}
+            defaultValue="html"
+            value={activeTabTwo}
+            fullWidth
+          >
+            <Tab
+              customStyles={`:hover { background: #efefef80; } border-radius: 6px;`}
+              activeStyles={`:hover { color: white; background: ${theme.color.primary.main}; }color: white; border: none; border-radius: 6px; background: ${theme.color.primary.main};`}
+              name="html"
+            >
+              HTML
+            </Tab>
+            <Tab
+              customStyles={`:hover { background: #efefef80; } border-radius: 6px;`}
+              activeStyles={`:hover { color: white; background: ${theme.color.secondary.main}; }color: white; border: none; border-radius: 6px; background: ${theme.color.secondary.main};`}
+              name="css"
+            >
+              CSS
+            </Tab>
+            <Tab
+              customStyles={`:hover { background: #efefef80; } border-radius: 6px;`}
+              activeStyles={`:hover { color: white; background: ${theme.color.success}; }color: white; border: none; border-radius: 6px; background: ${theme.color.success};`}
+              name="javascript"
+            >
+              Javascript
+            </Tab>
+          </Tabs>
+          <TabContent name="html" value={activeTabTwo}>
+            <H3 className="m-none">HTML</H3>
+            <p>
+              HTML is a modern markup language that defines the content
+              structure of a website.
+            </p>
+            <Button color="primary">Learn More</Button>
+          </TabContent>
+          <TabContent name="css" value={activeTabTwo}>
+            <H3 className="m-none">CSS</H3>
+            <p>
+              CSS is a language used to style websites. Without it, websites
+              would look horrible.
+            </p>
+            <Button color="secondary">Learn More</Button>
+          </TabContent>
+          <TabContent name="javascript" value={activeTabTwo}>
+            <H3 className="m-none">Javascript</H3>
+            <p>
+              Javascript is a language used to build websites and add user
+              interaction. Without it, it would be boring.
+            </p>
+            <Button color="success">Learn More</Button>
           </TabContent>
 
           {/* </div> */}
