@@ -62,7 +62,7 @@ const RadioButtonWrapper = styled.label`
     border-radius: 500px;
     border: 1px solid
       ${(props) =>
-        props.disabled ? 'rgb(230, 230, 230)' : 'rgb(195, 195, 195)'};
+        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.gray.four};
     background: #ffffff;
   }
   input:checked ~ .checkmark {
@@ -82,6 +82,18 @@ const RadioButtonWrapper = styled.label`
   // input:checked ~ .icon {
   //   display: block;
   // }
+    input:hover ~ .checkmark {
+    border: 1px solid ${(props) =>
+      props.disabled
+        ? 'rgb(230, 230, 230)'
+        : `${props.theme.color.primary.main}60`};
+  }
+    input:checked:hover ~ .checkmark {
+    border: 1px solid ${(props) =>
+      props.disabled
+        ? 'rgb(230, 230, 230)'
+        : `${props.theme.color.primary.main}`};
+  }
   input:checked ~ .checkmark > .icon {
     background: ${(props) => props.theme.color.primary.main};
     width: 100%;
@@ -93,10 +105,6 @@ const RadioButtonWrapper = styled.label`
   input:focus ~ .checkmark {
     // box-shadow: 0px 0px 0px 3px ${(props) =>
       props.theme.color.primary.main}30 !important;
-  }
-  input:hover ~ .checkmark {
-    border: 1px solid ${(props) =>
-      props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
   }
 `;
 

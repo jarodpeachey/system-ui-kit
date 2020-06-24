@@ -20,8 +20,8 @@ import { theme } from '../theme';
 import Code from '../components/Code';
 import Hidden from '../components/Hidden';
 import Flex from '../components/Flex';
-import Menu from '../components/Menu';
-import MenuItem from '../components/MenuItem';
+import Dropdown from '../components/Dropdown';
+import DropdownItem from '../components/DropdownItem';
 import Tabs from '../components/Tabs';
 import Tab from '../components/Tab';
 import TabContent from '../components/TabContent';
@@ -32,6 +32,7 @@ const NavigationComponents = ({}) => {
   const [showMenu, setShowMenu] = useState(false);
   const [activeTab, setActiveTab] = useState('one');
   const [activeTabTwo, setActiveTabTwo] = useState('html');
+  const [activeTabThree, setActiveTabThree] = useState('design');
 
   return (
     <Layout>
@@ -61,13 +62,13 @@ const NavigationComponents = ({}) => {
           {/* <Menu>
             <MenuItem>Test</MenuItem>
           </Menu> */}
-          <Menu align="right">
-            <Button>Open Menu</Button>
+          <Dropdown align="left">
+            <Button>Open</Button>
             <span>
-              <MenuItem>Item One</MenuItem>
-              <MenuItem>Item Two</MenuItem>
+              <DropdownItem>Item One</DropdownItem>
+              <DropdownItem>Item Two</DropdownItem>
             </span>
-          </Menu>
+          </Dropdown>
         </Container>
       </Section>
       <Section>
@@ -81,6 +82,64 @@ const NavigationComponents = ({}) => {
               boxShadow: theme.shadow.two,
             }}
           > */}
+
+          <div>
+            <Tabs
+              onChange={(value) => setActiveTabThree(value)}
+              // fullWidth
+              value={activeTabThree}
+            >
+              <Tab name="design">Design</Tab>
+              <Tab name="develop">Develop</Tab>
+              <Tab name="launch">Launch</Tab>
+            </Tabs>
+            <TabContent name="design" value={activeTabThree}>
+              <p className="m-none">
+                Cosby sweater eu banh mi, qui irure. Amet lorem et luctus. Sed
+                eget nulla ac metus porttitor tristique ac quis mauris. Praesent
+                condimentum justo in sapien semper,{' '}
+              </p>
+              <p>
+                Aliquam metus libero, pretium non posuere ut, ultrices sed
+                mauris. Pellentesque ut nunc tincidunt, consequat odio nec,
+                bibendum mauris. Vivamus blandit bibendum dolor, non ornare
+                lectus maximus in. Etiam ac nibh vel orci commodo congue. Nullam
+                pulvinar sit. Vitae varius magna fermentum. Vivamus mattis
+                turpis ut nulla facilisis, sit amet sagittis eros consectetur.
+                Nam viverra iaculis fermentum. Class aptent taciti sociosqu ad
+                litora torquent per conubia nostra, per inceptos himenaeos.
+              </p>
+            </TabContent>
+            <TabContent name="develop" value={activeTabThree}>
+              <p className="m-none">
+                Cras ornare luctus lectus vel varius. Sed neque risus, pharetra
+                vitae pellentesque vitae, scelerisque at nunc. Vestibulum
+                maximus fermentum nisi nec luctus. Maecenas vitae purus
+                facilisis, dapibus diam id, gravida nisi. Suspendisse tincidunt
+                nisl dui, condimentum semper erat mollis sit amet. Sed
+                sollicitudin lorem sit amet massa efficitur sollicitudin.
+              </p>
+              <p>
+                Vivamus sed neque maximus, malesuada risus vitae, bibendum
+                turpis. Nunc orci ligula, dignissim ac viverra et, ornare sed
+                augue.
+              </p>
+            </TabContent>
+            <TabContent name="launch" value={activeTabThree}>
+              <p className="m-none">
+                Cosby sweater eu banh mi, qui irure terry richardson ex squid.
+                Aliquip placeat salvia cillum iphone. Seitan aliquip quis
+                cardigan american apparel, butcher voluptate nisi qui.
+              </p>
+              <p>
+                Mustache cliche tempor, williamsburg carles vegan helvetica.
+                Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+              </p>
+            </TabContent>
+          </div>
+          <br />
+          <br />
+          <br />
           <div
             style={{
               boxShadow: '0px 4px 12px -7px #00000040',
@@ -123,15 +182,15 @@ const NavigationComponents = ({}) => {
               </Tab>
             </Tabs>
 
-            <Menu align="right">
+            <Dropdown align="right">
               <IconButton color="white" circle variant="plain">
                 <FontAwesomeIcon icon="user" />
               </IconButton>
               <span>
-                <MenuItem>Settings</MenuItem>
-                <MenuItem>Profile</MenuItem>
+                <DropdownItem>Settings</DropdownItem>
+                <DropdownItem>Profile</DropdownItem>
               </span>
-            </Menu>
+            </Dropdown>
           </div>
           <TabContent
             value={activeTab}

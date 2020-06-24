@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   cursor: pointer;
   :hover {
     background: ${(props) =>
-      props.active ? props.theme.color.primary.main : '#efefef'};
+      props.active ? props.theme.color.primary.main : props.theme.color.gray.one};
   }
   color: ${(props) => (props.active ? 'white' : '')};
   background: ${(props) =>

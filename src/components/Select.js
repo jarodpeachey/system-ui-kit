@@ -63,7 +63,7 @@ const Wrapper = styled.div`
 `;
 
 const SelectWrapper = styled.div`
-  padding: ${(props) => (props.open ? '13px 13px' : '14px 14px')};
+  padding: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -73,13 +73,13 @@ const SelectWrapper = styled.div`
   transition-duration: 0.15s;
   border: ${(props) =>
     props.open
-      ? `2px solid ${props.theme.color.primary.main}`
-      : '1px solid rgb(195, 195, 195)'};
+      ? `1px solid ${props.theme.color.primary.main}`
+      : `1px solid ${props.theme.color.gray.four}`};
   :hover {
     border: ${(props) =>
       props.open
-        ? `2px solid ${props.theme.color.primary.main}`
-        : `1px solid ${props.theme.color.primary.main}`};
+        ? `1px solid ${props.theme.color.primary.main}`
+        : `1px solid ${props.theme.color.primary.main}60`};
   }
 `;
 

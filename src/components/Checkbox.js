@@ -94,7 +94,7 @@ const CheckboxWrapper = styled.label`
     border-radius: 2px;
     border: 1px solid
       ${(props) =>
-        props.disabled ? 'rgb(230, 230, 230)' : 'rgb(195, 195, 195)'};
+        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.gray.four};
     background: #ffffff;
     transition: 0.1s;
   }
@@ -123,9 +123,17 @@ const CheckboxWrapper = styled.label`
   //   box-shadow: 0px 0px 0px 3px ${(props) =>
     props.theme.color.primary.main}30 !important;
   // }
-  input:hover ~ .checkmark {
+    input:hover ~ .checkmark {
     border: 1px solid ${(props) =>
-      props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
+      props.disabled
+        ? 'rgb(230, 230, 230)'
+        : `${props.theme.color.primary.main}60`};
+  }
+    input:checked:hover ~ .checkmark {
+    border: 1px solid ${(props) =>
+      props.disabled
+        ? 'rgb(230, 230, 230)'
+        : `${props.theme.color.primary.main}`};
   }
 `;
 

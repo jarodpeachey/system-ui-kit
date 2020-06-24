@@ -70,7 +70,7 @@ const NotificationWrapper = styled.div`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : '#efefef'};
+      : props.theme.color.gray.two};
   * {
     color: ${(props) => (props.color ? 'white' : null)};
   }

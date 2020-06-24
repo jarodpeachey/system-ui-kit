@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   margin-bottom: ${(props) => props.theme.spacing.three}px;
   margin-left: ${(props) => props.theme.spacing.one}px;
   margin-right: ${(props) => props.theme.spacing.one}px;
-  padding: ${(props) => props.theme.spacing.one}px
+  padding: 2px
     ${(props) => props.theme.spacing.two}px;
   background: ${(props) =>
     props.color === 'primary'
@@ -31,12 +31,12 @@ const Wrapper = styled.div`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : '#efefef'};
+      : props.theme.color.gray.two};
   div {
     font-size: 14px;
     color: ${(props) => (props.color === '' ? '' : 'white')};
   }
-  border-radius: 100px;
+  border-radius: 3px;
   padding-left: ${(props) => (props.icon ? '0' : '8px')};
 `;
 

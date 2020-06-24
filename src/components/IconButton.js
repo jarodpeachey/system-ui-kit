@@ -91,7 +91,7 @@ const StyledButton = styled.button`
             ? props.theme.color.error
             : props.color === 'white'
             ? 'white'
-            : '#efefef'};      
+            : props.theme.color.gray.two};      
     color: ${(props) =>
       props.color === 'white'
         ? ''
@@ -116,7 +116,7 @@ const StyledButton = styled.button`
                 ? props.theme.color.error
                 : props.color === 'white'
                 ? 'white'
-                : '#efefef'
+                : props.theme.color.gray.two
             }`,
             -25,
           )};
@@ -150,7 +150,7 @@ const StyledButton = styled.button`
           ? props.theme.color.error
           : props.color === 'white'
           ? 'white'
-          : '#efefef'};
+          : props.theme.color.gray.two};
       :hover {
         background: ${props.color === 'primary'
           ? props.theme.color.primary.main
@@ -162,7 +162,7 @@ const StyledButton = styled.button`
           ? props.theme.color.error
           : props.color === 'white'
           ? 'white'
-          : '#efefef'};
+          : props.theme.color.gray.two};
         color: ${props.color === 'white'
           ? 'initial'
           : props.color
@@ -200,7 +200,7 @@ const StyledButton = styled.button`
             : props.color === 'error'
             ? props.theme.color.error
             : props.color === 'white'
-            ? '#efefef'
+            ? props.theme.color.gray.two
             : '#666666'
         }15;
         // color: ${props.color === 'white' ? 'initial' : 'white'};

@@ -35,14 +35,24 @@ const Wrapper = styled.div`
   cursor: pointer;
   transition: 0.15s;
   border-bottom: 2px solid transparent;
+  border-radius: 3px;
   width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
+  :hover {
+    background: ${(props) => props.theme.color.gray.one};
+  }
   ${(props) =>
     props.active &&
     css`
-      border-bottom: 2px solid
-        ${props.indicatorColor || props.theme.color.primary.main};
-      color: ${props.theme.color.primary.main};
+      color: white;
+      background: ${props.theme.color.primary.main};
       ${props.activeStyles};
+      // box-shadow: ${props.theme.shadow.one};
+      :hover {
+        color: white;
+        background: ${props.theme.color.primary.main};
+        ${props.activeStyles};
+        // box-shadow: ${props.theme.shadow.one};
+      }
     `};
   ${(props) => props.customStyles}
   ${(props) =>

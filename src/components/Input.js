@@ -193,7 +193,7 @@ const NumberButton = styled.div`
 `;
 
 const Icon = styled.div`
-  color: ${(props) => props.theme.color.gray.eight}dd;
+  color: ${(props) => pSBC(props.theme.color.gray.three, -25)};
   position: absolute;
   left: ${(props) =>
     props.size === 'xs'
@@ -255,12 +255,12 @@ const StyledInput = styled.input`
       : '13px 15px'};
   font-size: ${(props) =>
     props.size === 'xs'
-      ? '14px'
+      ? '13px'
       : props.size === 'small'
       ? '14px'
       : props.size === 'large'
-      ? '16px'
-      : '16px'};
+      ? '17px'
+      : '15px'};
   transition-duration: 0.15s;
   display: inline-block;
   width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
@@ -268,13 +268,13 @@ const StyledInput = styled.input`
     props.variant === 'filled'
       ? css`
           border-radius: ${props.theme.radius.one};
-          background: #f7f7f7;
+          background: ${props.theme.color.gray.one};
           border: 1px solid
             ${props.state === 'success'
               ? props.theme.color.success
               : props.state === 'error'
               ? props.theme.color.error
-              : '#f7f7f7'};
+              : props.theme.color.gray.one};
         `
       : css`
           border-radius: ${props.theme.radius.one};
@@ -283,7 +283,7 @@ const StyledInput = styled.input`
               ? props.theme.color.success
               : props.state === 'error'
               ? props.theme.color.error
-              : 'rgb(195, 195, 195)'};
+              : props.theme.color.gray.four};
         `};
   ${(props) =>
     props.hover &&
@@ -295,7 +295,7 @@ const StyledInput = styled.input`
           ? props.theme.color.success
           : props.state === 'error'
           ? props.theme.color.error
-          : props.theme.color.primary.main
+          : `${props.theme.color.primary.main}60`
       };
   `}
   :hover {
@@ -303,21 +303,8 @@ const StyledInput = styled.input`
   :focus ~ div svg {
   }
   :focus {
-    outline: 1px
-      ${(props) =>
-        props.state === 'success'
-          ? props.theme.color.success
-          : props.state === 'error'
-          ? props.theme.color.error
-          : props.theme.color.primary.main}
-      auto;
-    border: 1px solid
-      ${(props) =>
-        props.state === 'success'
-          ? props.theme.color.success
-          : props.state === 'error'
-          ? props.theme.color.error
-          : props.theme.color.primary.main};
+    outline: none;
+    border: 1px solid ${(props) => props.theme.color.primary.main};
   }
   padding-left: ${(props) =>
     props.withIcon

@@ -247,7 +247,7 @@ const Inputs = ({}) => (
         <br />
       </Container>
     </Section>
-    <Section background="#f7f7f7">
+    <Section background={theme.color.gray.one}>
       <Container>
         <H2>IconButton</H2>
         <p>

@@ -12,7 +12,7 @@ const TabContent = ({ active, children, customStyles, value, name }) => {
 const Wrapper = styled.div`
   padding: 16px;
   border: 1px solid #efefef;
-  border-radius: 3;
+  border-radius: 3px;
   margin-top: 16px;
   display: none;
 

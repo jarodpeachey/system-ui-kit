@@ -67,11 +67,11 @@ const Wrapper = styled.div`
     padding: ${(props) => (props.square ? '12px' : '12px 18px')};
     text-decoration: none;
     cursor: pointer;
-    background: ${(props) => (props.open ? '#00000008' : 'transparent')};
+    background: ${(props) => (props.open ? '#08236f08' : 'transparent')};
     border-radius: ${(props) => props.theme.radius.one};
     transition-duration: 0.15s !important;
     :hover {
-      background: #00000008;
+      background: #08236f08;
     }
   }
 `;

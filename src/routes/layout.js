@@ -140,7 +140,7 @@ const LayoutComponents = ({}) => {
             {'<Flex>...</Flex>'}
           </Code>
           <Flex
-            style={{ height: 200, background: `#f7f7f7` }}
+            style={{ height: 200, background: theme.color.gray.one }}
             direction="horizontal"
           >
             <Button color="primary" className="m-2">
@@ -164,7 +164,7 @@ const LayoutComponents = ({}) => {
             {'<Flex vAlign="stretch" hAlign="space-evenly">...</Flex>'}
           </Code>
           <Flex
-            style={{ height: 200, background: `#f7f7f7` }}
+            style={{ height: 200, background: theme.color.gray.one }}
             direction="horizontal"
             vAlign="stretch"
             hAlign="space-evenly"

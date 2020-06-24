@@ -8,6 +8,7 @@ import Components from './routes/components';
 import Display from './routes/display';
 import LayoutComponents from './routes/layout';
 import NavigationComponents from './routes/navigation';
+import TypographyComponents from './routes/typography';
 
 const Routes = ({}) => (
   <>
@@ -16,6 +17,7 @@ const Routes = ({}) => (
       <Inputs path="/components/inputs" />
       <LayoutComponents path="/components/layout" />
       <NavigationComponents path="/components/navigation" />
+      <TypographyComponents path="/components/typography" />
       <Display path="/components/display" />
       <Components path="/components" />
     </Router>
