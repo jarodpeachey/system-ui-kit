@@ -17,7 +17,7 @@ const Menu = ({ children, align }) => {
       >
         {children[0]}
         <SubMenuWrapper align={align} open={show}>
-          <SubMenu>{children[1]}</SubMenu>
+          <SubMenu align={align}>{children[1]}</SubMenu>
         </SubMenuWrapper>
       </Wrapper>
     </>
@@ -54,7 +54,7 @@ const SubMenuWrapper = styled.div`
       ${(props) => (props.open ? ', visibility 0s 0s' : ', visibility 0s .1s')};
   transform: ${(props) => (props.open ? 'scale(1)' : 'scale(.95)')};
   position: absolute;
-  min-width: calc(100%);
+  min-width: 100%;
   top: calc(100%);
   padding-top: 14px;
   margin: 0 auto;
@@ -87,8 +87,11 @@ const SubMenu = styled.div`
   border-radius: ${(props) => props.theme.radius.one};
   background: #ffffff;
   padding: 8px 0;
-  width: 100%;
-  // box-shadow: ${(props) => props.theme.shadow.one};
+  min-width: 100%;
+    right: ${(props) => (props.align === 'right' ? '0' : null)};
+    left: ${(props) =>
+      props.align !== 'right' ? '0' : null};  // box-shadow: ${(props) =>
+  props.theme.shadow.one};
       // border: 1px solid #efefef;
 
 `;

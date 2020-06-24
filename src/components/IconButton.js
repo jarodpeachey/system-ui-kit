@@ -14,6 +14,8 @@ const Button = ({
   variant = '',
   size,
   circle,
+  customStyles,
+  disabled,
 }) => (
   <span>
     {link ? (
@@ -26,6 +28,8 @@ const Button = ({
           className={className}
           onClick={onClick || null}
           link
+          customStyles={customStyles}
+          disabled={disabled}
         >
           {children}
         </StyledButton>
@@ -38,6 +42,8 @@ const Button = ({
         variant={variant}
         className={className}
         onClick={onClick || null}
+        customStyles={customStyles}
+        disabled={disabled}
       >
         {children}
       </StyledButton>
@@ -50,7 +56,6 @@ const StyledButton = styled.button`
     props.variant === 'secondary' ? props.theme.shadow.two : 'none'};
 
   outline: none;
-  margin-right: 12px;
   padding: 12px 24px;
   border: none;
   font-size: 16px;
@@ -199,6 +204,17 @@ const StyledButton = styled.button`
             : '#666666'
         }15;
         // color: ${props.color === 'white' ? 'initial' : 'white'};
+      }
+    `};
+  ${(props) => props.customStyles};
+  ${(props) =>
+    props.disabled &&
+    css`
+      background: transparent;
+      color: #888;
+      :hover {
+        background: transparent;
+        cursor: default;
       }
     `};
 `;

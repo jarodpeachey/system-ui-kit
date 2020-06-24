@@ -17,6 +17,8 @@ import {
   faCheck,
   faHeart,
   faExclamationCircle,
+  faChevronRight,
+  faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import NavbarItem from './components/NavbarItem';
 import SubMenuItem from './components/SubMenuItem';
@@ -44,6 +46,8 @@ library.add(
   faDollarSign,
   faHeart,
   faExclamationCircle,
+  faChevronRight,
+  faChevronLeft,
 );
 
 const Layout = ({ children }) => (

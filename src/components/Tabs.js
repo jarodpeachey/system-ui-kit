@@ -1,21 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Tab from './Tab';
+import Flex from './Flex';
+import TabContent from './TabContent';
+import TabList from './TabList';
 
-const Tabs = ({ children }) => {
-  const [selectedTab, setSelectedTab] = useState(children[0].props.name);
+const Tabs = ({
+  children,
+  onChange,
+  defaultValue,
+  customStyles,
+  fullWidth,
+  value,
+  indicatorColor,
+}) => {
+  const [selectedTab, setSelectedTab] = useState(
+    value || defaultValue || children[0].props.children[0].props.name,
+  );
+
+  const customOnClick = (newValue) => {
+    console.log('Custom onClick!');
+    setSelectedTab(newValue);
+
+    onChange(newValue);
+  };
+
+  useEffect(() => {
+    console.log(value);
+    setSelectedTab(value);
+  }, [value]);
 
   return (
-    <Wrapper>
-      {children.map((child) => {
-        let newProps = { ...child.props };
-        newProps.active = selectedTab === child.props.name;
+    <Wrapper customStyles={customStyles}>
+      <Flex hAlign="start">
+        {children.map((child) => {
+          console.log(child.type.name);
+          let newProps = {
+            ...child.props,
+            onClick: customOnClick,
+            selectedTab,
+            fullWidth: fullWidth,
+            indicatorColor: indicatorColor,
+          };
+          newProps.active = selectedTab === child.props.name;
 
-        return <Tab>{child}</Tab>;
-      })}
+          return <Tab {...newProps}>{child.props.children}</Tab>;
+        })}
+      </Flex>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  ${(props) => props.customStyles}
+`;
 
 export default Tabs;
