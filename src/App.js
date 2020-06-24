@@ -52,7 +52,9 @@ const App = ({}) => (
     </Section>
     <Section className="pt-none" spacing="large">
       <Container>
-        <H5 className="center mt-none">Built For You</H5>
+        <H5 title color="primary" className="center mt-none">
+          Built For You
+        </H5>
         <H2 className="center mt-3">What is System?</H2>
         <p className="center" style={{ maxWidth: 780 }}>
           System is a UI Kit like none other. It's dead-simple to get up and
@@ -88,7 +90,9 @@ const App = ({}) => (
     </Section>
     <Section spacing="large">
       <Container>
-        <H5 className="mt-none">The Benefits</H5>
+        <H5 color="primary" title className="mt-none">
+          The Benefits
+        </H5>
         <H2 className="mt-3 mb-7">Simplicity and Ease</H2>
         <Row spacing={[24, 12]} breakpoints={[769, 960]}>
           <div widths={[6, 4]}>
@@ -136,7 +140,7 @@ const App = ({}) => (
         <Button
           className="center mt-5"
           link="/components"
-          color="secondary"
+          color="primary"
           variant="light"
         >
           View Components

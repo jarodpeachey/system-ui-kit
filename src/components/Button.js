@@ -92,7 +92,7 @@ const StyledButton = styled.button`
           props.color === 'error'
         ? 'white'
         : null};
-      border: 2px solid transparent;
+      border: 1px solid transparent;
       :hover {
         background: ${(props) =>
           props.color === 'primary'
@@ -125,7 +125,7 @@ const StyledButton = styled.button`
         : props.color === 'white'
         ? 'white'
         : ''};
-      border: 2px solid
+      border: 1px solid
         ${props.color === 'primary'
           ? props.theme.color.primary.main
           : props.color === 'secondary'
@@ -174,7 +174,7 @@ const StyledButton = styled.button`
           ? 'white'
           : ''
       };
-      border: 2px solid transparent;
+      border: 1px solid transparent;
       :hover {
         background: ${
           props.color === 'primary'

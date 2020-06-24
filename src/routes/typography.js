@@ -18,6 +18,7 @@ import H3 from '../components/H3';
 import H4 from '../components/H4';
 import H5 from '../components/H5';
 import H6 from '../components/H6';
+import Paragraph from '../components/Paragraph';
 import { theme } from '../theme';
 import Code from '../components/Code';
 import Hidden from '../components/Hidden';
@@ -51,7 +52,7 @@ const TypographyComponents = ({}) => {
           </p>
         </div>
       </Hero>
-      <Section>
+      <Section spacing="small">
         <Container>
           <H3 className="mt-none">Headings</H3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -198,8 +199,29 @@ const TypographyComponents = ({}) => {
               </tr>
             </tbody>
           </table>
-          <H4>Accents</H4>
-          <H5 title>Title</H5>
+        </Container>
+      </Section>
+      <Section spacing="small">
+        <Container>
+          <H4 className="mt-none">Accents</H4>
+          <H5 className="m-none" title>
+            Heading Title
+          </H5>
+          <H5 className="m-none" color="secondary" title>
+            Heading Title
+          </H5>
+          <H5 className="m-none" color="success" title>
+            Heading Title
+          </H5>
+          <H5 className="m-none" color="error" title>
+            Heading Title
+          </H5>
+        </Container>
+      </Section>
+      <Section spacing="small">
+        <Container>
+          <H4 className="mt-none">Paragraphs</H4>
+          <Paragraph>This is a really cool paragraph of words.</Paragraph>
         </Container>
       </Section>
     </Layout>
