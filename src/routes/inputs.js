@@ -30,17 +30,7 @@ import RadioButton from '../components/RadioButton';
 import Toggle from '../components/Toggle';
 import Select from '../components/Select';
 import Option from '../components/Option';
-import H1 from '../components/H1';
-import H2 from '../components/H2';
-import H3 from '../components/H3';
-import H4 from '../components/H4';
-import H5 from '../components/H5';
-import H6 from '../components/H6';
-import Alert from '../components/Alert';
-import Badge from '../components/Chip';
-import Mobile from '../components/Mobile';
-import Tablet from '../components/Tablet';
-import Info from '../components/Info';
+import Heading from '../components/Heading';
 import { Link } from '@reach/router';
 import Container from '../components/Container';
 import Hidden from '../components/Hidden';
@@ -99,15 +89,17 @@ const Inputs = ({}) => (
       )`}
     >
       <div style={{ textAlign: 'center' }}>
-        <h1 style={{ color: '#ffffff', fontSize: 48, margin: 0 }}>
+        <Heading type="h1" background="dark" className="m-none">
           Input Components
-        </h1>
+        </Heading>
       </div>
     </Hero>
     <Section>
       <Container>
-        <H2>Button</H2>
-        <H4 className="mb-none">Variant</H4>
+        <Heading type="h2">Button</Heading>
+        <Heading type="h4" className="mb-none">
+          Variant
+        </Heading>
         <p className="mt-2">
           The variant prop is used to change the appearance of a button.
         </p>
@@ -122,7 +114,9 @@ const Inputs = ({}) => (
         </Button>
         <br />
         <br />
-        <H4 className="mb-none">Size</H4>
+        <Heading type="h4" className="mb-none">
+          Size
+        </Heading>
         <p className="mt-2">
           The size prop is used to change the size of a button.
         </p>
@@ -137,7 +131,9 @@ const Inputs = ({}) => (
         </Button>
         <br />
         <br />
-        <H4 className="mb-none">Color</H4>
+        <Heading type="h4" className="mb-none">
+          Color
+        </Heading>
         <p className="mt-2">
           The color prop is used to change the color of a button.
         </p>
@@ -249,7 +245,9 @@ const Inputs = ({}) => (
     </Section>
     <Section background={theme.color.gray.one}>
       <Container>
-        <H2>IconButton</H2>
+        <Heading type="h2">
+          IconButton
+        </Heading>
         <p>
           The IconButton element extends all the props from the Button
           component. It also adds a new circle prop.
@@ -274,8 +272,8 @@ const Inputs = ({}) => (
     </Section>
     <Section>
       <Container>
-        <H2>Text Field</H2>
-        <H4>Size</H4>
+        <Heading type="h2">Text Field</Heading>
+        <Heading type="h4">Size</Heading>
         <Row spacing={[12]} breakpoints={[576, 769]}>
           <div widths={[6, 3]}>
             <Input className="mb-2" size="xs" fullWidth placeholder="X-Small" />
@@ -361,7 +359,7 @@ const Inputs = ({}) => (
             />
           </div>
         </Row>
-        <H4>State</H4>
+        <Heading type="h4">State</Heading>
         <Row spacing={[12]} breakpoints={[576, 769]}>
           <div widths={[6, 3]}>
             <Input className="mb-2" fullWidth placeholder="Default" />

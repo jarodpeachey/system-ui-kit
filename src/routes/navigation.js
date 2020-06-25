@@ -7,7 +7,7 @@ import Section from '../components/Section';
 import Button from '../components/Button';
 import IconButton from '../components/IconButton';
 import Row from '../components/Row';
-import H2 from '../components/H2';
+import Heading from '../components/Heading';
 import H4 from '../components/H4';
 import Alert from '../components/Alert';
 import Chip from '../components/Chip';
@@ -27,6 +27,7 @@ import Tab from '../components/Tab';
 import TabContent from '../components/TabContent';
 import TabList from '../components/TabList';
 import H3 from '../components/H3';
+import SubTitle from '../components/SubTitle';
 
 const NavigationComponents = ({}) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -47,23 +48,28 @@ const NavigationComponents = ({}) => {
       )`}
       >
         <div style={{ textAlign: 'center' }}>
-          <h1 style={{ color: '#ffffff', fontSize: 48, margin: 0 }}>
+          <Heading type="h1" background="dark" className="m-none">
             Layout Components
-          </h1>
-          <p style={{ color: '#ffffffaa' }}>
+          </Heading>
+          <SubTitle type="h4" background="dark">
             Layout components allow you to display information to a user in a
             prominent location.
-          </p>
+          </SubTitle>
         </div>
       </Hero>
       <Section>
         <Container>
-          <H2 className="mt-none">Menu</H2>
+          <Heading type="h2" className="mt-none">Menu</Heading>
           {/* <Menu>
             <MenuItem>Test</MenuItem>
           </Menu> */}
+          <Button>Test</Button>
           <Dropdown align="left">
-            <Button>Open</Button>
+            <Button>
+              <Flex hAlign="center" vAlign="center">
+                Open<FontAwesomeIcon icon="chevron-down" />
+              </Flex>
+            </Button>
             <span>
               <DropdownItem>Item One</DropdownItem>
               <DropdownItem>Item Two</DropdownItem>
@@ -73,7 +79,7 @@ const NavigationComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 className="mt-none">Tabs</H2>
+          <Heading type="h2" className="mt-none">Tabs</Heading>
           {/* <div
             style={{
               borderRadius: 3,
@@ -197,7 +203,7 @@ const NavigationComponents = ({}) => {
             customStyles={`border-top: none; border-top-right-radius: 0; border-top-left-radius: 0; margin: 0;`}
             name="one"
           >
-            <H3 className="mt-none">Content One</H3>
+            <Heading type="h3" className="mt-none">Content One</Heading>
             <p>
               This is a content box, controlled by the tabs up there. Go ahead
               click them and see what happens!
@@ -232,7 +238,7 @@ const NavigationComponents = ({}) => {
             customStyles={`border-top: none; border-top-right-radius: 0; border-top-left-radius: 0; margin: 0;`}
             name="two"
           >
-            <H3 className="mt-none">Content Two</H3>
+            <Heading type="h3" className="mt-none">Content Two</Heading>
             <p>
               This is a content box, controlled by the tabs up there. Go ahead
               click them and see what happens!
@@ -271,7 +277,7 @@ const NavigationComponents = ({}) => {
             customStyles={`border-top: none; border-top-right-radius: 0; border-top-left-radius: 0; margin: 0;`}
             name="three"
           >
-            <H3 className="mt-none">Content Three</H3>
+            <Heading type="h3" className="mt-none">Content Three</Heading>
             <p>
               This is a content box, controlled by the tabs up there. Go ahead
               click them and see what happens!
@@ -336,7 +342,7 @@ const NavigationComponents = ({}) => {
             </Tab>
           </Tabs>
           <TabContent name="html" value={activeTabTwo}>
-            <H3 className="m-none">HTML</H3>
+            <Heading type="h3" className="m-none">HTML</Heading>
             <p>
               HTML is a modern markup language that defines the content
               structure of a website.
@@ -344,7 +350,7 @@ const NavigationComponents = ({}) => {
             <Button color="primary">Learn More</Button>
           </TabContent>
           <TabContent name="css" value={activeTabTwo}>
-            <H3 className="m-none">CSS</H3>
+            <Heading type="h3" className="m-none">CSS</Heading>
             <p>
               CSS is a language used to style websites. Without it, websites
               would look horrible.
@@ -352,7 +358,7 @@ const NavigationComponents = ({}) => {
             <Button color="secondary">Learn More</Button>
           </TabContent>
           <TabContent name="javascript" value={activeTabTwo}>
-            <H3 className="m-none">Javascript</H3>
+            <Heading type="h3" className="m-none">Javascript</Heading>
             <p>
               Javascript is a language used to build websites and add user
               interaction. Without it, it would be boring.

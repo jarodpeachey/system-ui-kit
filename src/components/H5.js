@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const H5 = ({ children, className = '', title, color, customStyles }) => {
+const H5 = ({ children, className = '', title, color, customStyles, light, background }) => {
   return (
     <StyledH5
       customStyles={customStyles}

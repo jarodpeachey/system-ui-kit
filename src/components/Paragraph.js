@@ -30,7 +30,9 @@ const StyledParagraph = styled.p`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : null};
+      : props.background === 'dark'
+      ? props.theme.color.text.light.two
+      : props.theme.color.text.dark.two};
   ${(props) =>
     props.customStyles &&
     css`

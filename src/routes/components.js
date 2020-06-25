@@ -8,10 +8,11 @@ import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Button from '../components/Button';
 import Row from '../components/Row';
-import H2 from '../components/H2';
+import Heading from '../components/Heading';
 import Info from '../components/Info';
 import Container from '../components/Container';
 import Layout from '../Layout';
+import SubTitle from '../components/SubTitle';
 
 const Components = () => (
   <Layout>
@@ -26,17 +27,19 @@ const Components = () => (
       )`}
     >
       <div style={{ textAlign: 'center' }}>
-        <h1 style={{ color: '#ffffff', fontSize: 48, margin: 0 }}>
+        <Heading type="h1" background="dark" className="m-none">
           Components
-        </h1>
-        <p style={{ color: '#ffffffaa' }}>
+        </Heading>
+        <SubTitle type="h4" background="dark">
           Boxes, buttons, inputs, alerts and more!
-        </p>
+        </SubTitle>
       </div>
     </Hero>
     <Section>
       <Container>
-        <H2 className="mt-none">Components List</H2>
+        <Heading type="h2" className="mt-none">
+          Components List
+        </Heading>
         <Row spacing={[24, 12]} breakpoints={[769, 960]}>
           <div widths={[6, 4]}>
             <Info

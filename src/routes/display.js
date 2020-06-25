@@ -6,8 +6,7 @@ import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Button from '../components/Button';
 import Row from '../components/Row';
-import H2 from '../components/H2';
-import H4 from '../components/H4';
+import Heading from '../components/Heading';
 import Alert from '../components/Alert';
 import Chip from '../components/Chip';
 import { Link } from '@reach/router';
@@ -15,6 +14,7 @@ import Container from '../components/Container';
 import Notification from '../components/Notification';
 import Layout from '../Layout';
 import { theme } from '../theme';
+import SubTitle from '../components/SubTitle';
 
 const Display = ({}) => {
   const [showNotificationOne, setShowNotificationOne] = useState(false);
@@ -36,19 +36,19 @@ const Display = ({}) => {
       )`}
       >
         <div style={{ textAlign: 'center' }}>
-          <h1 style={{ color: '#ffffff', fontSize: 48, margin: 0 }}>
+          <Heading type="h1" background="dark" className="m-none">
             Display Components
-          </h1>
-          <p style={{ color: '#ffffffaa' }}>
+          </Heading>
+          <SubTitle type="h4" background="dark">
             Display components allow you to display information to a user in a
             prominent location.
-          </p>
+          </SubTitle>
         </div>
       </Hero>
       <Section spacing="small">
         <Container>
-          <H2 className="m-none">Alert</H2>
-          <H4 className="mb-none">Variant</H4>
+          <Heading type="h2" className="m-none">Alert</Heading>
+          <Heading type="h4" className="mb-none">Variant</Heading>
           <p className="mb-6">
             The variant prop is used to change the appearance of an alert.
           </p>
@@ -65,7 +65,7 @@ const Display = ({}) => {
           </Alert>
           <br />
           <br />
-          {/* <H4 className="mb-none">Size</H4>
+          {/* <Heading type="h4" className="mb-none">Size</Heading>
         <p className="mt-2">
           The size prop is used to change the size of a button.
         </p>
@@ -81,7 +81,7 @@ const Display = ({}) => {
         </Button>
         <br />
         <br /> */}
-          <H4 className="mb-none">Color</H4>
+          <Heading type="h4" className="mb-none">Color</Heading>
           <p p className="mb-6">
             The color prop is used to change the color of an alert.
           </p>
@@ -119,7 +119,7 @@ const Display = ({}) => {
       </Section>
       <Section spacing="small">
         <Container>
-          <H2 className="m-none">Notification</H2>
+          <Heading type="h2" className="m-none">Notification</Heading>
           <p className="mb-6">
             The Notification element allows you to display a notification that
             disappears after a certain amount of time.
@@ -206,7 +206,7 @@ const Display = ({}) => {
       </Section>
       <Section spacing="small">
         <Container>
-          <H2 className="m-none">Chip</H2>
+          <Heading type="h2" className="m-none">Chip</Heading>
           <Chip>Default</Chip>
           <Chip color="primary">Primary</Chip>
           <Chip color="secondary">Secondary</Chip>

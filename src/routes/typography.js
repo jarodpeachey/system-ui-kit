@@ -13,7 +13,7 @@ import Container from '../components/Container';
 import Notification from '../components/Notification';
 import Layout from '../Layout';
 import H1 from '../components/H1';
-import H2 from '../components/H2';
+import Heading from '../components/Heading';
 import H3 from '../components/H3';
 import H4 from '../components/H4';
 import H5 from '../components/H5';
@@ -23,6 +23,7 @@ import { theme } from '../theme';
 import Code from '../components/Code';
 import Hidden from '../components/Hidden';
 import Flex from '../components/Flex';
+import SubTitle from '../components/SubTitle';
 
 const TypographyComponents = ({}) => {
   const [showNotificationOne, setShowNotificationOne] = useState(false);
@@ -34,7 +35,7 @@ const TypographyComponents = ({}) => {
   return (
     <Layout>
       <Helmet>
-        <title>Layout Components - System UI Kit</title>
+        <title>Typography Components - System UI Kit</title>
       </Helmet>
       <Hero
         background={`linear-gradient(
@@ -44,17 +45,20 @@ const TypographyComponents = ({}) => {
       )`}
       >
         <div style={{ textAlign: 'center' }}>
-          <h1 style={{ color: '#ffffff', fontSize: 48, margin: 0 }}>
+          <Heading type="h1" background="dark" className="m-none">
             Typography Components
-          </h1>
-          <p style={{ color: '#ffffffaa' }}>
-            Layout components allow you to add text to your website.
-          </p>
+          </Heading>
+          <SubTitle type="h4" background="dark">
+            Typography components allow you to display styled text that fits
+            with the theme of your website.
+          </SubTitle>
         </div>
       </Hero>
       <Section spacing="small">
         <Container>
-          <H3 className="mt-none">Headings</H3>
+          <Heading type="h3" className="mt-none">
+            Typography
+          </Heading>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <th
@@ -85,7 +89,7 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  {'<H1 />'}
+                  H2
                 </td>
                 <td
                   style={{
@@ -105,7 +109,7 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  {'<H2 />'}
+                  H2
                 </td>
                 <td
                   style={{
@@ -114,27 +118,9 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <H2 className="m-none">Heading Two</H2>
-                </td>
-              </tr>
-              <tr>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: 16,
-                  }}
-                >
-                  {'<H3 />'}
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: 16,
-                  }}
-                >
-                  <H3 className="m-none">Heading Three</H3>
+                  <Heading type="h2" className="m-none">
+                    Heading Two
+                  </Heading>
                 </td>
               </tr>
               <tr>
@@ -145,7 +131,7 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  {'<H4 />'}
+                  H3
                 </td>
                 <td
                   style={{
@@ -154,27 +140,9 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <H4 className="m-none">Heading Four</H4>
-                </td>
-              </tr>
-              <tr>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: 16,
-                  }}
-                >
-                  {'<H5 />'}
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: 16,
-                  }}
-                >
-                  <H5 className="m-none">Heading Five</H5>
+                  <Heading type="h3" className="m-none">
+                    Heading Three
+                  </Heading>
                 </td>
               </tr>
               <tr>
@@ -185,7 +153,7 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  {'<H6 />'}
+                  H4
                 </td>
                 <td
                   style={{
@@ -194,34 +162,209 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <H6 className="m-none">Heading Six</H6>
+                  <Heading type="h4" className="m-none">
+                    Heading Four
+                  </Heading>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  H5
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  <Heading type="h5" className="m-none">
+                    Heading Five
+                  </Heading>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  {'H6'}
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  <Heading type="h6" className="m-none">
+                    Heading Six
+                  </Heading>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  {'Subtitle'}
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  <SubTitle className="m-none">Default Subtitle</SubTitle>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  {'Title'}
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  <Heading title type="h5" className="m-none">
+                    Title
+                  </Heading>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  {'Paragraph'}
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  <Paragraph className="m-none">
+                    This is a default paragraph.
+                  </Paragraph>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  {'Primary'}
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  <Paragraph color="primary" className="m-none">
+                    This is a default paragraph.
+                  </Paragraph>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  {'Secondary'}
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  <Paragraph color="secondary" className="m-none">
+                    This is a default paragraph.
+                  </Paragraph>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  {'Success'}
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  <Paragraph color="success" className="m-none">
+                    This is a default paragraph.
+                  </Paragraph>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  {'Error'}
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  <Paragraph color="error" className="m-none">
+                    This is a default paragraph.
+                  </Paragraph>
                 </td>
               </tr>
             </tbody>
           </table>
-        </Container>
-      </Section>
-      <Section spacing="small">
-        <Container>
-          <H4 className="mt-none">Accents</H4>
-          <H5 className="m-none" title>
-            Heading Title
-          </H5>
-          <H5 className="m-none" color="secondary" title>
-            Heading Title
-          </H5>
-          <H5 className="m-none" color="success" title>
-            Heading Title
-          </H5>
-          <H5 className="m-none" color="error" title>
-            Heading Title
-          </H5>
-        </Container>
-      </Section>
-      <Section spacing="small">
-        <Container>
-          <H4 className="mt-none">Paragraphs</H4>
-          <Paragraph>This is a really cool paragraph of words.</Paragraph>
         </Container>
       </Section>
     </Layout>

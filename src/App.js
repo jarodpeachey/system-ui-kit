@@ -8,14 +8,13 @@ import Section from './components/Section';
 import Button from './components/Button';
 import Row from './components/Row';
 
-import H2 from './components/H2';
-import H3 from './components/H3';
-import H5 from './components/H5';
+import Heading from './components/Heading';
 import Alert from './components/Alert';
 import Code from './components/Code';
 import Info from './components/Info';
 import Container from './components/Container';
 import Layout from './Layout';
+import SubTitle from './components/SubTitle';
 
 const App = ({}) => (
   <Layout>
@@ -29,13 +28,13 @@ const App = ({}) => (
         ${theme.color.secondary.main}
       )`}
     >
-      <h1 style={{ color: '#ffffff', fontSize: 48, textAlign: 'center' }}>
+      <Heading type="h1" background="dark" className="center">
         React Development Made Easy
-      </h1>
-      <h3 style={{ color: '#ffffff90', textAlign: 'center' }}>
+      </Heading>
+      <SubTitle type="h4" className="center" background="dark">
         A modern UI Kit built to speed up your development proccess, while still
         allowing you room to customize and grow.
-      </h3>
+      </SubTitle>
     </Hero>
     <Section spacing="small">
       <Container>
@@ -52,10 +51,12 @@ const App = ({}) => (
     </Section>
     <Section className="pt-none" spacing="large">
       <Container>
-        <H5 title color="primary" className="center mt-none">
+        <Heading type="h5" title color="primary" className="center mt-none">
           Built For You
-        </H5>
-        <H2 className="center mt-3">What is System?</H2>
+        </Heading>
+        <Heading type="h2" className="center mt-3">
+          What is System?
+        </Heading>
         <p className="center" style={{ maxWidth: 780 }}>
           System is a UI Kit like none other. It's dead-simple to get up and
           running, and offers advanced customization that's than most other UI
@@ -72,13 +73,17 @@ const App = ({}) => (
     </Section>
     <Section background={`${theme.color.error}10`}>
       <Container>
-        <H3 className="mt-none" customStyles={`color: ${theme.color.error};`}>
+        <Heading
+          type="h3"
+          className="mt-none"
+          customStyles={`color: ${theme.color.error};`}
+        >
           <FontAwesomeIcon
             icon="exclamation-circle"
             style={{ marginRight: 10 }}
           />
           Construction Notice
-        </H3>
+        </Heading>
         <p className="mb-5" style={{ color: theme.color.error }}>
           System UI Kit is still in development, but feel free to browse the
           site and look at the components I've already completed!
@@ -90,10 +95,12 @@ const App = ({}) => (
     </Section>
     <Section spacing="large">
       <Container>
-        <H5 color="primary" title className="mt-none">
+        <Heading type="h5" color="primary" title className="mt-none">
           The Benefits
-        </H5>
-        <H2 className="mt-3 mb-7">Simplicity and Ease</H2>
+        </Heading>
+        <Heading type="h2" className="mt-3 mb-7">
+          Simplicity and Ease
+        </Heading>
         <Row spacing={[24, 12]} breakpoints={[769, 960]}>
           <div widths={[6, 4]}>
             <Info

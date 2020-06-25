@@ -49,7 +49,6 @@ const Button = ({
 const StyledButton = styled.button`
   box-shadow: ${(props) =>
     props.variant === 'secondary' ? props.theme.shadow.two : 'none'};
-
   outline: none;
   padding: 12px 24px;
   border: none;
@@ -82,7 +81,7 @@ const StyledButton = styled.button`
             ? props.theme.color.error
             : props.color === 'white'
             ? 'white'
-            : props.theme.color.gray.one};      
+            : props.theme.color.gray.one};   
     color: ${(props) =>
       props.color === 'white'
         ? ''
@@ -91,7 +90,18 @@ const StyledButton = styled.button`
           props.color === 'success' ||
           props.color === 'error'
         ? 'white'
-        : null};
+        : props.theme.color.text.dark.one};
+      * {
+            color: ${(props) =>
+              props.color === 'white'
+                ? ''
+                : props.color === 'primary' ||
+                  props.color === 'secondary' ||
+                  props.color === 'success' ||
+                  props.color === 'error'
+                ? 'white'
+                : props.theme.color.text.dark.one};
+      }
       border: 1px solid transparent;
       :hover {
         background: ${(props) =>
@@ -125,6 +135,19 @@ const StyledButton = styled.button`
         : props.color === 'white'
         ? 'white'
         : ''};
+      * {
+        color: ${props.color === 'primary'
+          ? props.theme.color.primary.main
+          : props.color === 'secondary'
+          ? props.theme.color.secondary.main
+          : props.color === 'success'
+          ? props.theme.color.success
+          : props.color === 'error'
+          ? props.theme.color.error
+          : props.color === 'white'
+          ? 'white'
+          : ''};
+      }
       border: 1px solid
         ${props.color === 'primary'
           ? props.theme.color.primary.main
@@ -154,6 +177,13 @@ const StyledButton = styled.button`
           : props.color
           ? 'white'
           : ''};
+        * {
+          color: ${props.color === 'white'
+            ? 'initial'
+            : props.color
+            ? 'white'
+            : ''};
+        }
       }
     `};
 
@@ -174,6 +204,21 @@ const StyledButton = styled.button`
           ? 'white'
           : ''
       };
+    * {
+            color: ${
+              props.color === 'primary'
+                ? props.theme.color.primary.main
+                : props.color === 'secondary'
+                ? props.theme.color.secondary.main
+                : props.color === 'success'
+                ? props.theme.color.success
+                : props.color === 'error'
+                ? props.theme.color.error
+                : props.color === 'white'
+                ? 'white'
+                : ''
+            };
+    }
       border: 1px solid transparent;
       :hover {
         background: ${

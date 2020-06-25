@@ -6,19 +6,18 @@ import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Button from '../components/Button';
 import Row from '../components/Row';
-import H2 from '../components/H2';
-import H4 from '../components/H4';
 import Alert from '../components/Alert';
 import Chip from '../components/Chip';
 import { Link } from '@reach/router';
 import Container from '../components/Container';
 import Notification from '../components/Notification';
 import Layout from '../Layout';
-import H5 from '../components/H5';
+import Heading from '../components/Heading';
 import { theme } from '../theme';
 import Code from '../components/Code';
 import Hidden from '../components/Hidden';
 import Flex from '../components/Flex';
+import SubTitle from '../components/SubTitle';
 
 const LayoutComponents = ({}) => {
   const [showNotificationOne, setShowNotificationOne] = useState(false);
@@ -40,18 +39,18 @@ const LayoutComponents = ({}) => {
       )`}
       >
         <div style={{ textAlign: 'center' }}>
-          <h1 style={{ color: '#ffffff', fontSize: 48, margin: 0 }}>
+          <Heading type="h1" background="dark" className="m-none">
             Layout Components
-          </h1>
-          <p style={{ color: '#ffffffaa' }}>
+          </Heading>
+          <SubTitle type="h4" background="dark">
             Layout components allow you to display information to a user in a
             prominent location.
-          </p>
+          </SubTitle>
         </div>
       </Hero>
       <Section>
         <Container>
-          <H2 className="mt-none">Grid</H2>
+          <Heading type="h2" className="mt-none">Grid</Heading>
           <Row breakpoints={[769]} spacing={[8]}>
             <div widths={[1]}>
               <Demo>1</Demo>
@@ -124,7 +123,7 @@ const LayoutComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 className="m-none">Flex</H2>
+          <Heading type="h2" className="m-none">Flex</Heading>
           <p>
             The <Code>{'<Flex />'}</Code> component allows you to add a simple
             flex element. Also known as Grid Lite.
@@ -183,7 +182,7 @@ const LayoutComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 className="m-none">Container</H2>
+          <Heading type="h2" className="m-none">Container</Heading>
           <p>
             The container element can be set to 4 preset sizes: xs, sm, md and
             lg. The max-width can also be set using a custom prop:{' '}
@@ -213,7 +212,7 @@ const LayoutComponents = ({}) => {
                   justifyContent: 'center',
                 }}
               >
-                <H5 className="m-none">Default</H5>
+                <Heading type="h5" className="m-none">Default</Heading>
               </div>
             </Container>
           </div>
@@ -241,7 +240,7 @@ const LayoutComponents = ({}) => {
                   justifyContent: 'center',
                 }}
               >
-                <H5 className="m-none">Small</H5>
+                <Heading type="h5" className="m-none">Small</Heading>
               </div>
             </Container>
           </div>
@@ -249,7 +248,7 @@ const LayoutComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 className="m-none">Hidden</H2>
+          <Heading type="h2" className="m-none">Hidden</Heading>
           <p>
             The <Code>{'<Hidden />'}</Code> component allows you to create
             elements that are only shown on mobile, tablet, or desktop.
