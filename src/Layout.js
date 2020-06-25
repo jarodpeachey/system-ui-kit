@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faBolt,
@@ -19,6 +19,9 @@ import {
   faExclamationCircle,
   faChevronRight,
   faChevronLeft,
+  faBoxes,
+  faPalette,
+  faMousePointer,
 } from '@fortawesome/free-solid-svg-icons';
 import NavbarItem from './components/NavbarItem';
 import SubMenuItem from './components/SubMenuItem';
@@ -32,6 +35,7 @@ import MobileMenu from './components/MobileMenu';
 import MobileSubMenu from './components/MobileSubMenu';
 import Header from './components/Header';
 import { theme } from './theme';
+import Heading from './components/Heading';
 
 library.add(
   faQuestionCircle,
@@ -48,65 +52,76 @@ library.add(
   faExclamationCircle,
   faChevronRight,
   faChevronLeft,
+  faBoxes,
+  faPalette,
+  faMousePointer
 );
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <Header fixed color="transparent">
-      <h1 style={{ margin: '0' }}>System</h1>
-      <Mobile>
-        <MobileMenu>
-          <MobileMenuItem>
-            <a href="/">Home</a>
-          </MobileMenuItem>
-          <MobileMenuItem submenu>
-            <Link to="/components">Components</Link>
-            <MobileSubMenu>
-              <MobileSubMenuItem>
-                <Link to="/components/layout">Layout</Link>
-              </MobileSubMenuItem>
-              <MobileSubMenuItem>
-                <Link to="/components/inputs">Inputs</Link>
-              </MobileSubMenuItem>
-              <MobileSubMenuItem>
-                <Link to="/components/display">Display</Link>
-              </MobileSubMenuItem>
-            </MobileSubMenu>
-          </MobileMenuItem>
-        </MobileMenu>
-      </Mobile>
-      <Tablet>
-        <Navbar>
-          <NavbarItem>
-            <a href="/">Home</a>
-          </NavbarItem>
-          <NavbarItem submenu>
-            <Link to="/components">Components</Link>
-            <SubMenu>
-              <SubMenuItem>
-                <Link to="/components/layout">Layout</Link>
-              </SubMenuItem>
-              <SubMenuItem>
-                <Link to="/components/inputs">Inputs</Link>
-              </SubMenuItem>
-              <SubMenuItem>
-                <Link to="/components/display">Display</Link>
-              </SubMenuItem>
-            </SubMenu>
-          </NavbarItem>
-          <NavbarItem square>
-            <a href="/">
-              <FontAwesomeIcon
-                icon="heart"
-                style={{ width: 20, height: 20, fontSize: 24 }}
-              />
-            </a>
-          </NavbarItem>
-        </Navbar>
-      </Tablet>
-    </Header>
-    {children}
+    <Wrapper>
+      <Header fixed color="transparent">
+        <Heading type="h1" className="m-none">
+          System
+        </Heading>
+        <Mobile>
+          <MobileMenu>
+            <MobileMenuItem>
+              <a href="/">Home</a>
+            </MobileMenuItem>
+            <MobileMenuItem submenu>
+              <Link to="/components">Components</Link>
+              <MobileSubMenu>
+                <MobileSubMenuItem>
+                  <Link to="/components/layout">Layout</Link>
+                </MobileSubMenuItem>
+                <MobileSubMenuItem>
+                  <Link to="/components/inputs">Inputs</Link>
+                </MobileSubMenuItem>
+                <MobileSubMenuItem>
+                  <Link to="/components/display">Display</Link>
+                </MobileSubMenuItem>
+              </MobileSubMenu>
+            </MobileMenuItem>
+          </MobileMenu>
+        </Mobile>
+        <Tablet>
+          <Navbar>
+            <NavbarItem>
+              <a href="/">Home</a>
+            </NavbarItem>
+            <NavbarItem submenu>
+              <Link to="/components">Components</Link>
+              <SubMenu>
+                <SubMenuItem>
+                  <Link to="/components/layout">Layout</Link>
+                </SubMenuItem>
+                <SubMenuItem>
+                  <Link to="/components/inputs">Inputs</Link>
+                </SubMenuItem>
+                <SubMenuItem>
+                  <Link to="/components/display">Display</Link>
+                </SubMenuItem>
+              </SubMenu>
+            </NavbarItem>
+            <NavbarItem square>
+              <a href="/">
+                <FontAwesomeIcon
+                  icon="heart"
+                  style={{ width: 20, height: 20, fontSize: 24 }}
+                />
+              </a>
+            </NavbarItem>
+          </Navbar>
+        </Tablet>
+      </Header>
+      {children}
+    </Wrapper>
   </ThemeProvider>
 );
+
+const Wrapper = styled.div`
+  color: ${(props) => props.theme.color.heading};
+`;
 
 export default Layout;

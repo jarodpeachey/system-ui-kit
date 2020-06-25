@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { ThemeContext } from '../theme';
+import Heading from './Heading';
 
 const Info = ({
   children,
@@ -28,7 +29,7 @@ const Info = ({
         </Icon>
       )}
       <div>
-        {title && <h3>{title}</h3>}
+        {title && <Heading type="h3">{title}</Heading>}
         {children}
       </div>
     </StyledInfo>
@@ -117,7 +118,7 @@ const Icon = styled.div`
   width: fit-content;
   color: ${(props) => props.theme.color.primary.main};
   svg {
-    font-size: 38px;
+    font-size: 42px;
   }
   margin-right: ${(props) =>
     props.layout === 'horizontal' ? `${props.theme.spacing.five - 6}px` : null};

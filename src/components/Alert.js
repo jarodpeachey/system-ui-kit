@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Alert = ({ children, color, variant, icon, style, closable }) => {
+const Alert = ({ children, color, variant, icon, style, close }) => {
   const [showAlert, setShowAlert] = useState(true);
 
   const onClick = () => {
@@ -19,7 +19,7 @@ const Alert = ({ children, color, variant, icon, style, closable }) => {
     >
       {icon && <Icon>{icon}</Icon>}
       <div>{children}</div>
-      {closable && (
+      {close && (
         <CloseButton onClick={onClick}>
           <FontAwesomeIcon icon="times" />
         </CloseButton>

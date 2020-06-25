@@ -13,6 +13,7 @@ import Info from '../components/Info';
 import Container from '../components/Container';
 import Layout from '../Layout';
 import SubTitle from '../components/SubTitle';
+import Paragraph from '../components/Paragraph';
 
 const Components = () => (
   <Layout>
@@ -48,10 +49,10 @@ const Components = () => (
               title="Layout"
               icon={<FontAwesomeIcon icon="user" />}
             >
-              <p>
+              <Paragraph>
                 Layout components make it easy for you to create responsive
                 websites, grid systems and more.
-              </p>
+              </Paragraph>
               <Button link="/components/layout" color="primary">
                 See All
               </Button>
@@ -64,10 +65,10 @@ const Components = () => (
               title="Input"
               icon={<FontAwesomeIcon icon="user" />}
             >
-              <p>
+              <Paragraph>
                 Inputs allow users to interact with your website. This includes
                 buttons, text fields, checkboxes and more.
-              </p>
+              </Paragraph>
               <Button link="/components/inputs" color="secondary">
                 See All
               </Button>
@@ -80,11 +81,11 @@ const Components = () => (
               title="Display"
               icon={<FontAwesomeIcon icon="user" />}
             >
-              <p>
+              <Paragraph>
                 Display elements are used to display information to users in a
                 prominent fashion. This includes alerts, notifications, chips
                 and more.
-              </p>
+              </Paragraph>
               <Button link="/components/display" color="success">
                 See All
               </Button>

@@ -15,10 +15,14 @@ const Button = ({
   variant = '',
   size,
   customStyles,
+  fullWidth,
 }) => (
   <>
     {link ? (
-      <Link to={link} className={`${className} no-styling`}>
+      <Link
+        to={link}
+        className={`${className} no-styling ${fullWidth ? 'full-width' : null}`}
+      >
         <StyledButton
           color={color}
           size={size}
@@ -27,6 +31,7 @@ const Button = ({
           onClick={onClick || null}
           link
           customStyles={customStyles}
+          fullWidth={fullWidth}
         >
           {children}
         </StyledButton>
@@ -39,6 +44,7 @@ const Button = ({
         className={className}
         onClick={onClick || null}
         customStyles={customStyles}
+        fullWidth={fullWidth}
       >
         {children}
       </StyledButton>
@@ -52,6 +58,7 @@ const StyledButton = styled.button`
   outline: none;
   padding: 12px 24px;
   border: none;
+  width: ${(props) => (props.fullWidth ? '100%' : null)};
   font-size: 16px;
   // font-weight: 500;
   letter-spacing: 1.1px;
@@ -59,8 +66,10 @@ const StyledButton = styled.button`
     props.size === 'small'
       ? '8px 12px'
       : props.size === 'large'
-      ? '14px 29px'
+      ? '16px 29px'
       : '12px 18px'};
+    
+  height: ${(props) => (props.size === 'large' ? '54px' : null)};
   font-size: ${(props) =>
     props.size === 'small' ? '14px' : props.size === 'large' ? '18px' : '16px'};
   border-radius: ${(props) => props.theme.radius.one};

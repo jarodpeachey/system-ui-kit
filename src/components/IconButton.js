@@ -54,7 +54,9 @@ const Button = ({
 const StyledButton = styled.button`
   box-shadow: ${(props) =>
     props.variant === 'secondary' ? props.theme.shadow.two : 'none'};
-
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   padding: 12px 24px;
   border: none;
@@ -101,7 +103,7 @@ const StyledButton = styled.button`
           props.color === 'error'
         ? 'white'
         : null};
-      border: 2px solid transparent;
+      border: 1px solid transparent;
       :hover {
         background: ${(props) =>
           pSBC(
@@ -139,7 +141,7 @@ const StyledButton = styled.button`
         : props.color === 'white'
         ? 'white'
         : ''};
-      border: 2px solid
+      border: 1px solid
         ${props.color === 'primary'
           ? props.theme.color.primary.main
           : props.color === 'secondary'
@@ -188,7 +190,7 @@ const StyledButton = styled.button`
           ? 'white'
           : ''
       };
-      border: 2px solid transparent;
+      border: 1px solid transparent;
       :hover {
         background: ${
           props.color === 'primary'

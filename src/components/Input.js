@@ -19,6 +19,7 @@ const Input = ({
   icon,
   type,
   defaultValue,
+  color
 }) => {
   const [hover, setHover] = useState(false);
   const [focus, setFocus] = useState(false);
@@ -70,6 +71,7 @@ const Input = ({
       {icon && (
         <>
           <StyledInput
+            color={color}
             unselectable="on"
             fullWidth={fullWidth}
             size={size}
@@ -103,6 +105,7 @@ const Input = ({
       {!icon && (
         <>
           <StyledInput
+            color={color}
             unselectable="on"
             hover={hover}
             fullWidth={fullWidth}
@@ -291,9 +294,9 @@ const StyledInput = styled.input`
       // border: 1px solid ${props.theme.color.primary.main};
     border: 1px solid
       ${
-        props.state === 'success'
+        props.state === 'success' || props.color === 'success'
           ? props.theme.color.success
-          : props.state === 'error'
+          : props.state === 'error' || props.color === 'error'
           ? props.theme.color.error
           : `${props.theme.color.primary.main}60`
       };
@@ -304,7 +307,15 @@ const StyledInput = styled.input`
   }
   :focus {
     outline: none;
-    border: 1px solid ${(props) => props.theme.color.primary.main};
+    border: 1px solid
+      ${(props) =>
+        props.color === 'secondary'
+          ? props.theme.color.secondary.main
+          : props.color === 'success'
+          ? props.theme.color.success
+          : props.color === 'error'
+          ? props.theme.color.error
+          : props.theme.color.primary.main};
   }
   padding-left: ${(props) =>
     props.withIcon

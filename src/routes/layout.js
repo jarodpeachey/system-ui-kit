@@ -18,6 +18,7 @@ import Code from '../components/Code';
 import Hidden from '../components/Hidden';
 import Flex from '../components/Flex';
 import SubTitle from '../components/SubTitle';
+import Paragraph from '../components/Paragraph';
 
 const LayoutComponents = ({}) => {
   const [showNotificationOne, setShowNotificationOne] = useState(false);
@@ -124,10 +125,10 @@ const LayoutComponents = ({}) => {
       <Section>
         <Container>
           <Heading type="h2" className="m-none">Flex</Heading>
-          <p>
+          <Paragraph>
             The <Code>{'<Flex />'}</Code> component allows you to add a simple
             flex element. Also known as Grid Lite.
-          </p>
+          </Paragraph>
           <Code
             style={{
               marginTop: 32,
@@ -183,11 +184,11 @@ const LayoutComponents = ({}) => {
       <Section>
         <Container>
           <Heading type="h2" className="m-none">Container</Heading>
-          <p>
+          <Paragraph>
             The container element can be set to 4 preset sizes: xs, sm, md and
             lg. The max-width can also be set using a custom prop:{' '}
             <Code>{'maxWidth={900}'}</Code>
-          </p>
+          </Paragraph>
           <div
             className="mb-4"
             style={{
@@ -249,10 +250,10 @@ const LayoutComponents = ({}) => {
       <Section>
         <Container>
           <Heading type="h2" className="m-none">Hidden</Heading>
-          <p>
+          <Paragraph>
             The <Code>{'<Hidden />'}</Code> component allows you to create
             elements that are only shown on mobile, tablet, or desktop.
-          </p>
+          </Paragraph>
           <div
             style={{
               background: 'white',

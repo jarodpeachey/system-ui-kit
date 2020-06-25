@@ -37,11 +37,12 @@ import Hidden from '../components/Hidden';
 import Layout from '../Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Slider from '../components/Slider';
+import Paragraph from '../components/Paragraph';
 
 const Inputs = ({}) => (
   <Layout>
     {/* <Header primary>
-        <h1 style={{ margin: '0' }}>Primary Header</h1>
+        <Heading type="h1" className="m-none">Primary Header</h1>
         <Menu>
           <MenuItem>
             <a href='/'>Home</a>
@@ -60,7 +61,7 @@ const Inputs = ({}) => (
         </Menu>
       </Header>
       <Header secondary>
-        <h1 style={{ margin: '0' }}>Secondary Header</h1>
+        <Heading type="h1" className="m-none">Secondary Header</h1>
         <Menu>
           <MenuItem>
             <a href='/'>Home</a>
@@ -100,9 +101,9 @@ const Inputs = ({}) => (
         <Heading type="h4" className="mb-none">
           Variant
         </Heading>
-        <p className="mt-2">
+        <Paragraph className="mt-2">
           The variant prop is used to change the appearance of a button.
-        </p>
+        </Paragraph>
         <Button className="mr-2 mb-2" color="primary">
           Filled
         </Button>
@@ -117,9 +118,9 @@ const Inputs = ({}) => (
         <Heading type="h4" className="mb-none">
           Size
         </Heading>
-        <p className="mt-2">
+        <Paragraph className="mt-2">
           The size prop is used to change the size of a button.
-        </p>
+        </Paragraph>
         <Button className="mr-2 mb-2" color="primary" size="large">
           Large
         </Button>
@@ -134,9 +135,9 @@ const Inputs = ({}) => (
         <Heading type="h4" className="mb-none">
           Color
         </Heading>
-        <p className="mt-2">
+        <Paragraph className="mt-2">
           The color prop is used to change the color of a button.
-        </p>
+        </Paragraph>
         <Button className="mr-2 mb-2">Default</Button>
         <Button className="mr-2 mb-2" color="primary">
           Primary
@@ -248,10 +249,10 @@ const Inputs = ({}) => (
         <Heading type="h2">
           IconButton
         </Heading>
-        <p>
+        <Paragraph>
           The IconButton element extends all the props from the Button
           component. It also adds a new circle prop.
-        </p>
+        </Paragraph>
         <IconButton color="primary" size="large">
           <FontAwesomeIcon icon="check" />
         </IconButton>
@@ -469,10 +470,10 @@ const Inputs = ({}) => (
           </div>
           <div widths={[6, 4]}>
             <h3 color="primary">Toggle Switches</h3>
-            <p className="mb-none">Variants</p>
+            <Paragraph className="mb-none">Variants</Paragraph>
             <Toggle>Default</Toggle>
             <Toggle variant="filled">Filled</Toggle>
-            <p className="mb-none">Sizes</p>
+            <Paragraph className="mb-none">Sizes</Paragraph>
             <Toggle size="small">Small</Toggle>
             <Toggle>Normal</Toggle>
           </div>

@@ -15,6 +15,7 @@ import Notification from '../components/Notification';
 import Layout from '../Layout';
 import { theme } from '../theme';
 import SubTitle from '../components/SubTitle';
+import Paragraph from '../components/Paragraph';
 
 const Display = ({}) => {
   const [showNotificationOne, setShowNotificationOne] = useState(false);
@@ -47,11 +48,9 @@ const Display = ({}) => {
       </Hero>
       <Section spacing="small">
         <Container>
-          <Heading type="h2" className="m-none">Alert</Heading>
-          <Heading type="h4" className="mb-none">Variant</Heading>
-          <p className="mb-6">
-            The variant prop is used to change the appearance of an alert.
-          </p>
+          <Heading type="h2" className="m-none">
+            Alert
+          </Heading>
           <Alert color="primary">Default</Alert>
           <Alert color="primary" variant="light">
             Light
@@ -63,12 +62,14 @@ const Display = ({}) => {
           >
             With icon
           </Alert>
-          <br />
+          <Alert close color="primary">
+            With close button
+          </Alert>
           <br />
           {/* <Heading type="h4" className="mb-none">Size</Heading>
-        <p className="mt-2">
+        <Paragraph className="mt-2">
           The size prop is used to change the size of a button.
-        </p>
+        </Paragraph>
         <Button
           className="mr-2" color="primary" size="large">
           Large
@@ -81,36 +82,38 @@ const Display = ({}) => {
         </Button>
         <br />
         <br /> */}
-          <Heading type="h4" className="mb-none">Color</Heading>
-          <p p className="mb-6">
+          <Heading type="h4" className="mb-none">
+            Color
+          </Heading>
+          <Paragraph p>
             The color prop is used to change the color of an alert.
-          </p>
+          </Paragraph>
           <Row spacing={[14, 0]} breakpoints={[769]}>
             <div widths={[6]}>
-              <Alert>Default</Alert>
-              <Alert variant="light">Default</Alert>
+              <Alert icon={<FontAwesomeIcon icon="bell" />}>Default</Alert>
+              <Alert icon={<FontAwesomeIcon icon="bell" />} variant="light">Default</Alert>
             </div>
             <div widths={[6]}>
-              <Alert color="primary">Primary</Alert>
-              <Alert color="primary" variant="light">
+              <Alert icon={<FontAwesomeIcon icon="heart" />} color="primary">Primary</Alert>
+              <Alert icon={<FontAwesomeIcon icon="heart" />} color="primary" variant="light">
                 Primary
               </Alert>
             </div>
             <div widths={[6]}>
-              <Alert color="secondary">Secondary</Alert>
-              <Alert color="secondary" variant="light">
+              <Alert icon={<FontAwesomeIcon icon="globe" />} color="secondary">Secondary</Alert>
+              <Alert icon={<FontAwesomeIcon icon="globe" />} color="secondary" variant="light">
                 Secondary
               </Alert>
             </div>
             <div widths={[6]}>
-              <Alert color="success">Success</Alert>
-              <Alert color="success" variant="light">
+              <Alert icon={<FontAwesomeIcon icon="check" />} color="success">Success</Alert>
+              <Alert icon={<FontAwesomeIcon icon="check" />} color="success" variant="light">
                 Success
               </Alert>
             </div>
             <div widths={[6]}>
-              <Alert color="error">Error</Alert>
-              <Alert color="error" variant="light">
+              <Alert icon={<FontAwesomeIcon icon="exclamation-circle" />} color="error">Error</Alert>
+              <Alert icon={<FontAwesomeIcon icon="exclamation-circle" />} color="error" variant="light">
                 Error
               </Alert>
             </div>
@@ -119,11 +122,13 @@ const Display = ({}) => {
       </Section>
       <Section spacing="small">
         <Container>
-          <Heading type="h2" className="m-none">Notification</Heading>
-          <p className="mb-6">
+          <Heading type="h2" className="m-none">
+            Notification
+          </Heading>
+          <Paragraph>
             The Notification element allows you to display a notification that
             disappears after a certain amount of time.
-          </p>
+          </Paragraph>
           <Button
             className="mr-2"
             onClick={() => {
@@ -138,7 +143,6 @@ const Display = ({}) => {
           <Button
             className="mr-2"
             color="primary"
-            variant="outlined"
             onClick={() => {
               setShowNotificationTwo(true);
               setTimeout(() => {
@@ -151,7 +155,6 @@ const Display = ({}) => {
           <Button
             className="mr-2"
             color="secondary"
-            variant="outlined"
             onClick={() => {
               setShowNotificationThree(true);
               setTimeout(() => {
@@ -164,7 +167,6 @@ const Display = ({}) => {
           <Button
             className="mr-2"
             color="success"
-            variant="outlined"
             onClick={() => {
               setShowNotificationFour(true);
               setTimeout(() => {
@@ -177,7 +179,6 @@ const Display = ({}) => {
           <Button
             className="mr-2"
             color="error"
-            variant="outlined"
             onClick={() => {
               setShowNotificationFive(true);
               setTimeout(() => {
@@ -206,7 +207,9 @@ const Display = ({}) => {
       </Section>
       <Section spacing="small">
         <Container>
-          <Heading type="h2" className="m-none">Chip</Heading>
+          <Heading type="h2" className="m-none">
+            Chip
+          </Heading>
           <Chip>Default</Chip>
           <Chip color="primary">Primary</Chip>
           <Chip color="secondary">Secondary</Chip>

@@ -15,6 +15,9 @@ import Info from './components/Info';
 import Container from './components/Container';
 import Layout from './Layout';
 import SubTitle from './components/SubTitle';
+import Paragraph from './components/Paragraph';
+import Input from './components/Input';
+import Flex from './components/Flex';
 
 const App = ({}) => (
   <Layout>
@@ -31,7 +34,7 @@ const App = ({}) => (
       <Heading type="h1" background="dark" className="center">
         React Development Made Easy
       </Heading>
-      <SubTitle type="h4" className="center" background="dark">
+      <SubTitle type="h4" className="center" customStyles={`color: #ffffffcc;`}>
         A modern UI Kit built to speed up your development proccess, while still
         allowing you room to customize and grow.
       </SubTitle>
@@ -51,27 +54,100 @@ const App = ({}) => (
     </Section>
     <Section className="pt-none" spacing="large">
       <Container>
-        <Heading type="h5" title color="primary" className="center mt-none">
+        <Heading
+          display="title"
+          type="h5"
+          color="primary"
+          className="center mt-none"
+        >
           Built For You
         </Heading>
         <Heading type="h2" className="center mt-3">
           What is System?
         </Heading>
-        <p className="center" style={{ maxWidth: 780 }}>
-          System is a UI Kit like none other. It's dead-simple to get up and
-          running, and offers advanced customization that's than most other UI
-          kits.
-        </p>
-        <p className="center" style={{ maxWidth: 780 }}>
-          I'm building System because, as a developer, I sometimes get stuck
-          with creating a cohesive, well designed website. With System, I'm
-          solving this problem for other developers. Because System uses simple
-          components with even simpler cusomization, you can focus on the
-          development of your product rather than the website design.
-        </p>
+        <Container size="sm">
+          <Paragraph className="center" style={{ maxWidth: 780 }}>
+            System is a UI Kit like none other. It's dead-simple to get up and
+            running, and offers advanced customization options that are easier
+            than most other UI kits.
+          </Paragraph>
+          <Paragraph className="center mb-7" style={{ maxWidth: 780 }}>
+            With System, you can easily create a website for your product,
+            without spending the time and money to do it. System allows you to
+            focus on developing and marketing your product.
+          </Paragraph>
+        </Container>
+        <Row spacing={[24, 32]} breakpoints={[769, 960]}>
+          <div widths={[6, 4]}>
+            <Info
+              title="Drop-in Components"
+              color="primary"
+              icon={<FontAwesomeIcon icon="boxes" />}
+            >
+              <Paragraph>
+                System comes with a variety of components that require no custom
+                setup, so you can get up and running in no time.
+              </Paragraph>
+              <Paragraph>
+                In fact, this entire website is built using System: no custom
+                code added!
+              </Paragraph>
+            </Info>
+          </div>
+          <div widths={[6, 4]}>
+            <Info
+              title="Custom Theming"
+              color="primary"
+              icon={<FontAwesomeIcon icon="palette" />}
+            >
+              <Paragraph>
+                With custom theming options, you can make System your own.
+              </Paragraph>
+              <Paragraph>
+                Customize everything from font size, colors, spacing, box
+                shadow, border radius and more.
+              </Paragraph>
+            </Info>
+          </div>
+          <div widths={[6, 4]}>
+            <Info
+              title="Style Overrides"
+              color="primary"
+              icon={<FontAwesomeIcon icon="cog" />}
+            >
+              <Paragraph>
+                Each System component accepts a customStyles prop, which
+                overrides any other styles you've defined. This gives you more
+                flexibility with your components.
+              </Paragraph>
+            </Info>
+          </div>
+
+          {/* <div widths={[6, 4]}>
+            <Info
+              title="Native Behavior"
+              color="primary"
+              icon={<FontAwesomeIcon icon="mouse-pointer" />}
+            >
+              <Paragraph>
+                System allows you to pass custom event functions to each and
+                every component, just as you would with native HTML.
+              </Paragraph>
+              <Paragraph>
+                You can also add custom classes to each component, if you've got
+                custom CSS you'd like to use.
+              </Paragraph>
+            </Info>
+          </div> */}
+        </Row>
+        <Flex>
+          <Button className="mt-4" color="primary" link="/components">
+            View Components
+          </Button>
+        </Flex>
       </Container>
     </Section>
-    <Section background={`${theme.color.error}10`}>
+    {/* <Section background={`${theme.color.error}10`}>
       <Container>
         <Heading
           type="h3"
@@ -84,74 +160,39 @@ const App = ({}) => (
           />
           Construction Notice
         </Heading>
-        <p className="mb-5" style={{ color: theme.color.error }}>
+        <Paragraph className="mb-5" style={{ color: theme.color.error }}>
           System UI Kit is still in development, but feel free to browse the
           site and look at the components I've already completed!
-        </p>
+        </Paragraph>
         <Button link="/components" color="error">
           See Components
         </Button>
       </Container>
-    </Section>
-    <Section spacing="large">
+    </Section> */}
+    <Section spacing="large" background={`${theme.color.success}10`}>
       <Container>
-        <Heading type="h5" color="primary" title className="mt-none">
-          The Benefits
+        <Heading color="success" type="h2" className="mt-none center">
+          Join the waiting list!
         </Heading>
-        <Heading type="h2" className="mt-3 mb-7">
-          Simplicity and Ease
-        </Heading>
-        <Row spacing={[24, 12]} breakpoints={[769, 960]}>
-          <div widths={[6, 4]}>
-            <Info
-              color="primary"
-              title="Simple Naming"
-              icon={<FontAwesomeIcon icon="feather" />}
-            >
-              <p>
-                System uses simple naming conventions for the components and
-                their props. Plus, System uses as little props as possible,
-                making it easier for you to start developing.
-              </p>
-            </Info>
+        <SubTitle className="mb-5 center" style={{ color: theme.color.error }}>
+          Sign up to be notified when System is launched, and get a nice
+          discount to go with it!
+        </SubTitle>
+        <Row spacing={[8, 8]} breakpoints={[576, 800]}>
+          <div widths={[9, 10]}>
+            <Input
+              color="success"
+              size="large"
+              fullWidth
+              placeholder="user@mail.com"
+            />
           </div>
-          <div widths={[6, 4]}>
-            <Info
-              color="primary"
-              title="Highly Customizable"
-              icon={<FontAwesomeIcon icon="cog" />}
-            >
-              <p>
-                If the props System comes with aren't enough, each and every
-                component supports custom styling using{' '}
-                <Code>styled-components</Code>. Simply pass in a customStyles
-                prop and you can customize hover state, media queries and more.
-              </p>
-            </Info>
-          </div>
-          <div widths={[6, 4]}>
-            <Info
-              color="primary"
-              title="Global Theming"
-              icon={<FontAwesomeIcon icon="globe" />}
-            >
-              <p>
-                System allows you to add custom styles to each component on a
-                global scale, allowing you to integrate System seamlessly into
-                your brand. Plus, you can override these global styles whenever
-                you need 🔥
-              </p>
-            </Info>
+          <div widths={[3, 2]}>
+            <Button color="success" size="large" fullWidth>
+              Join
+            </Button>
           </div>
         </Row>
-        <Button
-          className="center mt-5"
-          link="/components"
-          color="primary"
-          variant="light"
-        >
-          View Components
-        </Button>
       </Container>
     </Section>
   </Layout>

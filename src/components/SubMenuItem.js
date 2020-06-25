@@ -10,15 +10,21 @@ const Wrapper = styled.div`
     width: 100%;
     padding: 8px 24px;
     text-decoration: none;
-    cursor: pointer;
-    background: none !important;
+    background: none;
     transition-duration: 0.15s !important;
     color: initial !important;
     font-weight: normal !important;
-    border-radius: 0 !important;
-    :hover,
-    :focus {
-      color: ${(props) => props.theme.color.primary.main} !important;
+    width: 100%;
+    border-radius: 0px;
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+    :active {
+      background: ${(props) => props.theme.color.primary.main};
+      color: white;
+    }
+    :hover {
+      background: ${(props) => props.theme.color.gray.one};
     }
   }
 `;

@@ -32,9 +32,9 @@ const StyledContainer = styled.div`
     props.maxWidth
       ? props.maxWidth
       : props.size === 'xs'
-      ? '576'
-      : props.size === 'sm'
       ? '769'
+      : props.size === 'sm'
+      ? '960'
       : props.size === 'lg'
       ? '1500'
       : '1300'}px;

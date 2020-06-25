@@ -100,12 +100,12 @@ const NavigationComponents = ({}) => {
               <Tab name="launch">Launch</Tab>
             </Tabs>
             <TabContent name="design" value={activeTabThree}>
-              <p className="m-none">
+              <Paragraph className="m-none">
                 Cosby sweater eu banh mi, qui irure. Amet lorem et luctus. Sed
                 eget nulla ac metus porttitor tristique ac quis mauris. Praesent
                 condimentum justo in sapien semper,{' '}
-              </p>
-              <p>
+              </Paragraph>
+              <Paragraph>
                 Aliquam metus libero, pretium non posuere ut, ultrices sed
                 mauris. Pellentesque ut nunc tincidunt, consequat odio nec,
                 bibendum mauris. Vivamus blandit bibendum dolor, non ornare
@@ -114,33 +114,33 @@ const NavigationComponents = ({}) => {
                 turpis ut nulla facilisis, sit amet sagittis eros consectetur.
                 Nam viverra iaculis fermentum. Class aptent taciti sociosqu ad
                 litora torquent per conubia nostra, per inceptos himenaeos.
-              </p>
+              </Paragraph>
             </TabContent>
             <TabContent name="develop" value={activeTabThree}>
-              <p className="m-none">
+              <Paragraph className="m-none">
                 Cras ornare luctus lectus vel varius. Sed neque risus, pharetra
                 vitae pellentesque vitae, scelerisque at nunc. Vestibulum
                 maximus fermentum nisi nec luctus. Maecenas vitae purus
                 facilisis, dapibus diam id, gravida nisi. Suspendisse tincidunt
                 nisl dui, condimentum semper erat mollis sit amet. Sed
                 sollicitudin lorem sit amet massa efficitur sollicitudin.
-              </p>
-              <p>
+              </Paragraph>
+              <Paragraph>
                 Vivamus sed neque maximus, malesuada risus vitae, bibendum
                 turpis. Nunc orci ligula, dignissim ac viverra et, ornare sed
                 augue.
-              </p>
+              </Paragraph>
             </TabContent>
             <TabContent name="launch" value={activeTabThree}>
-              <p className="m-none">
+              <Paragraph className="m-none">
                 Cosby sweater eu banh mi, qui irure terry richardson ex squid.
                 Aliquip placeat salvia cillum iphone. Seitan aliquip quis
                 cardigan american apparel, butcher voluptate nisi qui.
-              </p>
-              <p>
+              </Paragraph>
+              <Paragraph>
                 Mustache cliche tempor, williamsburg carles vegan helvetica.
                 Reprehenderit butcher retro keffiyeh dreamcatcher synth.
-              </p>
+              </Paragraph>
             </TabContent>
           </div>
           <br />
@@ -204,14 +204,14 @@ const NavigationComponents = ({}) => {
             name="one"
           >
             <Heading type="h3" className="mt-none">Content One</Heading>
-            <p>
+            <Paragraph>
               This is a content box, controlled by the tabs up there. Go ahead
               click them and see what happens!
-            </p>
-            <p>
+            </Paragraph>
+            <Paragraph>
               Or, you can switch to another tab using a controlled tab
               component.
-            </p>
+            </Paragraph>
             <IconButton
               circle
               customStyles={`margin: 0;`}
@@ -239,14 +239,14 @@ const NavigationComponents = ({}) => {
             name="two"
           >
             <Heading type="h3" className="mt-none">Content Two</Heading>
-            <p>
+            <Paragraph>
               This is a content box, controlled by the tabs up there. Go ahead
               click them and see what happens!
-            </p>
-            <p>
+            </Paragraph>
+            <Paragraph>
               Or, you can switch to another tab using a controlled tab
               component.
-            </p>
+            </Paragraph>
             <IconButton
               circle
               customStyles={`margin: 0;`}
@@ -278,14 +278,14 @@ const NavigationComponents = ({}) => {
             name="three"
           >
             <Heading type="h3" className="mt-none">Content Three</Heading>
-            <p>
+            <Paragraph>
               This is a content box, controlled by the tabs up there. Go ahead
               click them and see what happens!
-            </p>
-            <p>
+            </Paragraph>
+            <Paragraph>
               Or, you can switch to another tab using a controlled tab
               component.
-            </p>
+            </Paragraph>
             <IconButton
               circle
               customStyles={`margin: 0;`}
@@ -343,26 +343,26 @@ const NavigationComponents = ({}) => {
           </Tabs>
           <TabContent name="html" value={activeTabTwo}>
             <Heading type="h3" className="m-none">HTML</Heading>
-            <p>
+            <Paragraph>
               HTML is a modern markup language that defines the content
               structure of a website.
-            </p>
+            </Paragraph>
             <Button color="primary">Learn More</Button>
           </TabContent>
           <TabContent name="css" value={activeTabTwo}>
             <Heading type="h3" className="m-none">CSS</Heading>
-            <p>
+            <Paragraph>
               CSS is a language used to style websites. Without it, websites
               would look horrible.
-            </p>
+            </Paragraph>
             <Button color="secondary">Learn More</Button>
           </TabContent>
           <TabContent name="javascript" value={activeTabTwo}>
             <Heading type="h3" className="m-none">Javascript</Heading>
-            <p>
+            <Paragraph>
               Javascript is a language used to build websites and add user
               interaction. Without it, it would be boring.
-            </p>
+            </Paragraph>
             <Button color="success">Learn More</Button>
           </TabContent>
 
