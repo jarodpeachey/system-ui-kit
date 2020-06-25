@@ -14,15 +14,16 @@ import Notification from '../components/Notification';
 import Layout from '../Layout';
 import H1 from '../components/H1';
 import Heading from '../components/Heading';
+import H2 from '../components/H2';
 import H3 from '../components/H3';
 import H4 from '../components/H4';
-import H5 from '../components/H5';
 import H6 from '../components/H6';
 import Paragraph from '../components/Paragraph';
 import { theme } from '../theme';
 import Code from '../components/Code';
 import Hidden from '../components/Hidden';
 import Flex from '../components/Flex';
+import Text from '../components/Text';
 import SubTitle from '../components/SubTitle';
 
 const TypographyComponents = ({}) => {
@@ -98,7 +99,9 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <H1 className="m-none">Heading One</H1>
+                  <Heading type="h1" className="m-none">
+                    Heading One
+                  </Heading>
                 </td>
               </tr>
               <tr>
@@ -365,6 +368,147 @@ const TypographyComponents = ({}) => {
               </tr>
             </tbody>
           </table>
+          <br />
+          <br />
+          <br />
+          <Row spacing={[0, 6]} breakpoints={[769]}>
+            <div widths={[2]}>
+              <Text display="title" type="small" color="text-three">
+                <Text type="strong">Title</Text>
+              </Text>
+            </div>
+            <div widths={[10]}>
+              <Heading type="h5" className="m-none" display="title">
+                About
+              </Heading>
+            </div>
+          </Row>
+          <br />
+          <Row spacing={[0, 6]} breakpoints={[769]}>
+            <div widths={[2]}>
+              <Text display="title" type="small" color="text-three">
+                <Text type="strong">Heading</Text>
+              </Text>
+            </div>
+            <div widths={[10]}>
+              <Heading type="h2" className="m-none">
+                The Future of <Text color="success">React Development</Text>
+              </Heading>
+            </div>
+          </Row>
+          <br />
+          <Row spacing={[0, 6]} breakpoints={[769]}>
+            <div widths={[2]}>
+              <Text display="title" type="small" color="text-three">
+                <Text type="strong">Subtitle</Text>
+              </Text>
+            </div>
+            <div widths={[10]}>
+              <SubTitle className="m-none">
+                I will be the leader of a company that ends up being worth
+                billions of dollars, because I got the answers. I understand
+                culture. I am the nucleus. I think that’s a responsibility that
+                I have, to push possibilities, to show people, this is the level
+                that things could be at.
+              </SubTitle>
+            </div>
+          </Row>
+          <br />
+          <Row spacing={[0, 6]} breakpoints={[769]}>
+            <div widths={[2]}>
+              <Text display="title" type="small" color="text-three">
+                <Text type="strong">Paragraph</Text>
+              </Text>
+            </div>
+            <div widths={[10]}>
+              <Paragraph className="m-none">
+                With System, you'll be able to create a beautiful website with
+                no effort at all, allowing you to focus on the important stuff,
+                like marketing and developing your product.
+              </Paragraph>
+            </div>
+          </Row>
+          <br />
+          <br />
+          <br />
+          <Heading type="h4">Color</Heading>
+          <Paragraph>
+            System comes with customizable colors for headings, paragraphs, and
+            three modifier colors.
+          </Paragraph>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+
+              padding: 16,
+              background: theme.color.heading,
+              color: 'white',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            Heading: Used for headings and buttons
+          </div>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+
+              padding: 16,
+              background: theme.color.paragraph,
+              color: 'white',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            Paragraph: Used for paragraph tags
+          </div>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+
+              padding: 16,
+              background: theme.color.text.one,
+              color: 'white',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            One: Custom modifier that can be passed to a text component via the
+            color prop {'<Text color="text-one" />'}
+          </div>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+
+              padding: 16,
+              background: theme.color.text.two,
+              color: 'white',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            Two: Custom modifier that can be passed to a text component via the
+            color prop {'<Text color="text-two" />'}
+          </div>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+
+              padding: 16,
+              background: theme.color.text.three,
+              color: theme.color.text.one,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            Three: Custom modifier that can be passed to a text component via
+            the color prop {'<Text color="text-three" />'}
+          </div>
         </Container>
       </Section>
     </Layout>
@@ -372,9 +516,8 @@ const TypographyComponents = ({}) => {
 };
 
 const Demo = styled.div`
-  width: 100%;
-  padding: 16px;
-  text-align: center;
+  width: '100%'%;
+  padding: 1text-align: center;
   border-radius: 3px;
   color: white !important;
   * {

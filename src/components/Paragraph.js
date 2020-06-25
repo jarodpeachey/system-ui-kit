@@ -32,12 +32,15 @@ const StyledParagraph = styled.p`
       ? props.theme.color.error
       : props.background === 'dark'
       ? props.theme.color.text.light.two
-      : props.theme.color.text.dark.two};
+      : props.theme.color.paragraph};
   ${(props) =>
     props.customStyles &&
     css`
       ${props.customStyles}
     `}
+  line-height: 1.7;
+  font-size: ${(props) => props.theme.fontSize.p}px;
+  font-weight: 400;
 `;
 
 export default Paragraph;

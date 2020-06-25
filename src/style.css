@@ -122,73 +122,13 @@ small {
   color: var(--dark-two);
 }
 strong {
-  color: var(--dark-one);
+  font-weight: 600;
 }
 textarea {
   margin: 0;
   padding: 0;
   display: block;
   height: 100%;
-}
-.title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-}
-.subtitle {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-}
-p {
-  line-height: calc(var(--spacing-four) + 4px);
-  font-size: 17px;
-  color: var(--dark-two);
-  font-weight: 400;
-}
-ul,
-li {
-  /* font-size: 17px; */
-}
-small {
-  font-size: 14px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--dark-one);
-  font-weight: 600;
-}
-h1,
-h2 {
-  margin-bottom: var(--spacing-five);
-}
-h3,
-h4 {
-  margin-bottom: var(--spacing-four);
-}
-h5,
-h6 {
-  margin-bottom: var(--spacing-three);
-}
-h1 {
-  font-size: 48px;
-}
-h2 {
-  font-size: 36px;
-}
-h3 {
-  font-size: 28px;
-}
-h4 {
-  font-size: 24px;
-}
-h5 {
-  font-size: 20px;
-}
-h6 {
-  font-size: 16px;
 }
 a {
   transition: 0 !important;
@@ -197,42 +137,6 @@ a {
 }
 p:last-child {
   margin-bottom: 0;
-}
-.font-1 {
-  font-size: 14px !important;
-}
-.font-2 {
-  font-size: 16px !important;
-}
-.font-3 {
-  font-size: 18px !important;
-}
-.font-4 {
-  font-size: 22px !important;
-  line-height: var(--spacing-six);
-}
-.font-5 {
-  font-size: 28px !important;
-  line-height: var(--spacing-six);
-}
-@media (max-width: 769px) {
-  .mobile-font-1 {
-    font-size: 14px !important;
-  }
-  .mobile-font-2 {
-    font-size: 16px !important;
-  }
-  .mobile-font-3 {
-    font-size: 18px !important;
-  }
-  .mobile-font-4 {
-    font-size: 22px !important;
-    line-height: var(--spacing-six);
-  }
-  .mobile-font-5 {
-    font-size: 28px !important;
-    line-height: var(--spacing-six);
-  }
 }
 .bold {
   font-weight: bold !important;

@@ -7,7 +7,7 @@ const SubTitle = ({
   customStyles,
   background,
   light,
-  type = 'h1',
+  type = 'p',
   title,
   color,
 }) => {
@@ -79,10 +79,47 @@ const SubTitle = ({
           {children}
         </H6>
       )}
+      {type !== 'h1' &&
+        type !== 'h2' &&
+        type !== 'h3' &&
+        type !== 'h4' &&
+        type !== 'h5' &&
+        type !== 'h6' && (
+          <P
+            className={className}
+            background={background}
+            customStyles={customStyles}
+            color={color}
+            title={title}
+          >
+            {children}
+          </P>
+        )}
     </>
   );
 };
+const P = styled.p`
+  color: ${(props) =>
+    props.color === 'primary'
+      ? props.theme.color.primary.main
+      : props.color === 'secondary'
+      ? props.theme.color.secondary.main
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.background === 'dark'
+      ? props.theme.color.text.light.two
+      : props.theme.color.text.dark.two};
 
+  font-weight: normal;
+  font-size: 20px;
+  ${(props) =>
+    props.customStyles &&
+    css`
+      ${props.customStyles}
+    `}
+`;
 const H1 = styled.h1`
   color: ${(props) =>
     props.color === 'primary'
@@ -98,6 +135,7 @@ const H1 = styled.h1`
       : props.theme.color.text.dark.two};
 
   font-weight: normal;
+  font-size: 20px;
   ${(props) =>
     props.customStyles &&
     css`
@@ -119,6 +157,7 @@ const H2 = styled.h2`
       : props.theme.color.text.dark.two};
 
   font-weight: normal;
+  font-size: 20px;
   ${(props) =>
     props.customStyles &&
     css`
@@ -140,6 +179,7 @@ const H3 = styled.h3`
       : props.theme.color.text.dark.two};
 
   font-weight: normal;
+  font-size: 20px;
   ${(props) =>
     props.customStyles &&
     css`
@@ -161,6 +201,7 @@ const H4 = styled.h4`
       : props.theme.color.text.dark.two};
 
   font-weight: normal;
+  font-size: 20px;
   ${(props) =>
     props.customStyles &&
     css`
@@ -182,6 +223,7 @@ const H5 = styled.h5`
       : props.theme.color.text.dark.two};
 
   font-weight: normal;
+  font-size: 20px;
   ${(props) =>
     props.customStyles &&
     css`
@@ -203,6 +245,7 @@ const H6 = styled.h6`
       : props.theme.color.text.dark.two};
 
   font-weight: normal;
+  font-size: 20px;
   ${(props) =>
     props.customStyles &&
     css`

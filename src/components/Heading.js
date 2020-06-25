@@ -8,7 +8,7 @@ const Heading = ({
   background,
   light,
   type = 'h1',
-  title,
+  display,
   color,
 }) => {
   return (
@@ -19,7 +19,7 @@ const Heading = ({
           background={background}
           customStyles={customStyles}
           color={color}
-          title={title}
+          title={display === 'title'}
         >
           {children}
         </H1>
@@ -30,7 +30,7 @@ const Heading = ({
           background={background}
           customStyles={customStyles}
           color={color}
-          title={title}
+          title={display === 'title'}
         >
           {children}
         </H2>
@@ -41,7 +41,7 @@ const Heading = ({
           background={background}
           customStyles={customStyles}
           color={color}
-          title={title}
+          title={display === 'title'}
         >
           {children}
         </H3>
@@ -52,7 +52,7 @@ const Heading = ({
           background={background}
           customStyles={customStyles}
           color={color}
-          title={title}
+          title={display === 'title'}
         >
           {children}
         </H4>
@@ -63,7 +63,7 @@ const Heading = ({
           background={background}
           customStyles={customStyles}
           color={color}
-          title={title}
+          title={display === 'title'}
         >
           {children}
         </H5>
@@ -74,7 +74,7 @@ const Heading = ({
           background={background}
           customStyles={customStyles}
           color={color}
-          title={title}
+          title={display === 'title'}
         >
           {children}
         </H6>
@@ -93,15 +93,24 @@ const H1 = styled.h1`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
+      : props.color === 'text-one'
+      ? props.theme.color.text.one
+      : props.color === 'text-two'
+      ? props.theme.color.text.two
+      : props.color === 'text-three'
+      ? props.theme.color.text.three
       : props.background === 'dark'
       ? props.theme.color.text.light.one
-      : props.theme.color.text.dark.one};
+      : props.theme.color.heading};
   ${(props) =>
     props.customStyles &&
     css`
       ${props.customStyles}
     `}
   text-transform: ${(props) => (props.title ? 'uppercase' : null)};
+  font-weight: 600;
+  margin-bottom: 32px;
+  font-size: ${(props) => props.theme.fontSize.h1}px;
 `;
 const H2 = styled.h2`
   color: ${(props) =>
@@ -113,6 +122,12 @@ const H2 = styled.h2`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
+      : props.color === 'text-one'
+      ? props.theme.color.text.one
+      : props.color === 'text-two'
+      ? props.theme.color.text.two
+      : props.color === 'text-three'
+      ? props.theme.color.text.three
       : props.background === 'dark'
       ? props.theme.color.text.light.one
       : props.theme.color.text.dark.one};
@@ -122,6 +137,9 @@ const H2 = styled.h2`
       ${props.customStyles}
     `}
   text-transform: ${(props) => (props.title ? 'uppercase' : null)};
+  font-weight: 600;
+  margin-bottom: 32px;
+  font-size: ${(props) => props.theme.fontSize.h2}px;
 `;
 const H3 = styled.h3`
   color: ${(props) =>
@@ -133,6 +151,12 @@ const H3 = styled.h3`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
+      : props.color === 'text-one'
+      ? props.theme.color.text.one
+      : props.color === 'text-two'
+      ? props.theme.color.text.two
+      : props.color === 'text-three'
+      ? props.theme.color.text.three
       : props.background === 'dark'
       ? props.theme.color.text.light.one
       : props.theme.color.text.dark.one};
@@ -142,6 +166,9 @@ const H3 = styled.h3`
       ${props.customStyles}
     `}
   text-transform: ${(props) => (props.title ? 'uppercase' : null)};
+  font-weight: 600;
+  margin-bottom: 22px;
+  font-size: ${(props) => props.theme.fontSize.h3}px;
 `;
 const H4 = styled.h4`
   color: ${(props) =>
@@ -153,6 +180,12 @@ const H4 = styled.h4`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
+      : props.color === 'text-one'
+      ? props.theme.color.text.one
+      : props.color === 'text-two'
+      ? props.theme.color.text.two
+      : props.color === 'text-three'
+      ? props.theme.color.text.three
       : props.background === 'dark'
       ? props.theme.color.text.light.one
       : props.theme.color.text.dark.one};
@@ -162,6 +195,9 @@ const H4 = styled.h4`
       ${props.customStyles}
     `}
   text-transform: ${(props) => (props.title ? 'uppercase' : null)};
+  font-weight: 600;
+  margin-bottom: 22px;
+  font-size: ${(props) => props.theme.fontSize.h4}px;
 `;
 const H5 = styled.h5`
   color: ${(props) =>
@@ -173,6 +209,12 @@ const H5 = styled.h5`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
+      : props.color === 'text-one'
+      ? props.theme.color.text.one
+      : props.color === 'text-two'
+      ? props.theme.color.text.two
+      : props.color === 'text-three'
+      ? props.theme.color.text.three
       : props.background === 'dark'
       ? props.theme.color.text.light.one
       : props.theme.color.text.dark.one};
@@ -182,6 +224,9 @@ const H5 = styled.h5`
       ${props.customStyles}
     `}
   text-transform: ${(props) => (props.title ? 'uppercase' : null)};
+  font-weight: 600;
+  margin-bottom: 14px;
+  font-size: ${(props) => props.theme.fontSize.h5}px;
 `;
 const H6 = styled.h6`
   color: ${(props) =>
@@ -193,6 +238,12 @@ const H6 = styled.h6`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
+      : props.color === 'text-one'
+      ? props.theme.color.text.one
+      : props.color === 'text-two'
+      ? props.theme.color.text.two
+      : props.color === 'text-three'
+      ? props.theme.color.text.three
       : props.background === 'dark'
       ? props.theme.color.text.light.one
       : props.theme.color.text.dark.one};
@@ -202,6 +253,9 @@ const H6 = styled.h6`
       ${props.customStyles}
     `}
   text-transform: ${(props) => (props.title ? 'uppercase' : null)};
+  font-weight: 600;
+  margin-bottom: 14px;
+  font-size: ${(props) => props.theme.fontSize.h6}px;
 `;
 
 export default Heading;

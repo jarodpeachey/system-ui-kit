@@ -1,9 +1,22 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const H2 = ({ children, className = '', customStyles, light, background }) => {
+const H2 = ({
+  children,
+  className = '',
+  customStyles,
+  color,
+  background,
+  display,
+}) => {
   return (
-    <StyledH2 light={light} background={background} customStyles={customStyles} className={className}>
+    <StyledH2
+      background={background}
+      color={color}
+      customStyles={customStyles}
+      className={className}
+      display={display}
+    >
       {children}
     </StyledH2>
   );
@@ -11,21 +24,25 @@ const H2 = ({ children, className = '', customStyles, light, background }) => {
 
 const StyledH2 = styled.h2`
   color: ${(props) =>
-    props.light
-      ? props.theme.color.text.dark.two
+    props.color === 'primary'
+      ? props.theme.color.primary.main
+      : props.color === 'secondary'
+      ? props.theme.color.secondary.main
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.background === 'dark'
+      ? props.theme.color.text.light.one
       : props.theme.color.text.dark.one};
-  ${(props) =>
-    props.background === 'dark' &&
-    css`
-      color: ${props.light
-        ? props.theme.color.text.light.two
-        : props.theme.color.text.light.one};
-    `};
   ${(props) =>
     props.customStyles &&
     css`
       ${props.customStyles}
     `}
+  text-transform: ${(props) =>
+    props.display === 'title' ? 'uppercase' : null};
+  font-weight: ${(props) => (props.display === 'subtitle' ? 'normal' : null)};
 `;
 
 export default H2;

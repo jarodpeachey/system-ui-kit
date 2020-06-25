@@ -31,10 +31,27 @@ export const theme = {
     five: 16,
     six: 14,
   },
+  fontSize: {
+    h1: 48,
+    h2: 36,
+    h3: 28,
+    h4: 24,
+    h5: 20,
+    h6: 16,
+    p: 17,
+    small: 14,
+  },
   color: {
+    // primary: '#8731d5',
+    // secondary: '#4197f1',
     success: '#36ca6a',
     error: '#f14941',
+    paragraph: '#4c5267',
+    heading: '#2c2f3b',
     text: {
+      one: '#2c2f3b',
+      two: '#4c5267',
+      three: '#b5b9c1',
       dark: {
         one: '#2c2f3b',
         two: '#4c5267',
