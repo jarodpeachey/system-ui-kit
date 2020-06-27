@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { pSBC } from '../utils/color';
 
 const Alert = ({ children, className, id, color, variant, icon, close }) => {
   const [showAlert, setShowAlert] = useState(true);
@@ -32,7 +33,7 @@ const Alert = ({ children, className, id, color, variant, icon, close }) => {
 const Wrapper = styled.div`
   width: 100%;
   display: ${(props) => (props.show ? 'flex' : 'none')};
-  align-items: flex-start;
+  align-items: center;
   margin: ${(props) => props.theme.spacing.three}px 0;
   padding: 16px 24px;
   background: ${(props) =>
@@ -44,11 +45,8 @@ const Wrapper = styled.div`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.theme.color.gray.two};
-  * {
-    color: ${(props) => (props.color ? 'white' : null)};
-  }
-  color: ${(props) => (props.color ? 'white' : null)};
+      : props.theme.color.gray.eight};
+  color: white;
   ${(props) =>
     props.variant === 'light' &&
     css`
@@ -60,26 +58,36 @@ const Wrapper = styled.div`
         ? props.theme.color.success
         : props.color === 'error'
         ? props.theme.color.error
-        : '#ffffff'}15;
-      color: ${props.color === 'primary'
-        ? props.theme.color.primary
-        : props.color === 'secondary'
-        ? props.theme.color.secondary
-        : props.color === 'success'
-        ? props.theme.color.success
-        : props.color === 'error'
-        ? props.theme.color.error
-        : null};
-      * {
-        color: ${props.color === 'primary'
-          ? props.theme.color.primary
-          : props.color === 'secondary'
-          ? props.theme.color.secondary
-          : props.color === 'success'
-          ? props.theme.color.success
-          : props.color === 'error'
-          ? props.theme.color.error
-          : null};
+        : props.theme.color.heading}15;
+      color: ${pSBC(
+        `${
+          props.color === 'primary'
+            ? props.theme.color.primary
+            : props.color === 'secondary'
+            ? props.theme.color.secondary
+            : props.color === 'success'
+            ? props.theme.color.success
+            : props.color === 'error'
+            ? props.theme.color.error
+            : props.theme.color.heading
+        }`,
+        -25,
+      )};
+      span {
+        color: ${pSBC(
+          `${
+            props.color === 'primary'
+              ? props.theme.color.primary
+              : props.color === 'secondary'
+              ? props.theme.color.secondary
+              : props.color === 'success'
+              ? props.theme.color.success
+              : props.color === 'error'
+              ? props.theme.color.error
+              : props.theme.color.heading
+          }`,
+          -25,
+        )};
       }
     `};
   ${(props) =>
@@ -101,9 +109,13 @@ const CloseButton = styled.div`
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 18px;
   margin-left: auto;
+  color: ${(props) => props.theme.color.text.lightTwo};
   padding-right: 24px;
+  :hover {
+    color: ${(props) => props.theme.color.text.lightOne};
+  }
 `;
 const Icon = styled.div`
   width: 40px;

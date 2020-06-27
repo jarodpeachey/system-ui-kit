@@ -9,6 +9,8 @@ import Display from './routes/display';
 import LayoutComponents from './routes/layout';
 import NavigationComponents from './routes/navigation';
 import TypographyComponents from './routes/typography';
+import Alerts from './routes/alerts';
+import Buttons from './routes/buttons';
 
 const Routes = ({}) => (
   <>
@@ -19,6 +21,8 @@ const Routes = ({}) => (
       <NavigationComponents path="/components/navigation" />
       <TypographyComponents path="/components/typography" />
       <Display path="/components/display" />
+      <Alerts path="/components/alert" />
+      <Buttons path="/components/button" />
       <Components path="/components" />
     </Router>
   </>

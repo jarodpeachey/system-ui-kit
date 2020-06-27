@@ -94,7 +94,7 @@ const StyledButton = styled.button`
             ? props.theme.color.error
             : props.color === 'white'
             ? 'white'
-            : props.theme.color.gray.one};   
+            : props.theme.color.gray.two};   
     color: ${(props) =>
       props.color === 'white'
         ? ''
@@ -128,7 +128,7 @@ const StyledButton = styled.button`
             ? pSBC(props.theme.color.error, -25)
             : props.color === 'white'
             ? pSBC('#ffffff', -25)
-            : props.theme.color.gray.two};
+            : props.theme.color.gray.three};
         // color: ${(props) => (props.color === 'white' ? 'initial' : 'white')};
       }
 
@@ -172,7 +172,7 @@ const StyledButton = styled.button`
           ? props.theme.color.error
           : props.color === 'white'
           ? 'white'
-          : props.theme.color.gray.two};
+          : props.theme.color.gray.three};
       :hover {
         background: ${props.color === 'primary'
           ? props.theme.color.primary
@@ -184,7 +184,7 @@ const StyledButton = styled.button`
           ? props.theme.color.error
           : props.color === 'white'
           ? 'white'
-          : props.theme.color.gray.two};
+          : props.theme.color.gray.three};
         color: ${props.color === 'white'
           ? 'initial'
           : props.color

@@ -16,7 +16,7 @@ const Code = ({ children, className, id, customStyles, style }) => {
 
 const Wrapper = styled.code`
   font-size: 16px;
-  padding: 2px 4px;
+  padding: 0px 4px;
   background: ${(props) => props.theme.color.primary}20;
   margin: 0px 2px;
   border-radius: ${(props) => props.theme.radius.one};

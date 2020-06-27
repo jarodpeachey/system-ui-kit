@@ -67,6 +67,9 @@ export const theme = {
       two: '#4b4f61aa',
       // three: '#aab1b9',
       three: '#4b4f6170',
+      lightOne: '#ffffff',
+      lightTwo: '#ffffffaa',
+      lightThree: '#ffffff80',
     },
   },
 };
