@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
-import Button from '../components/Button';
 import Row from '../components/Row';
 import H1 from '../components/H1';
 import H2 from '../components/H2';
@@ -21,8 +20,12 @@ import { theme } from '../theme';
 import SubTitle from '../components/SubTitle';
 import Paragraph from '../components/Paragraph';
 import Code from '../components/Code';
+import RadioButton from '../components/RadioButton';
+import Flex from '../components/Flex';
+import RadioButtons from '../components/RadioButtons';
+import Text from '../components/Text';
 
-const Buttons = ({}) => {
+const RadioButtonsPage = ({}) => {
   const [showNotificationOne, setShowNotificationOne] = useState(false);
   const [showNotificationTwo, setShowNotificationTwo] = useState(false);
   const [showNotificationThree, setShowNotificationThree] = useState(false);
@@ -32,7 +35,7 @@ const Buttons = ({}) => {
   return (
     <Layout>
       <Helmet>
-        <title>Button Component - System UI Kit</title>
+        <title>Radio Button Component - System UI Kit</title>
       </Helmet>
       <Hero
         background={`linear-gradient(
@@ -43,89 +46,204 @@ const Buttons = ({}) => {
       >
         <div style={{ textAlign: 'center' }}>
           <H1 type="h1" darkBackground className="m-none">
-            Buttons
+            Radio Buttons
           </H1>
           <SubTitle type="h4" darkBackground>
-            Buttons are used to trigger actions when a user clicks them.
+            Radio buttons let users select one option from a list
           </SubTitle>
         </div>
       </Hero>
       <Section spacing="small">
         <Container>
+          <H3>Basic Radio Buttons</H3>
+          <div
+            style={{
+              background: theme.color.gray.one,
+              borderRadius: 3,
+              padding: 16,
+            }}
+          >
+            <Flex>
+              <RadioButtons inline color="primary" name="radios-one">
+                <RadioButton checked className="mr-2"></RadioButton>
+                <RadioButton
+                  checked
+                  color="primary"
+                  className="mr-2"
+                ></RadioButton>
+                <RadioButton className="mr-2" color="secondary"></RadioButton>
+                <RadioButton
+                  disabled
+                  className="mr-2"
+                  color="success"
+                ></RadioButton>
+                <RadioButton
+                  disabled
+                  className="mr-2"
+                  color="error"
+                ></RadioButton>
+              </RadioButtons>
+            </Flex>
+          </div>
+
+          <br />
           <H3>Color</H3>
-          <Button className="mr-2">default</Button>
-          <Button className="mr-2" color="primary">
-            primary
-          </Button>
-          <Button className="mr-2" color="secondary">
-            secondary
-          </Button>
-          <Button className="mr-2" color="success">
-            success
-          </Button>
-          <Button className="mr-2" color="error">
-            error
-          </Button>
+          <p>
+            You can change the color of the entire Radio button group, or
+            individually.
+          </p>
+          <Paragraph><strong>Group</strong></Paragraph>
+          <div
+            style={{
+              background: theme.color.gray.one,
+              borderRadius: 3,
+              padding: '16px 32px',
+            }}
+          >
+            <Flex hAlign="start">
+              <div className="mr-4">
+                <Text
+                  type="strong"
+                  className="mb-3 display-block"
+                  display="title"
+                  color="default"
+                >
+                  <Text type="small">Default</Text>
+                </Text>
+                <RadioButtons color="default" name="default">
+                  <RadioButton checked className="mr-2">
+                    Option one
+                  </RadioButton>
+                  <RadioButton checked color="default" className="mr-2">
+                    Option two
+                  </RadioButton>
+                  <RadioButton checked className="mr-2">
+                    Option three
+                  </RadioButton>
+                </RadioButtons>
+              </div>
+              <div className="mr-4">
+                <Text
+                  type="strong"
+                  className="mb-3 display-block"
+                  display="title"
+                  color="primary"
+                >
+                  <Text type="small">Primary</Text>
+                </Text>
+                <RadioButtons color="primary" name="primary">
+                  <RadioButton checked className="mr-2">
+                    Option one
+                  </RadioButton>
+                  <RadioButton checked color="primary" className="mr-2">
+                    Option two
+                  </RadioButton>
+                  <RadioButton checked className="mr-2">
+                    Option three
+                  </RadioButton>
+                </RadioButtons>
+              </div>
+              <div className="mr-4">
+                <Text
+                  type="strong"
+                  className="mb-3 display-block"
+                  display="title"
+                  color="secondary"
+                >
+                  <Text type="small">Secondary</Text>
+                </Text>
+                <RadioButtons color="secondary" name="secondary">
+                  <RadioButton checked className="mr-2">
+                    Option one
+                  </RadioButton>
+                  <RadioButton checked color="secondary" className="mr-2">
+                    Option two
+                  </RadioButton>
+                  <RadioButton checked className="mr-2">
+                    Option three
+                  </RadioButton>
+                </RadioButtons>
+              </div>
+              <div className="mr-4">
+                <Text
+                  type="strong"
+                  className="mb-3 display-block"
+                  display="title"
+                  color="success"
+                >
+                  <Text type="small">Success</Text>
+                </Text>
+                <RadioButtons color="success" name="success">
+                  <RadioButton checked className="mr-2">
+                    Option one
+                  </RadioButton>
+                  <RadioButton checked color="success" className="mr-2">
+                    Option two
+                  </RadioButton>
+                  <RadioButton checked className="mr-2">
+                    Option three
+                  </RadioButton>
+                </RadioButtons>
+              </div>
+              <div className="mr-4">
+                <Text
+                  type="strong"
+                  className="mb-3 display-block"
+                  display="title"
+                  color="error"
+                >
+                  <Text type="small">Error</Text>
+                </Text>
+                <RadioButtons color="error" name="error">
+                  <RadioButton checked className="mr-2">
+                    Option one
+                  </RadioButton>
+                  <RadioButton checked color="error" className="mr-2">
+                    Option two
+                  </RadioButton>
+                  <RadioButton checked className="mr-2">
+                    Option three
+                  </RadioButton>
+                </RadioButtons>
+              </div>
+            </Flex>
+          </div>
           <br />
-          <H3 className="mb-none">Outlined</H3>
-          <Paragraph>
-            Use an outlined button to indicate a secondary action.
-          </Paragraph>
-          <Button className="mr-2" variant="outlined">
-            default
-          </Button>
-          <Button className="mr-2" variant="outlined" color="primary">
-            primary
-          </Button>
-          <Button className="mr-2" variant="outlined" color="secondary">
-            secondary
-          </Button>
-          <Button className="mr-2" variant="outlined" color="success">
-            success
-          </Button>
-          <Button className="mr-2" variant="outlined" color="error">
-            error
-          </Button>
+          <H3>With Label</H3>
+          <div
+            style={{
+              background: theme.color.gray.one,
+              borderRadius: 3,
+              padding: 16,
+            }}
+          >
+            <Flex direction="vertical" hAlign="start">
+              <RadioButton checked className="mr-2">
+                Default
+              </RadioButton>
+              <br />
+              <RadioButton checked color="primary" className="mr-2">
+                Primary
+              </RadioButton>
+              <br />
+              <RadioButton checked className="mr-2" color="secondary">
+                Secondary
+              </RadioButton>
+              <br />
+              <RadioButton checked className="mr-2" color="success">
+                Success
+              </RadioButton>
+              <br />
+              <RadioButton checked className="mr-2" color="error">
+                Error
+              </RadioButton>
+              <br />
+            </Flex>
+          </div>
           <br />
-          <H3 className="mb-none">Plain</H3>
+          <H3>Props</H3>
           <Paragraph>
-            Use a plain button to indicate an action that's not important.
-          </Paragraph>
-          <Button className="mr-2" variant="plain">
-            default
-          </Button>
-          <Button className="mr-2" variant="plain" color="primary">
-            primary
-          </Button>
-          <Button className="mr-2" variant="plain" color="secondary">
-            secondary
-          </Button>
-          <Button className="mr-2" variant="plain" color="success">
-            success
-          </Button>
-          <Button className="mr-2" variant="plain" color="error">
-            error
-          </Button>
-          <br />
-          <H3 type="h3" className="mb-none">
-            Sizes
-          </H3>
-          <Paragraph>
-            You can choose between small, default and large button sizes.
-          </Paragraph>
-          <Button className="mr-2" color="primary" size="large">
-            Large
-          </Button>
-          <Button className="mr-2" color="primary">
-            Default
-          </Button>
-          <Button className="mr-2" color="primary" size="small">
-            Small
-          </Button>
-          <br />
-          <H3 className="mb-none">Props</H3>
-          <Paragraph>
-            Props available to customize the <Code>{'<Button />'}</Code>{' '}
+            Props available to customize the <Code>{'<RadioButton />'}</Code>{' '}
             component.
           </Paragraph>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -243,10 +361,9 @@ const Buttons = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Change the color of the button. Options include{' '}
+                  Change the color of the checkbox active state. Options include{' '}
                   <Code>primary</Code>, <Code>secondary</Code>,{' '}
-                  <Code>success</Code>, <Code>error</Code>, and{' '}
-                  <Code>white</Code>
+                  <Code>success</Code>, and <Code>error</Code>
                 </td>
               </tr>
               <tr>
@@ -257,69 +374,7 @@ const Buttons = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>variant</Code>
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  <Code>string</Code>
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  Change the style of the button. Options include{' '}
-                  <Code>default</Code>, <Code>outlined</Code>, and{' '}
-                  <Code>plain</Code>
-                </td>
-              </tr>
-              <tr>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  <Code>size</Code>
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  <Code>string</Code>
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  Change the size of the button. Options include{' '}
-                  <Code>small</Code>, <Code>default</Code>, and{' '}
-                  <Code>large</Code>
-                </td>
-              </tr>
-              <tr>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  <Code>fullWidth</Code>
+                  <Code>checked</Code>
                 </td>
                 <td
                   style={{
@@ -337,8 +392,7 @@ const Buttons = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  If <Code>true</Code>, the button will take up the full width
-                  of it's parent container.
+                  If true, the checkbox will default to <Code>checked</Code>
                 </td>
               </tr>
               <tr>
@@ -349,37 +403,7 @@ const Buttons = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>link</Code>
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  <Code>string</Code>
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  The url that you want the button to redirect to. Accepts
-                  relative and absolute paths.
-                </td>
-              </tr>
-              <tr>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  <Code>external</Code>
+                  <Code>disabled</Code>
                 </td>
                 <td
                   style={{
@@ -397,8 +421,7 @@ const Buttons = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  If set to true, uses an <Code>{'<a>'}</Code> tag as opposed to
-                  a React Router link
+                  If true, the user will not be able to select the checkbox
                 </td>
               </tr>
               <tr>
@@ -409,7 +432,7 @@ const Buttons = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>onClick</Code>
+                  <Code>onChange</Code>
                 </td>
                 <td
                   style={{
@@ -427,7 +450,8 @@ const Buttons = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Custom onClick function to handle actions other than links.
+                  A custom onChange function that returns the value of the
+                  checkbox.
                 </td>
               </tr>
             </tbody>
@@ -450,4 +474,4 @@ const Demo = styled.div`
   background: ${(props) => props.theme.color.primary};
 `;
 
-export default Buttons;
+export default RadioButtonsPage;

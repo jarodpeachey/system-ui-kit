@@ -11,3 +11,12 @@ export const pSBC = (color, amount) => {
       )
   );
 };
+
+export const calculateColor = (color, colorTheme) => {
+  if (color === 'primary') return colorTheme.primary;
+  if (color === 'secondary') return colorTheme.secondary;
+  if (color === 'success') return colorTheme.success;
+  if (color === 'error') return colorTheme.error;
+
+  return colorTheme.gray.eight;
+};

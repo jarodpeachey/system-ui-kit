@@ -11,6 +11,8 @@ import NavigationComponents from './routes/navigation';
 import TypographyComponents from './routes/typography';
 import Alerts from './routes/alerts';
 import Buttons from './routes/buttons';
+import Checkboxes from './routes/checkboxes';
+import RadioButtonsPage from './routes/radio-buttons';
 
 const Routes = ({}) => (
   <>
@@ -23,6 +25,8 @@ const Routes = ({}) => (
       <Display path="/components/display" />
       <Alerts path="/components/alert" />
       <Buttons path="/components/button" />
+      <Checkboxes path="/components/checkbox" />
+      <RadioButtonsPage path="/components/radio-button" />
       <Components path="/components" />
     </Router>
   </>

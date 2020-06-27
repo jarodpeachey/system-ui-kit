@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+import { calculateColor } from '../utils/color';
 
 const Checkbox = ({
   children,
@@ -10,7 +11,8 @@ const Checkbox = ({
   onChange,
   disabled,
   checked = false,
-  value = '',
+  color,
+  icon = <FontAwesomeIcon icon="check" />,
 }) => {
   const [inputChecked, setInputChecked] = useState(checked);
 
@@ -43,6 +45,7 @@ const Checkbox = ({
       checked={inputChecked}
       disabled={disabled}
       htmlFor={name}
+      color={color}
     >
       <input
         id={name}
@@ -53,9 +56,7 @@ const Checkbox = ({
         checked={inputChecked}
       />
       <span className="checkmark mr-2">
-        <div className="icon">
-          <FontAwesomeIcon icon="check" />
-        </div>
+        <div className="icon">{icon}</div>
       </span>
       {children}
     </CheckboxWrapper>
@@ -69,6 +70,7 @@ const Wrapper = styled.div`
 `;
 
 const CheckboxWrapper = styled.label`
+  width: fit-content;
   color: ${(props) => (props.disabled ? 'rgb(190, 190, 190)' : '')};
   display: block;
   position: relative;
@@ -96,16 +98,20 @@ const CheckboxWrapper = styled.label`
     border-radius: 2px;
     border: 1px solid
       ${(props) =>
-        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.gray.four};
+        props.disabled ? props.theme.color.gray.two : props.theme.color.gray.four};
     background: #ffffff;
     transition: 0.1s;
   }
   input:checked ~ .checkmark {
     background: ${(props) =>
-      props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary};
+      props.disabled
+        ? props.theme.color.gray.four
+        : calculateColor(props.color, props.theme.color)};
     border: 1px solid
       ${(props) =>
-        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary};
+        props.disabled
+          ? props.theme.color.gray.four
+          : calculateColor(props.color, props.theme.color)};
   }
   .icon {
     display: none;
@@ -114,7 +120,7 @@ const CheckboxWrapper = styled.label`
   //   display: block;
   // }
   input:checked ~ .checkmark > .icon {
-    font-size: 11px;
+    font-size: 12px;
     color: white;
     top: 0px;
     position: relative;
@@ -123,7 +129,7 @@ const CheckboxWrapper = styled.label`
   }
   // input:focus ~ .checkmark {
   //   box-shadow: 0px 0px 0px 3px ${(props) =>
-    props.theme.color.primary}30 !important;
+    calculateColor(props.color, props.theme.color)}30 !important;
   // }
     input:hover ~ .checkmark {
     border: 1px solid ${(props) =>
@@ -131,7 +137,9 @@ const CheckboxWrapper = styled.label`
   }
     input:checked:hover ~ .checkmark {
     border: 1px solid ${(props) =>
-      props.disabled ? 'rgb(230, 230, 230)' : `${props.theme.color.primary}`};
+      props.disabled
+        ? props.theme.color.gray.four
+        : `${calculateColor(props.color, props.theme.color)}`};
   }
 `;
 

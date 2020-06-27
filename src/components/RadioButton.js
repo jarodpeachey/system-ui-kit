@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+import { calculateColor } from '../utils/color';
 
 const RadioButton = ({
   children,
@@ -11,6 +12,8 @@ const RadioButton = ({
   disabled,
   name,
   value,
+  color,
+  inline
 }) => {
   const customOnChange = (e) => {
     onChange && onChange(e);
@@ -22,6 +25,8 @@ const RadioButton = ({
       id={id}
       disabled={disabled}
       htmlFor={name}
+      color={color}
+      inline={inline}
     >
       <input
         value={value}
@@ -48,7 +53,7 @@ const RadioButtonWrapper = styled.label`
   color: ${(props) => (props.disabled ? 'rgb(190, 190, 190)' : '')};
   display: block;
   position: relative;
-  display: flex;
+  display: ${(props) => (props.inline ? 'inline-flex' : 'flex')};
   align-items: center;
   cursor: ${(props) => (props.disabled ? '' : 'pointer')};
   input {
@@ -80,7 +85,9 @@ const RadioButtonWrapper = styled.label`
     transition: all 0.1s;
     border: 1px solid
       ${(props) =>
-        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary};
+        props.disabled
+          ? 'rgb(230, 230, 230)'
+          : calculateColor(props.color, props.theme.color)};
   }
   .icon {
     background: white;
@@ -99,10 +106,12 @@ const RadioButtonWrapper = styled.label`
   }
     input:checked:hover ~ .checkmark {
     border: 1px solid ${(props) =>
-      props.disabled ? 'rgb(230, 230, 230)' : `${props.theme.color.primary}`};
+      props.disabled
+        ? 'rgb(230, 230, 230)'
+        : `${calculateColor(props.color, props.theme.color)}`};
   }
   input:checked ~ .checkmark > .icon {
-    background: ${(props) => props.theme.color.primary};
+    background: ${(props) => calculateColor(props.color, props.theme.color)};
     width: 100%;
     height: 100%;
     display: block;
@@ -111,7 +120,7 @@ const RadioButtonWrapper = styled.label`
   }
   input:focus ~ .checkmark {
     // box-shadow: 0px 0px 0px 3px ${(props) =>
-      props.theme.color.primary}30 !important;
+      calculateColor(props.color, props.theme.color)}30 !important;
   }
 `;
 
