@@ -7,7 +7,7 @@ const Navbar = ({ children, className }) => (
   </Wrapper>
 );
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   display: flex;
   align-items: center;
 `;

@@ -38,8 +38,8 @@ const StyledContainer = styled.div`
       : props.size === 'sm'
       ? '960'
       : props.size === 'lg'
-      ? '1500'
-      : '1300'}px;
+      ? '1300'
+      : '1100'}px;
   padding-left: 16px;
   padding-right: 16px;
   padding: 0 12px;
