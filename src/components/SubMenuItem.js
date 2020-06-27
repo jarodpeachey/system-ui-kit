@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const SubMenuItem = ({ children }) => <Wrapper>{children}</Wrapper>;
+const SubMenuItem = ({ children, className, id }) => (
+  <Wrapper className={className} id={id}>
+    {children}
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
   width: 100%;
@@ -20,7 +24,7 @@ const Wrapper = styled.div`
     width: 100%;
     cursor: pointer;
     :active {
-      background: ${(props) => props.theme.color.primary.main};
+      background: ${(props) => props.theme.color.primary};
       color: white;
     }
     :hover {

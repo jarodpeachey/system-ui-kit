@@ -23,24 +23,24 @@ const Components = () => (
     <Hero
       background={`linear-gradient(
         to right,
-        ${theme.color.primary.main},
-        ${theme.color.secondary.main}
+        ${theme.color.primary},
+        ${theme.color.secondary}
       )`}
     >
       <div style={{ textAlign: 'center' }}>
-        <Heading type="h1" background="dark" className="m-none">
+        <H1 type="h1" darkBackground className="m-none">
           Components
-        </Heading>
-        <SubTitle type="h4" background="dark">
+        </H1>
+        <SubTitle type="h4" darkBackground>
           Boxes, buttons, inputs, alerts and more!
         </SubTitle>
       </div>
     </Hero>
     <Section>
       <Container>
-        <Heading type="h2" className="mt-none">
+        <H2 type="h2" className="mt-none">
           Components List
-        </Heading>
+        </H2>
         <Row spacing={[24, 12]} breakpoints={[769, 960]}>
           <div widths={[6, 4]}>
             <Info
@@ -106,7 +106,7 @@ const Demo = styled.div`
   * {
     color: white !important;
   }
-  background: ${(props) => props.theme.color.primary.main};
+  background: ${(props) => props.theme.color.primary};
 `;
 
 export default Components;

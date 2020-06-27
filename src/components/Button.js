@@ -8,7 +8,8 @@ import { Link } from '@reach/router';
 
 const Button = ({
   children,
-  className = '',
+  className,
+  id,
   onClick,
   link,
   color,
@@ -21,13 +22,14 @@ const Button = ({
     {link ? (
       <Link
         to={link}
-        className={`${className} no-styling ${fullWidth ? 'full-width' : null}`}
+        className={`no-styling ${fullWidth ? 'full-width' : null}`}
       >
         <StyledButton
+          className={className}
+          id={id}
           color={color}
           size={size}
           variant={variant}
-          className={className}
           onClick={onClick || null}
           link
           customStyles={customStyles}
@@ -38,10 +40,11 @@ const Button = ({
       </Link>
     ) : (
       <StyledButton
+        className={className}
+        id={id}
         color={color}
         size={size}
         variant={variant}
-        className={className}
         onClick={onClick || null}
         customStyles={customStyles}
         fullWidth={fullWidth}
@@ -71,19 +74,20 @@ const StyledButton = styled.button`
     
   height: ${(props) => (props.size === 'large' ? '54px' : null)};
   font-size: ${(props) =>
-    props.size === 'small' ? '14px' : props.size === 'large' ? '18px' : '16px'};
+    props.size === 'small' ? '12px' : props.size === 'large' ? '16px' : '14px'};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
+  text-transform: uppercase;
   :active {
     box-shadow: none !important;
   }
 
         background: ${(props) =>
           props.color === 'primary'
-            ? props.theme.color.primary.main
+            ? props.theme.color.primary
             : props.color === 'secondary'
-            ? props.theme.color.secondary.main
+            ? props.theme.color.secondary
             : props.color === 'success'
             ? props.theme.color.success
             : props.color === 'error'
@@ -99,7 +103,7 @@ const StyledButton = styled.button`
           props.color === 'success' ||
           props.color === 'error'
         ? 'white'
-        : props.theme.color.text.dark.one};
+        : props.theme.color.text.heading};
       * {
             color: ${(props) =>
               props.color === 'white'
@@ -109,15 +113,15 @@ const StyledButton = styled.button`
                   props.color === 'success' ||
                   props.color === 'error'
                 ? 'white'
-                : props.theme.color.text.dark.one};
+                : props.theme.color.text.heading};
       }
       border: 1px solid transparent;
       :hover {
         background: ${(props) =>
           props.color === 'primary'
-            ? pSBC(props.theme.color.primary.main, -25)
+            ? pSBC(props.theme.color.primary, -25)
             : props.color === 'secondary'
-            ? pSBC(props.theme.color.secondary.main, -25)
+            ? pSBC(props.theme.color.secondary, -25)
             : props.color === 'success'
             ? pSBC(props.theme.color.success, -25)
             : props.color === 'error'
@@ -134,9 +138,9 @@ const StyledButton = styled.button`
     css`
       background: transparent;
       color: ${props.color === 'primary'
-        ? props.theme.color.primary.main
+        ? props.theme.color.primary
         : props.color === 'secondary'
-        ? props.theme.color.secondary.main
+        ? props.theme.color.secondary
         : props.color === 'success'
         ? props.theme.color.success
         : props.color === 'error'
@@ -146,9 +150,9 @@ const StyledButton = styled.button`
         : ''};
       * {
         color: ${props.color === 'primary'
-          ? props.theme.color.primary.main
+          ? props.theme.color.primary
           : props.color === 'secondary'
-          ? props.theme.color.secondary.main
+          ? props.theme.color.secondary
           : props.color === 'success'
           ? props.theme.color.success
           : props.color === 'error'
@@ -159,9 +163,9 @@ const StyledButton = styled.button`
       }
       border: 1px solid
         ${props.color === 'primary'
-          ? props.theme.color.primary.main
+          ? props.theme.color.primary
           : props.color === 'secondary'
-          ? props.theme.color.secondary.main
+          ? props.theme.color.secondary
           : props.color === 'success'
           ? props.theme.color.success
           : props.color === 'error'
@@ -171,9 +175,9 @@ const StyledButton = styled.button`
           : props.theme.color.gray.two};
       :hover {
         background: ${props.color === 'primary'
-          ? props.theme.color.primary.main
+          ? props.theme.color.primary
           : props.color === 'secondary'
-          ? props.theme.color.secondary.main
+          ? props.theme.color.secondary
           : props.color === 'success'
           ? props.theme.color.success
           : props.color === 'error'
@@ -202,9 +206,9 @@ const StyledButton = styled.button`
       background: transparent;
       color: ${
         props.color === 'primary'
-          ? props.theme.color.primary.main
+          ? props.theme.color.primary
           : props.color === 'secondary'
-          ? props.theme.color.secondary.main
+          ? props.theme.color.secondary
           : props.color === 'success'
           ? props.theme.color.success
           : props.color === 'error'
@@ -216,9 +220,9 @@ const StyledButton = styled.button`
     * {
             color: ${
               props.color === 'primary'
-                ? props.theme.color.primary.main
+                ? props.theme.color.primary
                 : props.color === 'secondary'
-                ? props.theme.color.secondary.main
+                ? props.theme.color.secondary
                 : props.color === 'success'
                 ? props.theme.color.success
                 : props.color === 'error'
@@ -232,9 +236,9 @@ const StyledButton = styled.button`
       :hover {
         background: ${
           props.color === 'primary'
-            ? `${props.theme.color.primary.main}15`
+            ? `${props.theme.color.primary}15`
             : props.color === 'secondary'
-            ? `${props.theme.color.secondary.main}15`
+            ? `${props.theme.color.secondary}15`
             : props.color === 'success'
             ? `${props.theme.color.success}15`
             : props.color === 'error'

@@ -7,7 +7,8 @@ import { pSBC } from '../utils/color';
 
 const Button = ({
   children,
-  className = '',
+  className,
+  id,
   onClick,
   link,
   color,
@@ -21,11 +22,12 @@ const Button = ({
     {link ? (
       <a className="no-styling" href={link}>
         <StyledButton
+          className={className}
+          id={id}
           color={color}
           circle={circle}
           size={size}
           variant={variant}
-          className={className}
           onClick={onClick || null}
           link
           customStyles={customStyles}
@@ -36,11 +38,12 @@ const Button = ({
       </a>
     ) : (
       <StyledButton
+        className={className}
+        id={id}
         color={color}
         circle={circle}
         size={size}
         variant={variant}
-        className={className}
         onClick={onClick || null}
         customStyles={customStyles}
         disabled={disabled}
@@ -84,9 +87,9 @@ const StyledButton = styled.button`
 
         background: ${(props) =>
           props.color === 'primary'
-            ? props.theme.color.primary.main
+            ? props.theme.color.primary
             : props.color === 'secondary'
-            ? props.theme.color.secondary.main
+            ? props.theme.color.secondary
             : props.color === 'success'
             ? props.theme.color.success
             : props.color === 'error'
@@ -109,9 +112,9 @@ const StyledButton = styled.button`
           pSBC(
             `${
               props.color === 'primary'
-                ? props.theme.color.primary.main
+                ? props.theme.color.primary
                 : props.color === 'secondary'
-                ? props.theme.color.secondary.main
+                ? props.theme.color.secondary
                 : props.color === 'success'
                 ? props.theme.color.success
                 : props.color === 'error'
@@ -131,9 +134,9 @@ const StyledButton = styled.button`
     css`
       background: transparent;
       color: ${props.color === 'primary'
-        ? props.theme.color.primary.main
+        ? props.theme.color.primary
         : props.color === 'secondary'
-        ? props.theme.color.secondary.main
+        ? props.theme.color.secondary
         : props.color === 'success'
         ? props.theme.color.success
         : props.color === 'error'
@@ -143,9 +146,9 @@ const StyledButton = styled.button`
         : ''};
       border: 1px solid
         ${props.color === 'primary'
-          ? props.theme.color.primary.main
+          ? props.theme.color.primary
           : props.color === 'secondary'
-          ? props.theme.color.secondary.main
+          ? props.theme.color.secondary
           : props.color === 'success'
           ? props.theme.color.success
           : props.color === 'error'
@@ -155,9 +158,9 @@ const StyledButton = styled.button`
           : props.theme.color.gray.two};
       :hover {
         background: ${props.color === 'primary'
-          ? props.theme.color.primary.main
+          ? props.theme.color.primary
           : props.color === 'secondary'
-          ? props.theme.color.secondary.main
+          ? props.theme.color.secondary
           : props.color === 'success'
           ? props.theme.color.success
           : props.color === 'error'
@@ -179,9 +182,9 @@ const StyledButton = styled.button`
       background: transparent;
       color: ${
         props.color === 'primary'
-          ? props.theme.color.primary.main
+          ? props.theme.color.primary
           : props.color === 'secondary'
-          ? props.theme.color.secondary.main
+          ? props.theme.color.secondary
           : props.color === 'success'
           ? props.theme.color.success
           : props.color === 'error'
@@ -194,9 +197,9 @@ const StyledButton = styled.button`
       :hover {
         background: ${
           props.color === 'primary'
-            ? props.theme.color.primary.main
+            ? props.theme.color.primary
             : props.color === 'secondary'
-            ? props.theme.color.secondary.main
+            ? props.theme.color.secondary
             : props.color === 'success'
             ? props.theme.color.success
             : props.color === 'error'

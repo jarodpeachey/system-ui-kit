@@ -7,6 +7,8 @@ import TabList from './TabList';
 
 const Tabs = ({
   children,
+  className,
+  id,
   onChange,
   defaultValue,
   customStyles,
@@ -31,7 +33,7 @@ const Tabs = ({
   }, [value]);
 
   return (
-    <Wrapper customStyles={customStyles}>
+    <Wrapper className={className} id={id} customStyles={customStyles}>
       <Flex hAlign="start">
         {children.map((child) => {
           console.log(child.type.name);

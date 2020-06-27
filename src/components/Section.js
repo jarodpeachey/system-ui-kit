@@ -2,13 +2,14 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { ThemeContext } from '../theme';
 
-const Section = ({ children, background, className = '', spacing }) => {
+const Section = ({ children, className, id, background, spacing }) => {
   const theme = useContext(ThemeContext);
 
   return (
     <StyledSection
-      spacing={spacing}
       className={className}
+      id={id}
+      spacing={spacing}
       background={background}
     >
       {children}

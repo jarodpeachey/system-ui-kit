@@ -3,13 +3,15 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ThemeContext } from '../theme';
 
-const MobileMenuItem = ({ children, submenu, align, icon }) => {
+const MobileMenuItem = ({ children, className, id, submenu, align, icon }) => {
   const [showMobileSubMenu, setShowMobileSubMenu] = useState(false);
   return (
     <>
       {submenu ? (
         <>
           <Wrapper
+            className={className}
+            id={id}
             onClick={() => {
               setShowMobileSubMenu(!showMobileSubMenu);
             }}
@@ -38,7 +40,9 @@ const MobileMenuItem = ({ children, submenu, align, icon }) => {
           </MobileSubMenuWrapper>
         </>
       ) : (
-        <Wrapper>{children}</Wrapper>
+        <Wrapper className={className} id={id}>
+          {children}
+        </Wrapper>
       )}
     </>
   );
@@ -51,10 +55,10 @@ const Wrapper = styled.div`
   transition-duration: 0.15s !important;
   width: 100%;
   svg {
-    color: ${(props) => props.theme.color.text.dark.one} !important;
-    fill: ${(props) => props.theme.color.text.dark.one} !important;
+    color: ${(props) => props.theme.color.text.heading} !important;
+    fill: ${(props) => props.theme.color.text.heading} !important;
   }
-  color: ${(props) => props.theme.color.text.dark.one};
+  color: ${(props) => props.theme.color.text.heading};
   ${(props) =>
     props.submenu &&
     css`
@@ -66,8 +70,8 @@ const Wrapper = styled.div`
         background: #00000010;
       }
       svg {
-        color: ${props.theme.color.text.dark.one} !important;
-        fill: ${props.theme.color.text.dark.one} !important;
+        color: ${props.theme.color.text.heading} !important;
+        fill: ${props.theme.color.text.heading} !important;
       }
     `};
   a {
@@ -76,7 +80,7 @@ const Wrapper = styled.div`
     padding: ${(props) => (props.submenu ? 0 : '12px 16px')};
     text-decoration: none;
     cursor: pointer;
-    color: ${(props) => props.theme.color.text.dark.one};
+    color: ${(props) => props.theme.color.text.heading};
     background: ${(props) =>
       props.submenu ? 'transparent' : props.open ? '#00000010' : 'transparent'};
     border-radius: ${(props) => props.theme.radius.one};

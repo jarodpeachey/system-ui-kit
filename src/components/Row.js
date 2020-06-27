@@ -4,11 +4,12 @@ import styled, { css } from 'styled-components';
 import Column from './Column';
 
 const Row = ({
+  children,
+  className,
+  id,
   standardWidth,
   breakpoints,
   spacing,
-  children,
-  className,
   maxColumnSize = 2,
   demo,
   vertical,
@@ -16,8 +17,9 @@ const Row = ({
   customStyles,
 }) => (
   <Wrapper
+    className={className}
+    id={id}
     standardWidth={standardWidth}
-    className={className || ''}
     breakpoint={breakpoints[0]}
     breakpointTwo={breakpoints[1] || breakpoints[0]}
     spacingX={spacing[0]}

@@ -5,22 +5,7 @@ import Switch from './Switch';
 import { theme } from '../theme';
 import { pSBC } from '../utils/color';
 
-const Toggle = ({
-  className = '',
-  children,
-  onChange,
-  color,
-  checked,
-  variant,
-  size,
-  activeBackground,
-  background,
-  activeHandleColor,
-  handleColor,
-  width,
-  height,
-  handleSize,
-}) => {
+const Toggle = ({ children, className, id, onChange, checked, variant }) => {
   const [inputChecked, setInputChecked] = useState(checked || false);
 
   const customOnChange = (setChecked) => {
@@ -29,14 +14,14 @@ const Toggle = ({
     onChange && onChange(setChecked);
   };
 
-  console.log(height, width);
-
   useEffect(() => {
     console.log(inputChecked);
   }, [inputChecked]);
 
   return (
     <Wrapper
+      className={className}
+      id={id}
       checked={inputChecked}
       onClick={() => setInputChecked(!inputChecked)}
       filled={variant === 'filled'}
@@ -60,36 +45,37 @@ const ToggleWrapper = styled.div`
   width: 50px;
   border-radius: 999px;
   cursor: pointer;
+  margin-right: 4px;
   border: 1px solid
     ${(props) =>
       props.checked || props.filled
-        ? props.theme.color.primary.main
+        ? props.theme.color.primary
         : props.theme.color.gray.four};
-  padding: 2px;
-  transition: 0.15s;
-  background: ${(props) =>
-    props.filled ? props.theme.color.primary.main : null};
+  padding: ${(props) => (props.filled ? '1px' : '2px')};
+  transition: 0.15s ease-in;
+  background: ${(props) => (props.filled ? props.theme.color.primary : null)};
   :hover {
     border: 1px solid
       ${(props) =>
         props.checked || props.filled
-          ? props.theme.color.primary.main
-          : `${props.theme.color.primary.main}60`};
+          ? props.theme.color.primary
+          : props.theme.color.gray.four};
   }
 `;
 
 const Indicator = styled.div`
-  height: 18px;
+  height: ${(props) => (props.filled ? '20px' : '18px')};
   transition: 0.15s;
-  width: 18px;
+  width: ${(props) => (props.filled ? '20px' : '18px')};
   border-radius: 999px;
   background: ${(props) =>
     props.filled
       ? 'white'
       : props.checked
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.theme.color.gray.three};
-  margin-left: ${(props) => (props.checked ? 'calc(100% - 18px)' : 0)};
+  margin-left: ${(props) =>
+    props.checked ? `calc(100% -  ${props.filled ? '20px' : '18px'})` : 0};
 `;
 
 export default Toggle;

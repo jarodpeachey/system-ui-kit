@@ -1,9 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Code = ({ children, className = '', customStyles, style }) => {
+const Code = ({ children, className, id, customStyles, style }) => {
   return (
-    <Wrapper style={style} customStyles={customStyles} className={className}>
+    <Wrapper
+      className={className}
+      id={id}
+      style={style}
+      customStyles={customStyles}
+    >
       {children}
     </Wrapper>
   );
@@ -12,7 +17,7 @@ const Code = ({ children, className = '', customStyles, style }) => {
 const Wrapper = styled.code`
   font-size: 16px;
   padding: 2px 4px;
-  background: ${(props) => props.theme.color.primary.main}20;
+  background: ${(props) => props.theme.color.primary}20;
   margin: 0px 2px;
   border-radius: ${(props) => props.theme.radius.one};
 `;

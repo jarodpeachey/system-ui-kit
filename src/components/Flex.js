@@ -2,8 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
-const Flex = ({ direction, hAlign, vAlign, children, style }) => (
-  <Wrapper style={style} direction={direction} hAlign={hAlign} vAlign={vAlign}>
+const Flex = ({ children, className, id, direction, hAlign, vAlign }) => (
+  <Wrapper
+    className={className}
+    id={id}
+    direction={direction}
+    hAlign={hAlign}
+    vAlign={vAlign}
+  >
     {children}
   </Wrapper>
 );

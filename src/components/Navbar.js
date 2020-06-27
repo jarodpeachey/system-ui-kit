@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Navbar = ({ children }) => <Wrapper id="navbar">{children}</Wrapper>;
+const Navbar = ({ children, className }) => (
+  <Wrapper id="navbar" className={className}>
+    {children}
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
   display: flex;

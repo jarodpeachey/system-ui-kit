@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const MobileMenu = ({ children }) => {
+const MobileMenu = ({ children, className }) => {
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState(0);
 
@@ -40,7 +40,11 @@ const MobileMenu = ({ children }) => {
           <span />
         </MobileMenuRotate>
       </MobileMenuToggle>
-      <Wrapper id="mobile-menu" className="container" open={open}>
+      <Wrapper
+        id="mobile-menu"
+        className={`${className} container`}
+        open={open}
+      >
         {children}
       </Wrapper>
     </>
@@ -55,7 +59,7 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.03),
-      0 4px 16px -6px rgba(0, 0, 0, 0.5);
+    0 4px 16px -6px rgba(0, 0, 0, 0.5);
   width: 100%;
   transition: all 0.3s, background 0.3s;
   overflow: hidden;
@@ -95,7 +99,7 @@ const MobileMenuToggle = styled.div`
     height: 2px;
     width: 100%;
     background: ${(props) =>
-      props.open ? props.theme.color.text.dark.one : 'white'};
+      props.open ? props.theme.color.text.heading : 'white'};
     border-radius: 20px;
     opacity: 1;
     left: 0;

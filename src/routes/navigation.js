@@ -7,15 +7,18 @@ import Section from '../components/Section';
 import Button from '../components/Button';
 import IconButton from '../components/IconButton';
 import Row from '../components/Row';
-import Heading from '../components/Heading';
+import H1 from '../components/H1';
+import H2 from '../components/H2';
+import H3 from '../components/H3';
 import H4 from '../components/H4';
+import H5 from '../components/H5';
+import H6 from '../components/H6';
 import Alert from '../components/Alert';
 import Chip from '../components/Chip';
 import { Link } from '@reach/router';
 import Container from '../components/Container';
 import Notification from '../components/Notification';
 import Layout from '../Layout';
-import H5 from '../components/H5';
 import { theme } from '../theme';
 import Code from '../components/Code';
 import Hidden from '../components/Hidden';
@@ -26,8 +29,8 @@ import Tabs from '../components/Tabs';
 import Tab from '../components/Tab';
 import TabContent from '../components/TabContent';
 import TabList from '../components/TabList';
-import H3 from '../components/H3';
 import SubTitle from '../components/SubTitle';
+import Paragraph from '../components/Paragraph';
 
 const NavigationComponents = ({}) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -43,15 +46,15 @@ const NavigationComponents = ({}) => {
       <Hero
         background={`linear-gradient(
         to right,
-        ${theme.color.primary.main},
-        ${theme.color.secondary.main}
+        ${theme.color.primary},
+        ${theme.color.secondary}
       )`}
       >
         <div style={{ textAlign: 'center' }}>
-          <Heading type="h1" background="dark" className="m-none">
+          <H1 type="h1" darkBackground className="m-none">
             Layout Components
-          </Heading>
-          <SubTitle type="h4" background="dark">
+          </H1>
+          <SubTitle type="h4" darkBackground>
             Layout components allow you to display information to a user in a
             prominent location.
           </SubTitle>
@@ -59,15 +62,14 @@ const NavigationComponents = ({}) => {
       </Hero>
       <Section>
         <Container>
-          <Heading type="h2" className="mt-none">Menu</Heading>
+          <H2 type="h2" className="mt-none">Menu</H2>
           {/* <Menu>
             <MenuItem>Test</MenuItem>
           </Menu> */}
-          <Button>Test</Button>
           <Dropdown align="left">
             <Button>
               <Flex hAlign="center" vAlign="center">
-                Open<FontAwesomeIcon icon="chevron-down" />
+                Open <FontAwesomeIcon icon="chevron-down" />
               </Flex>
             </Button>
             <span>
@@ -79,7 +81,7 @@ const NavigationComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <Heading type="h2" className="mt-none">Tabs</Heading>
+          <H2 type="h2" className="mt-none">Tabs</H2>
           {/* <div
             style={{
               borderRadius: 3,
@@ -149,7 +151,7 @@ const NavigationComponents = ({}) => {
           <div
             style={{
               boxShadow: '0px 4px 12px -7px #00000040',
-              background: `${theme.color.primary.main}`,
+              background: `${theme.color.primary}`,
               border: '1px solid #efefef',
               borderBottom: 'none',
               width: '100%',
@@ -203,7 +205,7 @@ const NavigationComponents = ({}) => {
             customStyles={`border-top: none; border-top-right-radius: 0; border-top-left-radius: 0; margin: 0;`}
             name="one"
           >
-            <Heading type="h3" className="mt-none">Content One</Heading>
+            <H3 type="h3" className="mt-none">Content One</H3>
             <Paragraph>
               This is a content box, controlled by the tabs up there. Go ahead
               click them and see what happens!
@@ -238,7 +240,7 @@ const NavigationComponents = ({}) => {
             customStyles={`border-top: none; border-top-right-radius: 0; border-top-left-radius: 0; margin: 0;`}
             name="two"
           >
-            <Heading type="h3" className="mt-none">Content Two</Heading>
+            <H3 type="h3" className="mt-none">Content Two</H3>
             <Paragraph>
               This is a content box, controlled by the tabs up there. Go ahead
               click them and see what happens!
@@ -277,7 +279,7 @@ const NavigationComponents = ({}) => {
             customStyles={`border-top: none; border-top-right-radius: 0; border-top-left-radius: 0; margin: 0;`}
             name="three"
           >
-            <Heading type="h3" className="mt-none">Content Three</Heading>
+            <H3 type="h3" className="mt-none">Content Three</H3>
             <Paragraph>
               This is a content box, controlled by the tabs up there. Go ahead
               click them and see what happens!
@@ -321,14 +323,14 @@ const NavigationComponents = ({}) => {
           >
             <Tab
               customStyles={`:hover { background: #efefef80; } border-radius: 6px;`}
-              activeStyles={`:hover { color: white; background: ${theme.color.primary.main}; }color: white; border: none; border-radius: 6px; background: ${theme.color.primary.main};`}
+              activeStyles={`:hover { color: white; background: ${theme.color.primary}; }color: white; border: none; border-radius: 6px; background: ${theme.color.primary};`}
               name="html"
             >
               HTML
             </Tab>
             <Tab
               customStyles={`:hover { background: #efefef80; } border-radius: 6px;`}
-              activeStyles={`:hover { color: white; background: ${theme.color.secondary.main}; }color: white; border: none; border-radius: 6px; background: ${theme.color.secondary.main};`}
+              activeStyles={`:hover { color: white; background: ${theme.color.secondary}; }color: white; border: none; border-radius: 6px; background: ${theme.color.secondary};`}
               name="css"
             >
               CSS
@@ -342,7 +344,7 @@ const NavigationComponents = ({}) => {
             </Tab>
           </Tabs>
           <TabContent name="html" value={activeTabTwo}>
-            <Heading type="h3" className="m-none">HTML</Heading>
+            <H3 type="h3" className="m-none">HTML</H3>
             <Paragraph>
               HTML is a modern markup language that defines the content
               structure of a website.
@@ -350,7 +352,7 @@ const NavigationComponents = ({}) => {
             <Button color="primary">Learn More</Button>
           </TabContent>
           <TabContent name="css" value={activeTabTwo}>
-            <Heading type="h3" className="m-none">CSS</Heading>
+            <H3 type="h3" className="m-none">CSS</H3>
             <Paragraph>
               CSS is a language used to style websites. Without it, websites
               would look horrible.
@@ -358,7 +360,7 @@ const NavigationComponents = ({}) => {
             <Button color="secondary">Learn More</Button>
           </TabContent>
           <TabContent name="javascript" value={activeTabTwo}>
-            <Heading type="h3" className="m-none">Javascript</Heading>
+            <H3 type="h3" className="m-none">Javascript</H3>
             <Paragraph>
               Javascript is a language used to build websites and add user
               interaction. Without it, it would be boring.
@@ -382,7 +384,7 @@ const Demo = styled.div`
   * {
     color: white !important;
   }
-  background: ${(props) => props.theme.color.primary.main};
+  background: ${(props) => props.theme.color.primary};
 `;
 
 export default NavigationComponents;

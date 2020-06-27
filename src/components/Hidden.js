@@ -1,10 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Hidden = ({ children, show, hide }) => {
+const Hidden = ({ children, className, id, show, hide }) => {
   return (
     <>
-      <Wrapper show={show} hide={hide}>
+      <Wrapper className={className} id={id} show={show} hide={hide}>
         {children}
       </Wrapper>
     </>

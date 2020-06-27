@@ -37,14 +37,14 @@ const StyledButton = styled.button`
   transition: all 0.15s;
   :hover, :focus
  {
-    box-shadow: 0px 8px 26px -14px ${(props) => (props.color === 'primary' ? props.theme.color.primary.main : props.color === 'secondary' ? props.theme.color.secondary.main : props.color === 'error' ? props.theme.color.error : props.color === 'success' ? props.theme.color.success : '#aaa')};
+    box-shadow: 0px 8px 26px -14px ${(props) => (props.color === 'primary' ? props.theme.color.primary : props.color === 'secondary' ? props.theme.color.secondary : props.color === 'error' ? props.theme.color.error : props.color === 'success' ? props.theme.color.success : '#aaa')};
     transform: scale(1.02);
   }
   background: ${(props) =>
     props.color === 'primary' ?
-      props.theme.color.primary.main :
+      props.theme.color.primary :
       props.color === 'secondary' ?
-        props.theme.color.secondary.main :
+        props.theme.color.secondary :
         props.color === 'error' ?
           props.theme.color.error :
           props.color === 'success' ?

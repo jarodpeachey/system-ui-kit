@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { ThemeContext } from '../theme';
-import Heading from './Heading';
+import H3 from './H3';
 
 const Info = ({
   children,
+  className,
+  id,
   title,
   icon,
-  className = '',
   variant,
   color,
   layout,
@@ -17,11 +18,12 @@ const Info = ({
 
   return (
     <StyledInfo
+      className={className}
+      id={id}
       layout={layout}
       variant={variant}
       color={color}
       align={align}
-      className={className}
     >
       {icon && (
         <Icon layout={layout} align={align} color={color} variant={variant}>
@@ -29,7 +31,7 @@ const Info = ({
         </Icon>
       )}
       <div>
-        {title && <Heading type="h3">{title}</Heading>}
+        {title && <H3 type="h3">{title}</H3>}
         {children}
       </div>
     </StyledInfo>
@@ -72,9 +74,9 @@ const StyledInfo = styled.div`
     props.variant === 'filled' &&
     css`
       background: ${props.color === 'primary'
-        ? props.theme.color.primary.main
+        ? props.theme.color.primary
         : props.color === 'secondary'
-        ? props.theme.color.secondary.main
+        ? props.theme.color.secondary
         : props.color === 'success'
         ? props.theme.color.success
         : props.color === 'error'
@@ -96,9 +98,9 @@ const StyledInfo = styled.div`
     props.variant === 'light' &&
     css`
       background: ${props.color === 'primary'
-        ? props.theme.color.primary.main
+        ? props.theme.color.primary
         : props.color === 'secondary'
-        ? props.theme.color.secondary.main
+        ? props.theme.color.secondary
         : props.color === 'success'
         ? props.theme.color.success
         : props.color === 'error'
@@ -116,7 +118,7 @@ const Icon = styled.div`
     props.align === 'left' || props.align === 'right' ? 0 : '0 auto'};
   margin-left: ${(props) => (props.align === 'right' ? 'auto' : null)};
   width: fit-content;
-  color: ${(props) => props.theme.color.primary.main};
+  color: ${(props) => props.theme.color.primary};
   svg {
     font-size: 42px;
   }
@@ -125,14 +127,14 @@ const Icon = styled.div`
 
   color: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.theme.color.text.dark.one};
+      : props.theme.color.text.heading};
   ${(props) =>
     props.variant === 'filled' &&
     css`

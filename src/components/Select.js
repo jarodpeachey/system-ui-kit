@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Option from './Option';
+import Text from './Text';
+import { theme } from '../theme';
 
-const Select = ({ children, name = 'default' }) => {
+const Select = ({ children, className, id }) => {
   const newChildren = [];
 
   const [open, setOpen] = useState(false);
@@ -24,13 +26,20 @@ const Select = ({ children, name = 'default' }) => {
 
   return (
     <Wrapper>
-      <SelectWrapper open={open} onClick={toggleOpen}>
-        {selectedLabel || 'Select a value'}
+      <SelectWrapper
+        className={className}
+        id={id}
+        open={open}
+        onClick={toggleOpen}
+      >
+        {selectedLabel || <Text color="text-two">Select a value</Text>}
         <FontAwesomeIcon
           style={{
             marginLeft: 12,
             transform: `${open ? 'rotate(180deg)' : 'none'}`,
             transition: 'all .1s ease-in-out',
+            fontSize: 14,
+            color: selectedLabel ? null : theme.color.text.two,
           }}
           icon="chevron-down"
         />
@@ -73,13 +82,13 @@ const SelectWrapper = styled.div`
   transition-duration: 0.15s;
   border: ${(props) =>
     props.open
-      ? `1px solid ${props.theme.color.primary.main}`
+      ? `1px solid ${props.theme.color.primary}`
       : `1px solid ${props.theme.color.gray.four}`};
   :hover {
     border: ${(props) =>
       props.open
-        ? `1px solid ${props.theme.color.primary.main}`
-        : `1px solid ${props.theme.color.primary.main}60`};
+        ? `1px solid ${props.theme.color.primary}`
+        : `1px solid ${props.theme.color.gray.four}`};
   }
 `;
 

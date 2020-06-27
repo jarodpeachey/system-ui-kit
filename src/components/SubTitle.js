@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components';
 const SubTitle = ({
   children,
   className,
+  id,
   customStyles,
-  background,
-  light,
+  darkBackground,
   type = 'p',
   title,
   color,
@@ -16,7 +16,8 @@ const SubTitle = ({
       {type === 'h1' && (
         <H1
           className={className}
-          background={background}
+          id={id}
+          darkBackground={darkBackground}
           customStyles={customStyles}
           color={color}
           title={title}
@@ -27,7 +28,8 @@ const SubTitle = ({
       {type === 'h2' && (
         <H2
           className={className}
-          background={background}
+          id={id}
+          darkBackground={darkBackground}
           customStyles={customStyles}
           color={color}
           title={title}
@@ -38,7 +40,8 @@ const SubTitle = ({
       {type === 'h3' && (
         <H3
           className={className}
-          background={background}
+          id={id}
+          darkBackground={darkBackground}
           customStyles={customStyles}
           color={color}
           title={title}
@@ -49,7 +52,8 @@ const SubTitle = ({
       {type === 'h4' && (
         <H4
           className={className}
-          background={background}
+          id={id}
+          darkBackground={darkBackground}
           customStyles={customStyles}
           color={color}
           title={title}
@@ -60,7 +64,8 @@ const SubTitle = ({
       {type === 'h5' && (
         <H5
           className={className}
-          background={background}
+          id={id}
+          darkBackground={darkBackground}
           customStyles={customStyles}
           color={color}
           title={title}
@@ -71,7 +76,8 @@ const SubTitle = ({
       {type === 'h6' && (
         <H6
           className={className}
-          background={background}
+          id={id}
+          darkBackground={darkBackground}
           customStyles={customStyles}
           color={color}
           title={title}
@@ -87,7 +93,8 @@ const SubTitle = ({
         type !== 'h6' && (
           <P
             className={className}
-            background={background}
+            id={id}
+            darkBackground={darkBackground}
             customStyles={customStyles}
             color={color}
             title={title}
@@ -101,16 +108,16 @@ const SubTitle = ({
 const P = styled.p`
   color: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.background === 'dark'
-      ? props.theme.color.text.light.two
-      : props.theme.color.text.dark.two};
+      : props.darkBackground
+      ? '#ffffffaa'
+      : props.theme.color.subtitle};
 
   font-weight: normal;
   line-height: 1.7;
@@ -124,16 +131,16 @@ const P = styled.p`
 const H1 = styled.h1`
   color: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.background === 'dark'
-      ? props.theme.color.text.light.two
-      : props.theme.color.text.dark.two};
+      : props.darkBackground
+      ? '#ffffffaa'
+      : props.theme.color.subtitle};
 
   font-weight: normal;
   line-height: 1.7;
@@ -147,16 +154,16 @@ const H1 = styled.h1`
 const H2 = styled.h2`
   color: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.background === 'dark'
-      ? props.theme.color.text.light.two
-      : props.theme.color.text.dark.two};
+      : props.darkBackground
+      ? '#ffffffaa'
+      : props.theme.color.subtitle};
 
   font-weight: normal;
   line-height: 1.7;
@@ -170,16 +177,16 @@ const H2 = styled.h2`
 const H3 = styled.h3`
   color: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.background === 'dark'
-      ? props.theme.color.text.light.two
-      : props.theme.color.text.dark.two};
+      : props.darkBackground
+      ? '#ffffffaa'
+      : props.theme.color.subtitle};
 
   font-weight: normal;
   line-height: 1.7;
@@ -193,16 +200,16 @@ const H3 = styled.h3`
 const H4 = styled.h4`
   color: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.background === 'dark'
-      ? props.theme.color.text.light.two
-      : props.theme.color.text.dark.two};
+      : props.darkBackground
+      ? '#ffffffaa'
+      : props.theme.color.subtitle};
 
   font-weight: normal;
   line-height: 1.7;
@@ -216,16 +223,16 @@ const H4 = styled.h4`
 const H5 = styled.h5`
   color: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.background === 'dark'
-      ? props.theme.color.text.light.two
-      : props.theme.color.text.dark.two};
+      : props.darkBackground
+      ? '#ffffffaa'
+      : props.theme.color.subtitle};
 
   font-weight: normal;
   line-height: 1.7;
@@ -239,16 +246,16 @@ const H5 = styled.h5`
 const H6 = styled.h6`
   color: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.background === 'dark'
-      ? props.theme.color.text.light.two
-      : props.theme.color.text.dark.two};
+      : props.darkBackground
+      ? '#ffffffaa'
+      : props.theme.color.subtitle};
 
   font-weight: normal;
   line-height: 1.7;

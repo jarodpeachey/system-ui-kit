@@ -1,9 +1,22 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const TabContent = ({ active, children, customStyles, value, name }) => {
+const TabContent = ({
+  children,
+  className,
+  id,
+  active,
+  customStyles,
+  value,
+  name,
+}) => {
   return (
-    <Wrapper active={value === name} customStyles={customStyles}>
+    <Wrapper
+      className={className}
+      id={id}
+      active={value === name}
+      customStyles={customStyles}
+    >
       {children}
     </Wrapper>
   );

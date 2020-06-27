@@ -27,6 +27,8 @@ const getDecimalPrecision = (num) => {
 };
 
 const Slider = ({
+  className,
+  id,
   initial = 0,
   max,
   formatFn = (number) => number.toFixed(0),
@@ -84,7 +86,7 @@ const Slider = ({
   };
 
   return (
-    <Wrapper>
+    <Wrapper className={className} id={id}>
       <StyledSlider color={color} ref={sliderRef}>
         <StyledBackground
           style={{ width: `${initialPercentage}%` }}
@@ -124,14 +126,14 @@ const StyledBackground = styled.div`
   top: 0;
   background: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.theme.color.primary.main};
+      : props.theme.color.primary};
   border-radius: 9999px;
 `;
 
@@ -146,14 +148,14 @@ const StyledSlider = styled.div`
   border-radius: 999px;
   background: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.theme.color.primary.main}20;
+      : props.theme.color.primary}20;
   height: 5px;
   width: 100%;
 `;
@@ -167,14 +169,14 @@ const StyledThumb = styled.div`
   // opacity: 0.5;
   background: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.theme.color.primary.main};
+      : props.theme.color.primary};
   cursor: pointer;
 `;
 

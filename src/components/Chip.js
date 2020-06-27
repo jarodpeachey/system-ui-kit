@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Chip = ({ children, color = '', icon }) => {
+const Chip = ({ children, className, id, color = '', icon, rounded }) => {
   return (
-    <Wrapper icon={!!icon} color={color}>
+    <Wrapper
+      className={className}
+      id={id}
+      icon={!!icon}
+      rounded={rounded}
+      color={color}
+    >
       {icon && <Icon>{icon}</Icon>}
       <div>{children}</div>
     </Wrapper>
@@ -20,23 +26,23 @@ const Wrapper = styled.div`
   margin-bottom: ${(props) => props.theme.spacing.three}px;
   margin-left: ${(props) => props.theme.spacing.one}px;
   margin-right: ${(props) => props.theme.spacing.one}px;
-  padding: 2px
-    ${(props) => props.theme.spacing.two}px;
+  padding: 2px ${(props) => props.theme.spacing.two}px;
   background: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
       : props.theme.color.gray.two};
   div {
-    font-size: 14px;
+    font-size: 12px;
+    text-transform: uppercase;
     color: ${(props) => (props.color === '' ? '' : 'white')};
   }
-  border-radius: 3px;
+  border-radius: ${(props) => (props.rounded ? '999px' : '3px')};
   padding-left: ${(props) => (props.icon ? '0' : '8px')};
 `;
 

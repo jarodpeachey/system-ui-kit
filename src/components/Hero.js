@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Hero = ({ children, background }) => (
-  <Wrapper>
+const Hero = ({ children, className, id, background }) => (
+  <Wrapper className={className} id={id}>
     <Background background={background}>
       <div />
     </Background>

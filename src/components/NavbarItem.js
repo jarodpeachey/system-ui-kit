@@ -4,15 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Menu from './Menu';
 import { Link } from '@reach/router';
 
-const NavbarItem = ({ children, submenu, square, align }) => {
+const NavbarItem = ({ children, className, id, submenu, square, align }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   if (submenu) {
     console.log(children[0].props);
     const link = (
-      <Link
-        to={children[0].props.to}
-        className="menu-item"
-      >
+      <Link to={children[0].props.to} className="menu-item">
         {children[0].props.children}
         <FontAwesomeIcon
           style={{
@@ -30,7 +27,8 @@ const NavbarItem = ({ children, submenu, square, align }) => {
     return (
       <>
         <Wrapper
-          className="menu-item"
+          className={`${className} menu-item`}
+          id={id}
           square={square}
           onMouseEnter={() => {
             setShowSubMenu(true);
@@ -49,7 +47,7 @@ const NavbarItem = ({ children, submenu, square, align }) => {
     );
   } else {
     return (
-      <Wrapper className="menu-item" square={square}>
+      <Wrapper className={`${className} menu-item`} id={id} square={square}>
         {children}
       </Wrapper>
     );

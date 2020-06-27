@@ -35,15 +35,15 @@ const LayoutComponents = ({}) => {
       <Hero
         background={`linear-gradient(
         to right,
-        ${theme.color.primary.main},
-        ${theme.color.secondary.main}
+        ${theme.color.primary},
+        ${theme.color.secondary}
       )`}
       >
         <div style={{ textAlign: 'center' }}>
-          <Heading type="h1" background="dark" className="m-none">
+          <H1 type="h1" darkBackground className="m-none">
             Layout Components
-          </Heading>
-          <SubTitle type="h4" background="dark">
+          </H1>
+          <SubTitle type="h4" darkBackground>
             Layout components allow you to display information to a user in a
             prominent location.
           </SubTitle>
@@ -51,7 +51,7 @@ const LayoutComponents = ({}) => {
       </Hero>
       <Section>
         <Container>
-          <Heading type="h2" className="mt-none">Grid</Heading>
+          <H2 type="h2" className="mt-none">Grid</H2>
           <Row breakpoints={[769]} spacing={[8]}>
             <div widths={[1]}>
               <Demo>1</Demo>
@@ -124,7 +124,7 @@ const LayoutComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <Heading type="h2" className="m-none">Flex</Heading>
+          <H2 type="h2" className="m-none">Flex</H2>
           <Paragraph>
             The <Code>{'<Flex />'}</Code> component allows you to add a simple
             flex element. Also known as Grid Lite.
@@ -183,7 +183,7 @@ const LayoutComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <Heading type="h2" className="m-none">Container</Heading>
+          <H2 type="h2" className="m-none">Container</H2>
           <Paragraph>
             The container element can be set to 4 preset sizes: xs, sm, md and
             lg. The max-width can also be set using a custom prop:{' '}
@@ -206,14 +206,14 @@ const LayoutComponents = ({}) => {
             >
               <div
                 style={{
-                  background: `${theme.color.primary.main}10`,
+                  background: `${theme.color.primary}10`,
                   height: '100%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <Heading type="h5" className="m-none">Default</Heading>
+                <H5 type="h5" className="m-none">Default</H5>
               </div>
             </Container>
           </div>
@@ -234,14 +234,14 @@ const LayoutComponents = ({}) => {
             >
               <div
                 style={{
-                  background: `${theme.color.primary.main}10`,
+                  background: `${theme.color.primary}10`,
                   height: '100%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <Heading type="h5" className="m-none">Small</Heading>
+                <H5 type="h5" className="m-none">Small</H5>
               </div>
             </Container>
           </div>
@@ -249,7 +249,7 @@ const LayoutComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <Heading type="h2" className="m-none">Hidden</Heading>
+          <H2 type="h2" className="m-none">Hidden</H2>
           <Paragraph>
             The <Code>{'<Hidden />'}</Code> component allows you to create
             elements that are only shown on mobile, tablet, or desktop.
@@ -268,7 +268,7 @@ const LayoutComponents = ({}) => {
               <div
                 style={{
                   padding: 16,
-                  background: `${theme.color.primary.main}10`,
+                  background: `${theme.color.primary}10`,
                   marginBottom: 14,
                   textAlign: 'center',
                   border: '2px dashed transparent',
@@ -294,7 +294,7 @@ const LayoutComponents = ({}) => {
               <div
                 style={{
                   padding: 16,
-                  background: `${theme.color.primary.main}10`,
+                  background: `${theme.color.primary}10`,
                   marginBottom: 14,
                   textAlign: 'center',
                   border: '2px dashed transparent',
@@ -320,7 +320,7 @@ const LayoutComponents = ({}) => {
               <div
                 style={{
                   padding: 16,
-                  background: `${theme.color.primary.main}10`,
+                  background: `${theme.color.primary}10`,
                   marginBottom: 14,
                   textAlign: 'center',
                   border: '2px dashed transparent',
@@ -358,7 +358,7 @@ const Demo = styled.div`
   * {
     color: white !important;
   }
-  background: ${(props) => props.theme.color.primary.main};
+  background: ${(props) => props.theme.color.primary};
 `;
 
 export default LayoutComponents;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Alert = ({ children, color, variant, icon, style, close }) => {
+const Alert = ({ children, className, id, color, variant, icon, close }) => {
   const [showAlert, setShowAlert] = useState(true);
 
   const onClick = () => {
@@ -11,7 +11,8 @@ const Alert = ({ children, color, variant, icon, style, close }) => {
 
   return (
     <Wrapper
-      style={style}
+      className={className}
+      id={id}
       icon={!!icon}
       show={showAlert}
       color={color}
@@ -36,9 +37,9 @@ const Wrapper = styled.div`
   padding: 16px 24px;
   background: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
@@ -52,18 +53,18 @@ const Wrapper = styled.div`
     props.variant === 'light' &&
     css`
       background: ${props.color === 'primary'
-        ? props.theme.color.primary.main
+        ? props.theme.color.primary
         : props.color === 'secondary'
-        ? props.theme.color.secondary.main
+        ? props.theme.color.secondary
         : props.color === 'success'
         ? props.theme.color.success
         : props.color === 'error'
         ? props.theme.color.error
         : '#ffffff'}15;
       color: ${props.color === 'primary'
-        ? props.theme.color.primary.main
+        ? props.theme.color.primary
         : props.color === 'secondary'
-        ? props.theme.color.secondary.main
+        ? props.theme.color.secondary
         : props.color === 'success'
         ? props.theme.color.success
         : props.color === 'error'
@@ -71,9 +72,9 @@ const Wrapper = styled.div`
         : null};
       * {
         color: ${props.color === 'primary'
-          ? props.theme.color.primary.main
+          ? props.theme.color.primary
           : props.color === 'secondary'
-          ? props.theme.color.secondary.main
+          ? props.theme.color.secondary
           : props.color === 'success'
           ? props.theme.color.success
           : props.color === 'error'

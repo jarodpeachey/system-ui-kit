@@ -4,8 +4,9 @@ import { ThemeContext } from '../theme';
 
 const Container = ({
   children,
+  className,
+  id,
   background,
-  className = '',
   maxWidth,
   style,
   size,
@@ -14,8 +15,9 @@ const Container = ({
 
   return (
     <StyledContainer
-      maxWidth={maxWidth}
       className={className}
+      id={id}
+      maxWidth={maxWidth}
       background={background}
       style={style}
       size={size}

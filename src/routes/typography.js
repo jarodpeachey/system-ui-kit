@@ -13,10 +13,10 @@ import Container from '../components/Container';
 import Notification from '../components/Notification';
 import Layout from '../Layout';
 import H1 from '../components/H1';
-import Heading from '../components/Heading';
 import H2 from '../components/H2';
 import H3 from '../components/H3';
 import H4 from '../components/H4';
+import H5 from '../components/H5';
 import H6 from '../components/H6';
 import Paragraph from '../components/Paragraph';
 import { theme } from '../theme';
@@ -41,15 +41,15 @@ const TypographyComponents = ({}) => {
       <Hero
         background={`linear-gradient(
         to right,
-        ${theme.color.primary.main},
-        ${theme.color.secondary.main}
+        ${theme.color.primary},
+        ${theme.color.secondary}
       )`}
       >
         <div style={{ textAlign: 'center' }}>
-          <Heading type="h1" background="dark" className="m-none">
+          <H1 type="h1" darkBackground className="m-none">
             Typography Components
-          </Heading>
-          <SubTitle type="h4" background="dark">
+          </H1>
+          <SubTitle type="h4" darkBackground>
             Typography components allow you to display styled text that fits
             with the theme of your website.
           </SubTitle>
@@ -57,9 +57,9 @@ const TypographyComponents = ({}) => {
       </Hero>
       <Section spacing="small">
         <Container>
-          <Heading type="h3" className="mt-none">
+          <H3 type="h3" className="mt-none">
             Typography
-          </Heading>
+          </H3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <th
@@ -90,7 +90,7 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  H2
+                  H1
                 </td>
                 <td
                   style={{
@@ -99,9 +99,9 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <Heading type="h1" className="m-none">
+                  <H1 type="h1" className="m-none">
                     Heading One
-                  </Heading>
+                  </H1>
                 </td>
               </tr>
               <tr>
@@ -121,9 +121,9 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <Heading type="h2" className="m-none">
+                  <H2 type="h2" className="m-none">
                     Heading Two
-                  </Heading>
+                  </H2>
                 </td>
               </tr>
               <tr>
@@ -143,9 +143,9 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <Heading type="h3" className="m-none">
+                  <H3 type="h3" className="m-none">
                     Heading Three
-                  </Heading>
+                  </H3>
                 </td>
               </tr>
               <tr>
@@ -165,9 +165,9 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <Heading type="h4" className="m-none">
+                  <H4 type="h4" className="m-none">
                     Heading Four
-                  </Heading>
+                  </H4>
                 </td>
               </tr>
               <tr>
@@ -187,9 +187,9 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <Heading type="h5" className="m-none">
+                  <H5 type="h5" className="m-none">
                     Heading Five
-                  </Heading>
+                  </H5>
                 </td>
               </tr>
               <tr>
@@ -209,9 +209,9 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <Heading type="h6" className="m-none">
+                  <H6 type="h6" className="m-none">
                     Heading Six
-                  </Heading>
+                  </H6>
                 </td>
               </tr>
               <tr>
@@ -251,9 +251,31 @@ const TypographyComponents = ({}) => {
                     padding: 16,
                   }}
                 >
-                  <Heading title type="h5" className="m-none">
+                  <H5 title type="h5" className="m-none">
                     Title
-                  </Heading>
+                  </H5>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  {'Muted'}
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: 16,
+                  }}
+                >
+                  <Paragraph muted className="m-none">
+                    This is a default paragraph.
+                  </Paragraph>
                 </td>
               </tr>
               <tr>
@@ -378,9 +400,9 @@ const TypographyComponents = ({}) => {
               </Text>
             </div>
             <div widths={[10]}>
-              <Heading type="h5" className="m-none" display="title">
+              <H5 type="h5" className="m-none" display="title">
                 About
-              </Heading>
+              </H5>
             </div>
           </Row>
           <br />
@@ -391,9 +413,9 @@ const TypographyComponents = ({}) => {
               </Text>
             </div>
             <div widths={[10]}>
-              <Heading type="h2" className="m-none">
+              <H2 type="h2" className="m-none">
                 The Future of <Text color="success">React Development</Text>
-              </Heading>
+              </H2>
             </div>
           </Row>
           <br />
@@ -431,7 +453,7 @@ const TypographyComponents = ({}) => {
           <br />
           <br />
           <br />
-          <Heading type="h4">Color</Heading>
+          <H4 type="h4">Color</H4>
           <Paragraph>
             System comes with customizable colors for headings, paragraphs, and
             three modifier colors.
@@ -523,7 +545,7 @@ const Demo = styled.div`
   * {
     color: white !important;
   }
-  background: ${(props) => props.theme.color.primary.main};
+  background: ${(props) => props.theme.color.primary};
 `;
 
 export default TypographyComponents;

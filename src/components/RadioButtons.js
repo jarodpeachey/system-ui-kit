@@ -4,7 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import RadioButton from './RadioButton';
 
-const RadioButtons = ({ children, name = 'default', onChange }) => {
+const RadioButtons = ({
+  children,
+  className,
+  id,
+  onChange,
+  name = 'default',
+}) => {
   const newChildren = [];
 
   const customOnChange = (e) => {
@@ -12,7 +18,7 @@ const RadioButtons = ({ children, name = 'default', onChange }) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper className={className} id={id}>
       {children.forEach((child) => {
         console.log(child);
 

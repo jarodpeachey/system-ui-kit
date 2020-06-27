@@ -3,17 +3,21 @@ import styled, { css } from 'styled-components';
 
 const Paragraph = ({
   children,
-  className = '',
+  className,
+  id,
   title,
   color,
+  muted,
   customStyles,
 }) => {
   return (
     <StyledParagraph
+      className={className}
+      id={id}
       customStyles={customStyles}
       color={color}
       title={title}
-      className={className}
+      muted={muted}
     >
       {children}
     </StyledParagraph>
@@ -22,17 +26,21 @@ const Paragraph = ({
 
 const StyledParagraph = styled.p`
   color: ${(props) =>
-    props.color === 'primary'
-      ? props.theme.color.primary.main
-      : props.color === 'secondary'
-      ? props.theme.color.secondary.main
-      : props.color === 'success'
-      ? props.theme.color.success
-      : props.color === 'error'
-      ? props.theme.color.error
-      : props.background === 'dark'
-      ? props.theme.color.text.light.two
-      : props.theme.color.paragraph};
+      props.color === 'primary'
+        ? props.theme.color.primary
+        : props.color === 'secondary'
+        ? props.theme.color.secondary
+        : props.color === 'success'
+        ? props.theme.color.success
+        : props.color === 'error'
+        ? props.theme.color.error
+        : props.color === 'text-one'
+        ? props.theme.color.text.one
+        : props.color === 'text-two'
+        ? props.theme.color.text.two
+        : props.color === 'text-three'
+        ? props.theme.color.text.three
+        : props.theme.color.paragraph}${(props) => (props.muted ? '90' : null)};
   ${(props) =>
     props.customStyles &&
     css`

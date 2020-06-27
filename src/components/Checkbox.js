@@ -4,8 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
 const Checkbox = ({
-  onChange,
   children,
+  className,
+  id,
+  onChange,
   disabled,
   checked = false,
   value = '',
@@ -35,28 +37,28 @@ const Checkbox = ({
   }, [inputChecked]);
 
   return (
-    <Wrapper>
-      <CheckboxWrapper
-        checked={inputChecked}
+    <CheckboxWrapper
+      className={className}
+      id={id}
+      checked={inputChecked}
+      disabled={disabled}
+      htmlFor={name}
+    >
+      <input
+        id={name}
+        onChange={customOnChange}
         disabled={disabled}
-        htmlFor={name}
-      >
-        <input
-          id={name}
-          onChange={customOnChange}
-          disabled={disabled}
-          name={name}
-          type="checkbox"
-          checked={inputChecked}
-        />
-        <span className="checkmark mr-2">
-          <div className="icon">
-            <FontAwesomeIcon icon="check" />
-          </div>
-        </span>
-        {children}
-      </CheckboxWrapper>
-    </Wrapper>
+        name={name}
+        type="checkbox"
+        checked={inputChecked}
+      />
+      <span className="checkmark mr-2">
+        <div className="icon">
+          <FontAwesomeIcon icon="check" />
+        </div>
+      </span>
+      {children}
+    </CheckboxWrapper>
   );
 };
 
@@ -100,10 +102,10 @@ const CheckboxWrapper = styled.label`
   }
   input:checked ~ .checkmark {
     background: ${(props) =>
-      props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
+      props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary};
     border: 1px solid
       ${(props) =>
-        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary.main};
+        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary};
   }
   .icon {
     display: none;
@@ -121,19 +123,15 @@ const CheckboxWrapper = styled.label`
   }
   // input:focus ~ .checkmark {
   //   box-shadow: 0px 0px 0px 3px ${(props) =>
-    props.theme.color.primary.main}30 !important;
+    props.theme.color.primary}30 !important;
   // }
     input:hover ~ .checkmark {
     border: 1px solid ${(props) =>
-      props.disabled
-        ? 'rgb(230, 230, 230)'
-        : `${props.theme.color.primary.main}60`};
+      props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.gray.four};
   }
     input:checked:hover ~ .checkmark {
     border: 1px solid ${(props) =>
-      props.disabled
-        ? 'rgb(230, 230, 230)'
-        : `${props.theme.color.primary.main}`};
+      props.disabled ? 'rgb(230, 230, 230)' : `${props.theme.color.primary}`};
   }
 `;
 

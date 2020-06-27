@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import Button from './Button';
 import { theme } from '../theme';
 
-const DropdownItem = ({ children }) => (
-  <Wrapper variant="plain">{children}</Wrapper>
+const DropdownItem = ({ children, className, id }) => (
+  <Wrapper className={className} id={id}>
+    {children}
+  </Wrapper>
 );
 
 const Wrapper = styled.div`
@@ -14,12 +16,12 @@ const Wrapper = styled.div`
   margin: 0;
   width: 100%;
   cursor: pointer;
-  :active {
-    background: ${theme.color.primary.main};
-    color: white;
-  }
   :hover {
     background: ${(props) => props.theme.color.gray.one};
+  }
+  :active {
+    background: ${theme.color.primary};
+    color: white;
   }
 `;
 

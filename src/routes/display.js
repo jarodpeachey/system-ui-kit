@@ -6,7 +6,12 @@ import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Button from '../components/Button';
 import Row from '../components/Row';
-import Heading from '../components/Heading';
+import H1 from '../components/H1';
+import H2 from '../components/H2';
+import H3 from '../components/H3';
+import H4 from '../components/H4';
+import H5 from '../components/H5';
+import H6 from '../components/H6';
 import Alert from '../components/Alert';
 import Chip from '../components/Chip';
 import { Link } from '@reach/router';
@@ -32,15 +37,15 @@ const Display = ({}) => {
       <Hero
         background={`linear-gradient(
         to right,
-        ${theme.color.primary.main},
-        ${theme.color.secondary.main}
+        ${theme.color.primary},
+        ${theme.color.secondary}
       )`}
       >
         <div style={{ textAlign: 'center' }}>
-          <Heading type="h1" background="dark" className="m-none">
+          <H1 type="h1" darkBackground className="m-none">
             Display Components
-          </Heading>
-          <SubTitle type="h4" background="dark">
+          </H1>
+          <SubTitle type="h4" darkBackground>
             Display components allow you to display information to a user in a
             prominent location.
           </SubTitle>
@@ -48,9 +53,9 @@ const Display = ({}) => {
       </Hero>
       <Section spacing="small">
         <Container>
-          <Heading type="h2" className="m-none">
+          <H2 type="h2" className="m-none">
             Alert
-          </Heading>
+          </H2>
           <Alert color="primary">Default</Alert>
           <Alert color="primary" variant="light">
             Light
@@ -82,38 +87,67 @@ const Display = ({}) => {
         </Button>
         <br />
         <br /> */}
-          <Heading type="h4" className="mb-none">
+          <H4 type="h4" className="mb-none">
             Color
-          </Heading>
+          </H4>
           <Paragraph p>
             The color prop is used to change the color of an alert.
           </Paragraph>
           <Row spacing={[14, 0]} breakpoints={[769]}>
             <div widths={[6]}>
               <Alert icon={<FontAwesomeIcon icon="bell" />}>Default</Alert>
-              <Alert icon={<FontAwesomeIcon icon="bell" />} variant="light">Default</Alert>
+              <Alert icon={<FontAwesomeIcon icon="bell" />} variant="light">
+                Default
+              </Alert>
             </div>
             <div widths={[6]}>
-              <Alert icon={<FontAwesomeIcon icon="heart" />} color="primary">Primary</Alert>
-              <Alert icon={<FontAwesomeIcon icon="heart" />} color="primary" variant="light">
+              <Alert icon={<FontAwesomeIcon icon="heart" />} color="primary">
+                Primary
+              </Alert>
+              <Alert
+                icon={<FontAwesomeIcon icon="heart" />}
+                color="primary"
+                variant="light"
+              >
                 Primary
               </Alert>
             </div>
             <div widths={[6]}>
-              <Alert icon={<FontAwesomeIcon icon="globe" />} color="secondary">Secondary</Alert>
-              <Alert icon={<FontAwesomeIcon icon="globe" />} color="secondary" variant="light">
+              <Alert icon={<FontAwesomeIcon icon="globe" />} color="secondary">
+                Secondary
+              </Alert>
+              <Alert
+                icon={<FontAwesomeIcon icon="globe" />}
+                color="secondary"
+                variant="light"
+              >
                 Secondary
               </Alert>
             </div>
             <div widths={[6]}>
-              <Alert icon={<FontAwesomeIcon icon="check" />} color="success">Success</Alert>
-              <Alert icon={<FontAwesomeIcon icon="check" />} color="success" variant="light">
+              <Alert icon={<FontAwesomeIcon icon="check" />} color="success">
+                Success
+              </Alert>
+              <Alert
+                icon={<FontAwesomeIcon icon="check" />}
+                color="success"
+                variant="light"
+              >
                 Success
               </Alert>
             </div>
             <div widths={[6]}>
-              <Alert icon={<FontAwesomeIcon icon="exclamation-circle" />} color="error">Error</Alert>
-              <Alert icon={<FontAwesomeIcon icon="exclamation-circle" />} color="error" variant="light">
+              <Alert
+                icon={<FontAwesomeIcon icon="exclamation-circle" />}
+                color="error"
+              >
+                Error
+              </Alert>
+              <Alert
+                icon={<FontAwesomeIcon icon="exclamation-circle" />}
+                color="error"
+                variant="light"
+              >
                 Error
               </Alert>
             </div>
@@ -122,9 +156,9 @@ const Display = ({}) => {
       </Section>
       <Section spacing="small">
         <Container>
-          <Heading type="h2" className="m-none">
+          <H2 type="h2" className="m-none">
             Notification
-          </Heading>
+          </H2>
           <Paragraph>
             The Notification element allows you to display a notification that
             disappears after a certain amount of time.
@@ -207,14 +241,28 @@ const Display = ({}) => {
       </Section>
       <Section spacing="small">
         <Container>
-          <Heading type="h2" className="m-none">
+          <H2 type="h2" className="m-none">
             Chip
-          </Heading>
+          </H2>
           <Chip>Default</Chip>
           <Chip color="primary">Primary</Chip>
           <Chip color="secondary">Secondary</Chip>
           <Chip color="success">Success</Chip>
           <Chip color="error">Error</Chip>
+          <H4 className="mb-none">Rounded</H4>
+          <Chip rounded>Default</Chip>
+          <Chip rounded color="primary">
+            Primary
+          </Chip>
+          <Chip rounded color="secondary">
+            Secondary
+          </Chip>
+          <Chip rounded color="success">
+            Success
+          </Chip>
+          <Chip rounded color="error">
+            Error
+          </Chip>
         </Container>
       </Section>
     </Layout>
@@ -230,7 +278,7 @@ const Demo = styled.div`
   * {
     color: white !important;
   }
-  background: ${(props) => props.theme.color.primary.main};
+  background: ${(props) => props.theme.color.primary};
 `;
 
 export default Display;

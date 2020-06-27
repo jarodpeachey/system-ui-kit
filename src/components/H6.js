@@ -3,46 +3,51 @@ import styled, { css } from 'styled-components';
 
 const H6 = ({
   children,
-  className = '',
+  className,
+  id,
   customStyles,
-  color,
-  background,
+  darkBackground,
+  type = 'h6',
   display,
+  color,
 }) => {
   return (
-    <StyledH6
-      background={background}
-      color={color}
-      customStyles={customStyles}
+    <Wrapper
       className={className}
+      id={id}
+      customStyles={customStyles}
+      color={color}
       display={display}
+      darkBackground={darkBackground}
     >
       {children}
-    </StyledH6>
+    </Wrapper>
   );
 };
 
-const StyledH6 = styled.h6`
+const Wrapper = styled.h6`
   color: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'success'
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.background === 'dark'
-      ? props.theme.color.text.light.one
-      : props.theme.color.text.dark.one};
+      : props.darkBackground
+      ? '#ffffff'
+      : props.theme.color.heading};
+  text-transform: ${(props) =>
+    props.display === 'title' ? 'uppercase' : null};
+  font-weight: 600;
+  margin-bottom: 32px;
+  font-size: ${(props) => props.theme.fontSize.h6}px;
   ${(props) =>
     props.customStyles &&
     css`
       ${props.customStyles}
     `}
-  text-transform: ${(props) =>
-    props.display === 'title' ? 'uppercase' : null};
-  font-weight: ${(props) => (props.display === 'subtitle' ? 'normal' : null)};
 `;
 
 export default H6;

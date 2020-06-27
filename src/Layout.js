@@ -35,7 +35,12 @@ import MobileMenu from './components/MobileMenu';
 import MobileSubMenu from './components/MobileSubMenu';
 import Header from './components/Header';
 import { theme } from './theme';
-import Heading from './components/Heading';
+import H1 from './components/H1';
+import H2 from './components/H2';
+import H3 from './components/H3';
+import H4 from './components/H4';
+import H5 from './components/H5';
+import H6 from './components/H6';
 
 library.add(
   faQuestionCircle,
@@ -61,9 +66,9 @@ const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Wrapper>
       <Header fixed color="transparent">
-        <Heading type="h1" className="m-none">
+        <H1 type="h1" className="m-none">
           System
-        </Heading>
+        </H1>
         <Mobile>
           <MobileMenu>
             <MobileMenuItem>

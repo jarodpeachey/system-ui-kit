@@ -8,7 +8,12 @@ import Section from './components/Section';
 import Button from './components/Button';
 import Row from './components/Row';
 
-import Heading from './components/Heading';
+import H1 from './components/H1';
+import H2 from './components/H2';
+import H3 from './components/H3';
+import H4 from './components/H4';
+import H5 from './components/H5';
+import H6 from './components/H6';
 import Alert from './components/Alert';
 import Code from './components/Code';
 import Info from './components/Info';
@@ -27,13 +32,13 @@ const App = ({}) => (
     <Hero
       background={`linear-gradient(
         to right,
-        ${theme.color.primary.main},
-        ${theme.color.secondary.main}
+        ${theme.color.primary},
+        ${theme.color.secondary}
       )`}
     >
-      <Heading type="h1" background="dark" className="center">
+      <H1 darkBackground className="center">
         React Development Made Easy
-      </Heading>
+      </H1>
       <SubTitle type="h4" className="center" customStyles={`color: #ffffffcc;`}>
         A modern UI Kit built to speed up your development proccess, while still
         allowing you room to customize and grow.
@@ -54,17 +59,17 @@ const App = ({}) => (
     </Section>
     <Section className="pt-none" spacing="large">
       <Container>
-        <Heading
+        <H5
           display="title"
           type="h5"
           color="primary"
           className="center mt-none"
         >
           Built For You
-        </Heading>
-        <Heading type="h2" className="center mt-3">
+        </H5>
+        <H2 type="h2" className="center mt-3">
           What is System?
-        </Heading>
+        </H2>
         <Container size="sm">
           <Paragraph className="center" style={{ maxWidth: 780 }}>
             System is a UI Kit like none other. It's dead-simple to get up and
@@ -171,9 +176,9 @@ const App = ({}) => (
     </Section> */}
     <Section spacing="large" background={`${theme.color.success}10`}>
       <Container>
-        <Heading color="success" type="h2" className="mt-none center">
+        <H2 color="success" type="h2" className="mt-none center">
           Join the waiting list!
-        </Heading>
+        </H2>
         <SubTitle className="mb-5 center" style={{ color: theme.color.error }}>
           Sign up to be notified when System is launched, and get a nice
           discount to go with it!

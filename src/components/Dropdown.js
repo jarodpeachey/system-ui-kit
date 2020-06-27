@@ -4,12 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MenuItem from './DropdownItem';
 import { Link } from '@reach/router';
 
-const Dropdown = ({ children, align }) => {
+const Dropdown = ({ children, className, id, align }) => {
   const [show, setShow] = useState(false);
 
   return (
     <>
       <Wrapper
+        className={className}
+        id={id}
         onClick={() => {
           setShow(!show);
         }}
@@ -58,7 +60,7 @@ const SubMenuWrapper = styled.div`
   position: absolute;
   min-width: 100%;
   top: calc(100%);
-  // padding-top: 14px;
+  padding-top: 6px;
   margin: 0 auto;
   left: ${(props) => (props.align !== 'right' ? 0 : null)};
   right: ${(props) => (props.align === 'right' ? 0 : null)};

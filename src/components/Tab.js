@@ -2,8 +2,10 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const Tab = ({
-  active,
   children,
+  className,
+  id,
+  active,
   onClick,
   name,
   customStyles,
@@ -13,6 +15,8 @@ const Tab = ({
 }) => {
   return (
     <Wrapper
+      className={className}
+      id={id}
       customStyles={customStyles}
       activeStyles={activeStyles}
       onClick={() => onClick(name)}
@@ -44,12 +48,12 @@ const Wrapper = styled.div`
     props.active &&
     css`
       color: white;
-      background: ${props.theme.color.primary.main};
+      background: ${props.theme.color.primary};
       ${props.activeStyles};
       // box-shadow: ${props.theme.shadow.one};
       :hover {
         color: white;
-        background: ${props.theme.color.primary.main};
+        background: ${props.theme.color.primary};
         ${props.activeStyles};
         // box-shadow: ${props.theme.shadow.one};
       }

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import Container from './Container';
 
-const Header = ({ children, color, scrollColor, fixed }) => {
+const Header = ({ children, className, color, scrollColor, fixed }) => {
   const [scroll, setScroll] = useState(
     typeof window !== 'undefined' && window.scrollY,
   );
@@ -33,6 +33,7 @@ const Header = ({ children, color, scrollColor, fixed }) => {
 
   return (
     <Wrapper
+      className={className}
       id="header"
       scrolled={window.scrollY > 50}
       color={color}
@@ -56,9 +57,9 @@ const Wrapper = styled.div`
   z-index: 999;
   background: ${(props) =>
     props.color === 'primary'
-      ? props.theme.color.primary.main
+      ? props.theme.color.primary
       : props.color === 'secondary'
-      ? props.theme.color.secondary.main
+      ? props.theme.color.secondary
       : props.color === 'transparent'
       ? 'transparent'
       : 'white'};
@@ -88,7 +89,7 @@ const Wrapper = styled.div`
         ? 'white'
         : props.color === 'transparent'
         ? 'white'
-        : props.theme.color.text.dark.one} !important;
+        : props.theme.color.heading} !important;
   }
 
   h1,
@@ -103,9 +104,9 @@ const Wrapper = styled.div`
   #mobile-menu::after {
     background: ${(props) =>
       props.color === 'primary'
-        ? props.theme.color.primary.main
+        ? props.theme.color.primary
         : props.color === 'secondary'
-        ? props.theme.color.secondary.main
+        ? props.theme.color.secondary
         : props.color === 'transparent'
         ? 'transparent'
         : 'white'};
@@ -136,13 +137,13 @@ const Wrapper = styled.div`
       color: ${(props) =>
         props.color === 'primary' || props.color === 'secondary'
           ? 'white'
-          : props.theme.color.text.dark.one};
+          : props.theme.color.heading};
     }
     span {
       background: ${(props) =>
         props.color === 'primary' || props.color === 'secondary'
           ? 'white'
-          : props.theme.color.text.dark.one} !important;
+          : props.theme.color.heading} !important;
     }
   }
   &.open {
@@ -156,12 +157,12 @@ const Wrapper = styled.div`
     .menu-item,
     .menu-item a {
       color: ${(props) =>
-        props.color === 'transparent' ? props.theme.color.text.dark.one : null};
+        props.color === 'transparent' ? props.theme.color.heading : null};
     }
     span {
       background: ${(props) =>
         props.color === 'transparent'
-          ? props.theme.color.text.dark.one
+          ? props.theme.color.heading
           : null} !important;
     }
   }

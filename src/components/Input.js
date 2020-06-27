@@ -6,11 +6,12 @@ import { pSBC } from '../utils/color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Input = ({
-  className = '',
+  className,
+  id,
   placeholder = '',
-  onChange = null,
-  onFocus = null,
-  onBlur = null,
+  onChange,
+  onFocus,
+  onBlur,
   size,
   variant,
   label,
@@ -19,7 +20,7 @@ const Input = ({
   icon,
   type,
   defaultValue,
-  color
+  color,
 }) => {
   const [hover, setHover] = useState(false);
   const [focus, setFocus] = useState(false);
@@ -58,7 +59,6 @@ const Input = ({
 
   return (
     <Wrapper
-      className={className}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       fullWidth={fullWidth}
@@ -71,6 +71,8 @@ const Input = ({
       {icon && (
         <>
           <StyledInput
+            className={className}
+            id={id}
             color={color}
             unselectable="on"
             fullWidth={fullWidth}
@@ -105,6 +107,8 @@ const Input = ({
       {!icon && (
         <>
           <StyledInput
+            className={className}
+            id={id}
             color={color}
             unselectable="on"
             hover={hover}
@@ -173,7 +177,7 @@ const NumberButton = styled.div`
 
   :hover {
     cursor: pointer;
-    background: ${(props) => props.theme.color.primary.main}10;
+    background: ${(props) => props.theme.color.primary}10;
   }
   right: ${(props) => (props.focus ? '0px' : null)};
 
@@ -196,7 +200,7 @@ const NumberButton = styled.div`
 `;
 
 const Icon = styled.div`
-  color: ${(props) => pSBC(props.theme.color.gray.three, -25)};
+  color: ${(props) => pSBC(props.theme.color.gray.four, 0)};
   position: absolute;
   left: ${(props) =>
     props.size === 'xs'
@@ -208,11 +212,11 @@ const Icon = styled.div`
       : '16px'};
   top: ${(props) =>
     props.size === 'xs'
-      ? 'calc(50% - 9px)'
-      : props.size === 'small'
       ? 'calc(50% - 11px)'
+      : props.size === 'small'
+      ? 'calc(50% - 12px)'
       : props.size === 'large'
-      ? 'calc(50% - 14px)'
+      ? 'calc(50% - 15px)'
       : 'calc(50% - 13px)'};
   font-size: ${(props) =>
     props.size === 'xs'
@@ -247,7 +251,6 @@ const StyledInput = styled.input`
   /* Rules below not implemented in browsers yet */
   -o-user-select: none;
   user-select: none;
-  display: inline-block;
   padding: ${(props) =>
     props.size === 'xs'
       ? '4px 8px'
@@ -267,17 +270,48 @@ const StyledInput = styled.input`
   transition-duration: 0.15s;
   display: inline-block;
   width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
+  ::placeholder {
+    color: ${(props) => props.theme.color.text.two};
+  }
+  :focus {
+    outline: none;
+    border: 1px solid
+      ${(props) =>
+        props.color === 'secondary'
+          ? props.theme.color.secondary
+          : props.state === 'success'
+          ? props.theme.color.success
+          : props.state === 'error'
+          ? props.theme.color.error
+          : props.theme.color.primary};
+  }
   ${(props) =>
     props.variant === 'filled'
       ? css`
           border-radius: ${props.theme.radius.one};
           background: ${props.theme.color.gray.one};
-          border: 1px solid
-            ${props.state === 'success'
+          color: ${props.state === 'success'
+            ? props.theme.color.success
+            : props.state === 'error'
+            ? props.theme.color.error
+            : null};
+          ::placeholder {
+            color: ${props.state === 'success'
               ? props.theme.color.success
               : props.state === 'error'
               ? props.theme.color.error
-              : props.theme.color.gray.one};
+              : null};
+          }
+          :focus {
+            outline: none;
+            border: 1px solid
+              ${props.state === 'success'
+                ? props.theme.color.success
+                : props.state === 'error'
+                ? props.theme.color.error
+                : props.theme.color.primary};
+          }
+          border: 1px solid ${props.theme.color.gray.one};
         `
       : css`
           border-radius: ${props.theme.radius.one};
@@ -288,34 +322,8 @@ const StyledInput = styled.input`
               ? props.theme.color.error
               : props.theme.color.gray.four};
         `};
-  ${(props) =>
-    props.hover &&
-    css`
-      // border: 1px solid ${props.theme.color.primary.main};
-    border: 1px solid
-      ${
-        props.state === 'success' || props.color === 'success'
-          ? props.theme.color.success
-          : props.state === 'error' || props.color === 'error'
-          ? props.theme.color.error
-          : `${props.theme.color.primary.main}60`
-      };
-  `}
-  :hover {
-  }
+
   :focus ~ div svg {
-  }
-  :focus {
-    outline: none;
-    border: 1px solid
-      ${(props) =>
-        props.color === 'secondary'
-          ? props.theme.color.secondary.main
-          : props.color === 'success'
-          ? props.theme.color.success
-          : props.color === 'error'
-          ? props.theme.color.error
-          : props.theme.color.primary.main};
   }
   padding-left: ${(props) =>
     props.withIcon

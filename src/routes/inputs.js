@@ -30,7 +30,6 @@ import RadioButton from '../components/RadioButton';
 import Toggle from '../components/Toggle';
 import Select from '../components/Select';
 import Option from '../components/Option';
-import Heading from '../components/Heading';
 import { Link } from '@reach/router';
 import Container from '../components/Container';
 import Hidden from '../components/Hidden';
@@ -38,6 +37,12 @@ import Layout from '../Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Slider from '../components/Slider';
 import Paragraph from '../components/Paragraph';
+import H1 from '../components/H1';
+import H2 from '../components/H2';
+import H3 from '../components/H3';
+import H4 from '../components/H4';
+import H5 from '../components/H5';
+import H6 from '../components/H6';
 
 const Inputs = ({}) => (
   <Layout>
@@ -85,22 +90,85 @@ const Inputs = ({}) => (
     <Hero
       background={`linear-gradient(
         to right,
-        ${theme.color.primary.main},
-        ${theme.color.secondary.main}
+        ${theme.color.primary},
+        ${theme.color.secondary}
       )`}
     >
       <div style={{ textAlign: 'center' }}>
-        <Heading type="h1" background="dark" className="m-none">
+        <H1 type="h1" darkBackground className="m-none">
           Input Components
-        </Heading>
+        </H1>
       </div>
     </Hero>
     <Section>
       <Container>
-        <Heading type="h2">Button</Heading>
-        <Heading type="h4" className="mb-none">
+        <div
+          style={{
+            height: 60,
+            width: '100%',
+            background: theme.color.gray.one,
+          }}
+        ></div>
+        <div
+          style={{
+            height: 60,
+            width: '100%',
+            background: theme.color.gray.two,
+          }}
+        ></div>
+        <div
+          style={{
+            height: 60,
+            width: '100%',
+            background: theme.color.gray.three,
+          }}
+        ></div>
+        <div
+          style={{
+            height: 60,
+            width: '100%',
+            background: theme.color.gray.four,
+          }}
+        ></div>
+        <div
+          style={{
+            height: 60,
+            width: '100%',
+            background: theme.color.gray.five,
+          }}
+        ></div>
+        <div
+          style={{
+            height: 60,
+            width: '100%',
+            background: theme.color.gray.six,
+          }}
+        ></div>
+        <div
+          style={{
+            height: 60,
+            width: '100%',
+            background: theme.color.gray.seven,
+          }}
+        ></div>
+        <div
+          style={{
+            height: 60,
+            width: '100%',
+            background: theme.color.gray.eight,
+          }}
+        ></div>
+        <div
+          style={{
+            height: 60,
+            width: '100%',
+            background: theme.color.gray.nine,
+          }}
+        ></div>
+        <H2 type="h2">Button</H2>
+        <H4 type="h4" className="mb-none">
           Variant
-        </Heading>
+        </H4>
         <Paragraph className="mt-2">
           The variant prop is used to change the appearance of a button.
         </Paragraph>
@@ -115,9 +183,9 @@ const Inputs = ({}) => (
         </Button>
         <br />
         <br />
-        <Heading type="h4" className="mb-none">
+        <H4 type="h4" className="mb-none">
           Size
-        </Heading>
+        </H4>
         <Paragraph className="mt-2">
           The size prop is used to change the size of a button.
         </Paragraph>
@@ -132,9 +200,9 @@ const Inputs = ({}) => (
         </Button>
         <br />
         <br />
-        <Heading type="h4" className="mb-none">
+        <H4 type="h4" className="mb-none">
           Color
-        </Heading>
+        </H4>
         <Paragraph className="mt-2">
           The color prop is used to change the color of a button.
         </Paragraph>
@@ -246,9 +314,7 @@ const Inputs = ({}) => (
     </Section>
     <Section background={theme.color.gray.one}>
       <Container>
-        <Heading type="h2">
-          IconButton
-        </Heading>
+        <H2 type="h2">IconButton</H2>
         <Paragraph>
           The IconButton element extends all the props from the Button
           component. It also adds a new circle prop.
@@ -273,8 +339,8 @@ const Inputs = ({}) => (
     </Section>
     <Section>
       <Container>
-        <Heading type="h2">Text Field</Heading>
-        <Heading type="h4">Size</Heading>
+        <H2 type="h2">Text Field</H2>
+        <H4 type="h4">Size</H4>
         <Row spacing={[12]} breakpoints={[576, 769]}>
           <div widths={[6, 3]}>
             <Input className="mb-2" size="xs" fullWidth placeholder="X-Small" />
@@ -360,7 +426,7 @@ const Inputs = ({}) => (
             />
           </div>
         </Row>
-        <Heading type="h4">State</Heading>
+        <H4 type="h4">State</H4>
         <Row spacing={[12]} breakpoints={[576, 769]}>
           <div widths={[6, 3]}>
             <Input className="mb-2" fullWidth placeholder="Default" />
@@ -430,8 +496,8 @@ const Inputs = ({}) => (
         </Row>
         <Row breakpoints={[476, 960]} spacing={[24]}>
           <div widths={[6, 4]}>
-            <h3>Checkboxes</h3>
-            <Checkbox value="unchecked">Unchecked</Checkbox>
+            <H3>Checkboxes</H3>
+            <Checkbox id="test" value="unchecked">Unchecked</Checkbox>
             <Checkbox
               value="checked"
               checked
@@ -447,7 +513,7 @@ const Inputs = ({}) => (
             </Checkbox>
           </div>
           <div widths={[6, 4]}>
-            <h3>Radio Buttons</h3>
+            <H3>Radio Buttons</H3>
             {/* <form
             className="form"
             onSubmit={(e) => {
@@ -469,16 +535,12 @@ const Inputs = ({}) => (
           </form> */}
           </div>
           <div widths={[6, 4]}>
-            <h3 color="primary">Toggle Switches</h3>
-            <Paragraph className="mb-none">Variants</Paragraph>
+            <H3 color="primary">Toggle Switches</H3>
             <Toggle>Default</Toggle>
             <Toggle variant="filled">Filled</Toggle>
-            <Paragraph className="mb-none">Sizes</Paragraph>
-            <Toggle size="small">Small</Toggle>
-            <Toggle>Normal</Toggle>
           </div>
           <div widths={[6, 4]}>
-            <h3>Selects</h3>
+            <H3>Selects</H3>
             <Select>
               <Option value="one">One</Option>
               <Option value="two">Two</Option>
@@ -486,7 +548,7 @@ const Inputs = ({}) => (
             </Select>
           </div>
           <div widths={[6, 4]}>
-            <h3>Slider</h3>
+            <H3>Slider</H3>
             <Slider initial={82} max={100} />
             <Slider initial={28} color="secondary" max={100} />
             <Slider initial={63} color="success" max={100} />
@@ -507,7 +569,7 @@ const Demo = styled.div`
   * {
     color: white !important;
   }
-  background: ${(props) => props.theme.color.primary.main};
+  background: ${(props) => props.theme.color.primary};
 `;
 
 export default Inputs;
