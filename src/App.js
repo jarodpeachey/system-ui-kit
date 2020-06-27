@@ -43,6 +43,7 @@ const App = ({}) => (
         A modern UI Kit built to speed up your development proccess, while still
         allowing you room to customize and grow.
       </SubTitle>
+      <Button className="center" link="https://google.com" color="white">Google</Button>
     </Hero>
     <Section spacing="small">
       <Container>

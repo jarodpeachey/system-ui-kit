@@ -113,8 +113,6 @@ textarea {
   height: 100%;
 }
 a {
-  transition: 0 !important;
-  transition-duration: 0s !important;
   transition-delay: 0s !important;
 }
 p:last-child {
