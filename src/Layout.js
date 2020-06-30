@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { ThemeProvider } from 'styled-components';
@@ -33,6 +33,7 @@ import MobileSubMenuItem from './components/MobileSubMenuItem';
 import MobileMenuItem from './components/MobileMenuItem';
 import MobileMenu from './components/MobileMenu';
 import MobileSubMenu from './components/MobileSubMenu';
+import MobileMenuToggle from './components/MobileMenuToggle';
 import Header from './components/Header';
 import { theme } from './theme';
 import H1 from './components/H1';
@@ -59,18 +60,57 @@ library.add(
   faChevronLeft,
   faBoxes,
   faPalette,
-  faMousePointer
+  faMousePointer,
 );
 
-const Layout = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <Wrapper>
-      <Header fixed color="transparent">
-        <H1 type="h1" className="m-none">
-          System
-        </H1>
+const Layout = ({ children }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <Header fixed color="transparent">
+          <H1 type="h1" className="m-none">
+            System
+          </H1>
+          <Mobile>
+            <MobileMenuToggle
+              open={mobileMenuOpen}
+              toggleFunction={() => setMobileMenuOpen(!mobileMenuOpen)}
+            />
+          </Mobile>
+          <Tablet>
+            <Navbar>
+              <NavbarItem>
+                <a href="/">Home</a>
+              </NavbarItem>
+              <NavbarItem submenu>
+                <Link to="/components">Components</Link>
+                <SubMenu>
+                  <SubMenuItem>
+                    <Link to="/components/layout">Layout</Link>
+                  </SubMenuItem>
+                  <SubMenuItem>
+                    <Link to="/components/inputs">Inputs</Link>
+                  </SubMenuItem>
+                  <SubMenuItem>
+                    <Link to="/components/display">Display</Link>
+                  </SubMenuItem>
+                </SubMenu>
+              </NavbarItem>
+              <NavbarItem square>
+                <a href="/">
+                  <FontAwesomeIcon
+                    icon="heart"
+                    style={{ width: 20, height: 20, fontSize: 24 }}
+                  />
+                </a>
+              </NavbarItem>
+            </Navbar>
+          </Tablet>
+        </Header>
         <Mobile>
-          <MobileMenu>
+          <MobileMenu open={mobileMenuOpen}>
             <MobileMenuItem>
               <a href="/">Home</a>
             </MobileMenuItem>
@@ -90,40 +130,11 @@ const Layout = ({ children }) => (
             </MobileMenuItem>
           </MobileMenu>
         </Mobile>
-        <Tablet>
-          <Navbar>
-            <NavbarItem>
-              <a href="/">Home</a>
-            </NavbarItem>
-            <NavbarItem submenu>
-              <Link to="/components">Components</Link>
-              <SubMenu>
-                <SubMenuItem>
-                  <Link to="/components/layout">Layout</Link>
-                </SubMenuItem>
-                <SubMenuItem>
-                  <Link to="/components/inputs">Inputs</Link>
-                </SubMenuItem>
-                <SubMenuItem>
-                  <Link to="/components/display">Display</Link>
-                </SubMenuItem>
-              </SubMenu>
-            </NavbarItem>
-            <NavbarItem square>
-              <a href="/">
-                <FontAwesomeIcon
-                  icon="heart"
-                  style={{ width: 20, height: 20, fontSize: 24 }}
-                />
-              </a>
-            </NavbarItem>
-          </Navbar>
-        </Tablet>
-      </Header>
-      {children}
-    </Wrapper>
-  </ThemeProvider>
-);
+        {children}
+      </Wrapper>
+    </ThemeProvider>
+  );
+};
 
 const Wrapper = styled.div`
   color: ${(props) => props.theme.color.heading};

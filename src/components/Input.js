@@ -212,12 +212,12 @@ const Icon = styled.div`
       : '16px'};
   top: ${(props) =>
     props.size === 'xs'
-      ? 'calc(50% - 11px)'
+      ? 'calc(50% - 14px)'
       : props.size === 'small'
-      ? 'calc(50% - 12px)'
+      ? 'calc(50% - 16px)'
       : props.size === 'large'
-      ? 'calc(50% - 15px)'
-      : 'calc(50% - 13px)'};
+      ? 'calc(50% - 19px)'
+      : 'calc(50% - 17px)'};
   font-size: ${(props) =>
     props.size === 'xs'
       ? '15px'

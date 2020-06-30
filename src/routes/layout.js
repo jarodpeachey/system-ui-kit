@@ -19,6 +19,12 @@ import Hidden from '../components/Hidden';
 import Flex from '../components/Flex';
 import SubTitle from '../components/SubTitle';
 import Paragraph from '../components/Paragraph';
+import H1 from '../components/H1';
+import H2 from '../components/H2';
+import H3 from '../components/H3';
+import H4 from '../components/H4';
+import H5 from '../components/H5';
+import H6 from '../components/H6';
 
 const LayoutComponents = ({}) => {
   const [showNotificationOne, setShowNotificationOne] = useState(false);

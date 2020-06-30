@@ -67,7 +67,7 @@ const Wrapper = styled.div`
       border-radius: ${props.theme.radius.one};
       transition-duration: 0.15s !important;
       :hover {
-        background: #00000010;
+        background: ${'#435a8e10'};
       }
       svg {
         color: ${props.theme.color.text.heading} !important;
@@ -79,29 +79,33 @@ const Wrapper = styled.div`
     width: ${(props) => (props.submenu ? 'fit-content' : '100%')};
     padding: ${(props) => (props.submenu ? 0 : '12px 16px')};
     text-decoration: none;
+    color: ${(props) => props.theme.color.heading};
     cursor: pointer;
-    color: ${(props) => props.theme.color.text.heading};
     background: ${(props) =>
-      props.submenu ? 'transparent' : props.open ? '#00000010' : 'transparent'};
+      props.submenu
+        ? 'transparent'
+        : props.open
+        ? '#435a8e10'
+        : 'transparent'};
     border-radius: ${(props) => props.theme.radius.one};
     transition-duration: 0.15s !important;
     :hover {
-      background: ${(props) => (props.submenu ? 'transparent' : '#00000010')};
+      background: ${(props) =>
+        props.submenu ? 'transparent' : '#435a8e10'};
     }
   }
 `;
 
 const MobileSubMenuWrapper = styled.div`
-  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
-  background: ${(props) => (props.open ? 'white' : 'transparent')};
-  opacity: ${(props) => (props.open ? 1 : 0)};
-  top: 0;
-  left: 0;
-  width: 100%;
+
+
+    -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  -ms-transition: all 0.15s;
+  -o-transition: all 0.15s;
   transition: all 0.15s;
-  padding: 0;
-  height: ${(props) => (props.open ? 'fit-content' : 0)};
-  z-index: -1;
+  overflow: hidden;
+  max-height: ${(props) => (props.open ? '130px' : '0')} !important;
 `;
 
 export default MobileMenuItem;

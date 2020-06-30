@@ -42,8 +42,10 @@ export const theme = {
     small: 14,
   },
   color: {
-    primary: '#8731d5',
-    secondary: '#4197f1',
+    // primary: '#8731d5',
+    primary: '#7650ea',
+    // secondary: '#4197f1',
+    secondary: '#09a8d8',
     gray: {
       // one: '#f6f9fc',
       one: '#f7f7fb',

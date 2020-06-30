@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Option from './Option';
 import Text from './Text';
 import { theme } from '../theme';
 
-const Select = ({ children, className, id }) => {
+const Select = ({ children, className, id, size, variant }) => {
   const newChildren = [];
 
   const [open, setOpen] = useState(false);
@@ -30,16 +30,17 @@ const Select = ({ children, className, id }) => {
         className={className}
         id={id}
         open={open}
+        size={size}
+        variant={variant}
         onClick={toggleOpen}
       >
-        {selectedLabel || <Text color="text-two">Select a value</Text>}
+        {selectedLabel || <Text>Select a value</Text>}
         <FontAwesomeIcon
           style={{
             marginLeft: 12,
             transform: `${open ? 'rotate(180deg)' : 'none'}`,
             transition: 'all .1s ease-in-out',
-            fontSize: 14,
-            color: selectedLabel ? null : theme.color.text.two,
+            fontSize: 14
           }}
           icon="chevron-down"
         />
@@ -72,7 +73,22 @@ const Wrapper = styled.div`
 `;
 
 const SelectWrapper = styled.div`
-  padding: 14px;
+  padding: ${(props) =>
+    props.size === 'xs'
+      ? '4px 8px'
+      : props.size === 'small'
+      ? '8px 12px'
+      : props.size === 'large'
+      ? '16px 18px'
+      : '13px 15px'};
+  font-size: ${(props) =>
+    props.size === 'xs'
+      ? '13px'
+      : props.size === 'small'
+      ? '14px'
+      : props.size === 'large'
+      ? '17px'
+      : '15px'};
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -90,6 +106,22 @@ const SelectWrapper = styled.div`
         ? `1px solid ${props.theme.color.primary}`
         : `1px solid ${props.theme.color.gray.four}`};
   }
+  ${(props) =>
+    props.variant === 'filled' &&
+    css`
+      background: ${props.theme.color.gray.one};
+      border: ${props.open
+        ? `1px solid ${props.theme.color.primary}`
+        : `1px solid ${props.theme.color.gray.one}`};
+      :hover {
+        border: ${props.open
+          ? `1px solid ${props.theme.color.primary}`
+          : `1px solid ${props.theme.color.gray.one}`};
+      }
+      :focus {
+        border: 1px solid ${props.theme.color.primary};
+      }
+    `}
 `;
 
 const SelectMenu = styled.div`

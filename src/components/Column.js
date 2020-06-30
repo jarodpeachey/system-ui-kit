@@ -69,7 +69,7 @@ const Wrapper = styled.div`
   > * {
     width: 100% !important;
   }
-  flex: 1;
+  flex: 1 1 0;
   padding: ${(props) => props.spacingY}px ${(props) => props.spacingX}px;
   ${(props) =>
     props.alignBottom &&

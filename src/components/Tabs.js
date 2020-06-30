@@ -14,7 +14,7 @@ const Tabs = ({
   customStyles,
   fullWidth,
   value,
-  indicatorColor,
+  vertical,
 }) => {
   const [selectedTab, setSelectedTab] = useState(
     value || defaultValue || children[0].props.children[0].props.name,
@@ -34,7 +34,7 @@ const Tabs = ({
 
   return (
     <Wrapper className={className} id={id} customStyles={customStyles}>
-      <Flex hAlign="start">
+      <Flex direction={vertical ? 'vertical' : 'horizontal'} hAlign="start">
         {children.map((child) => {
           console.log(child.type.name);
           let newProps = {
@@ -42,7 +42,7 @@ const Tabs = ({
             onClick: customOnClick,
             selectedTab,
             fullWidth: fullWidth,
-            indicatorColor: indicatorColor,
+            vertical: vertical,
           };
           newProps.active = selectedTab === child.props.name;
 

@@ -481,6 +481,7 @@ const StyledA = styled.a`
   font-size: 16px;
   // font-weight: 500;
   letter-spacing: 1.1px;
+  z-index: -1 !important;
   padding: ${(props) =>
     props.size === 'small'
       ? '8px 12px'

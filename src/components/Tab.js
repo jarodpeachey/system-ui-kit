@@ -12,6 +12,7 @@ const Tab = ({
   fullWidth,
   indicatorColor,
   activeStyles,
+  vertical
 }) => {
   return (
     <Wrapper
@@ -23,6 +24,7 @@ const Tab = ({
       active={active}
       fullWidth={fullWidth}
       indicatorColor={indicatorColor}
+      vertical={vertical}
     >
       {children}
     </Wrapper>
@@ -40,7 +42,7 @@ const Wrapper = styled.div`
   transition: 0.15s;
   border-bottom: 2px solid transparent;
   border-radius: 3px;
-  width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
+  width: ${(props) => (props.fullWidth || props.vertical ? '100%' : 'fit-content')};
   :hover {
     background: ${(props) => props.theme.color.gray.one};
   }

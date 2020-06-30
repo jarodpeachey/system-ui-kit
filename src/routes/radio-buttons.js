@@ -92,7 +92,9 @@ const RadioButtonsPage = ({}) => {
             You can change the color of the entire Radio button group, or
             individually.
           </p>
-          <Paragraph><strong>Group</strong></Paragraph>
+          <Paragraph>
+            <strong>Group</strong>
+          </Paragraph>
           <div
             style={{
               background: theme.color.gray.one,

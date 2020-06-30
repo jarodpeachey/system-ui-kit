@@ -50,7 +50,7 @@ const Header = ({ children, className, color, scrollColor, fixed }) => {
 };
 
 const Wrapper = styled.div`
-  transition: background 0.3s;
+  transition: all 0.3s, border-bottom .15s ease .3s;
   position: ${(props) => (props.fixed ? 'fixed' : '')};
   top: 0;
   width: 100%;
@@ -72,6 +72,7 @@ const Wrapper = styled.div`
   .menu-item,
   .menu-item a,
   div {
+    transition: all .3s;
     color: ${(props) =>
       props.color === 'primary'
         ? 'white'
@@ -110,20 +111,17 @@ const Wrapper = styled.div`
         : props.color === 'transparent'
         ? 'transparent'
         : 'white'};
+    height: ${(props) =>
+      props.color === 'primary' || props.color === 'secondary'
+        ? '71px'
+        : '103px'};
   }
-  #mobile-menu {
-    padding-top: 103px;
   }
 
   &.scrolled {
-    #mobile-menu {
-      padding-top: 71px;
-    }
-
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.03),
-      0 4px 16px -6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 4px 0 rgba(17,22,26,0.08), 0 2px 4px 0 rgba(17,22,26, 0.03), 0 4px 8px 0 rgba(17,22,26, 0.03);
     background: ${(props) =>
-      props.color === 'transparent' ? '#ffffffee' : null};
+      props.color === 'transparent' ? '#fffffff9' : null};
     h1,
     h2,
     h3,
@@ -146,7 +144,10 @@ const Wrapper = styled.div`
           : props.theme.color.heading} !important;
     }
   }
+  border-bottom: 2px solid transparent;
   &.open {
+    box-shadow: none !important;
+    border-bottom: 2px solid ${(props) => props.theme.color.gray.one};
     h1,
     h2,
     h3,
@@ -159,12 +160,17 @@ const Wrapper = styled.div`
       color: ${(props) =>
         props.color === 'transparent' ? props.theme.color.heading : null};
     }
+    transition: background 0s;
     span {
       background: ${(props) =>
         props.color === 'transparent'
           ? props.theme.color.heading
           : null} !important;
     }
+  }
+  border-bottom: none !important;
+  &.open.scrolled {
+    border-bottom: none !important;
   }
 `;
 

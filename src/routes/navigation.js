@@ -34,8 +34,8 @@ import Paragraph from '../components/Paragraph';
 
 const NavigationComponents = ({}) => {
   const [showMenu, setShowMenu] = useState(false);
-  const [activeTab, setActiveTab] = useState('one');
-  const [activeTabTwo, setActiveTabTwo] = useState('html');
+  const [activeTabOne, setActiveTabOne] = useState('design');
+  const [activeTabTwo, setActiveTabTwo] = useState('design');
   const [activeTabThree, setActiveTabThree] = useState('design');
 
   return (
@@ -62,7 +62,9 @@ const NavigationComponents = ({}) => {
       </Hero>
       <Section>
         <Container>
-          <H2 type="h2" className="mt-none">Menu</H2>
+          <H2 type="h2" className="mt-none">
+            Menu
+          </H2>
           {/* <Menu>
             <MenuItem>Test</MenuItem>
           </Menu> */}
@@ -81,7 +83,9 @@ const NavigationComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 type="h2" className="mt-none">Tabs</H2>
+          <H2 type="h2" className="mt-none">
+            Tabs
+          </H2>
           {/* <div
             style={{
               borderRadius: 3,
@@ -93,15 +97,16 @@ const NavigationComponents = ({}) => {
 
           <div>
             <Tabs
-              onChange={(value) => setActiveTabThree(value)}
+              onChange={(value) => setActiveTabOne(value)}
               // fullWidth
-              value={activeTabThree}
+              value={activeTabOne}
+              customStyles={`margin-bottom: 16px;`}
             >
               <Tab name="design">Design</Tab>
               <Tab name="develop">Develop</Tab>
               <Tab name="launch">Launch</Tab>
             </Tabs>
-            <TabContent name="design" value={activeTabThree}>
+            <TabContent name="design" value={activeTabOne}>
               <Paragraph className="m-none">
                 Cosby sweater eu banh mi, qui irure. Amet lorem et luctus. Sed
                 eget nulla ac metus porttitor tristique ac quis mauris. Praesent
@@ -118,7 +123,7 @@ const NavigationComponents = ({}) => {
                 litora torquent per conubia nostra, per inceptos himenaeos.
               </Paragraph>
             </TabContent>
-            <TabContent name="develop" value={activeTabThree}>
+            <TabContent name="develop" value={activeTabOne}>
               <Paragraph className="m-none">
                 Cras ornare luctus lectus vel varius. Sed neque risus, pharetra
                 vitae pellentesque vitae, scelerisque at nunc. Vestibulum
@@ -133,7 +138,7 @@ const NavigationComponents = ({}) => {
                 augue.
               </Paragraph>
             </TabContent>
-            <TabContent name="launch" value={activeTabThree}>
+            <TabContent name="launch" value={activeTabOne}>
               <Paragraph className="m-none">
                 Cosby sweater eu banh mi, qui irure terry richardson ex squid.
                 Aliquip placeat salvia cillum iphone. Seitan aliquip quis
@@ -148,227 +153,66 @@ const NavigationComponents = ({}) => {
           <br />
           <br />
           <br />
-          <div
-            style={{
-              boxShadow: '0px 4px 12px -7px #00000040',
-              background: `${theme.color.primary}`,
-              border: '1px solid #efefef',
-              borderBottom: 'none',
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              paddingRight: 14,
-            }}
-          >
-            <Tabs
-              onChange={(value) => {
-                console.log('New value: ', value);
-                setActiveTab(value);
-              }}
-              defaultValue="two"
-              value={activeTab}
-              indicatorColor="white"
-            >
-              <Tab
-                customStyles={`padding: 16px 26px; font-weight: bold; color: white;`}
-                name="one"
+          <Row spacing={[8]} breakpoints={[576]}>
+            <div widths={['auto']}>
+              <Tabs
+                onChange={(value) => setActiveTabTwo(value)}
+                // fullWidth
+                value={activeTabTwo}
+                vertical
               >
-                Tab One
-              </Tab>
-              <Tab
-                customStyles={`padding: 16px 26px; font-weight: bold; color: white;`}
-                name="two"
-              >
-                Tab Two
-              </Tab>
-              <Tab
-                customStyles={`padding: 16px 26px; font-weight: bold; color: white;`}
-                name="three"
-              >
-                Tab Three
-              </Tab>
-            </Tabs>
-
-            <Dropdown align="right">
-              <IconButton color="white" circle variant="plain">
-                <FontAwesomeIcon icon="user" />
-              </IconButton>
-              <span>
-                <DropdownItem>Settings</DropdownItem>
-                <DropdownItem>Profile</DropdownItem>
-              </span>
-            </Dropdown>
-          </div>
-          <TabContent
-            value={activeTab}
-            customStyles={`border-top: none; border-top-right-radius: 0; border-top-left-radius: 0; margin: 0;`}
-            name="one"
-          >
-            <H3 type="h3" className="mt-none">Content One</H3>
-            <Paragraph>
-              This is a content box, controlled by the tabs up there. Go ahead
-              click them and see what happens!
-            </Paragraph>
-            <Paragraph>
-              Or, you can switch to another tab using a controlled tab
-              component.
-            </Paragraph>
-            <IconButton
-              circle
-              customStyles={`margin: 0;`}
-              variant="plain"
-              disabled
-            >
-              <FontAwesomeIcon icon="chevron-left" />
-            </IconButton>
-            <IconButton
-              circle
-              customStyles={`margin: 0;`}
-              color="primary"
-              variant="plain"
-              onClick={() => {
-                console.log(activeTab);
-                setActiveTab('two');
-              }}
-            >
-              <FontAwesomeIcon icon="chevron-right" />
-            </IconButton>
-          </TabContent>
-          <TabContent
-            value={activeTab}
-            customStyles={`border-top: none; border-top-right-radius: 0; border-top-left-radius: 0; margin: 0;`}
-            name="two"
-          >
-            <H3 type="h3" className="mt-none">Content Two</H3>
-            <Paragraph>
-              This is a content box, controlled by the tabs up there. Go ahead
-              click them and see what happens!
-            </Paragraph>
-            <Paragraph>
-              Or, you can switch to another tab using a controlled tab
-              component.
-            </Paragraph>
-            <IconButton
-              circle
-              customStyles={`margin: 0;`}
-              color="primary"
-              variant="plain"
-              onClick={() => {
-                console.log(activeTab);
-                setActiveTab('one');
-              }}
-            >
-              <FontAwesomeIcon icon="chevron-left" />
-            </IconButton>
-            <IconButton
-              circle
-              customStyles={`margin: 0;`}
-              color="primary"
-              variant="plain"
-              onClick={() => {
-                console.log(activeTab);
-                setActiveTab('three');
-              }}
-            >
-              <FontAwesomeIcon icon="chevron-right" />
-            </IconButton>
-          </TabContent>
-          <TabContent
-            value={activeTab}
-            customStyles={`border-top: none; border-top-right-radius: 0; border-top-left-radius: 0; margin: 0;`}
-            name="three"
-          >
-            <H3 type="h3" className="mt-none">Content Three</H3>
-            <Paragraph>
-              This is a content box, controlled by the tabs up there. Go ahead
-              click them and see what happens!
-            </Paragraph>
-            <Paragraph>
-              Or, you can switch to another tab using a controlled tab
-              component.
-            </Paragraph>
-            <IconButton
-              circle
-              customStyles={`margin: 0;`}
-              color="primary"
-              variant="plain"
-              onClick={() => {
-                console.log(activeTab);
-                setActiveTab('two');
-              }}
-            >
-              <FontAwesomeIcon icon="chevron-left" />
-            </IconButton>
-            <IconButton
-              circle
-              customStyles={`margin: 0;`}
-              variant="plain"
-              disabled
-            >
-              <FontAwesomeIcon icon="chevron-right" />
-            </IconButton>
-          </TabContent>
-          <br />
-          <br />
-          <br />
-          <Tabs
-            onChange={(value) => {
-              console.log('New value: ', value);
-              setActiveTabTwo(value);
-            }}
-            defaultValue="html"
-            value={activeTabTwo}
-            fullWidth
-          >
-            <Tab
-              customStyles={`:hover { background: #efefef80; } border-radius: 6px;`}
-              activeStyles={`:hover { color: white; background: ${theme.color.primary}; }color: white; border: none; border-radius: 6px; background: ${theme.color.primary};`}
-              name="html"
-            >
-              HTML
-            </Tab>
-            <Tab
-              customStyles={`:hover { background: #efefef80; } border-radius: 6px;`}
-              activeStyles={`:hover { color: white; background: ${theme.color.secondary}; }color: white; border: none; border-radius: 6px; background: ${theme.color.secondary};`}
-              name="css"
-            >
-              CSS
-            </Tab>
-            <Tab
-              customStyles={`:hover { background: #efefef80; } border-radius: 6px;`}
-              activeStyles={`:hover { color: white; background: ${theme.color.success}; }color: white; border: none; border-radius: 6px; background: ${theme.color.success};`}
-              name="javascript"
-            >
-              Javascript
-            </Tab>
-          </Tabs>
-          <TabContent name="html" value={activeTabTwo}>
-            <H3 type="h3" className="m-none">HTML</H3>
-            <Paragraph>
-              HTML is a modern markup language that defines the content
-              structure of a website.
-            </Paragraph>
-            <Button color="primary">Learn More</Button>
-          </TabContent>
-          <TabContent name="css" value={activeTabTwo}>
-            <H3 type="h3" className="m-none">CSS</H3>
-            <Paragraph>
-              CSS is a language used to style websites. Without it, websites
-              would look horrible.
-            </Paragraph>
-            <Button color="secondary">Learn More</Button>
-          </TabContent>
-          <TabContent name="javascript" value={activeTabTwo}>
-            <H3 type="h3" className="m-none">Javascript</H3>
-            <Paragraph>
-              Javascript is a language used to build websites and add user
-              interaction. Without it, it would be boring.
-            </Paragraph>
-            <Button color="success">Learn More</Button>
-          </TabContent>
-
-          {/* </div> */}
+                <Tab name="design">Design</Tab>
+                <Tab name="develop">Develop</Tab>
+                <Tab name="launch">Launch</Tab>
+              </Tabs>
+            </div>
+            <div widths={[9]}>
+              <TabContent name="design" value={activeTabTwo}>
+                <Paragraph className="m-none">
+                  Cosby sweater eu banh mi, qui irure. Amet lorem et luctus. Sed
+                  eget nulla ac metus porttitor tristique ac quis mauris.
+                  Praesent condimentum justo in sapien semper,
+                </Paragraph>
+                <Paragraph>
+                  Aliquam metus libero, pretium non posuere ut, ultrices sed
+                  mauris. Pellentesque ut nunc tincidunt, consequat odio nec,
+                  bibendum mauris. Vivamus blandit bibendum dolor, non ornare
+                  lectus maximus in. Etiam ac nibh vel orci commodo congue.
+                  Nullam pulvinar sit. Vitae varius magna fermentum. Vivamus
+                  mattis turpis ut nulla facilisis, sit amet sagittis eros
+                  consectetur. Nam viverra iaculis fermentum. Class aptent
+                  taciti sociosqu ad litora torquent per conubia nostra, per
+                  inceptos himenaeos.
+                </Paragraph>
+              </TabContent>
+              <TabContent name="develop" value={activeTabTwo}>
+                <Paragraph className="m-none">
+                  Cras ornare luctus lectus vel varius. Sed neque risus,
+                  pharetra vitae pellentesque vitae, scelerisque at nunc.
+                  Vestibulum maximus fermentum nisi nec luctus. Maecenas vitae
+                  purus facilisis, dapibus diam id, gravida nisi. Suspendisse
+                  tincidunt nisl dui, condimentum semper erat mollis sit amet.
+                  Sed sollicitudin lorem sit amet massa efficitur sollicitudin.
+                </Paragraph>
+                <Paragraph>
+                  Vivamus sed neque maximus, malesuada risus vitae, bibendum
+                  turpis. Nunc orci ligula, dignissim ac viverra et, ornare sed
+                  augue.
+                </Paragraph>
+              </TabContent>
+              <TabContent name="launch" value={activeTabTwo}>
+                <Paragraph className="m-none">
+                  Cosby sweater eu banh mi, qui irure terry richardson ex squid.
+                  Aliquip placeat salvia cillum iphone. Seitan aliquip quis
+                  cardigan american apparel, butcher voluptate nisi qui.
+                </Paragraph>
+                <Paragraph>
+                  Mustache cliche tempor, williamsburg carles vegan helvetica.
+                  Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+                </Paragraph>
+              </TabContent>
+            </div>
+          </Row>
         </Container>
       </Section>
     </Layout>

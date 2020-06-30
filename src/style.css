@@ -581,3 +581,101 @@ p:last-child {
     height: 100%;
   }
 }
+
+html body .dayWrapper button,
+.dayWrapper.today button {
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  outline: none !important;
+  font-size: 15px !important;
+  color: #2c2f3b !important;
+}
+
+.calendarContainer .heading {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+.prev {
+  position: absolute;
+  right: 0 !important;
+  top: 0 !important;
+}
+
+.next {
+  position: absolute;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+.prev,
+.next,
+.dayWrapper,
+.calendarContainer .title,
+.calendarContainer button,
+.rc-time-picker {
+  border-radius: 3px !important;
+  border: none !important;
+  transition: 0.15s;
+}
+
+.prev:hover,
+.next:hover,
+.calendarContainer .title:hover,
+.calendarContainer button:hover,
+.rc-time-picker:hover {
+  background: #eaedf1 !important;
+}
+
+.dayWrapper:hover {
+  background: #eaedf1 !important;
+}
+
+.calendarContainer .daysOfWeek div {
+  color: #4b4f6190;
+}
+
+.prev:active,
+.next:active,
+.dayWrapper:active,
+.calendarContainer .title:active,
+.dayWrapper.selected,
+.selected button,
+.calendarContainer .selected button {
+  background: #7650ea !important;
+  color: white !important;
+}
+
+.calendarContainer .title {
+  height: 42px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+.calendarContainer .rc-time-picker,
+.calendarContainer .rc-time-picker input {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #4b4f61bb !important;
+}
+
+.rc-time-picker-panel {
+  border-radius: 3px !important;
+  background: #ffffff !important;
+  padding: 8px 0 !important;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.rc-time-picker-panel-inner {
+  box-shadow: none !important;
+  border: none !important;
+  margin: none !important;
+  padding: none !important;
+}
+
+.tether-target {
+  width: fit-content !important;
+}

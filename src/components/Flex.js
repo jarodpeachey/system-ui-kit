@@ -16,6 +16,7 @@ const Flex = ({ children, className, id, direction, hAlign, vAlign }) => (
 
 const Wrapper = styled.div`
   display: flex;
+  // flex-wrap: wrap;
   flex-direction: ${(props) =>
     props.direction === 'vertical' ? 'column' : 'row'};
   align-items: ${(props) =>
