@@ -12,8 +12,7 @@ const RadioButton = ({
   disabled,
   name,
   value,
-  color,
-  inline
+  inline,
 }) => {
   const customOnChange = (e) => {
     onChange && onChange(e);
@@ -25,7 +24,6 @@ const RadioButton = ({
       id={id}
       disabled={disabled}
       htmlFor={name}
-      color={color}
       inline={inline}
     >
       <input
@@ -87,7 +85,7 @@ const RadioButtonWrapper = styled.label`
       ${(props) =>
         props.disabled
           ? 'rgb(230, 230, 230)'
-          : calculateColor(props.color, props.theme.color)};
+          : props.theme.color.primary};
   }
   .icon {
     background: white;
@@ -108,10 +106,10 @@ const RadioButtonWrapper = styled.label`
     border: 1px solid ${(props) =>
       props.disabled
         ? 'rgb(230, 230, 230)'
-        : `${calculateColor(props.color, props.theme.color)}`};
+        : `${props.theme.color.primary}`};
   }
   input:checked ~ .checkmark > .icon {
-    background: ${(props) => calculateColor(props.color, props.theme.color)};
+    background: ${(props) => props.theme.color.primary};
     width: 100%;
     height: 100%;
     display: block;
@@ -120,7 +118,7 @@ const RadioButtonWrapper = styled.label`
   }
   input:focus ~ .checkmark {
     // box-shadow: 0px 0px 0px 3px ${(props) =>
-      calculateColor(props.color, props.theme.color)}30 !important;
+      props.theme.color.primary}30 !important;
   }
 `;
 

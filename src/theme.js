@@ -3,9 +3,9 @@ import React from 'react';
 
 export const theme = {
   shadow: {
-    one: '0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)',
-    two: '0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.18)',
-    three: '0 4px 12px rgba(50,50,93,.25), 0 1px 3px rgba(0,0,0,.18)',
+    one: '0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08)',
+    two: '0 4px 18px -8px rgba(50,50,93,.25), 0 1px 3px rgba(0,0,0,.18)',
+    three: '0 15px 45px -20px rgba(50,50,93,.2), 0 3px 12px -2px rgba(0,0,0,.17)',
     four: '0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)',
   },
   radius: {

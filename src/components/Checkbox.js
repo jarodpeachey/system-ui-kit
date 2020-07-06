@@ -11,7 +11,6 @@ const Checkbox = ({
   onChange,
   disabled,
   checked = false,
-  color,
   icon = <FontAwesomeIcon icon="check" />,
 }) => {
   const [inputChecked, setInputChecked] = useState(checked);
@@ -45,7 +44,6 @@ const Checkbox = ({
       checked={inputChecked}
       disabled={disabled}
       htmlFor={name}
-      color={color}
     >
       <input
         id={name}
@@ -106,12 +104,12 @@ const CheckboxWrapper = styled.label`
     background: ${(props) =>
       props.disabled
         ? props.theme.color.gray.four
-        : calculateColor(props.color, props.theme.color)};
+        : props.theme.color.primary};
     border: 1px solid
       ${(props) =>
         props.disabled
           ? props.theme.color.gray.four
-          : calculateColor(props.color, props.theme.color)};
+          : props.theme.color.primary};
   }
   .icon {
     display: none;
@@ -129,7 +127,7 @@ const CheckboxWrapper = styled.label`
   }
   // input:focus ~ .checkmark {
   //   box-shadow: 0px 0px 0px 3px ${(props) =>
-    calculateColor(props.color, props.theme.color)}30 !important;
+    props.theme.color.primary}30 !important;
   // }
     input:hover ~ .checkmark {
     border: 1px solid ${(props) =>
@@ -139,7 +137,7 @@ const CheckboxWrapper = styled.label`
     border: 1px solid ${(props) =>
       props.disabled
         ? props.theme.color.gray.four
-        : `${calculateColor(props.color, props.theme.color)}`};
+        : `${props.theme.color.primary}`};
   }
 `;
 

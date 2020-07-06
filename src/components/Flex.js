@@ -2,10 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
-const Flex = ({ children, className, id, direction, hAlign, vAlign }) => (
+const Flex = ({
+  children,
+  className,
+  id,
+  customStyles,
+  direction,
+  hAlign,
+  vAlign,
+}) => (
   <Wrapper
     className={className}
     id={id}
+    customStyles={customStyles}
     direction={direction}
     hAlign={hAlign}
     vAlign={vAlign}
@@ -61,6 +70,7 @@ const Wrapper = styled.div`
         ? 'space-between'
         : 'center'};
     `};
+  ${(props) => props.customStyles}
 `;
 
 export default Flex;

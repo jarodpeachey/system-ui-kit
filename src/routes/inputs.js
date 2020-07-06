@@ -10,6 +10,7 @@ import OutlinedButton from '../components/OutlinedButton';
 import IconButton from '../components/IconButton';
 import OutlinedIconButton from '../components/OutlinedIconButton';
 import Input from '../components/Input';
+import TextArea from '../components/TextArea';
 import OutlinedInput from '../components/OutlinedInput';
 import Checkbox from '../components/Checkbox';
 import Row from '../components/Row';
@@ -32,17 +33,14 @@ import H4 from '../components/H4';
 import H5 from '../components/H5';
 import H6 from '../components/H6';
 import ReactDatetime from 'react-datetime';
-import DatePicker from 'react-datepicker2';
-// import "react-datepicker/dist/react-datepicker.css";
-import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
+import DatePicker from '../components/DatePicker';
+import Flex from '../components/Flex';
+import Modal from '../components/Modal';
+import Line from '../components/Line';
 
 const Inputs = ({}) => {
-  const [date, setDate] = useState(moment());
-
-  const handleChange = (newDate) => {
-    setDate(newDate);
-  };
-
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <Layout>
       <Helmet>
@@ -693,6 +691,8 @@ const Inputs = ({}) => {
               />
             </div>
           </Row>
+          <H2>Text Area</H2>
+          <TextArea />
           <Row breakpoints={[476, 960]} spacing={[24]}>
             <div widths={[6, 4]}>
               <H3>Checkboxes</H3>
@@ -772,9 +772,30 @@ const Inputs = ({}) => {
           <DatePicker
             showTodayButton={false}
             timePicker={false}
-            value={date}
-            onChange={(value) => setDate(value)}
+            variant="filled"
           />
+          <H2>Modal</H2>
+          <Button onClick={() => setModalOpen(!modalOpen)} color="primary">Open Modal</Button>
+          {modalOpen && (
+            <Modal
+              toggleFunction={() => setModalOpen(!modalOpen)}
+              title="Test Modal"
+            >
+              <Paragraph>This is a modal. It's really pretty sweet.</Paragraph>
+              <Paragraph>
+                You can do cool stuff with it, and add buttons to it at the
+                bottom.
+              </Paragraph>
+              <Line />
+              <Flex hAlign="space-between">
+                <Button color="primary">Save</Button>
+                <Button color="primary" variant="plain">
+                  Cancel
+                </Button>
+              </Flex>
+            </Modal>
+          )}
+
           <br />
           <br />
           <br />

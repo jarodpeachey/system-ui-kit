@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { theme } from '../theme';
 import { pSBC } from '../utils/color';
@@ -21,17 +21,22 @@ const Input = ({
   type,
   defaultValue,
   color,
+  value,
 }) => {
   const [hover, setHover] = useState(false);
   const [focus, setFocus] = useState(false);
-  const [value, setValue] = useState(
-    defaultValue || type === 'number' ? 0 : '',
+  const [inputValue, setInputValue] = useState(
+    value || defaultValue || (type === 'number' ? 0 : ''),
   );
 
-  console.log(hover);
+  useEffect(() => {
+    setInputValue(value);
+  }, [value]);
+
+  console.log(variant);
 
   const customOnChange = (e) => {
-    setValue(e.target.value);
+    setInputValue(e.target.value);
 
     onChange(e);
   };
@@ -50,11 +55,11 @@ const Input = ({
 
   const increment = () => {
     console.log('Increasing.');
-    setValue(value + 1);
+    setInputValue(value + 1);
   };
 
   const decrement = () => {
-    setValue(value - 1);
+    setInputValue(value - 1);
   };
 
   return (
@@ -83,7 +88,7 @@ const Input = ({
             placeholder={placeholder}
             type={type === 'number' ? 'tel' : type}
             hover={hover}
-            value={value}
+            value={inputValue}
             onChange={customOnChange}
             onFocus={customOnFocus}
             onBlur={customOnBlur}
@@ -118,7 +123,7 @@ const Input = ({
             variant={variant}
             type={type === 'number' ? 'tel' : type}
             placeholder={placeholder}
-            value={value}
+            value={inputValue}
             onChange={customOnChange}
             onFocus={customOnFocus}
             onBlur={customOnBlur}
@@ -243,14 +248,12 @@ const Label = styled.label`
 `;
 
 const StyledInput = styled.input`
-  -webkit-user-select: none; /* Chrome/Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+ */
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
   display: inline-block;
-
-  /* Rules below not implemented in browsers yet */
-  -o-user-select: none;
-  user-select: none;
   padding: ${(props) =>
     props.size === 'xs'
       ? '4px 8px'
