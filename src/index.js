@@ -13,6 +13,7 @@ import Alerts from './routes/alerts';
 import Buttons from './routes/buttons';
 import Checkboxes from './routes/checkboxes';
 import RadioButtonsPage from './routes/radio-buttons';
+import Example from './routes/test';
 
 const Routes = ({}) => (
   <>
@@ -28,6 +29,7 @@ const Routes = ({}) => (
       <Checkboxes path="/components/checkbox" />
       <RadioButtonsPage path="/components/radio-button" />
       <Components path="/components" />
+      <Example path="/test" />
     </Router>
   </>
 );

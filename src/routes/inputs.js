@@ -38,6 +38,7 @@ import DatePicker from '../components/DatePicker';
 import Flex from '../components/Flex';
 import Modal from '../components/Modal';
 import Line from '../components/Line';
+import Popover from '../components/Popover';
 
 const Inputs = ({}) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -775,7 +776,9 @@ const Inputs = ({}) => {
             variant="filled"
           />
           <H2>Modal</H2>
-          <Button onClick={() => setModalOpen(!modalOpen)} color="primary">Open Modal</Button>
+          <Button onClick={() => setModalOpen(!modalOpen)} color="primary">
+            Open Modal
+          </Button>
           {modalOpen && (
             <Modal
               toggleFunction={() => setModalOpen(!modalOpen)}
@@ -795,7 +798,10 @@ const Inputs = ({}) => {
               </Flex>
             </Modal>
           )}
-
+          <Popover>
+            <Button color="primary">Click Me</Button>
+            <div>Test stuff</div>
+          </Popover>
           <br />
           <br />
           <br />
