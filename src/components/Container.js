@@ -1,26 +1,23 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
-import { ThemeContext } from '../theme';
+import styled, { css } from 'styled-components';
 
 const Container = ({
   children,
-  className,
-  id,
   background,
+  className = '',
   maxWidth,
   style,
-  size,
+  customStyles,
+  align,
 }) => {
-  const theme = useContext(ThemeContext);
-
   return (
     <StyledContainer
-      className={className}
-      id={id}
       maxWidth={maxWidth}
+      className={className}
       background={background}
       style={style}
-      size={size}
+      align={align}
+      customStyles={customStyles}
     >
       {children}
     </StyledContainer>
@@ -29,28 +26,37 @@ const Container = ({
 
 const StyledContainer = styled.div`
   width: 100%;
-  margin: 0 auto;
+  margin: ${(props) =>
+    props.align === 'left'
+      ? '0px'
+      : props.align === 'right'
+      ? '0px auto 0px 0px'
+      : '0 auto'};
   max-width: ${(props) =>
-    props.maxWidth
-      ? props.maxWidth
-      : props.size === 'xs'
+    props.maxWidth === 'xs'
+      ? '600'
+      : props.maxWidth === 'sm'
       ? '769'
-      : props.size === 'sm'
-      ? '960'
-      : props.size === 'lg'
+      : props.maxWidth === 'lg'
       ? '1300'
-      : '1100'}px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding: 0 12px;
+      : '1000'}px;
+  padding-left: 24px;
+  padding-right: 24px;
   @media (min-width: 576px) {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
   @media (min-width: 769px) {
     padding-left: 48px;
     padding-right: 48px;
   }
+  ${(props) =>
+    (props.align === 'left' || props.align === 'right') &&
+    css`
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    `};
+  ${(props) => props.customStyles}
 `;
 
 export default Container;

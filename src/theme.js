@@ -32,8 +32,8 @@ export const theme = {
     six: 14,
   },
   fontSize: {
-    h1: 48,
-    h2: 36,
+    h1: 40,
+    h2: 34,
     h3: 28,
     h4: 24,
     h5: 20,

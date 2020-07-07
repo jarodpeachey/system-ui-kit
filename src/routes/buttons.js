@@ -30,27 +30,12 @@ const Buttons = ({}) => {
   const [showNotificationFive, setShowNotificationFive] = useState(false);
 
   return (
-    <Layout>
+    <Layout component>
       <Helmet>
         <title>Button Component - System UI Kit</title>
       </Helmet>
-      <Hero
-        background={`linear-gradient(
-        to right,
-        ${theme.color.primary},
-        ${theme.color.secondary}
-      )`}
-      >
-        <div style={{ textAlign: 'center' }}>
-          <H1 type="h1" darkBackground className="m-none">
-            Buttons
-          </H1>
-          <SubTitle type="h4" darkBackground>
-            Buttons are used to trigger actions when a user clicks them.
-          </SubTitle>
-        </div>
-      </Hero>
-      <Section spacing="small">
+
+      <Section>
         <Container>
           <H3>Color</H3>
           <Button className="mr-2">default</Button>

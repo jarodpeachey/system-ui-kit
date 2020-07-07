@@ -16,8 +16,8 @@ const H1 = ({
       id={id}
       customStyles={customStyles}
       color={color}
-      display={display}
       darkBackground={darkBackground}
+      display={display}
     >
       {children}
     </Wrapper>
@@ -37,11 +37,10 @@ const Wrapper = styled.h1`
       : props.darkBackground
       ? '#ffffff'
       : props.theme.color.heading};
-  text-transform: ${(props) =>
-    props.display === 'title' ? 'uppercase' : null};
-  font-weight: 600;
+  font-weight: ${(props) => (props.display ? '700' : '500')};
   margin-bottom: 32px;
-  font-size: ${(props) => props.theme.fontSize.h1}px;
+  font-size: ${(props) =>
+    props.display ? props.theme.fontSize.h1 + 8 : props.theme.fontSize.h1}px;
   ${(props) =>
     props.customStyles &&
     css`

@@ -27,39 +27,20 @@ import Text from '../components/Text';
 import SubTitle from '../components/SubTitle';
 
 const TypographyComponents = ({}) => {
-  const [showNotificationOne, setShowNotificationOne] = useState(false);
-  const [showNotificationTwo, setShowNotificationTwo] = useState(false);
-  const [showNotificationThree, setShowNotificationThree] = useState(false);
-  const [showNotificationFour, setShowNotificationFour] = useState(false);
-  const [showNotificationFive, setShowNotificationFive] = useState(false);
-
   return (
-    <Layout>
+    <Layout component component>
       <Helmet>
         <title>Typography Components - System UI Kit</title>
       </Helmet>
-      <Hero
-        background={`linear-gradient(
-        to right,
-        ${theme.color.primary},
-        ${theme.color.secondary}
-      )`}
-      >
-        <div style={{ textAlign: 'center' }}>
-          <H1 type="h1" darkBackground className="m-none">
-            Typography Components
-          </H1>
-          <SubTitle type="h4" darkBackground>
-            Typography components allow you to display styled text that fits
-            with the theme of your website.
-          </SubTitle>
-        </div>
-      </Hero>
-      <Section spacing="small">
+      <Section>
         <Container>
-          <H3 type="h3" className="mt-none">
+          <H1 type="h3" className="mt-none">
             Typography
-          </H3>
+          </H1>
+          <Paragraph>
+            Typography elements allow you to style text to fit the theme of your
+            site.
+          </Paragraph>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <th

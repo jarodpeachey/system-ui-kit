@@ -33,26 +33,10 @@ const RadioButtonsPage = ({}) => {
   const [showNotificationFive, setShowNotificationFive] = useState(false);
 
   return (
-    <Layout>
+    <Layout component>
       <Helmet>
         <title>Radio Button Component - System UI Kit</title>
       </Helmet>
-      <Hero
-        background={`linear-gradient(
-        to right,
-        ${theme.color.primary},
-        ${theme.color.secondary}
-      )`}
-      >
-        <div style={{ textAlign: 'center' }}>
-          <H1 type="h1" darkBackground className="m-none">
-            Radio Buttons
-          </H1>
-          <SubTitle type="h4" darkBackground>
-            Radio buttons let users select one option from a list
-          </SubTitle>
-        </div>
-      </Hero>
       <Section spacing="small">
         <Container>
           <H3>Basic Radio Buttons</H3>

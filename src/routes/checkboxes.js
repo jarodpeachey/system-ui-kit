@@ -31,27 +31,12 @@ const Checkboxes = ({}) => {
   const [showNotificationFive, setShowNotificationFive] = useState(false);
 
   return (
-    <Layout>
+    <Layout component>
       <Helmet>
         <title>Checkbox Component - System UI Kit</title>
       </Helmet>
-      <Hero
-        background={`linear-gradient(
-        to right,
-        ${theme.color.primary},
-        ${theme.color.secondary}
-      )`}
-      >
-        <div style={{ textAlign: 'center' }}>
-          <H1 type="h1" darkBackground className="m-none">
-            Checkboxes
-          </H1>
-          <SubTitle type="h4" darkBackground>
-            Checkboxes let users select multiple options from a list
-          </SubTitle>
-        </div>
-      </Hero>
-      <Section spacing="small">
+
+      <Section>
         <Container>
           <H3>Basic Checkboxes</H3>
           <div

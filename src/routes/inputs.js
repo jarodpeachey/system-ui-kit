@@ -43,23 +43,10 @@ import Popover from '../components/Popover';
 const Inputs = ({}) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <Layout>
+    <Layout component>
       <Helmet>
         <title>Input Components - System UI Kit</title>
       </Helmet>
-      <Hero
-        background={`linear-gradient(
-        to right,
-        ${theme.color.primary},
-        ${theme.color.secondary}
-      )`}
-      >
-        <div style={{ textAlign: 'center' }}>
-          <H1 type="h1" darkBackground className="m-none">
-            Input Components
-          </H1>
-        </div>
-      </Hero>
       <Section>
         <Container>
           <div

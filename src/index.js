@@ -14,6 +14,8 @@ import Buttons from './routes/buttons';
 import Checkboxes from './routes/checkboxes';
 import RadioButtonsPage from './routes/radio-buttons';
 import Example from './routes/test';
+import ContainerRoute from './routes/container';
+import SectionRoute from './routes/section';
 
 const Routes = ({}) => (
   <>
@@ -30,6 +32,8 @@ const Routes = ({}) => (
       <RadioButtonsPage path="/components/radio-button" />
       <Components path="/components" />
       <Example path="/test" />
+      <ContainerRoute path="/components/container" />
+      <SectionRoute path="/components/section" />
     </Router>
   </>
 );

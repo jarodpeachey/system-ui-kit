@@ -105,12 +105,12 @@ const InnerWrapper = styled.div`
 // max-height: calc(
 //   400px -
 //     ${(props) =>
-//       props.scrolled ? 'calc(75px + 12px)' : 'calc(107px + 12px)'}
+//       props.scrolled ? 'calc(75px + 8px)' : 'calc(107px + 8px)'}
 // );
 // height: calc(
 //   400px -
 //     ${(props) =>
-//       props.scrolled ? 'calc(75px + 12px)' : 'calc(107px + 12px)'}
+//       props.scrolled ? 'calc(75px + 8px)' : 'calc(107px + 8px)'}
 // );
 
 const Bottom = styled.div`

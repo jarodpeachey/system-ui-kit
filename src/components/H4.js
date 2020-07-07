@@ -16,8 +16,8 @@ const H4 = ({
       id={id}
       customStyles={customStyles}
       color={color}
-      display={display}
       darkBackground={darkBackground}
+      display={display}
     >
       {children}
     </Wrapper>
@@ -34,12 +34,13 @@ const Wrapper = styled.h4`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.darkBackground ? '#ffffff' :props.theme.color.heading};
-  text-transform: ${(props) =>
-    props.display === 'title' ? 'uppercase' : null};
-  font-weight: 600;
-  margin-bottom: 32px;
-  font-size: ${(props) => props.theme.fontSize.h4}px;
+      : props.darkBackground
+      ? '#ffffff'
+      : props.theme.color.heading};
+  font-weight: ${(props) => (props.display ? '700' : '500')};
+  margin-bottom: 34px;
+  font-size: ${(props) =>
+    props.display ? props.theme.fontSize.h4 + 8 : props.theme.fontSize.h4}px;
   ${(props) =>
     props.customStyles &&
     css`

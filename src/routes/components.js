@@ -16,26 +16,10 @@ import SubTitle from '../components/SubTitle';
 import Paragraph from '../components/Paragraph';
 
 const Components = () => (
-  <Layout>
+  <Layout component>
     <Helmet>
       <title>Components - System UI Kit</title>
     </Helmet>
-    <Hero
-      background={`linear-gradient(
-        to right,
-        ${theme.color.primary},
-        ${theme.color.secondary}
-      )`}
-    >
-      <div style={{ textAlign: 'center' }}>
-        <H1 type="h1" darkBackground className="m-none">
-          Components
-        </H1>
-        <SubTitle type="h4" darkBackground>
-          Boxes, buttons, inputs, alerts and more!
-        </SubTitle>
-      </div>
-    </Hero>
     <Section>
       <Container>
         <H2 type="h2" className="mt-none">

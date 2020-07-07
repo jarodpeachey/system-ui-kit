@@ -7,7 +7,6 @@ const H2 = ({
   id,
   customStyles,
   darkBackground,
-  type = 'h2',
   display,
   color,
 }) => {
@@ -17,8 +16,8 @@ const H2 = ({
       id={id}
       customStyles={customStyles}
       color={color}
-      display={display}
       darkBackground={darkBackground}
+      display={display}
     >
       {children}
     </Wrapper>
@@ -35,12 +34,13 @@ const Wrapper = styled.h2`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.darkBackground ? '#ffffff' :props.theme.color.heading};
-  text-transform: ${(props) =>
-    props.display === 'title' ? 'uppercase' : null};
-  font-weight: 600;
+      : props.darkBackground
+      ? '#ffffff'
+      : props.theme.color.heading};
+  font-weight: ${(props) => (props.display ? '700' : '500')};
   margin-bottom: 32px;
-  font-size: ${(props) => props.theme.fontSize.h2}px;
+  font-size: ${(props) =>
+    props.display ? props.theme.fontSize.h2 + 6 : props.theme.fontSize.h2}px;
   ${(props) =>
     props.customStyles &&
     css`

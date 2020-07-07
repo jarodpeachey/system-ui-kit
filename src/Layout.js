@@ -42,6 +42,8 @@ import H3 from './components/H3';
 import H4 from './components/H4';
 import H5 from './components/H5';
 import H6 from './components/H6';
+import Row from './components/Row';
+import Button from './components/Button';
 
 library.add(
   faQuestionCircle,
@@ -63,13 +65,13 @@ library.add(
   faMousePointer,
 );
 
-const Layout = ({ children }) => {
+const Layout = ({ children, component }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <Header fixed color="transparent">
+        <Header fixed color={component ? 'primary' : 'transparent'}>
           <H1 type="h1" className="m-none">
             System
           </H1>
@@ -130,7 +132,331 @@ const Layout = ({ children }) => {
             </MobileMenuItem>
           </MobileMenu>
         </Mobile>
-        {children}
+        <br />
+        <br />
+        <Row spacing={[12]} breakpoints={[576, 850, 1200]}>
+          <div widths={[4, 3, 2]} style={{ position: 'sticky', top: 0 }}>
+            <div
+              style={{
+                background: theme.color.gray.one,
+                height: '100%',
+                position: 'sticky',
+                left: 0,
+                width: '100%',
+                top: 0,
+                boxShadow: theme.shadow.one,
+                padding: '32px 16px',
+              }}
+            >
+              <H6 className="mb-2">Getting Started</H6>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/container"
+              >
+                Quick Start
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/container"
+              >
+                Theming
+              </Link>
+              <H6 className="mb-2">Layout</H6>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/section"
+              >
+                Section
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/container"
+              >
+                Container
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/grid"
+              >
+                Grid
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/flex"
+              >
+                Flex
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/hidden"
+              >
+                Hidden
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/header"
+              >
+                Header
+              </Link>
+              <H6 className="mb-2">Navigation</H6>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/container"
+              >
+                Menu
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/container"
+              >
+                Mobile Menu
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/container"
+              >
+                Dropdown
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/container"
+              >
+                Tabs
+              </Link>
+              <H6 className="mb-2">Display</H6>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/alert"
+              >
+                Alert
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/notification"
+              >
+                Notification
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/badge"
+              >
+                Badge
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/info"
+              >
+                Info
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/info"
+              >
+                Typography
+              </Link>
+              <H6 className="mb-2">Input</H6>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/button"
+              >
+                Button
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/input"
+              >
+                Input
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/textarea"
+              >
+                Text Area
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/select"
+              >
+                Select
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/checkboxes"
+              >
+                Checkboxes
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/radio-buttons"
+              >
+                Radio Buttons
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/toggle"
+              >
+                Toggle
+              </Link>
+              <Link
+                className="no-styling"
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  fontSize: 15,
+                  padding: '4px 0',
+                }}
+                to="/components/toggle"
+              >
+                Slider
+              </Link>
+            </div>
+          </div>
+          <div widths={[8, 9, 10]}>{children}</div>
+        </Row>
       </Wrapper>
     </ThemeProvider>
   );

@@ -11,8 +11,10 @@ const Column = ({
   maxColumnSize,
   demo,
   alignBottom,
+  style
 }) => (
   <Wrapper
+    style={style}
     demo={demo}
     maxColumnSize={maxColumnSize}
     spacingX={spacingX}

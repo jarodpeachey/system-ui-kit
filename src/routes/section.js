@@ -23,7 +23,7 @@ import SubTitle from '../components/SubTitle';
 import Paragraph from '../components/Paragraph';
 import Code from '../components/Code';
 
-const Alerts = ({}) => {
+const SectionRoute = ({}) => {
   const [showNotificationOne, setShowNotificationOne] = useState(false);
   const [showNotificationTwo, setShowNotificationTwo] = useState(false);
   const [showNotificationThree, setShowNotificationThree] = useState(false);
@@ -37,58 +37,40 @@ const Alerts = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H3 className="m-none">Color</H3>
-          <Alert>This is a default alert</Alert>
-          <Alert color="primary">This is a primary alert</Alert>
-          <Alert color="secondary">This is a secondary alert</Alert>
-          <Alert color="success">This is a success alert</Alert>
-          <Alert color="error">This is an error alert</Alert>
-          <br />
-          <H3 className="mb-none">Light</H3>
+          <H1 className="mb-none">Section</H1>
           <Paragraph>
-            Use a light alert to display information that's not as important.
+            The section component allows you to seperate content vertically
+            using padding and background color.
           </Paragraph>
-          <Alert variant="light">This is a default alert</Alert>
-          <Alert variant="light" color="primary">
-            This is a primary alert
-          </Alert>
-          <Alert variant="light" color="secondary">
-            This is a secondary alert
-          </Alert>
-          <Alert variant="light" color="success">
-            This is a success alert
-          </Alert>
-          <Alert variant="light" color="error">
-            This is an error alert
-          </Alert>
-          <br />
-          <H3 type="h3" className="mb-none">
-            With Icon
-          </H3>
-          <Paragraph>
-            You can display an alert with an icon by passing a component to the{' '}
-            <Code>icon</Code> prop.
-          </Paragraph>
-          <Alert
-            icon={<FontAwesomeIcon icon="exclamation-circle" />}
-            color="error"
+          <div
+            style={{
+              fontFamily: 'monospace',
+              background: theme.color.gray.nine,
+              padding: 16,
+              borderRadius: 3,
+              color: 'white',
+              margin: '32px 0',
+            }}
           >
-            Error
-          </Alert>
-          <br />
-          <H3 className="mb-none">Closable</H3>
-          <Paragraph>
-            Pass in a <Code>close</Code> prop to allow users to close the alert.
-          </Paragraph>
-          <Alert icon={<FontAwesomeIcon icon="bell" />} close>
-            This is an alert that you can close.
-          </Alert>
-          <br />
+            {"import Section from 'system-ui';"}
+          </div>
+          <H3 className="mb-none">Usage</H3>
+          <div
+            style={{
+              fontFamily: 'monospace',
+              background: theme.color.gray.nine,
+              padding: 16,
+              borderRadius: 3,
+              color: 'white',
+              margin: '32px 0',
+            }}
+          >
+            {'<Section spacing="lg" background="#f7f7f7" />'}
+          </div>
+          <Section spacing="lg" background="#f7f7f7">
+            <div className="center">A large section</div>
+          </Section>
           <H3 className="mb-none">Props</H3>
-          <Paragraph>
-            Props available to customize the <Code>{'<Alert />'}</Code>{' '}
-            component.
-          </Paragraph>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <th
@@ -186,7 +168,37 @@ const Alerts = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>color</Code>
+                  <Code>customStyles</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>object</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  Pass a custom styles object. Accepts styles in the format of{' '}
+                  <Code>styled-components</Code>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>spacing</Code>
                 </td>
                 <td
                   style={{
@@ -204,9 +216,9 @@ const Alerts = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Change the color of the alert. Options include{' '}
-                  <Code>primary</Code>, <Code>secondary</Code>,{' '}
-                  <Code>success</Code>, and <Code>error</Code>
+                  Changes the vertical padding. Options include <Code>lg</Code>,{' '}
+                  <Code>md</Code>
+                  and <Code>sm</Code>
                 </td>
               </tr>
               <tr>
@@ -217,7 +229,7 @@ const Alerts = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>variant</Code>
+                  <Code>background</Code>
                 </td>
                 <td
                   style={{
@@ -235,67 +247,8 @@ const Alerts = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Change the alert style. Options include <Code>default</Code>{' '}
-                  and <Code>light</Code>
-                </td>
-              </tr>
-              <tr>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  <Code>icon</Code>
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  <Code>node</Code>
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  Display an icon inside the alert.
-                </td>
-              </tr>
-              <tr>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  <Code>close</Code>
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  <Code>boolean</Code>
-                </td>
-                <td
-                  style={{
-                    textAlign: 'left',
-                    border: `1px solid ${theme.color.gray.three}`,
-                    padding: '14px 8px',
-                  }}
-                >
-                  Display a close button inside the alert to allow the alert to
-                  be closed
+                  Change the background color of the section. Accepts any valid
+                  CSS.
                 </td>
               </tr>
             </tbody>
@@ -318,4 +271,4 @@ const Demo = styled.div`
   background: ${(props) => props.theme.color.primary};
 `;
 
-export default Alerts;
+export default SectionRoute;
