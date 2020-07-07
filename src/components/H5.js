@@ -6,10 +6,9 @@ const H5 = ({
   className,
   id,
   customStyles,
-  darkBackground,
-  type = 'h5',
   display,
   color,
+  uppercase
 }) => {
   return (
     <Wrapper
@@ -18,7 +17,7 @@ const H5 = ({
       customStyles={customStyles}
       color={color}
       display={display}
-      darkBackground={darkBackground}
+      uppercase={uppercase}
     >
       {children}
     </Wrapper>
@@ -35,13 +34,14 @@ const Wrapper = styled.h5`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.darkBackground ? '#ffffff' :props.theme.color.heading};
-  text-transform: ${(props) =>
-    props.display === 'title' ? 'uppercase' : null};
+      : props.darkBackground
+      ? '#ffffff'
+      : props.theme.color.heading};
+  text-transform: ${(props) => (props.uppercase ? 'uppercase' : null)};
   font-weight: 600;
   margin-bottom: 32px;
-  font-size: ${(props) => props.theme.fontSize.h5}px;
-  ${(props) =>
+  font-size: ${(props) =>
+    props.uppercase ? props.theme.fontSize.h5 - 1 : props.theme.fontSize.h5}px;  ${(props) =>
     props.customStyles &&
     css`
       ${props.customStyles}

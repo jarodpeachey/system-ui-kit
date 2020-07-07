@@ -9,6 +9,7 @@ const H3 = ({
   darkBackground,
   display,
   color,
+  uppercase
 }) => {
   return (
     <Wrapper
@@ -18,6 +19,7 @@ const H3 = ({
       color={color}
       darkBackground={darkBackground}
       display={display}
+      uppercase={uppercase}
     >
       {children}
     </Wrapper>
@@ -37,7 +39,8 @@ const Wrapper = styled.h3`
       : props.darkBackground
       ? '#ffffff'
       : props.theme.color.heading};
-  font-weight: ${(props) => (props.display ? '700' : '500')};
+  font-weight: ${(props) => (props.display ? '700' : '600')};
+text-transform: ${props => props.uppercase ? 'uppercase' : null};
   margin-bottom: 33px;
   font-size: ${(props) =>
     props.display ? props.theme.fontSize.h3 + 8 : props.theme.fontSize.h3}px;

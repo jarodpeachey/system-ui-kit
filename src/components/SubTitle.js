@@ -117,7 +117,7 @@ const P = styled.p`
       ? props.theme.color.error
       : props.darkBackground
       ? '#ffffffaa'
-      : props.theme.color.subtitle};
+      : props.theme.color.paragraph};
 
   font-weight: normal;
   line-height: 1.7;
@@ -140,7 +140,7 @@ const H1 = styled.h1`
       ? props.theme.color.error
       : props.darkBackground
       ? '#ffffffaa'
-      : props.theme.color.subtitle};
+      : props.theme.color.paragraph};
 
   font-weight: normal;
   line-height: 1.7;
@@ -163,7 +163,7 @@ const H2 = styled.h2`
       ? props.theme.color.error
       : props.darkBackground
       ? '#ffffffaa'
-      : props.theme.color.subtitle};
+      : props.theme.color.paragraph};
 
   font-weight: normal;
   line-height: 1.7;
@@ -186,7 +186,7 @@ const H3 = styled.h3`
       ? props.theme.color.error
       : props.darkBackground
       ? '#ffffffaa'
-      : props.theme.color.subtitle};
+      : props.theme.color.paragraph};
 
   font-weight: normal;
   line-height: 1.7;
@@ -209,7 +209,7 @@ const H4 = styled.h4`
       ? props.theme.color.error
       : props.darkBackground
       ? '#ffffffaa'
-      : props.theme.color.subtitle};
+      : props.theme.color.paragraph};
 
   font-weight: normal;
   line-height: 1.7;
@@ -232,7 +232,7 @@ const H5 = styled.h5`
       ? props.theme.color.error
       : props.darkBackground
       ? '#ffffffaa'
-      : props.theme.color.subtitle};
+      : props.theme.color.paragraph};
 
   font-weight: normal;
   line-height: 1.7;
@@ -255,7 +255,7 @@ const H6 = styled.h6`
       ? props.theme.color.error
       : props.darkBackground
       ? '#ffffffaa'
-      : props.theme.color.subtitle};
+      : props.theme.color.paragraph};
 
   font-weight: normal;
   line-height: 1.7;

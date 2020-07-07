@@ -178,9 +178,9 @@ const InnerContainer = styled.div`
   display: flex;
   align-items: center;
   padding-top: ${(props) =>
-    props.scrolled || props.color !== 'transparent' ? '16px' : '32px'};
+    props.scrolled || props.color !== 'transparent' ? '10px' : '32px'};
   padding-bottom: ${(props) =>
-    props.scrolled || props.color !== 'transparent' ? '16px' : '32px'};
+    props.scrolled || props.color !== 'transparent' ? '10px' : '32px'};
   justify-content: space-between;
   transition: 0.3s;
 `;

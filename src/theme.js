@@ -37,8 +37,8 @@ export const theme = {
     h3: 28,
     h4: 24,
     h5: 20,
-    h6: 16,
-    p: 17,
+    h6: 18,
+    p: 16,
     small: 14,
   },
   color: {
@@ -62,7 +62,6 @@ export const theme = {
     error: '#f14941',
     heading: '#2c2f3b',
     paragraph: '#4b4f61',
-    subtitle: '#7b8392',
     text: {
       one: '#4b4f61',
       // two: '#7b8392',

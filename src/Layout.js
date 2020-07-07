@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { ThemeProvider } from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -44,6 +43,9 @@ import H5 from './components/H5';
 import H6 from './components/H6';
 import Row from './components/Row';
 import Button from './components/Button';
+import InternalLink from './components/InternalLink';
+import Collapse from './components/Collapse';
+import { pathnameIncludes } from './utils/pathnameIncludes';
 
 library.add(
   faQuestionCircle,
@@ -87,16 +89,18 @@ const Layout = ({ children, component }) => {
                 <a href="/">Home</a>
               </NavbarItem>
               <NavbarItem submenu>
-                <Link to="/components">Components</Link>
+                <InternalLink to="/components">Components</InternalLink>
                 <SubMenu>
                   <SubMenuItem>
-                    <Link to="/components/layout">Layout</Link>
+                    <InternalLink to="/components/layout">Layout</InternalLink>
                   </SubMenuItem>
                   <SubMenuItem>
-                    <Link to="/components/inputs">Inputs</Link>
+                    <InternalLink to="/components/inputs">Inputs</InternalLink>
                   </SubMenuItem>
                   <SubMenuItem>
-                    <Link to="/components/display">Display</Link>
+                    <InternalLink to="/components/display">
+                      Display
+                    </InternalLink>
                   </SubMenuItem>
                 </SubMenu>
               </NavbarItem>
@@ -117,346 +121,1062 @@ const Layout = ({ children, component }) => {
               <a href="/">Home</a>
             </MobileMenuItem>
             <MobileMenuItem submenu>
-              <Link to="/components">Components</Link>
+              <InternalLink to="/components">Components</InternalLink>
               <MobileSubMenu>
                 <MobileSubMenuItem>
-                  <Link to="/components/layout">Layout</Link>
+                  <InternalLink to="/components/layout">Layout</InternalLink>
                 </MobileSubMenuItem>
                 <MobileSubMenuItem>
-                  <Link to="/components/inputs">Inputs</Link>
+                  <InternalLink to="/components/inputs">Inputs</InternalLink>
                 </MobileSubMenuItem>
                 <MobileSubMenuItem>
-                  <Link to="/components/display">Display</Link>
+                  <InternalLink to="/components/display">Display</InternalLink>
                 </MobileSubMenuItem>
               </MobileSubMenu>
             </MobileMenuItem>
           </MobileMenu>
         </Mobile>
-        <br />
-        <br />
-        <Row spacing={[12]} breakpoints={[576, 850, 1200]}>
-          <div widths={[4, 3, 2]} style={{ position: 'sticky', top: 0 }}>
-            <div
-              style={{
-                background: theme.color.gray.one,
-                height: '100%',
-                position: 'sticky',
-                left: 0,
-                width: '100%',
-                top: 0,
-                boxShadow: theme.shadow.one,
-                padding: '32px 16px',
-              }}
-            >
-              <H6 className="mb-2">Getting Started</H6>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/container"
-              >
-                Quick Start
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/container"
-              >
-                Theming
-              </Link>
-              <H6 className="mb-2">Layout</H6>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/section"
-              >
-                Section
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/container"
-              >
-                Container
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/grid"
-              >
-                Grid
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/flex"
-              >
-                Flex
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/hidden"
-              >
-                Hidden
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/header"
-              >
-                Header
-              </Link>
-              <H6 className="mb-2">Navigation</H6>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/container"
-              >
-                Menu
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/container"
-              >
-                Mobile Menu
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/container"
-              >
-                Dropdown
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/container"
-              >
-                Tabs
-              </Link>
-              <H6 className="mb-2">Display</H6>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/alert"
-              >
-                Alert
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/notification"
-              >
-                Notification
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/badge"
-              >
-                Badge
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/info"
-              >
-                Info
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/info"
-              >
-                Typography
-              </Link>
-              <H6 className="mb-2">Input</H6>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/button"
-              >
-                Button
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/input"
-              >
-                Input
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/textarea"
-              >
-                Text Area
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/select"
-              >
-                Select
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/checkboxes"
-              >
-                Checkboxes
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/radio-buttons"
-              >
-                Radio Buttons
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/toggle"
-              >
-                Toggle
-              </Link>
-              <Link
-                className="no-styling"
-                style={{
-                  color: 'inherit',
-                  display: 'block',
-                  fontSize: 15,
-                  padding: '4px 0',
-                }}
-                to="/components/toggle"
-              >
-                Slider
-              </Link>
-            </div>
-          </div>
-          <div widths={[8, 9, 10]}>{children}</div>
-        </Row>
+
+        {component ? (
+          <>
+            <br />
+            <br />
+            <Row spacing={[12]} breakpoints={[576, 850, 1200]}>
+              <div widths={[4, 3, 2]} style={{ position: 'sticky', top: 0 }}>
+                <div
+                  style={{
+                    borderRight: `1px solid ${theme.color.gray.two}`,
+                    height: '100%',
+                    position: 'sticky',
+                    left: 0,
+                    width: '100%',
+                    top: 0,
+                    boxShadow: 'none',
+                    padding: '32px 16px',
+                  }}
+                >
+                  <H6 uppercase className="m-none">
+                    Getting Started
+                  </H6>
+                  <InternalLink
+                    className="no-styling"
+                    customStyles={`
+                      color: inherit;
+                      display: block;
+                      font-size: 15px;
+                      padding: 12px 16px;
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      position: relative;
+                      background: white;
+                      :hover {
+                        background: ${theme.color.primary}10;
+                      }
+                    `}
+                    to="/components/container"
+                  >
+                    Quick Start
+                  </InternalLink>
+                  <InternalLink
+                    className="no-styling"
+                    customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          left: -16px;
+                          position: relative;
+                          width: calc(100% + 32px);
+                          background: white;
+                        :hover {
+                          background: ${theme.color.primary}10;
+                        }
+                      `}
+                    to="/components/container"
+                  >
+                    Theming
+                  </InternalLink>
+                  <Collapse
+                    startOpen={
+                      pathnameIncludes('section') ||
+                      pathnameIncludes('container') ||
+                      pathnameIncludes('grid') ||
+                      pathnameIncludes('flex') ||
+                      pathnameIncludes('hidden') ||
+                      pathnameIncludes('header')
+                    }
+                    customStyles={`
+                      border-top: 1px solid ${theme.color.gray.two};
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      padding: 0px 16px;
+                      position: relative;
+                    `}
+                    titleStyles={`
+                      padding: 10px 16px;
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      position: relative;
+                      :hover {
+                        background: ${theme.color.primary}10;
+                      }
+                    `}
+                    bodyStyles={`
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      position: relative;
+                    `}
+                  >
+                    <div>
+                      <H6 uppercase className="m-none">
+                        Layout
+                      </H6>
+                    </div>
+                    <div>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('section')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('section')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('section')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('section')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/section"
+                      >
+                        Section
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('container')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('container')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('container')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('container')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/container"
+                      >
+                        Container
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('grid')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('grid')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('grid')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('grid')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/grid"
+                      >
+                        Grid
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('flex')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('flex')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('flex')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('flex')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/flex"
+                      >
+                        Flex
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('hidden')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('hidden')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('hidden')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('hidden')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/hidden"
+                      >
+                        Hidden
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('header')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('header')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('header')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('header')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/header"
+                      >
+                        Header
+                      </InternalLink>
+                    </div>
+                  </Collapse>
+                  <Collapse
+                    startOpen={
+                      pathnameIncludes('/menu') ||
+                      pathnameIncludes('mobile-menu') ||
+                      pathnameIncludes('dropdown') ||
+                      pathnameIncludes('tabs')
+                    }
+                    customStyles={`
+                      border-top: 1px solid ${theme.color.gray.two};
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      padding: 0px 16px;
+                      position: relative;
+                    `}
+                    titleStyles={`
+                      padding: 10px 16px;
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      position: relative;
+                      :hover {
+                        background: ${theme.color.primary}10;
+                      }
+                    `}
+                    bodyStyles={`
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      position: relative;
+                    `}
+                  >
+                    <div>
+                      <H6 uppercase className="m-none">
+                        Navigation
+                      </H6>
+                    </div>
+                    <div>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('/menu')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('/menu')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('/menu')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('/menu')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/container"
+                      >
+                        Menu
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('mobile-menu')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('mobile-menu')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('mobile-menu')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('mobile-menu')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/mobile-menu"
+                      >
+                        Mobile Menu
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('dropdown')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('dropdown')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('dropdown')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('dropdown')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/dropdown"
+                      >
+                        Dropdown
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('tabs')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('tabs')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('tabs')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('tabs')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/tabs"
+                      >
+                        Tabs
+                      </InternalLink>
+                    </div>
+                  </Collapse>
+                  <Collapse
+                    startOpen={
+                      pathnameIncludes('alert') ||
+                      pathnameIncludes('notification') ||
+                      pathnameIncludes('badge') ||
+                      pathnameIncludes('info') ||
+                      pathnameIncludes('typography') ||
+                      pathnameIncludes('modal')
+                    }
+                    customStyles={`
+                      border-top: 1px solid ${theme.color.gray.two};
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      padding: 0px 16px;
+                      position: relative;
+                    `}
+                    titleStyles={`
+                      padding: 10px 16px;
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      position: relative;
+                      :hover {
+                        background: ${theme.color.primary}10;
+                      }
+                    `}
+                    bodyStyles={`
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      position: relative;
+                    `}
+                  >
+                    <div>
+                      <H6 uppercase className="m-none">
+                        Display
+                      </H6>
+                    </div>
+                    <div>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('alert')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('alert')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('alert')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('alert')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/alert"
+                      >
+                        Alert
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('notification')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('notification')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('notification')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('notification')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/notification"
+                      >
+                        Notification
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('badge')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('badge')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('badge')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('badge')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/badge"
+                      >
+                        Badge
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('info')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('info')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('info')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('info')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/info"
+                      >
+                        Info
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('modal')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('modal')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('modal')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('modal')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/modal"
+                      >
+                        Modal
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('typography')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('typography')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('typography')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('typography')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/typography"
+                      >
+                        Typography
+                      </InternalLink>
+                    </div>
+                  </Collapse>
+                  <Collapse
+                    startOpen={
+                      pathnameIncludes('button') ||
+                      pathnameIncludes('input') ||
+                      pathnameIncludes('textarea') ||
+                      pathnameIncludes('select') ||
+                      pathnameIncludes('checkboxes') ||
+                      pathnameIncludes('radio-buttons') ||
+                      pathnameIncludes('toggle') ||
+                      pathnameIncludes('slider')
+                    }
+                    customStyles={`
+                      border-top: 1px solid ${theme.color.gray.two};
+                      border-bottom: 1px solid ${theme.color.gray.two};
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      padding: 0px 16px;
+                      position: relative;
+                    `}
+                    titleStyles={`
+                      padding: 10px 16px;
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      position: relative;
+                      :hover {
+                        background: ${theme.color.primary}10;
+                      }
+                    `}
+                    bodyStyles={`
+                      width: calc(100% + 32px);
+                      left: -16px;
+                      position: relative;
+                    `}
+                  >
+                    <>
+                      <H6 uppercase className="m-none">
+                        Input
+                      </H6>
+                    </>
+                    <>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('button')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('button')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('button')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('button')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/button"
+                      >
+                        Button
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('input')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('input')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('input')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('input')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/input"
+                      >
+                        Input
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('textarea')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('textarea')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('textarea')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('textarea')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/textarea"
+                      >
+                        Text Area
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('select')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('select')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('select')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('select')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/select"
+                      >
+                        Select
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('checkboxes')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('checkboxes')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('checkboxes')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('checkboxes')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/checkboxes"
+                      >
+                        Checkboxes
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('radio-buttons')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('radio-buttons')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('radio-buttons')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('radio-buttons')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/radio-buttons"
+                      >
+                        Radio Buttons
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('toggle')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('toggle')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('toggle')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('toggle')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/toggle"
+                      >
+                        Toggle
+                      </InternalLink>
+                      <InternalLink
+                        className="no-styling"
+                        customStyles={`
+                          color: inherit;
+                          display: block;
+                          font-size: 15px;
+                          padding: 12px 16px;
+                          background: ${
+                            pathnameIncludes('slider')
+                              ? theme.color.primary
+                              : '#ffffff'
+                          }10;
+                          color: ${
+                            pathnameIncludes('slider')
+                              ? theme.color.primary
+                              : 'inherit'
+                          };
+                          :hover {
+                            background: ${
+                              pathnameIncludes('slider')
+                                ? `${theme.color.primary}10`
+                                : `${theme.color.primary}10`
+                            };
+                            color: ${
+                              pathnameIncludes('slider')
+                                ? theme.color.primary
+                                : 'inherit'
+                            };
+                          }
+                        `}
+                        to="/components/slider"
+                      >
+                        Slider
+                      </InternalLink>
+                    </>
+                  </Collapse>
+                </div>
+              </div>
+              <div widths={[8, 9, 10]}>{children}</div>
+            </Row>
+          </>
+        ) : (
+          <>{children}</>
+        )}
       </Wrapper>
     </ThemeProvider>
   );

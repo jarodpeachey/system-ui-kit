@@ -6,10 +6,9 @@ const H6 = ({
   className,
   id,
   customStyles,
-  darkBackground,
-  type = 'h6',
   display,
   color,
+  uppercase,
 }) => {
   return (
     <Wrapper
@@ -18,7 +17,7 @@ const H6 = ({
       customStyles={customStyles}
       color={color}
       display={display}
-      darkBackground={darkBackground}
+      uppercase={uppercase}
     >
       {children}
     </Wrapper>
@@ -38,11 +37,11 @@ const Wrapper = styled.h6`
       : props.darkBackground
       ? '#ffffff'
       : props.theme.color.heading};
-  text-transform: ${(props) =>
-    props.display === 'title' ? 'uppercase' : null};
+  text-transform: ${(props) => (props.uppercase ? 'uppercase' : null)};
   font-weight: 600;
   margin-bottom: 32px;
-  font-size: ${(props) => props.theme.fontSize.h6}px;
+  font-size: ${(props) =>
+    props.uppercase ? props.theme.fontSize.h6 - 1 : props.theme.fontSize.h6}px;
   ${(props) =>
     props.customStyles &&
     css`
