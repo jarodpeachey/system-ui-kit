@@ -22,12 +22,12 @@ import {
   faPalette,
   faMousePointer,
 } from '@fortawesome/free-solid-svg-icons';
-import NavbarItem from './components/NavbarItem';
+import MenuItem from './components/MenuItem';
 import SubMenuItem from './components/SubMenuItem';
 import SubMenu from './components/SubMenu';
 import Tablet from './components/Tablet';
 import Mobile from './components/Mobile';
-import Navbar from './components/Navbar';
+import Menu from './components/Menu';
 import MobileSubMenuItem from './components/MobileSubMenuItem';
 import MobileMenuItem from './components/MobileMenuItem';
 import MobileMenu from './components/MobileMenu';
@@ -73,8 +73,14 @@ const Layout = ({ children, component }) => {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <Header fixed color={component ? 'primary' : 'transparent'}>
-          <H1 type="h1" className="m-none">
+        <Header
+          fixed
+          color={component ? 'primary' : 'transparent'}
+          scrollColor="primary"
+          height={component ? 55 : 105}
+          scrollHeight={component ? 55 : 65}
+        >
+          <H1 customStyles={'font-size: 32px; position: relative; top: -1px;'} className="m-none">
             System
           </H1>
           <Mobile>
@@ -84,11 +90,11 @@ const Layout = ({ children, component }) => {
             />
           </Mobile>
           <Tablet>
-            <Navbar>
-              <NavbarItem>
+            <Menu>
+              <MenuItem>
                 <a href="/">Home</a>
-              </NavbarItem>
-              <NavbarItem submenu>
+              </MenuItem>
+              <MenuItem submenu>
                 <InternalLink to="/components">Components</InternalLink>
                 <SubMenu>
                   <SubMenuItem>
@@ -103,16 +109,16 @@ const Layout = ({ children, component }) => {
                     </InternalLink>
                   </SubMenuItem>
                 </SubMenu>
-              </NavbarItem>
-              <NavbarItem square>
+              </MenuItem>
+              <MenuItem square>
                 <a href="/">
                   <FontAwesomeIcon
                     icon="heart"
                     style={{ width: 20, height: 20, fontSize: 24 }}
                   />
                 </a>
-              </NavbarItem>
-            </Navbar>
+              </MenuItem>
+            </Menu>
           </Tablet>
         </Header>
         <Mobile>
@@ -155,9 +161,7 @@ const Layout = ({ children, component }) => {
                     padding: '32px 16px',
                   }}
                 >
-                  <H6 uppercase className="m-none">
-                    Getting Started
-                  </H6>
+                  <H6 className="m-none">Getting Started</H6>
                   <InternalLink
                     className="no-styling"
                     customStyles={`
@@ -228,9 +232,7 @@ const Layout = ({ children, component }) => {
                     `}
                   >
                     <div>
-                      <H6 uppercase className="m-none">
-                        Layout
-                      </H6>
+                      <H6 className="m-none">Layout</H6>
                     </div>
                     <div>
                       <InternalLink
@@ -469,9 +471,7 @@ const Layout = ({ children, component }) => {
                     `}
                   >
                     <div>
-                      <H6 uppercase className="m-none">
-                        Navigation
-                      </H6>
+                      <H6 className="m-none">Navigation</H6>
                     </div>
                     <div>
                       <InternalLink
@@ -644,9 +644,7 @@ const Layout = ({ children, component }) => {
                     `}
                   >
                     <div>
-                      <H6 uppercase className="m-none">
-                        Display
-                      </H6>
+                      <H6 className="m-none">Display</H6>
                     </div>
                     <div>
                       <InternalLink
@@ -890,9 +888,7 @@ const Layout = ({ children, component }) => {
                     `}
                   >
                     <>
-                      <H6 uppercase className="m-none">
-                        Input
-                      </H6>
+                      <H6 className="m-none">Input</H6>
                     </>
                     <>
                       <InternalLink

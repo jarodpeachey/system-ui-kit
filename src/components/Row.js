@@ -7,24 +7,18 @@ const Row = ({
   children,
   className,
   id,
-  standardWidth,
+  customStyles,
   breakpoints,
   spacing,
-  maxColumnSize = 2,
-  demo,
-  vertical,
   flexDirections,
-  customStyles,
 }) => (
   <Wrapper
     className={className}
     id={id}
-    standardWidth={standardWidth}
     breakpoint={breakpoints[0]}
     breakpointTwo={breakpoints[1] || breakpoints[0]}
     spacingX={spacing[0]}
     spacingY={typeof spacing[1] === 'number' ? spacing[1] : spacing[0]}
-    vertical={vertical}
     flexDirections={flexDirections || null}
     customStyles={customStyles}
   >
@@ -36,8 +30,6 @@ const Row = ({
           ) : (
             <Column
               {...item.props}
-              demo={demo}
-              maxColumnSize={maxColumnSize}
               key="column"
               breakpoints={breakpoints}
               spacingX={spacing[0]}
@@ -86,11 +78,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin: ${
-      props.standardWidth
-        ? '0'
-        : `0 -${props.spacingX}px 0 -${props.spacingX}px`
-    };
+    margin: 0 -${props.spacingX}px 0 -${props.spacingX}px;
   `};
 `;
 

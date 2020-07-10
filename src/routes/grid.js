@@ -24,18 +24,18 @@ import Code from '../components/Code';
 import Heading from '../components/Heading';
 import Flex from '../components/Flex';
 
-const ContainerRoute = ({}) => {
+const GridRoute = ({}) => {
   return (
     <Layout component>
       <Helmet>
-        <title>Container Component - System UI</title>
+        <title>Grid Component - System UI</title>
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mb-3">Container</H2>
+          <H2 className="mb-3">Grid System</H2>
           <Paragraph>
-            The container component prevents your content from exceeding a
-            certain width, and centers it.
+            The grid system consists of two components, Row and Column. They
+            allow you to create responsive layouts.
           </Paragraph>
           <div
             style={{
@@ -47,7 +47,7 @@ const ContainerRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            import Container from "system-ui";
+            import Row from "system-ui";
           </div>
           <H3 className="mb-none">Usage</H3>
           <div
@@ -60,22 +60,89 @@ const ContainerRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            {'<Container size="sm" />'}
+            &lt;Row breakpoints=&#123;&#91;769, 960&#93;&#125;
+            spacing=&#123;&#91;x, y&#93;&#125;&gt;
+            <br />
+            &#127;&#127;&#127;&lt;div widths=&#123;&#91;6, 4&#93;&#125; /&gt;
+            <br />
+            &#127;&#127;&#127;&lt;div widths=&#123;&#91;6, 4&#93;&#125; /&gt;
+            <br />
+            &#127;&#127;&#127;&lt;div widths=&#123;&#91;6, 4&#93;&#125; /&gt;
+            <br />
+            &lt;/Row&gt;
           </div>
-          <div
-            style={{
-              padding: '0 16px',
-              background: theme.color.gray.one,
-              borderRadius: 3,
-            }}
+          <Row
+            maxColumnSize={12}
+            breakpoints={[769]}
+            spacing={[8]}
           >
-            <Container
-              size="xs"
-              customStyles={`background: ${theme.color.primary}; height: 300px; display: flex; align-items: center; justify-content: center; color: white;`}
-            >
-              <Flex>A small container</Flex>
-            </Container>
-          </div>
+            <div widths={[1]}>
+              <Demo>1</Demo>
+            </div>
+            <div widths={[11]}>
+              <Demo>11</Demo>
+            </div>
+            <div widths={[2]}>
+              <Demo>2</Demo>
+            </div>
+            <div widths={[10]}>
+              <Demo>10</Demo>
+            </div>
+            <div widths={[3]}>
+              <Demo>3</Demo>
+            </div>
+            <div widths={[9]}>
+              <Demo>9</Demo>
+            </div>
+            <div widths={[4]}>
+              <Demo>4</Demo>
+            </div>
+            <div widths={[8]}>
+              <Demo>8</Demo>
+            </div>
+            <div widths={[5]}>
+              <Demo>5</Demo>
+            </div>
+            <div widths={[7]}>
+              <Demo>7</Demo>
+            </div>
+            <div widths={[6]}>
+              <Demo>6</Demo>
+            </div>
+            <div widths={[6]}>
+              <Demo>6</Demo>
+            </div>
+            <div widths={[7]}>
+              <Demo>7</Demo>
+            </div>
+            <div widths={[5]}>
+              <Demo>5</Demo>
+            </div>
+            <div widths={[8]}>
+              <Demo>8</Demo>
+            </div>
+            <div widths={[4]}>
+              <Demo>4</Demo>
+            </div>
+            <div widths={[9]}>
+              <Demo>9</Demo>
+            </div>
+            <div widths={[3]}>
+              <Demo>3</Demo>
+            </div>
+            <div widths={[10]}>
+              <Demo>10</Demo>
+            </div>
+            <div widths={[2]}>
+              <Demo>2</Demo>
+            </div>
+            <div widths={[11]}>
+              <Demo>11</Demo>
+            </div>
+            <div widths={[1]}>
+              <Demo>1</Demo>
+            </div>
+          </Row>
           <H3>Props</H3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
@@ -204,7 +271,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>maxWidth</Code>
+                  <Code>breakpoints</Code>
                 </td>
                 <td
                   style={{
@@ -213,7 +280,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>string</Code>
+                  <Code>array</Code>
                 </td>
                 <td
                   style={{
@@ -222,9 +289,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Changes the max width of the container. Options include{' '}
-                  <Code>lg</Code>, <Code>md</Code>
-                  and <Code>sm</Code>
+                  Set up to two breakpoints using an array
                 </td>
               </tr>
               <tr>
@@ -235,7 +300,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>align</Code>
+                  <Code>spacing</Code>
                 </td>
                 <td
                   style={{
@@ -244,7 +309,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>string</Code>
+                  <Code>array</Code>
                 </td>
                 <td
                   style={{
@@ -253,9 +318,36 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Change whether or not the container centers its children.
-                  Options include <Code>left</Code>, <Code>right</Code> and{' '}
-                  <Code>center</Code> (default)
+                  Set the gutter width for the x and y axis {'[x, y]'}
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>flexDirections</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>array</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  Set the flex direction for each breakpoints. The first array item will be used at the first breakpoints array item
                 </td>
               </tr>
             </tbody>
@@ -278,4 +370,4 @@ const Demo = styled.div`
   background: ${(props) => props.theme.color.primary};
 `;
 
-export default ContainerRoute;
+export default GridRoute;

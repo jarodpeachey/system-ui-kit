@@ -23,19 +23,20 @@ import Paragraph from '../components/Paragraph';
 import Code from '../components/Code';
 import Heading from '../components/Heading';
 import Flex from '../components/Flex';
+import Hidden from '../components/Hidden';
 
-const ContainerRoute = ({}) => {
+const HiddenRoute = ({}) => {
   return (
     <Layout component>
       <Helmet>
-        <title>Container Component - System UI</title>
+        <title>Hidden Component - System UI</title>
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mb-3">Container</H2>
+          <H2 className="mb-3">Hidden</H2>
           <Paragraph>
-            The container component prevents your content from exceeding a
-            certain width, and centers it.
+            The Hidden component allows you to hide and display content based on
+            the screen width.
           </Paragraph>
           <div
             style={{
@@ -47,7 +48,7 @@ const ContainerRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            import Container from "system-ui";
+            import Hidden from "system-ui";
           </div>
           <H3 className="mb-none">Usage</H3>
           <div
@@ -60,21 +61,100 @@ const ContainerRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            {'<Container size="sm" />'}
+            {'<Hidden show={769} hide={1200} />'}
           </div>
+          <Paragraph>
+            The Hidden component accepts to props: show and hide. You can even
+            pass in both at once.
+          </Paragraph>
           <div
             style={{
-              padding: '0 16px',
-              background: theme.color.gray.one,
+              background: 'white',
+              border: '1px solid #efefef',
               borderRadius: 3,
+              height: 300,
+              width: '100%',
+              padding: 16,
             }}
           >
-            <Container
-              size="xs"
-              customStyles={`background: ${theme.color.primary}; height: 300px; display: flex; align-items: center; justify-content: center; color: white;`}
-            >
-              <Flex>A small container</Flex>
-            </Container>
+            <Hidden show={769}>
+              <div
+                style={{
+                  padding: 16,
+                  background: `${theme.color.primary}10`,
+                  marginBottom: 14,
+                  textAlign: 'center',
+                  border: '2px dashed transparent',
+                }}
+              >
+                {'show={769}'}
+              </div>
+            </Hidden>
+            <Hidden hide={769}>
+              <div
+                style={{
+                  padding: 16,
+                  border: '2px dashed #efefef',
+                  marginBottom: 14,
+                  textAlign: 'center',
+                  color: '#ddd',
+                }}
+              >
+                {'show={769}'}
+              </div>
+            </Hidden>
+            <Hidden hide={769}>
+              <div
+                style={{
+                  padding: 16,
+                  background: `${theme.color.primary}10`,
+                  marginBottom: 14,
+                  textAlign: 'center',
+                  border: '2px dashed transparent',
+                }}
+              >
+                {'hide={769}'}
+              </div>
+            </Hidden>
+            <Hidden show={769}>
+              <div
+                style={{
+                  padding: 16,
+                  border: '2px dashed #efefef',
+                  marginBottom: 14,
+                  textAlign: 'center',
+                  color: '#ddd',
+                }}
+              >
+                {'hide={769}'}
+              </div>
+            </Hidden>
+            <Hidden show={576} hide={960}>
+              <div
+                style={{
+                  padding: 16,
+                  background: `${theme.color.primary}10`,
+                  marginBottom: 14,
+                  textAlign: 'center',
+                  border: '2px dashed transparent',
+                }}
+              >
+                {'show={576} hide={960}'}
+              </div>
+            </Hidden>
+            <Hidden hide={576} show={960}>
+              <div
+                style={{
+                  padding: 16,
+                  border: '2px dashed #efefef',
+                  marginBottom: 14,
+                  textAlign: 'center',
+                  color: '#ddd',
+                }}
+              >
+                {'show={576} hide={960}'}
+              </div>
+            </Hidden>
           </div>
           <H3>Props</H3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -204,7 +284,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>maxWidth</Code>
+                  <Code>show</Code>
                 </td>
                 <td
                   style={{
@@ -213,7 +293,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>string</Code>
+                  <Code>number</Code>
                 </td>
                 <td
                   style={{
@@ -222,9 +302,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Changes the max width of the container. Options include{' '}
-                  <Code>lg</Code>, <Code>md</Code>
-                  and <Code>sm</Code>
+                  Set the breakpoint at which the element is shown.
                 </td>
               </tr>
               <tr>
@@ -235,7 +313,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>align</Code>
+                  <Code>hidden</Code>
                 </td>
                 <td
                   style={{
@@ -244,7 +322,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>string</Code>
+                  <Code>number</Code>
                 </td>
                 <td
                   style={{
@@ -253,9 +331,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Change whether or not the container centers its children.
-                  Options include <Code>left</Code>, <Code>right</Code> and{' '}
-                  <Code>center</Code> (default)
+                  Set the breakpoint at which the element is hidden.
                 </td>
               </tr>
             </tbody>
@@ -267,10 +343,10 @@ const ContainerRoute = ({}) => {
 };
 
 const Demo = styled.div`
-  width: 100%;
   padding: 16px;
   text-align: center;
   border-radius: 3px;
+  margin: 0px 8px;
   color: white !important;
   * {
     color: white !important;
@@ -278,4 +354,4 @@ const Demo = styled.div`
   background: ${(props) => props.theme.color.primary};
 `;
 
-export default ContainerRoute;
+export default HiddenRoute;

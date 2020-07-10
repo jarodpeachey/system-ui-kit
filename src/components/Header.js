@@ -3,7 +3,15 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import Container from './Container';
 
-const Header = ({ children, className, color, scrollColor, fixed }) => {
+const Header = ({
+  children,
+  className,
+  color,
+  scrollColor,
+  height,
+  scrollHeight,
+  fixed,
+}) => {
   const [scroll, setScroll] = useState(
     typeof window !== 'undefined' && window.scrollY,
   );
@@ -38,6 +46,8 @@ const Header = ({ children, className, color, scrollColor, fixed }) => {
       scrolled={window.scrollY > 50}
       color={color}
       fixed={fixed}
+      height={height}
+      scrollHeight={scrollHeight}
       scrollColor={scrollColor}
     >
       <Container>
@@ -52,9 +62,12 @@ const Header = ({ children, className, color, scrollColor, fixed }) => {
 const Wrapper = styled.div`
   transition: all 0.3s, border-bottom .15s ease .3s;
   position: ${(props) => (props.fixed ? 'fixed' : '')};
+  display: flex;
+  align-items: center;
   top: 0;
   width: 100%;
   z-index: 999;
+  min-height: ${(props) => `${props.height}px` || 'fit-content'};
   background: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
@@ -92,36 +105,19 @@ const Wrapper = styled.div`
         ? 'white'
         : props.theme.color.heading} !important;
   }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 32px !important;
-  }
-
-  #mobile-menu::after {
-    background: ${(props) =>
-      props.color === 'primary'
-        ? props.theme.color.primary
-        : props.color === 'secondary'
-        ? props.theme.color.secondary
-        : props.color === 'transparent'
-        ? 'transparent'
-        : 'white'};
-    height: ${(props) =>
-      props.color === 'primary' || props.color === 'secondary'
-        ? '71px'
-        : '103px'};
-  }
   }
 
   &.scrolled {
+    min-height: ${(props) => `${props.scrollHeight}px` || 'fit-content'};
     box-shadow: 0 0 4px 0 rgba(17,22,26,0.08), 0 2px 4px 0 rgba(17,22,26, 0.03), 0 4px 8px 0 rgba(17,22,26, 0.03);
-    background: ${(props) =>
-      props.color === 'transparent' ? '#fffffff9' : null};
+        background: ${(props) =>
+          props.scrollColor === 'primary'
+            ? props.theme.color.primary
+            : props.scrollColor === 'secondary'
+            ? props.theme.color.secondary
+            : props.scrollColor === 'transparent'
+            ? 'transparent'
+            : '#fffffff9'};
     h1,
     h2,
     h3,
@@ -133,18 +129,17 @@ const Wrapper = styled.div`
     span,
     div {
       color: ${(props) =>
-        props.color === 'primary' || props.color === 'secondary'
+        props.scrollColor === 'primary' || props.scrollColor === 'secondary'
           ? 'white'
           : props.theme.color.heading};
     }
     span {
       background: ${(props) =>
-        props.color === 'primary' || props.color === 'secondary'
+        props.scrollColor === 'primary' || props.scrollColor === 'secondary'
           ? 'white'
           : props.theme.color.heading} !important;
     }
   }
-  border-bottom: 2px solid transparent;
   &.open {
     box-shadow: none !important;
     border-bottom: 2px solid ${(props) => props.theme.color.gray.one};
@@ -168,19 +163,34 @@ const Wrapper = styled.div`
           : null} !important;
     }
   }
-  border-bottom: none !important;
   &.open.scrolled {
+    box-shadow: none !important;
     border-bottom: none !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    div,
+    .menu-item,
+    .menu-item a {
+      color: ${(props) =>
+        props.scrollColor === 'transparent' ? props.theme.color.heading : 'white'};
+    }
+    transition: background 0s;
+    span {
+      background: ${(props) =>
+        props.scrollColor === 'transparent'
+          ? props.theme.color.heading
+          : 'white'} !important;
+    }
   }
 `;
 
 const InnerContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-top: ${(props) =>
-    props.scrolled || props.color !== 'transparent' ? '10px' : '32px'};
-  padding-bottom: ${(props) =>
-    props.scrolled || props.color !== 'transparent' ? '10px' : '32px'};
   justify-content: space-between;
   transition: 0.3s;
 `;

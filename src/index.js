@@ -14,8 +14,13 @@ import Buttons from './routes/buttons';
 import Checkboxes from './routes/checkboxes';
 import RadioButtonsPage from './routes/radio-buttons';
 import Example from './routes/test';
-import ContainerRoute from './routes/container';
 import SectionRoute from './routes/section';
+import ContainerRoute from './routes/container';
+import GridRoute from './routes/grid';
+import FlexRoute from './routes/flex';
+import HiddenRoute from './routes/hidden';
+import HeaderRoute from './routes/header';
+import MenuRoute from './routes/menu';
 
 const Routes = ({}) => (
   <>
@@ -32,8 +37,13 @@ const Routes = ({}) => (
       <RadioButtonsPage path="/components/radio-button" />
       <Components path="/components" />
       <Example path="/test" />
-      <ContainerRoute path="/components/container" />
       <SectionRoute path="/components/section" />
+      <ContainerRoute path="/components/container" />
+      <GridRoute path="/components/grid" />
+      <FlexRoute path="/components/flex" />
+      <HiddenRoute path="/components/hidden" />
+      <HeaderRoute path="/components/header" />
+      <MenuRoute path="/components/menu" />
     </Router>
   </>
 );

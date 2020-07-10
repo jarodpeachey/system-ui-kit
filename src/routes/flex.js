@@ -24,18 +24,18 @@ import Code from '../components/Code';
 import Heading from '../components/Heading';
 import Flex from '../components/Flex';
 
-const ContainerRoute = ({}) => {
+const FlexRoute = ({}) => {
   return (
     <Layout component>
       <Helmet>
-        <title>Container Component - System UI</title>
+        <title>Flex Component - System UI</title>
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mb-3">Container</H2>
+          <H2 className="mb-3">Flex</H2>
           <Paragraph>
-            The container component prevents your content from exceeding a
-            certain width, and centers it.
+            The flex component is a light version of the grid, for layouts that
+            don't require a fixed width.
           </Paragraph>
           <div
             style={{
@@ -47,7 +47,7 @@ const ContainerRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            import Container from "system-ui";
+            import Flex from "system-ui";
           </div>
           <H3 className="mb-none">Usage</H3>
           <div
@@ -60,22 +60,15 @@ const ContainerRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            {'<Container size="sm" />'}
+            {'<Flex hAlign="start" vAlign="center" />'}
           </div>
-          <div
-            style={{
-              padding: '0 16px',
-              background: theme.color.gray.one,
-              borderRadius: 3,
-            }}
-          >
-            <Container
-              size="xs"
-              customStyles={`background: ${theme.color.primary}; height: 300px; display: flex; align-items: center; justify-content: center; color: white;`}
-            >
-              <Flex>A small container</Flex>
-            </Container>
-          </div>
+          <Flex>
+            <Demo>Test</Demo>
+            <Demo>Test</Demo>
+            <Demo>Test</Demo>
+            <Demo>Test</Demo>
+            <Demo>Test</Demo>
+          </Flex>
           <H3>Props</H3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
@@ -204,7 +197,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>maxWidth</Code>
+                  <Code>hAlign</Code>
                 </td>
                 <td
                   style={{
@@ -222,9 +215,8 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Changes the max width of the container. Options include{' '}
-                  <Code>lg</Code>, <Code>md</Code>
-                  and <Code>sm</Code>
+                  Set the horizontal alignment of the flex children. Accepts all
+                  valid flexbox values.
                 </td>
               </tr>
               <tr>
@@ -235,7 +227,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>align</Code>
+                  <Code>vAlign</Code>
                 </td>
                 <td
                   style={{
@@ -253,9 +245,37 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Change whether or not the container centers its children.
-                  Options include <Code>left</Code>, <Code>right</Code> and{' '}
-                  <Code>center</Code> (default)
+                  Set the vertical alignment of the flex children. Accepts all
+                  valid flexbox values.
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>direction</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>string</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  Set the flex direction of the flex container. Accepts <Code>vertical</Code> and <Code>horizontal</Code>
                 </td>
               </tr>
             </tbody>
@@ -267,10 +287,10 @@ const ContainerRoute = ({}) => {
 };
 
 const Demo = styled.div`
-  width: 100%;
   padding: 16px;
   text-align: center;
   border-radius: 3px;
+  margin: 0px 8px;
   color: white !important;
   * {
     color: white !important;
@@ -278,4 +298,4 @@ const Demo = styled.div`
   background: ${(props) => props.theme.color.primary};
 `;
 
-export default ContainerRoute;
+export default FlexRoute;

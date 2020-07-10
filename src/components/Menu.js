@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Navbar = ({ children, className }) => (
-  <Wrapper id="navbar" className={className}>
+const Menu = ({ children, className }) => (
+  <Wrapper id="menu" className={className}>
     {children}
   </Wrapper>
 );
@@ -18,4 +18,4 @@ const Close = styled.div`
   color: white;
 `;
 
-export default Navbar;
+export default Menu;

@@ -23,19 +23,20 @@ import Paragraph from '../components/Paragraph';
 import Code from '../components/Code';
 import Heading from '../components/Heading';
 import Flex from '../components/Flex';
+import Hidden from '../components/Hidden';
+import Header from '../components/Header';
 
-const ContainerRoute = ({}) => {
+const MenuRoute = ({}) => {
   return (
     <Layout component>
       <Helmet>
-        <title>Container Component - System UI</title>
+        <title>Header Component - System UI</title>
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mb-3">Container</H2>
+          <H2 className="mb-3">Header</H2>
           <Paragraph>
-            The container component prevents your content from exceeding a
-            certain width, and centers it.
+            The Header component is wrapper for your website's navigation.
           </Paragraph>
           <div
             style={{
@@ -47,7 +48,7 @@ const ContainerRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            import Container from "system-ui";
+            import Header from "system-ui";
           </div>
           <H3 className="mb-none">Usage</H3>
           <div
@@ -60,21 +61,7 @@ const ContainerRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            {'<Container size="sm" />'}
-          </div>
-          <div
-            style={{
-              padding: '0 16px',
-              background: theme.color.gray.one,
-              borderRadius: 3,
-            }}
-          >
-            <Container
-              size="xs"
-              customStyles={`background: ${theme.color.primary}; height: 300px; display: flex; align-items: center; justify-content: center; color: white;`}
-            >
-              <Flex>A small container</Flex>
-            </Container>
+            {'<Header color="primary" />'}
           </div>
           <H3>Props</H3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -204,7 +191,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>maxWidth</Code>
+                  <Code>fixed</Code>
                 </td>
                 <td
                   style={{
@@ -213,7 +200,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>string</Code>
+                  <Code>boolean</Code>
                 </td>
                 <td
                   style={{
@@ -222,9 +209,8 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Changes the max width of the container. Options include{' '}
-                  <Code>lg</Code>, <Code>md</Code>
-                  and <Code>sm</Code>
+                  If true, the header will stay at the top of the screen, even
+                  after the user scrolls
                 </td>
               </tr>
               <tr>
@@ -235,7 +221,7 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  <Code>align</Code>
+                  <Code>color</Code>
                 </td>
                 <td
                   style={{
@@ -253,9 +239,96 @@ const ContainerRoute = ({}) => {
                     padding: '14px 8px',
                   }}
                 >
-                  Change whether or not the container centers its children.
-                  Options include <Code>left</Code>, <Code>right</Code> and{' '}
-                  <Code>center</Code> (default)
+                  Set the background color of the header
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>scrollColor</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>string</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  If the header is fixed, this sets the background of the header
+                  on scroll.
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>height</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>number</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  Set the height of the header
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>scrollHeight</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  <Code>number</Code>
+                </td>
+                <td
+                  style={{
+                    textAlign: 'left',
+                    border: `1px solid ${theme.color.gray.three}`,
+                    padding: '14px 8px',
+                  }}
+                >
+                  If the header is fixed, this sets the height of the header on
+                  scroll
                 </td>
               </tr>
             </tbody>
@@ -267,10 +340,10 @@ const ContainerRoute = ({}) => {
 };
 
 const Demo = styled.div`
-  width: 100%;
   padding: 16px;
   text-align: center;
   border-radius: 3px;
+  margin: 0px 8px;
   color: white !important;
   * {
     color: white !important;
@@ -278,4 +351,4 @@ const Demo = styled.div`
   background: ${(props) => props.theme.color.primary};
 `;
 
-export default ContainerRoute;
+export default MenuRoute;
