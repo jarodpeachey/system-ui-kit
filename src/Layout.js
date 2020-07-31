@@ -76,7 +76,7 @@ const Layout = ({ children, component }) => {
         <Header
           fixed
           color={component ? 'primary' : 'transparent'}
-          scrollColor="primary"
+          scrollColor="orange"
           height={component ? 55 : 105}
           scrollHeight={component ? 55 : 65}
         >

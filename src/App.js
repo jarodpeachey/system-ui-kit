@@ -45,7 +45,7 @@ const App = ({}) => (
       </SubTitle>
       <Button className="center" link="https://google.com" color="white">Google</Button>
     </Hero>
-    <Section spacing="small">
+    <Section>
       <Container>
         <Alert
           color="success"
@@ -58,7 +58,7 @@ const App = ({}) => (
         </Alert>
       </Container>
     </Section>
-    <Section className="pt-none" spacing="large">
+    <Section className="pt-none">
       <Container>
         <H5
           display="title"
@@ -71,7 +71,7 @@ const App = ({}) => (
         <H2 type="h2" className="center mt-3">
           What is System?
         </H2>
-        <Container size="sm">
+        <Container>
           <Paragraph className="center" style={{ maxWidth: 780 }}>
             System is a UI Kit like none other. It's dead-simple to get up and
             running, and offers advanced customization options that are easier
@@ -175,7 +175,7 @@ const App = ({}) => (
         </Button>
       </Container>
     </Section> */}
-    <Section spacing="large" background={`${theme.color.success}10`}>
+    <Section background={`${theme.color.success}10`}>
       <Container>
         <H2 color="success" type="h2" className="mt-none center">
           Join the waiting list!

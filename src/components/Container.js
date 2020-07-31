@@ -32,14 +32,7 @@ const StyledContainer = styled.div`
       : props.align === 'right'
       ? '0px auto 0px 0px'
       : '0 auto'};
-  max-width: ${(props) =>
-    props.maxWidth === 'xs'
-      ? '600'
-      : props.maxWidth === 'sm'
-      ? '769'
-      : props.maxWidth === 'lg'
-      ? '1300'
-      : '1000'}px;
+  max-width: ${(props) => (props.maxWidth ? props.maxWidth : '1024')}px;
   padding-left: 24px;
   padding-right: 24px;
   @media (min-width: 576px) {
@@ -47,8 +40,8 @@ const StyledContainer = styled.div`
     padding-right: 32px;
   }
   @media (min-width: 769px) {
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
   ${(props) =>
     (props.align === 'left' || props.align === 'right') &&

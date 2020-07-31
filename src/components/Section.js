@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { ThemeContext } from '../theme';
 
 const Section = ({
   children,
@@ -10,8 +9,6 @@ const Section = ({
   background,
   spacing,
 }) => {
-  const theme = useContext(ThemeContext);
-
   return (
     <StyledSection
       className={className}
@@ -26,12 +23,9 @@ const Section = ({
 };
 
 const StyledSection = styled.section`
-  text-align: ${(props) => (props.center ? 'center' : 'inherit')};
   z-index: 1;
   background: ${(props) => props.background};
-  padding: ${(props) =>
-      props.spacing === 'sm' ? 44 : props.spacing === 'lg' ? 78 : 52}px
-    0;
+  padding: ${(props) => (props.spacing ? props.spacing : 52)}px 0;
   ${(props) => props.customStyles}
 `;
 

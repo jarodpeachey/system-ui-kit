@@ -108,7 +108,8 @@ const Wrapper = styled.div`
   }
 
   &.scrolled {
-    min-height: ${(props) => `${props.scrollHeight}px` || 'fit-content'};
+    min-height: ${(props) =>
+      props.scrollHeight ? `${props.scrollHeight}px` : null};
     box-shadow: 0 0 4px 0 rgba(17,22,26,0.08), 0 2px 4px 0 rgba(17,22,26, 0.03), 0 4px 8px 0 rgba(17,22,26, 0.03);
         background: ${(props) =>
           props.scrollColor === 'primary'
@@ -117,7 +118,11 @@ const Wrapper = styled.div`
             ? props.theme.color.secondary
             : props.scrollColor === 'transparent'
             ? 'transparent'
-            : '#fffffff9'};
+            : props.scrollColor === 'white'
+            ? '#ffffff'
+            : props.scrollColor
+            ? props.scrollColor
+            : null};
     h1,
     h2,
     h3,
@@ -176,7 +181,9 @@ const Wrapper = styled.div`
     .menu-item,
     .menu-item a {
       color: ${(props) =>
-        props.scrollColor === 'transparent' ? props.theme.color.heading : 'white'};
+        props.scrollColor === 'transparent'
+          ? props.theme.color.heading
+          : 'white'};
     }
     transition: background 0s;
     span {

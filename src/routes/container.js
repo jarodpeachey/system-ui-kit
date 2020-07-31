@@ -60,7 +60,7 @@ const ContainerRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            {'<Container size="sm" />'}
+            {'<Container />'}
           </div>
           <div
             style={{

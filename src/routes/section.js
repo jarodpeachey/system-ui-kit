@@ -65,9 +65,9 @@ const SectionRoute = ({}) => {
               margin: '32px 0',
             }}
           >
-            {'<Section spacing="lg" background="#f7f7f7" />'}
+            {'<Section spacing={52} background="#f7f7f7" />'}
           </div>
-          <Section spacing="lg" background="#f7f7f7">
+          <Section spacing={52} background="#f7f7f7">
             <div className="center">A large section</div>
           </Section>
           <H3 className="mb-none">Props</H3>

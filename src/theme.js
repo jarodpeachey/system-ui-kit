@@ -23,14 +23,6 @@ export const theme = {
     six: 44,
     seven: 60,
   },
-  heading: {
-    one: 53,
-    two: 36,
-    three: 27,
-    four: 18,
-    five: 16,
-    six: 14,
-  },
   fontSize: {
     h1: 40,
     h2: 34,

@@ -7,7 +7,7 @@ const Flex = ({
   className,
   id,
   customStyles,
-  direction,
+  flexDirection,
   hAlign,
   vAlign,
 }) => (
@@ -15,7 +15,7 @@ const Flex = ({
     className={className}
     id={id}
     customStyles={customStyles}
-    direction={direction}
+    flexDirection={flexDirection}
     hAlign={hAlign}
     vAlign={vAlign}
   >
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   display: flex;
   // flex-wrap: wrap;
   flex-direction: ${(props) =>
-    props.direction === 'vertical' ? 'column' : 'row'};
+    props.flexDirection === 'column' ? 'column' : 'row'};
   align-items: ${(props) =>
     props.vAlign === 'stretch'
       ? 'stretch'

@@ -34,7 +34,7 @@ const Display = ({}) => {
       <Helmet>
         <title>Display Components - System UI Kit</title>
       </Helmet>
-      <Section spacing="small">
+      <Section>
         <Container>
           <H2 type="h2" className="m-none">
             Alert
@@ -137,7 +137,7 @@ const Display = ({}) => {
           </Row>
         </Container>
       </Section>
-      <Section spacing="small">
+      <Section>
         <Container>
           <H2 type="h2" className="m-none">
             Notification
@@ -222,7 +222,7 @@ const Display = ({}) => {
           )}
         </Container>
       </Section>
-      <Section spacing="small">
+      <Section>
         <Container>
           <H2 type="h2" className="m-none">
             Chip

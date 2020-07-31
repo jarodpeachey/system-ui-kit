@@ -30,13 +30,13 @@ const MenuRoute = ({}) => {
   return (
     <Layout component>
       <Helmet>
-        <title>Header Component - System UI</title>
+        <title>Menu Component - System UI</title>
       </Helmet>
       <Section>
         <Container>
           <H2 className="mb-3">Header</H2>
           <Paragraph>
-            The Header component is wrapper for your website's navigation.
+            The Menu component is used to allow the user to navigate the website on desktop.
           </Paragraph>
           <div
             style={{
@@ -48,7 +48,7 @@ const MenuRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            import Header from "system-ui";
+            import Menu from "system-ui";
           </div>
           <H3 className="mb-none">Usage</H3>
           <div
@@ -61,7 +61,7 @@ const MenuRoute = ({}) => {
               margin: '16px 0',
             }}
           >
-            {'<Header color="primary" />'}
+            {'<Menu color="primary" />'}
           </div>
           <H3>Props</H3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
