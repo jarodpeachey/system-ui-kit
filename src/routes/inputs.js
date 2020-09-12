@@ -804,24 +804,6 @@ const Inputs = ({}) => {
           <br />
           <br />
           <br />
-          <div style={{ maxWidth: 500 }}>
-            <Row spacing={[14]}>
-              <Column>
-                <Button fullWidth color="primary">
-                  Click Me
-                </Button>
-              </Column>
-              <Column>
-                <Button
-                  fullWidth
-                  color="primary"
-                  customStyles="font-weight: 500; font-size: 16px; text-transform: none; line-height: 16.4px; height: 42.8px;"
-                >
-                  Click Me
-                </Button>
-              </Column>
-            </Row>
-          </div>
           <br />
           <br />
           <br />

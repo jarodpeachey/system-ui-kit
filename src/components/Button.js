@@ -86,11 +86,11 @@ const StyledButton = styled.button`
     
   height: ${(props) => (props.size === 'large' ? '54px' : null)};
   font-size: ${(props) =>
-    props.size === 'small' ? '12px' : props.size === 'large' ? '16px' : '14px'};
+    props.size === 'small' ? '14px' : props.size === 'large' ? '18px' : '16px'};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   :active {
     box-shadow: none !important;
   }
