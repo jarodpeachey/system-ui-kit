@@ -41,11 +41,12 @@ import H3 from './components/H3';
 import H4 from './components/H4';
 import H5 from './components/H5';
 import H6 from './components/H6';
-import Row from './components/Row';
+import { Row, Column } from '@react-tiny-grid/core';
 import Button from './components/Button';
 import InternalLink from './components/InternalLink';
 import Collapse from './components/Collapse';
 import { pathnameIncludes } from './utils/pathnameIncludes';
+import { Link } from '@reach/router';
 
 library.add(
   faQuestionCircle,
@@ -76,7 +77,7 @@ const Layout = ({ children, component }) => {
         <Header
           fixed
           color={component ? 'primary' : 'transparent'}
-          scrollColor="orange"
+          scrollColor="primary"
           height={component ? 55 : 105}
           scrollHeight={component ? 55 : 65}
         >
@@ -92,7 +93,7 @@ const Layout = ({ children, component }) => {
           <Tablet>
             <Menu>
               <MenuItem>
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </MenuItem>
               <MenuItem submenu>
                 <InternalLink to="/components">Components</InternalLink>
@@ -148,7 +149,7 @@ const Layout = ({ children, component }) => {
             <br />
             <br />
             <Row spacing={[12]} breakpoints={[576, 850, 1200]}>
-              <div widths={[4, 3, 2]} style={{ position: 'sticky', top: 0 }}>
+              <Column widths={[4, 3, 2]} style={{ position: 'sticky', top: 0 }}>
                 <div
                   style={{
                     borderRight: `1px solid ${theme.color.gray.two}`,
@@ -504,7 +505,7 @@ const Layout = ({ children, component }) => {
                             };
                           }
                         `}
-                        to="/components/container"
+                        to="/components/menu"
                       >
                         Menu
                       </InternalLink>
@@ -1166,8 +1167,8 @@ const Layout = ({ children, component }) => {
                     </>
                   </Collapse>
                 </div>
-              </div>
-              <div widths={[8, 9, 10]}>{children}</div>
+              </Column>
+              <Column widths={[8, 9, 10]}>{children}</Column>
             </Row>
           </>
         ) : (
@@ -1179,7 +1180,7 @@ const Layout = ({ children, component }) => {
 };
 
 const Wrapper = styled.div`
-  color: ${(props) => props.theme.color.heading};
+  color: ${(props) => props.theme.color.text.heading};
 `;
 
 export default Layout;

@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
-import Row from '../components/Row';
+import { Row, Column } from '@react-tiny-grid/core';
 import H1 from '../components/H1';
 import H2 from '../components/H2';
 import H3 from '../components/H3';
@@ -23,7 +23,8 @@ import Code from '../components/Code';
 import RadioButton from '../components/RadioButton';
 import Flex from '../components/Flex';
 import RadioButtons from '../components/RadioButtons';
-import Text from '../components/Text';
+import Small from '../components/Small';
+import Strong from '../components/Strong';
 
 const RadioButtonsPage = ({}) => {
   const [showNotificationOne, setShowNotificationOne] = useState(false);
@@ -88,14 +89,13 @@ const RadioButtonsPage = ({}) => {
           >
             <Flex hAlign="start">
               <div className="mr-4">
-                <Text
-                  type="strong"
+                <Strong
                   className="mb-3 display-block"
                   display="title"
                   color="default"
                 >
-                  <Text type="small">Default</Text>
-                </Text>
+                  <Small>Default</Small>
+                </Strong>
                 <RadioButtons color="default" name="default">
                   <RadioButton checked className="mr-2">
                     Option one
@@ -109,14 +109,13 @@ const RadioButtonsPage = ({}) => {
                 </RadioButtons>
               </div>
               <div className="mr-4">
-                <Text
-                  type="strong"
+                <Strong
                   className="mb-3 display-block"
                   display="title"
                   color="primary"
                 >
-                  <Text type="small">Primary</Text>
-                </Text>
+                  <Small type="small">Primary</Small>
+                </Strong>
                 <RadioButtons color="primary" name="primary">
                   <RadioButton checked className="mr-2">
                     Option one
@@ -130,14 +129,13 @@ const RadioButtonsPage = ({}) => {
                 </RadioButtons>
               </div>
               <div className="mr-4">
-                <Text
-                  type="strong"
+                <Strong
                   className="mb-3 display-block"
                   display="title"
                   color="secondary"
                 >
-                  <Text type="small">Secondary</Text>
-                </Text>
+                  <Small type="small">Secondary</Small>
+                </Strong>
                 <RadioButtons color="secondary" name="secondary">
                   <RadioButton checked className="mr-2">
                     Option one
@@ -151,14 +149,13 @@ const RadioButtonsPage = ({}) => {
                 </RadioButtons>
               </div>
               <div className="mr-4">
-                <Text
-                  type="strong"
+                <Strong
                   className="mb-3 display-block"
                   display="title"
                   color="success"
                 >
-                  <Text type="small">Success</Text>
-                </Text>
+                  <Small type="small">Success</Small>
+                </Strong>
                 <RadioButtons color="success" name="success">
                   <RadioButton checked className="mr-2">
                     Option one
@@ -172,14 +169,13 @@ const RadioButtonsPage = ({}) => {
                 </RadioButtons>
               </div>
               <div className="mr-4">
-                <Text
-                  type="strong"
+                <Strong
                   className="mb-3 display-block"
                   display="title"
                   color="error"
                 >
-                  <Text type="small">Error</Text>
-                </Text>
+                  <Small type="small">Error</Small>
+                </Strong>
                 <RadioButtons color="error" name="error">
                   <RadioButton checked className="mr-2">
                     Option one

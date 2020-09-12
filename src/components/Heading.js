@@ -92,7 +92,7 @@ const H1 = styled.h1`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.darkBackground ? '#ffffff' :props.theme.color.heading};
+      : props.darkBackground ? '#ffffff' :props.theme.color.text.heading};
   ${(props) =>
     props.customStyles &&
     css`
@@ -113,7 +113,7 @@ const H2 = styled.h2`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.darkBackground ? '#ffffff' :props.theme.color.heading};
+      : props.darkBackground ? '#ffffff' :props.theme.color.text.heading};
   ${(props) =>
     props.customStyles &&
     css`
@@ -134,7 +134,7 @@ const H3 = styled.h3`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.darkBackground ? '#ffffff' :props.theme.color.heading};
+      : props.darkBackground ? '#ffffff' :props.theme.color.text.heading};
   ${(props) =>
     props.customStyles &&
     css`
@@ -155,7 +155,7 @@ const H4 = styled.h4`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.darkBackground ? '#ffffff' :props.theme.color.heading};
+      : props.darkBackground ? '#ffffff' :props.theme.color.text.heading};
   ${(props) =>
     props.customStyles &&
     css`
@@ -176,7 +176,7 @@ const H5 = styled.h5`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.darkBackground ? '#ffffff' :props.theme.color.heading};
+      : props.darkBackground ? '#ffffff' :props.theme.color.text.heading};
   ${(props) =>
     props.customStyles &&
     css`
@@ -197,7 +197,7 @@ const H6 = styled.h6`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.darkBackground ? '#ffffff' :props.theme.color.heading};
+      : props.darkBackground ? '#ffffff' :props.theme.color.text.heading};
   ${(props) =>
     props.customStyles &&
     css`

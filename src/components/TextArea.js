@@ -111,7 +111,7 @@ const StyledTextArea = styled.textarea`
   resize: vertical;
   width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
   ::placeholder {
-    color: ${(props) => props.theme.color.text.two};
+    color: ${(props) => props.theme.color.two};
   }
   :focus {
     outline: none;

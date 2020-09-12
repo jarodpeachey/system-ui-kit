@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
-import Row from '../components/Row';
+import { Row, Column } from '@react-tiny-grid/core';
 import H1 from '../components/H1';
 import H2 from '../components/H2';
 import H3 from '../components/H3';

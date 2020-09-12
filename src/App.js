@@ -6,7 +6,7 @@ import { theme } from './theme';
 import Hero from './components/Hero';
 import Section from './components/Section';
 import Button from './components/Button';
-import Row from './components/Row';
+import { Row, Column } from '@react-tiny-grid/core';
 
 import H1 from './components/H1';
 import H2 from './components/H2';
@@ -36,14 +36,13 @@ const App = ({}) => (
         ${theme.color.secondary}
       )`}
     >
-      <H1 darkBackground className="center">
+      <H1 display color="light-one" className="center">
         React Development Made Easy
       </H1>
-      <SubTitle type="h4" className="center" customStyles={`color: #ffffffcc;`}>
+      <H4 className="center" color="light-two">
         A modern UI Kit built to speed up your development proccess, while still
         allowing you room to customize and grow.
-      </SubTitle>
-      <Button className="center" link="https://google.com" color="white">Google</Button>
+      </H4>
     </Hero>
     <Section>
       <Container>
@@ -61,10 +60,10 @@ const App = ({}) => (
     <Section className="pt-none">
       <Container>
         <H5
-          display="title"
+          uppercase
           type="h5"
           color="primary"
-          className="center mt-none"
+          className="center my-none"
         >
           Built For You
         </H5>
@@ -84,7 +83,7 @@ const App = ({}) => (
           </Paragraph>
         </Container>
         <Row spacing={[24, 32]} breakpoints={[769, 960]}>
-          <div widths={[6, 4]}>
+          <Column widths={[6, 4]}>
             <Info
               title="Drop-in Components"
               color="primary"
@@ -99,8 +98,8 @@ const App = ({}) => (
                 code added!
               </Paragraph>
             </Info>
-          </div>
-          <div widths={[6, 4]}>
+          </Column>
+          <Column widths={[6, 4]}>
             <Info
               title="Custom Theming"
               color="primary"
@@ -114,8 +113,8 @@ const App = ({}) => (
                 shadow, border radius and more.
               </Paragraph>
             </Info>
-          </div>
-          <div widths={[6, 4]}>
+          </Column>
+          <Column widths={[6, 4]}>
             <Info
               title="Style Overrides"
               color="primary"
@@ -127,7 +126,7 @@ const App = ({}) => (
                 flexibility with your components.
               </Paragraph>
             </Info>
-          </div>
+          </Column>
 
           {/* <div widths={[6, 4]}>
             <Info
@@ -185,19 +184,19 @@ const App = ({}) => (
           discount to go with it!
         </SubTitle>
         <Row spacing={[8, 8]} breakpoints={[576, 800]}>
-          <div widths={[9, 10]}>
+          <Column widths={[9, 10]}>
             <Input
               color="success"
               size="large"
               fullWidth
               placeholder="user@mail.com"
             />
-          </div>
-          <div widths={[3, 2]}>
+          </Column>
+          <Column widths={[3, 2]}>
             <Button color="success" size="large" fullWidth>
               Join
             </Button>
-          </div>
+          </Column>
         </Row>
       </Container>
     </Section>

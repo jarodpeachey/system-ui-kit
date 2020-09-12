@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Button from '../components/Button';
-import Row from '../components/Row';
+import { Row, Column } from '@react-tiny-grid/core';
 import H1 from '../components/H1';
 import H2 from '../components/H2';
 import H3 from '../components/H3';
@@ -76,72 +76,72 @@ const GridRoute = ({}) => {
             breakpoints={[769]}
             spacing={[8]}
           >
-            <div widths={[1]}>
+            <Column widths={[1]}>
               <Demo>1</Demo>
-            </div>
-            <div widths={[11]}>
+            </Column>
+            <Column widths={[11]}>
               <Demo>11</Demo>
-            </div>
-            <div widths={[2]}>
+            </Column>
+            <Column widths={[2]}>
               <Demo>2</Demo>
-            </div>
-            <div widths={[10]}>
+            </Column>
+            <Column widths={[10]}>
               <Demo>10</Demo>
-            </div>
-            <div widths={[3]}>
+            </Column>
+            <Column widths={[3]}>
               <Demo>3</Demo>
-            </div>
-            <div widths={[9]}>
+            </Column>
+            <Column widths={[9]}>
               <Demo>9</Demo>
-            </div>
-            <div widths={[4]}>
+            </Column>
+            <Column widths={[4]}>
               <Demo>4</Demo>
-            </div>
-            <div widths={[8]}>
+            </Column>
+            <Column widths={[8]}>
               <Demo>8</Demo>
-            </div>
-            <div widths={[5]}>
+            </Column>
+            <Column widths={[5]}>
               <Demo>5</Demo>
-            </div>
-            <div widths={[7]}>
+            </Column>
+            <Column widths={[7]}>
               <Demo>7</Demo>
-            </div>
-            <div widths={[6]}>
+            </Column>
+            <Column widths={[6]}>
               <Demo>6</Demo>
-            </div>
-            <div widths={[6]}>
+            </Column>
+            <Column widths={[6]}>
               <Demo>6</Demo>
-            </div>
-            <div widths={[7]}>
+            </Column>
+            <Column widths={[7]}>
               <Demo>7</Demo>
-            </div>
-            <div widths={[5]}>
+            </Column>
+            <Column widths={[5]}>
               <Demo>5</Demo>
-            </div>
-            <div widths={[8]}>
+            </Column>
+            <Column widths={[8]}>
               <Demo>8</Demo>
-            </div>
-            <div widths={[4]}>
+            </Column>
+            <Column widths={[4]}>
               <Demo>4</Demo>
-            </div>
-            <div widths={[9]}>
+            </Column>
+            <Column widths={[9]}>
               <Demo>9</Demo>
-            </div>
-            <div widths={[3]}>
+            </Column>
+            <Column widths={[3]}>
               <Demo>3</Demo>
-            </div>
-            <div widths={[10]}>
+            </Column>
+            <Column widths={[10]}>
               <Demo>10</Demo>
-            </div>
-            <div widths={[2]}>
+            </Column>
+            <Column widths={[2]}>
               <Demo>2</Demo>
-            </div>
-            <div widths={[11]}>
+            </Column>
+            <Column widths={[11]}>
               <Demo>11</Demo>
-            </div>
-            <div widths={[1]}>
+            </Column>
+            <Column widths={[1]}>
               <Demo>1</Demo>
-            </div>
+            </Column>
           </Row>
           <H3>Props</H3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>

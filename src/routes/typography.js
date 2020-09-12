@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Button from '../components/Button';
-import Row from '../components/Row';
+import { Row, Column } from '@react-tiny-grid/core';
 import Alert from '../components/Alert';
 import Chip from '../components/Chip';
 import { Link } from '@reach/router';
@@ -23,8 +23,10 @@ import { theme } from '../theme';
 import Code from '../components/Code';
 import Hidden from '../components/Hidden';
 import Flex from '../components/Flex';
-import Text from '../components/Text';
 import SubTitle from '../components/SubTitle';
+import Small from '../components/Small';
+import Strong from '../components/Strong';
+import Span from '../components/Span';
 
 const TypographyComponents = ({}) => {
   return (
@@ -376,9 +378,9 @@ const TypographyComponents = ({}) => {
           <br />
           <Row spacing={[0, 6]} breakpoints={[769]}>
             <div widths={[2]}>
-              <Text display="title" type="small" color="text-three">
-                <Text type="strong">Title</Text>
-              </Text>
+              <Small>
+                <Strong>Title</Strong>
+              </Small>
             </div>
             <div widths={[10]}>
               <H5 type="h5" className="m-none" display="title">
@@ -389,22 +391,22 @@ const TypographyComponents = ({}) => {
           <br />
           <Row spacing={[0, 6]} breakpoints={[769]}>
             <div widths={[2]}>
-              <Text display="title" type="small" color="text-three">
-                <Text type="strong">Heading</Text>
-              </Text>
+              <Small display="title">
+                <Strong>Heading</Strong>
+              </Small>
             </div>
             <div widths={[10]}>
               <H2 type="h2" className="m-none">
-                The Future of <Text color="success">React Development</Text>
+                The Future of <Span color="success">React Development</Span>
               </H2>
             </div>
           </Row>
           <br />
           <Row spacing={[0, 6]} breakpoints={[769]}>
             <div widths={[2]}>
-              <Text display="title" type="small" color="text-three">
-                <Text type="strong">Subtitle</Text>
-              </Text>
+              <Small display="title">
+                <Strong>Subtitle</Strong>
+              </Small>
             </div>
             <div widths={[10]}>
               <SubTitle className="m-none">
@@ -419,9 +421,9 @@ const TypographyComponents = ({}) => {
           <br />
           <Row spacing={[0, 6]} breakpoints={[769]}>
             <div widths={[2]}>
-              <Text display="title" type="small" color="text-three">
-                <Text type="strong">Paragraph</Text>
-              </Text>
+              <Small display="title">
+                <Strong>Paragraph</Strong>
+              </Small>
             </div>
             <div widths={[10]}>
               <Paragraph className="m-none">
@@ -445,7 +447,7 @@ const TypographyComponents = ({}) => {
               display: 'flex',
 
               padding: 16,
-              background: theme.color.heading,
+              background: theme.color.text.heading,
               color: 'white',
               alignItems: 'center',
               justifyContent: 'center',
@@ -473,7 +475,7 @@ const TypographyComponents = ({}) => {
               display: 'flex',
 
               padding: 16,
-              background: theme.color.text.one,
+              background: theme.color.one,
               color: 'white',
               alignItems: 'center',
               justifyContent: 'center',
@@ -488,7 +490,7 @@ const TypographyComponents = ({}) => {
               display: 'flex',
 
               padding: 16,
-              background: theme.color.text.two,
+              background: theme.color.two,
               color: 'white',
               alignItems: 'center',
               justifyContent: 'center',
@@ -503,14 +505,14 @@ const TypographyComponents = ({}) => {
               display: 'flex',
 
               padding: 16,
-              background: theme.color.text.three,
-              color: theme.color.text.one,
+              background: theme.color.three,
+              color: theme.color.one,
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
             Three: Custom modifier that can be passed to a text component via
-            the color prop {'<Text color="text-three" />'}
+            the color prop {'<Text />'}
           </div>
         </Container>
       </Section>

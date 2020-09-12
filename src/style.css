@@ -100,7 +100,7 @@ body {
 }
 
 .transition {
-  transition-duration: 0.15s;
+  transition-duration: 0.1s;
 }
 
 strong {
@@ -736,7 +736,7 @@ p:last-child {
 .calendarContainer button,
 .rc-time-picker {
   border: none !important;
-  transition: 0.15s;
+  transition: 0.1s;
 }
 
 .prev:hover,

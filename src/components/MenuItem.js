@@ -4,7 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Menu from './Menu';
 import { Link } from '@reach/router';
 
-const MenuItem = ({ children, className, id, submenu, square, align }) => {
+const MenuItem = ({
+  children,
+  className,
+  id,
+  customStyles,
+  submenu,
+  square,
+  align,
+}) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   if (submenu) {
     console.log(children[0].props);
@@ -29,6 +37,7 @@ const MenuItem = ({ children, className, id, submenu, square, align }) => {
         <Wrapper
           className={`${className} menu-item`}
           id={id}
+          customStyles={customStyles}
           square={square}
           onMouseEnter={() => {
             setShowSubMenu(true);
@@ -72,6 +81,7 @@ const Wrapper = styled.div`
       background: #00000007;
     }
   }
+  ${(props) => props.customStyles}
 `;
 
 const SubMenuWrapper = styled.div`

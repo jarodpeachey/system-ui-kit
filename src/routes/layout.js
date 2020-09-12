@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Button from '../components/Button';
-import Row from '../components/Row';
+import { Row, Column } from '@react-tiny-grid/core';
 import Alert from '../components/Alert';
 import Chip from '../components/Chip';
 import { Link } from '@reach/router';

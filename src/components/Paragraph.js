@@ -26,21 +26,27 @@ const Paragraph = ({
 
 const StyledParagraph = styled.p`
   color: ${(props) =>
-      props.color === 'primary'
-        ? props.theme.color.primary
-        : props.color === 'secondary'
-        ? props.theme.color.secondary
-        : props.color === 'success'
-        ? props.theme.color.success
-        : props.color === 'error'
-        ? props.theme.color.error
-        : props.color === 'text-one'
-        ? props.theme.color.text.one
-        : props.color === 'text-two'
-        ? props.theme.color.text.two
-        : props.color === 'text-three'
-        ? props.theme.color.text.three
-        : props.theme.color.paragraph}${(props) => (props.muted ? '90' : null)};
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.color === 'secondary'
+      ? props.theme.color.secondary
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.color === 'one'
+      ? props.theme.color.text.one
+      : props.color === 'two'
+      ? props.theme.color.text.two
+      : props.color === 'three'
+      ? props.theme.color.text.three
+      : props.color === 'light-one'
+      ? props.theme.color.text.light.one
+      : props.color === 'light-two'
+      ? props.theme.color.text.light.two
+      : props.color === 'light-three'
+      ? props.theme.color.text.light.three
+      : props.theme.color.paragraph}};
   ${(props) =>
     props.customStyles &&
     css`

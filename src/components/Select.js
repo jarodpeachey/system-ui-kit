@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Option from './Option';
-import Text from './Text';
 import { theme } from '../theme';
+import Span from './Span';
 
 const Select = ({ children, className, id, size, variant }) => {
   const newChildren = [];
@@ -34,7 +34,7 @@ const Select = ({ children, className, id, size, variant }) => {
         variant={variant}
         onClick={toggleOpen}
       >
-        {selectedLabel || <Text>Select a value</Text>}
+        {selectedLabel || <Span>Select a value</Span>}
         <FontAwesomeIcon
           style={{
             marginLeft: 12,
@@ -95,7 +95,7 @@ const SelectWrapper = styled.div`
   cursor: pointer;
   border-radius: 3px;
   width: 100%;
-  transition-duration: 0.15s;
+  transition-duration: 0.1s;
   border: ${(props) =>
     props.open
       ? `1px solid ${props.theme.color.primary}`

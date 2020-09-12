@@ -254,6 +254,7 @@ const StyledInput = styled.input`
   -ms-user-select: initial;
   user-select: initial;
   display: inline-block;
+  color: ${(props) => props.theme.color.text.paragraph};
   padding: ${(props) =>
     props.size === 'xs'
       ? '4px 8px'
@@ -270,7 +271,7 @@ const StyledInput = styled.input`
       : props.size === 'large'
       ? '17px'
       : '15px'};
-  transition-duration: 0.15s;
+  transition-duration: 0.1s;
   display: inline-block;
   width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
   ::placeholder {
@@ -291,20 +292,13 @@ const StyledInput = styled.input`
   ${(props) =>
     props.variant === 'filled'
       ? css`
-          border-radius: ${props.theme.radius.one};
-          background: ${props.theme.color.gray.one};
           color: ${props.state === 'success'
             ? props.theme.color.success
             : props.state === 'error'
             ? props.theme.color.error
             : null};
-          ::placeholder {
-            color: ${props.state === 'success'
-              ? props.theme.color.success
-              : props.state === 'error'
-              ? props.theme.color.error
-              : null};
-          }
+          border-radius: ${props.theme.radius.one};
+          background: ${props.theme.color.gray.one};
           :focus {
             outline: none;
             border: 1px solid
@@ -313,6 +307,7 @@ const StyledInput = styled.input`
                 : props.state === 'error'
                 ? props.theme.color.error
                 : props.theme.color.primary};
+            color: ${props.theme.color.text.paragraph};
           }
           border: 1px solid ${props.theme.color.gray.one};
         `

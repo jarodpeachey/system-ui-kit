@@ -1,32 +1,30 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const H4 = ({
+const Span = ({
   children,
   className,
   id,
-  customStyles,
-  darkBackground,
-  display,
+  title,
   color,
-  uppercase,
+  muted,
+  customStyles,
 }) => {
   return (
-    <Wrapper
+    <StyledSpan
       className={className}
       id={id}
       customStyles={customStyles}
       color={color}
-      darkBackground={darkBackground}
-      display={display}
-      uppercase={uppercase}
+      title={title}
+      muted={muted}
     >
       {children}
-    </Wrapper>
+    </StyledSpan>
   );
 };
 
-const Wrapper = styled.h4`
+const StyledSpan = styled.span`
   color: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
@@ -48,12 +46,7 @@ const Wrapper = styled.h4`
       ? props.theme.color.text.light.two
       : props.color === 'light-three'
       ? props.theme.color.text.light.three
-      : props.theme.color.text.heading}};
-  font-weight: ${(props) => (props.display ? '700' : '600')};
-  text-transform: ${(props) => (props.uppercase ? 'uppercase' : null)};
-  margin-bottom: 34px;
-  font-size: ${(props) =>
-    props.display ? props.theme.fontSize.h4 + 8 : props.theme.fontSize.h4}px;
+      : props.theme.color.text.paragraph}};
   ${(props) =>
     props.customStyles &&
     css`
@@ -61,4 +54,4 @@ const Wrapper = styled.h4`
     `}
 `;
 
-export default H4;
+export default Span;

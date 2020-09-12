@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin: ${(props) => props.theme.spacing.two}px 0;
-  transition: 0.15s;
+  transition: 0.1s;
 `;
 
 const ToggleWrapper = styled.div`
@@ -65,7 +65,7 @@ const ToggleWrapper = styled.div`
 
 const Indicator = styled.div`
   height: ${(props) => (props.filled ? '20px' : '18px')};
-  transition: 0.15s;
+  transition: 0.1s;
   width: ${(props) => (props.filled ? '20px' : '18px')};
   border-radius: 999px;
   background: ${(props) =>

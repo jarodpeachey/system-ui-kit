@@ -13,7 +13,7 @@ import Input from '../components/Input';
 import TextArea from '../components/TextArea';
 import OutlinedInput from '../components/OutlinedInput';
 import Checkbox from '../components/Checkbox';
-import Row from '../components/Row';
+import { Row, Column } from '@react-tiny-grid/core';
 import RadioButtons from '../components/RadioButtons';
 import RadioButton from '../components/RadioButton';
 import Toggle from '../components/Toggle';
@@ -522,7 +522,7 @@ const Inputs = ({}) => {
           </H2>
           <H4 type="h4">Size</H4>
           <Row spacing={[12]} breakpoints={[576, 769]}>
-            <div widths={[6, 3]}>
+            <Column widths={[6, 3]}>
               <Input
                 className="mb-2"
                 size="xs"
@@ -545,8 +545,8 @@ const Inputs = ({}) => {
                 fullWidth
                 placeholder="Large"
               />
-            </div>
-            <div widths={[6, 3]}>
+            </Column>
+            <Column widths={[6, 3]}>
               <Input
                 className="mb-2"
                 variant="filled"
@@ -577,8 +577,8 @@ const Inputs = ({}) => {
                 fullWidth
                 placeholder="Large"
               />
-            </div>
-            <div widths={[6, 3]}>
+            </Column>
+            <Column widths={[6, 3]}>
               <Input
                 className="mb-2"
                 size="xs"
@@ -609,11 +609,11 @@ const Inputs = ({}) => {
                 placeholder="Large"
                 icon={<FontAwesomeIcon icon="heart" />}
               />
-            </div>
+            </Column>
           </Row>
           <H4 type="h4">State</H4>
           <Row spacing={[12]} breakpoints={[576, 769]}>
-            <div widths={[6, 3]}>
+            <Column widths={[6, 3]}>
               <Input className="mb-2" fullWidth placeholder="Default" />
               <div />
               <Input
@@ -629,8 +629,8 @@ const Inputs = ({}) => {
                 placeholder="Error"
                 state="error"
               />
-            </div>
-            <div widths={[6, 3]}>
+            </Column>
+            <Column widths={[6, 3]}>
               <Input
                 className="mb-2"
                 variant="filled"
@@ -653,8 +653,8 @@ const Inputs = ({}) => {
                 placeholder="Error"
                 state="error"
               />
-            </div>
-            <div widths={[6, 3]}>
+            </Column>
+            <Column widths={[6, 3]}>
               <Input
                 className="mb-2"
                 icon={<FontAwesomeIcon icon="heart" />}
@@ -677,12 +677,12 @@ const Inputs = ({}) => {
                 placeholder="Error"
                 state="error"
               />
-            </div>
+            </Column>
           </Row>
           <H2>Text Area</H2>
           <TextArea />
           <Row breakpoints={[476, 960]} spacing={[24]}>
-            <div widths={[6, 4]}>
+            <Column widths={[6, 4]}>
               <H3>Checkboxes</H3>
               <Checkbox id="test" value="unchecked">
                 Unchecked
@@ -700,8 +700,8 @@ const Inputs = ({}) => {
               <Checkbox value="disabled" disabled>
                 Disabled
               </Checkbox>
-            </div>
-            <div widths={[6, 4]}>
+            </Column>
+            <Column widths={[6, 4]}>
               <H3>Radio Buttons</H3>
               {/* <form
             className="form"
@@ -725,13 +725,13 @@ const Inputs = ({}) => {
               </RadioButtons>
               {/* <button type="submit">Submit</button>
           </form> */}
-            </div>
-            <div widths={[6, 4]}>
+            </Column>
+            <Column widths={[6, 4]}>
               <H3 color="primary">Toggle Switches</H3>
               <Toggle>Default</Toggle>
               <Toggle variant="filled">Filled</Toggle>
-            </div>
-            <div widths={[6, 4]}>
+            </Column>
+            <Column widths={[6, 4]}>
               <H3>Selects</H3>
               <Select>
                 <Option value="one">One</Option>
@@ -743,14 +743,14 @@ const Inputs = ({}) => {
                 <Option value="two">Two</Option>
                 <Option value="three">Three</Option>
               </Select>
-            </div>
-            <div widths={[6, 4]}>
+            </Column>
+            <Column widths={[6, 4]}>
               <H3>Slider</H3>
               <Slider initial={82} max={100} />
               <Slider initial={28} color="secondary" max={100} />
               <Slider initial={63} color="success" max={100} />
               <Slider initial={47} color="error" max={100} />
-            </div>
+            </Column>
           </Row>
           <H2>Date Pickers</H2>
           {/* <DatePicker
@@ -804,6 +804,24 @@ const Inputs = ({}) => {
           <br />
           <br />
           <br />
+          <div style={{ maxWidth: 500 }}>
+            <Row spacing={[14]}>
+              <Column>
+                <Button fullWidth color="primary">
+                  Click Me
+                </Button>
+              </Column>
+              <Column>
+                <Button
+                  fullWidth
+                  color="primary"
+                  customStyles="font-weight: 500; font-size: 16px; text-transform: none; line-height: 16.4px; height: 42.8px;"
+                >
+                  Click Me
+                </Button>
+              </Column>
+            </Row>
+          </div>
           <br />
           <br />
           <br />

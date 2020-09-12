@@ -109,23 +109,23 @@ const StyledButton = styled.button`
             : props.theme.color.gray.two};   
     color: ${(props) =>
       props.color === 'white'
-        ? props.theme.color.heading
+        ? props.theme.color.text.heading
         : props.color === 'primary' ||
           props.color === 'secondary' ||
           props.color === 'success' ||
           props.color === 'error'
         ? 'white'
-        : props.theme.color.heading};
+        : props.theme.color.text.heading};
       * {
             color: ${(props) =>
               props.color === 'white'
-                ? props.theme.color.heading
+                ? props.theme.color.text.heading
                 : props.color === 'primary' ||
                   props.color === 'secondary' ||
                   props.color === 'success' ||
                   props.color === 'error'
                 ? 'white'
-                : props.theme.color.heading};
+                : props.theme.color.text.heading};
       }
       border: 1px solid transparent;
       :hover {
@@ -159,7 +159,7 @@ const StyledButton = styled.button`
         ? props.theme.color.error
         : props.color === 'white'
         ? 'white'
-        : props.theme.color.heading} !important;
+        : props.theme.color.text.heading} !important;
       * {
         color: ${props.color === 'primary'
           ? props.theme.color.primary
@@ -171,7 +171,7 @@ const StyledButton = styled.button`
           ? props.theme.color.error
           : props.color === 'white'
           ? 'white'
-          : props.theme.color.heading} !important;
+          : props.theme.color.text.heading} !important;
       }
       border: 1px solid
         ${props.color === 'primary'
@@ -201,13 +201,13 @@ const StyledButton = styled.button`
           ? 'initial'
           : props.color
           ? 'white'
-          : props.theme.color.heading} !important;
+          : props.theme.color.text.heading} !important;
         * {
           color: ${props.color === 'white'
             ? 'initial'
             : props.color
             ? 'white'
-            : props.theme.color.heading} !important;
+            : props.theme.color.text.heading} !important;
         }
       }
     `};
@@ -227,7 +227,7 @@ const StyledButton = styled.button`
           ? props.theme.color.error
           : props.color === 'white'
           ? 'white'
-          : props.theme.color.heading
+          : props.theme.color.text.heading
       } !important;
     * {
             color: ${
@@ -241,7 +241,7 @@ const StyledButton = styled.button`
                 ? props.theme.color.error
                 : props.color === 'white'
                 ? 'white'
-                : props.theme.color.heading
+                : props.theme.color.text.heading
             } !important;
     }
       border: 1px solid transparent;
@@ -311,23 +311,23 @@ const StyledLink = styled(Link)`
             : props.theme.color.gray.two};   
     color: ${(props) =>
       props.color === 'white'
-        ? props.theme.color.heading
+        ? props.theme.color.text.heading
         : props.color === 'primary' ||
           props.color === 'secondary' ||
           props.color === 'success' ||
           props.color === 'error'
         ? 'white'
-        : props.theme.color.heading} !important;
+        : props.theme.color.text.heading} !important;
       * {
             color: ${(props) =>
               props.color === 'white'
-                ? props.theme.color.heading
+                ? props.theme.color.text.heading
                 : props.color === 'primary' ||
                   props.color === 'secondary' ||
                   props.color === 'success' ||
                   props.color === 'error'
                 ? 'white'
-                : props.theme.color.heading} !important;
+                : props.theme.color.text.heading} !important;
       }
       border: 1px solid transparent;
       :hover {
@@ -361,7 +361,7 @@ const StyledLink = styled(Link)`
         ? props.theme.color.error
         : props.color === 'white'
         ? 'white'
-        : props.theme.color.heading};
+        : props.theme.color.text.heading};
       * {
         color: ${props.color === 'primary'
           ? props.theme.color.primary
@@ -373,7 +373,7 @@ const StyledLink = styled(Link)`
           ? props.theme.color.error
           : props.color === 'white'
           ? 'white'
-          : props.theme.color.heading};
+          : props.theme.color.text.heading};
       }
       border: 1px solid
         ${props.color === 'primary'
@@ -403,13 +403,13 @@ const StyledLink = styled(Link)`
           ? 'initial'
           : props.color
           ? 'white'
-          : props.theme.color.heading};
+          : props.theme.color.text.heading};
         * {
           color: ${props.color === 'white'
             ? 'initial'
             : props.color
             ? 'white'
-            : props.theme.color.heading};
+            : props.theme.color.text.heading};
         }
       }
     `};
@@ -429,7 +429,7 @@ const StyledLink = styled(Link)`
           ? props.theme.color.error
           : props.color === 'white'
           ? 'white'
-          : props.theme.color.heading
+          : props.theme.color.text.heading
       };
     * {
             color: ${
@@ -443,7 +443,7 @@ const StyledLink = styled(Link)`
                 ? props.theme.color.error
                 : props.color === 'white'
                 ? 'white'
-                : props.theme.color.heading
+                : props.theme.color.text.heading
             };
     }
       border: 1px solid transparent;
@@ -514,23 +514,23 @@ const StyledA = styled.a`
             : props.theme.color.gray.two};   
     color: ${(props) =>
       props.color === 'white'
-        ? props.theme.color.heading
+        ? props.theme.color.text.heading
         : props.color === 'primary' ||
           props.color === 'secondary' ||
           props.color === 'success' ||
           props.color === 'error'
         ? 'white'
-        : props.theme.color.heading} !important;
+        : props.theme.color.text.heading} !important;
       * {
             color: ${(props) =>
               props.color === 'white'
-                ? props.theme.color.heading
+                ? props.theme.color.text.heading
                 : props.color === 'primary' ||
                   props.color === 'secondary' ||
                   props.color === 'success' ||
                   props.color === 'error'
                 ? 'white'
-                : props.theme.color.heading} !important;
+                : props.theme.color.text.heading} !important;
       }
       border: 1px solid transparent;
       :hover {
@@ -564,7 +564,7 @@ const StyledA = styled.a`
         ? props.theme.color.error
         : props.color === 'white'
         ? 'white'
-        : props.theme.color.heading};
+        : props.theme.color.text.heading};
       * {
         color: ${props.color === 'primary'
           ? props.theme.color.primary
@@ -576,7 +576,7 @@ const StyledA = styled.a`
           ? props.theme.color.error
           : props.color === 'white'
           ? 'white'
-          : props.theme.color.heading};
+          : props.theme.color.text.heading};
       }
       border: 1px solid
         ${props.color === 'primary'
@@ -606,13 +606,13 @@ const StyledA = styled.a`
           ? 'initial'
           : props.color
           ? 'white'
-          : props.theme.color.heading};
+          : props.theme.color.text.heading};
         * {
           color: ${props.color === 'white'
             ? 'initial'
             : props.color
             ? 'white'
-            : props.theme.color.heading};
+            : props.theme.color.text.heading};
         }
       }
     `};
@@ -632,7 +632,7 @@ const StyledA = styled.a`
           ? props.theme.color.error
           : props.color === 'white'
           ? 'white'
-          : props.theme.color.heading
+          : props.theme.color.text.heading
       };
     * {
             color: ${
@@ -646,7 +646,7 @@ const StyledA = styled.a`
                 ? props.theme.color.error
                 : props.color === 'white'
                 ? 'white'
-                : props.theme.color.heading
+                : props.theme.color.text.heading
             };
     }
       border: 1px solid transparent;

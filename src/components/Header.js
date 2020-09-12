@@ -103,7 +103,7 @@ const Wrapper = styled.div`
         ? 'white'
         : props.color === 'transparent'
         ? 'white'
-        : props.theme.color.heading} !important;
+        : props.theme.color.text.heading} !important;
   }
   }
 
@@ -120,8 +120,6 @@ const Wrapper = styled.div`
             ? 'transparent'
             : props.scrollColor === 'white'
             ? '#ffffff'
-            : props.scrollColor
-            ? props.scrollColor
             : null};
     h1,
     h2,
@@ -136,13 +134,13 @@ const Wrapper = styled.div`
       color: ${(props) =>
         props.scrollColor === 'primary' || props.scrollColor === 'secondary'
           ? 'white'
-          : props.theme.color.heading};
+          : props.theme.color.text.heading};
     }
     span {
       background: ${(props) =>
         props.scrollColor === 'primary' || props.scrollColor === 'secondary'
           ? 'white'
-          : props.theme.color.heading} !important;
+          : props.theme.color.text.heading} !important;
     }
   }
   &.open {
@@ -158,13 +156,13 @@ const Wrapper = styled.div`
     .menu-item,
     .menu-item a {
       color: ${(props) =>
-        props.color === 'transparent' ? props.theme.color.heading : null};
+        props.color === 'transparent' ? props.theme.color.text.heading : null};
     }
     transition: background 0s;
     span {
       background: ${(props) =>
         props.color === 'transparent'
-          ? props.theme.color.heading
+          ? props.theme.color.text.heading
           : null} !important;
     }
   }
@@ -182,14 +180,14 @@ const Wrapper = styled.div`
     .menu-item a {
       color: ${(props) =>
         props.scrollColor === 'transparent'
-          ? props.theme.color.heading
+          ? props.theme.color.text.heading
           : 'white'};
     }
     transition: background 0s;
     span {
       background: ${(props) =>
         props.scrollColor === 'transparent'
-          ? props.theme.color.heading
+          ? props.theme.color.text.heading
           : 'white'} !important;
     }
   }

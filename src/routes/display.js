@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Button from '../components/Button';
-import Row from '../components/Row';
+import { Row, Column } from '@react-tiny-grid/core';
 import H1 from '../components/H1';
 import H2 from '../components/H2';
 import H3 from '../components/H3';
@@ -77,13 +77,13 @@ const Display = ({}) => {
             The color prop is used to change the color of an alert.
           </Paragraph>
           <Row spacing={[14, 0]} breakpoints={[769]}>
-            <div widths={[6]}>
+            <Column widths={[6]}>
               <Alert icon={<FontAwesomeIcon icon="bell" />}>Default</Alert>
               <Alert icon={<FontAwesomeIcon icon="bell" />} variant="light">
                 Default
               </Alert>
-            </div>
-            <div widths={[6]}>
+            </Column>
+            <Column widths={[6]}>
               <Alert icon={<FontAwesomeIcon icon="heart" />} color="primary">
                 Primary
               </Alert>
@@ -94,8 +94,8 @@ const Display = ({}) => {
               >
                 Primary
               </Alert>
-            </div>
-            <div widths={[6]}>
+            </Column>
+            <Column widths={[6]}>
               <Alert icon={<FontAwesomeIcon icon="globe" />} color="secondary">
                 Secondary
               </Alert>
@@ -106,8 +106,8 @@ const Display = ({}) => {
               >
                 Secondary
               </Alert>
-            </div>
-            <div widths={[6]}>
+            </Column>
+            <Column widths={[6]}>
               <Alert icon={<FontAwesomeIcon icon="check" />} color="success">
                 Success
               </Alert>
@@ -118,8 +118,8 @@ const Display = ({}) => {
               >
                 Success
               </Alert>
-            </div>
-            <div widths={[6]}>
+            </Column>
+            <Column widths={[6]}>
               <Alert
                 icon={<FontAwesomeIcon icon="exclamation-circle" />}
                 color="error"
@@ -133,7 +133,7 @@ const Display = ({}) => {
               >
                 Error
               </Alert>
-            </div>
+            </Column>
           </Row>
         </Container>
       </Section>

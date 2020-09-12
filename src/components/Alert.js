@@ -58,7 +58,7 @@ const Wrapper = styled.div`
         ? props.theme.color.success
         : props.color === 'error'
         ? props.theme.color.error
-        : props.theme.color.heading}15;
+        : props.theme.color.text.heading}15;
       color: ${pSBC(
         `${
           props.color === 'primary'
@@ -69,7 +69,7 @@ const Wrapper = styled.div`
             ? props.theme.color.success
             : props.color === 'error'
             ? props.theme.color.error
-            : props.theme.color.heading
+            : props.theme.color.text.heading
         }`,
         -25,
       )};
@@ -84,7 +84,7 @@ const Wrapper = styled.div`
               ? props.theme.color.success
               : props.color === 'error'
               ? props.theme.color.error
-              : props.theme.color.heading
+              : props.theme.color.text.heading
           }`,
           -25,
         )};
@@ -111,10 +111,10 @@ const CloseButton = styled.div`
   justify-content: center;
   font-size: 18px;
   margin-left: auto;
-  color: ${(props) => props.theme.color.text.lightTwo};
+  color: ${(props) => props.theme.color.text.light.two};
   padding-right: 24px;
   :hover {
-    color: ${(props) => props.theme.color.text.lightOne};
+    color: ${(props) => props.theme.color.text.light.one};
   }
 `;
 const Icon = styled.div`

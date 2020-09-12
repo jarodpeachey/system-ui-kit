@@ -39,7 +39,7 @@ const Wrapper = styled.div`
   padding: 12px 18px;
   text-align: center;
   cursor: pointer;
-  transition: 0.15s;
+  transition: 0.1s;
   border-bottom: 2px solid transparent;
   border-radius: 3px;
   width: ${(props) => (props.fullWidth || props.vertical ? '100%' : 'fit-content')};

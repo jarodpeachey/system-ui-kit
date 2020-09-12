@@ -1,32 +1,30 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const H4 = ({
+const Small = ({
   children,
   className,
   id,
-  customStyles,
-  darkBackground,
-  display,
+  title,
   color,
-  uppercase,
+  muted,
+  customStyles,
 }) => {
   return (
-    <Wrapper
+    <StyledSmall
       className={className}
       id={id}
       customStyles={customStyles}
       color={color}
-      darkBackground={darkBackground}
-      display={display}
-      uppercase={uppercase}
+      title={title}
+      muted={muted}
     >
       {children}
-    </Wrapper>
+    </StyledSmall>
   );
 };
 
-const Wrapper = styled.h4`
+const StyledSmall = styled.small`
   color: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
@@ -48,17 +46,13 @@ const Wrapper = styled.h4`
       ? props.theme.color.text.light.two
       : props.color === 'light-three'
       ? props.theme.color.text.light.three
-      : props.theme.color.text.heading}};
-  font-weight: ${(props) => (props.display ? '700' : '600')};
-  text-transform: ${(props) => (props.uppercase ? 'uppercase' : null)};
-  margin-bottom: 34px;
-  font-size: ${(props) =>
-    props.display ? props.theme.fontSize.h4 + 8 : props.theme.fontSize.h4}px;
+      : props.theme.color.text.paragraph}};
+  font-size: ${(props) => props.theme.fontSize.small};
   ${(props) =>
     props.customStyles &&
     css`
       ${props.customStyles}
-    `}
+    `};
 `;
 
-export default H4;
+export default Small;

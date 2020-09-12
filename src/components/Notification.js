@@ -57,7 +57,7 @@ const NotificationWrapper = styled.div`
   align-items: center;
   transform: ${(props) =>
     props.animate ? 'translateY(200px)' : 'translateY(0)'};
-  transition: 0.15s;
+  transition: 0.1s;
   margin: ${(props) => props.theme.spacing.three}px 0;
   padding: ${(props) => props.theme.spacing.three}px
     ${(props) => props.theme.spacing.five}px;

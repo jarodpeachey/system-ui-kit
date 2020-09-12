@@ -121,9 +121,9 @@ const CloseButton = styled.div`
   justify-content: center;
   font-size: 20px;
   margin-left: auto;
-  color: ${(props) => props.theme.color.text.two};
+  color: ${(props) => props.theme.color.two};
   :hover {
-    color: ${(props) => props.theme.color.text.one};
+    color: ${(props) => props.theme.color.one};
   }
 `;
 

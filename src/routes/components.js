@@ -6,8 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme } from '../theme';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
+import H2 from '../components/H2';
 import Button from '../components/Button';
-import Row from '../components/Row';
+import { Row, Column } from '@react-tiny-grid/core';
 import Heading from '../components/Heading';
 import Info from '../components/Info';
 import Container from '../components/Container';
@@ -26,7 +27,7 @@ const Components = () => (
           Components List
         </H2>
         <Row spacing={[24, 12]} breakpoints={[769, 960]}>
-          <div widths={[6, 4]}>
+          <Column widths={[6, 4]}>
             <Info
               variant="light"
               color="primary"
@@ -41,8 +42,8 @@ const Components = () => (
                 See All
               </Button>
             </Info>
-          </div>
-          <div widths={[6, 4]}>
+          </Column>
+          <Column widths={[6, 4]}>
             <Info
               variant="light"
               color="secondary"
@@ -57,8 +58,8 @@ const Components = () => (
                 See All
               </Button>
             </Info>
-          </div>
-          <div widths={[6, 4]}>
+          </Column>
+          <Column widths={[6, 4]}>
             <Info
               variant="light"
               color="success"
@@ -74,7 +75,7 @@ const Components = () => (
                 See All
               </Button>
             </Info>
-          </div>
+          </Column>
         </Row>
       </Container>
     </Section>

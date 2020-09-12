@@ -5,7 +5,8 @@ export const theme = {
   shadow: {
     one: '0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08)',
     two: '0 4px 18px -8px rgba(50,50,93,.25), 0 1px 3px rgba(0,0,0,.18)',
-    three: '0 15px 45px -20px rgba(50,50,93,.2), 0 3px 12px -2px rgba(0,0,0,.17)',
+    three:
+      '0 15px 45px -20px rgba(50,50,93,.2), 0 3px 12px -2px rgba(0,0,0,.17)',
     four: '0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)',
   },
   radius: {
@@ -26,12 +27,12 @@ export const theme = {
   fontSize: {
     h1: 40,
     h2: 34,
-    h3: 28,
-    h4: 23,
+    h3: 26,
+    h4: 22,
     h5: 18,
     h6: 16,
-    p: 16,
-    small: 14,
+    p: 17,
+    small: 15,
   },
   color: {
     // primary: '#8731d5',
@@ -52,17 +53,17 @@ export const theme = {
     },
     success: '#36ca6a',
     error: '#f14941',
-    heading: '#2c2f3b',
-    paragraph: '#4b4f61',
     text: {
+      heading: '#2c2f3b',
+      paragraph: '#4b4f61',
       one: '#4b4f61',
-      // two: '#7b8392',
       two: '#4b4f61aa',
-      // three: '#aab1b9',
       three: '#4b4f6170',
-      lightOne: '#ffffff',
-      lightTwo: '#ffffffaa',
-      lightThree: '#ffffff80',
+      light: {
+        one: '#ffffff',
+        two: '#ffffffbf',
+        three: '#ffffff80',
+      },
     },
   },
 };

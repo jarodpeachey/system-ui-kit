@@ -79,7 +79,7 @@ const Wrapper = styled.div`
     width: ${(props) => (props.submenu ? 'fit-content' : '100%')};
     padding: ${(props) => (props.submenu ? 0 : '12px 16px')};
     text-decoration: none;
-    color: ${(props) => props.theme.color.heading};
+    color: ${(props) => props.theme.color.text.heading};
     cursor: pointer;
     background: ${(props) =>
       props.submenu
