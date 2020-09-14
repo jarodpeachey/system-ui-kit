@@ -801,6 +801,79 @@ const Inputs = ({}) => {
           <br />
           <br />
           <br />
+          <div
+            style={{ background: '#f7f7f7', padding: 32, width: 'fit-content' }}
+          >
+            <div
+              style={{
+                background: 'white',
+                padding: 20,
+                borderRadius: 3,
+                // boxShadow: theme.shadow.one,
+                width: 'fit-content',
+              }}
+            >
+              <Button
+                color="primary"
+                className="mr-3"
+                customStyles="font-weight: 400;"
+              >
+                Click me
+              </Button>
+              <Button
+                color="primary"
+                className="mr-3"
+                customStyles="font-weight: 500;"
+              >
+                Click me
+              </Button>
+              <Button color="primary" customStyles="font-weight: 600;">
+                Click me
+              </Button>
+            </div>
+          </div>
+          <Flex hAlign="flex-start">
+            <div
+              style={{
+                background: 'white',
+                borderRadius: 3,
+                width: '150px',
+                height: '150px',
+                marginRight: 48,
+                boxShadow: theme.shadow.one,
+              }}
+            ></div>
+            <div
+              style={{
+                background: 'white',
+                borderRadius: 3,
+                width: '150px',
+                height: '150px',
+                marginRight: 48,
+                boxShadow: theme.shadow.two,
+              }}
+            ></div>
+            <div
+              style={{
+                background: 'white',
+                borderRadius: 3,
+                width: '150px',
+                height: '150px',
+                marginRight: 48,
+                boxShadow: theme.shadow.three,
+              }}
+            ></div>
+            <div
+              style={{
+                background: 'white',
+                borderRadius: 3,
+                width: '150px',
+                height: '150px',
+                marginRight: 48,
+                boxShadow: theme.shadow.four,
+              }}
+            ></div>
+          </Flex>
           <br />
           <br />
           <br />

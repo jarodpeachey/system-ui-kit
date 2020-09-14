@@ -99,7 +99,7 @@ const SubMenuWrapper = styled.div`
   left: ${(props) => (props.align !== 'right' ? 0 : null)};
   right: ${(props) => (props.align === 'right' ? 0 : null)};
   z-index: 999;
-  filter: drop-shadow(0px 0px 5px #00000010);
+  // filter: drop-shadow(0px 0px 5px #00000010);
   ::after {
     display: block;
     content: '';
