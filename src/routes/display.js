@@ -13,7 +13,7 @@ import H4 from '../components/H4';
 import H5 from '../components/H5';
 import H6 from '../components/H6';
 import Alert from '../components/Alert';
-import Chip from '../components/Chip';
+import Badge from '../components/Badge';
 import { Link } from '@reach/router';
 import Container from '../components/Container';
 import Notification from '../components/Notification';
@@ -225,27 +225,27 @@ const Display = ({}) => {
       <Section>
         <Container>
           <H2 type="h2" className="m-none">
-            Chip
+            Badge
           </H2>
-          <Chip>Default</Chip>
-          <Chip color="primary">Primary</Chip>
-          <Chip color="secondary">Secondary</Chip>
-          <Chip color="success">Success</Chip>
-          <Chip color="error">Error</Chip>
+          <Badge>Default</Badge>
+          <Badge color="primary">Primary</Badge>
+          <Badge color="secondary">Secondary</Badge>
+          <Badge color="success">Success</Badge>
+          <Badge color="error">Error</Badge>
           <H4 className="mb-none">Rounded</H4>
-          <Chip rounded>Default</Chip>
-          <Chip rounded color="primary">
+          <Badge rounded>Default</Badge>
+          <Badge rounded color="primary">
             Primary
-          </Chip>
-          <Chip rounded color="secondary">
+          </Badge>
+          <Badge rounded color="secondary">
             Secondary
-          </Chip>
-          <Chip rounded color="success">
+          </Badge>
+          <Badge rounded color="success">
             Success
-          </Chip>
-          <Chip rounded color="error">
+          </Badge>
+          <Badge rounded color="error">
             Error
-          </Chip>
+          </Badge>
         </Container>
       </Section>
     </Layout>

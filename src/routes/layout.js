@@ -7,7 +7,7 @@ import Section from '../components/Section';
 import Button from '../components/Button';
 import { Row, Column } from '@react-tiny-grid/core';
 import Alert from '../components/Alert';
-import Chip from '../components/Chip';
+import Badge from '../components/Badge';
 import { Link } from '@reach/router';
 import Container from '../components/Container';
 import Notification from '../components/Notification';

@@ -1,23 +1,13 @@
 import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 
-const Container = ({
-  children,
-  background,
-  className = '',
-  maxWidth,
-  style,
-  customStyles,
-  align,
-}) => {
+const Container = ({ className, id, children, customStyles, size }) => {
   return (
     <StyledContainer
-      maxWidth={maxWidth}
       className={className}
-      background={background}
-      style={style}
-      align={align}
+      id={id}
       customStyles={customStyles}
+      size={size}
     >
       {children}
     </StyledContainer>
@@ -26,29 +16,31 @@ const Container = ({
 
 const StyledContainer = styled.div`
   width: 100%;
-  margin: ${(props) =>
-    props.align === 'left'
-      ? '0px'
-      : props.align === 'right'
-      ? '0px auto 0px 0px'
-      : '0 auto'};
-  max-width: ${(props) => (props.maxWidth ? props.maxWidth : '1024')}px;
+  margin: 0 auto;
+  // max-width: ${(props) => (props.maxWidth ? props.maxWidth : '1024')}px;
   padding-left: 24px;
   padding-right: 24px;
   @media (min-width: 576px) {
     padding-left: 32px;
     padding-right: 32px;
+    max-width: 576px;
   }
   @media (min-width: 769px) {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: ${(props) =>
+      props.size === 'sm' ? '64px' : props.size === 'lg' ? '48px' : '64px'};
+    padding-right: ${(props) =>
+      props.size === 'sm' ? '64px' : props.size === 'lg' ? '48px' : '64px'};
+    max-width: ${(props) =>
+      props.size === 'sm' ? '769px' : props.size === 'lg' ? '1200px' : '960px'};
   }
-  ${(props) =>
-    (props.align === 'left' || props.align === 'right') &&
-    css`
-      padding-left: 0px !important;
-      padding-right: 0px !important;
-    `};
+  @media (min-width: 960px) {
+    max-width: ${(props) =>
+      props.size === 'sm'
+        ? '960px'
+        : props.size === 'lg'
+        ? '1500px'
+        : '1200px'};
+  }
   ${(props) => props.customStyles}
 `;
 

@@ -11,7 +11,7 @@ import H3 from '../components/H3';
 import H4 from '../components/H4';
 import H5 from '../components/H5';
 import H6 from '../components/H6';
-import Chip from '../components/Chip';
+import Badge from '../components/Badge';
 import { Link } from '@reach/router';
 import Container from '../components/Container';
 import Notification from '../components/Notification';
@@ -69,13 +69,13 @@ const Checkboxes = ({}) => {
               padding: 16,
             }}
           >
-            <Flex>
+            {/* <Flex> */}
               <Checkbox checked className="mr-2"></Checkbox>
               <Checkbox checked color="primary" className="mr-2"></Checkbox>
               <Checkbox checked className="mr-2" color="secondary"></Checkbox>
               <Checkbox checked className="mr-2" color="success"></Checkbox>
               <Checkbox checked className="mr-2" color="error"></Checkbox>
-            </Flex>
+            {/* </Flex> */}
           </div>
           <br />
           <H3>With Label</H3>

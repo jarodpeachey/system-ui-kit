@@ -622,7 +622,7 @@ p:last-child {
   border-radius: 3px !important;
   background: #ffffff !important;
   border: none !important;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px -2px, rgba(0, 0, 0, 0.06) 0px 1px 16px -4px !important;
 }
 
 .react-datepicker__triangle {
@@ -710,7 +710,7 @@ p:last-child {
 
 .react-datepicker__day--selected,
 .react-datepicker__day--selected:hover {
-  background: #7650ea !important;
+  background: #3676ea !important;
   color: white !important;
   font-weight: normal !important;
 }
@@ -773,7 +773,7 @@ p:last-child {
 .dayWrapper.selected,
 .selected button,
 .calendarContainer .selected button {
-  background: #7650ea !important;
+  background: #3676ea !important;
   color: white !important;
 }
 

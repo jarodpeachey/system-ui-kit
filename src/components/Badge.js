@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Chip = ({ children, className, id, color = '', icon, rounded }) => {
+const Badge = ({ children, className, id, color = '', icon, rounded }) => {
   return (
     <Wrapper
       className={className}
@@ -36,6 +36,8 @@ const Wrapper = styled.div`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
+      : props.color === 'dark'
+      ? props.theme.color.gray.eight
       : props.theme.color.gray.two};
   div {
     font-size: 12px;
@@ -70,4 +72,4 @@ const Icon = styled.div`
   padding-left: 14px;
 `;
 
-export default Chip;
+export default Badge;

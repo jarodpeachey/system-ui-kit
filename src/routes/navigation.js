@@ -14,7 +14,7 @@ import H4 from '../components/H4';
 import H5 from '../components/H5';
 import H6 from '../components/H6';
 import Alert from '../components/Alert';
-import Chip from '../components/Chip';
+import Badge from '../components/Badge';
 import { Link } from '@reach/router';
 import Container from '../components/Container';
 import Notification from '../components/Notification';

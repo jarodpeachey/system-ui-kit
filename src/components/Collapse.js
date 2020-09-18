@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Flex from './Flex';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,6 +15,13 @@ const Collapse = ({
 }) => {
   const [open, setOpen] = useState(startOpen);
   const [hover, setHover] = useState(false);
+  const [bodyHeight, setBodyHeight] = useState(children[1]);
+
+  const bodyChildren = useRef();
+
+  useEffect(() => {
+    console.log(bodyChildren.current.children[0].clientHeight);
+  });
 
   const onClick = () => {
     setOpen(!open);
@@ -33,6 +40,7 @@ const Collapse = ({
         onMouseLeave={onMouseLeave}
         onClick={onClick}
         customStyles={titleStyles}
+        open={open}
       >
         <Flex hAlign="space-between">
           <span>{children[0]}</span>
@@ -42,21 +50,32 @@ const Collapse = ({
                 fontSize: 14,
                 color: hover ? theme.color.gray.six : theme.color.gray.four,
                 transition: '.15s ease-out',
-                fontWeight: 400
+                fontWeight: 400,
               }}
               icon="chevron-right"
             />
           </Toggle>
         </Flex>
       </Title>
-      <Body customStyles={bodyStyles} open={open}>
-        {children[1]}
+      <Body
+        customStyles={bodyStyles}
+        open={open}
+        height={
+          bodyChildren.current
+            ? bodyChildren.current.children[0].clientHeight
+            : 400
+        }
+      >
+        <span ref={bodyChildren}>{children[1]}</span>
       </Body>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  border: 1px solid ${theme.color.gray.two};
+  padding: 0px 16px;
+  position: relative;
   ${(props) => props.customStyles}
 `;
 
@@ -98,9 +117,15 @@ const Title = styled.button`
   margin: inherit;
   padding: 0px;
   outline: none;
-  border: none;
   cursor: pointer;
   padding: 16px;
+  padding: 10px 16px;
+  width: calc(100% + 32px);
+  left: -16px;
+  position: relative;
+  :hover {
+    background: ${theme.color.gray.one};
+  }
   ${(props) => props.customStyles}
 `;
 
@@ -111,7 +136,10 @@ const Body = styled.div`
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
-  max-height: ${(props) => (props.open ? '400px' : '0')} !important;
+  width: calc(100% + 32px);
+  left: -16px;
+  position: relative;
+  max-height: ${(props) => (props.open ? `${props.height}px` : '0')} !important;
   ${(props) => props.customStyles}
 `;
 

@@ -5,12 +5,15 @@ export const theme = {
   shadow: {
     // one: '3px 3px 18px -6px #00000010',
     one:
-      'rgba(0, 0, 0, 0.1) 0px 1px 6px -2px, rgba(0, 0, 0, 0.06) 0px 1px 16px -4px',
-    two: 'rgba(0, 0, 0, 0.1) 0px 1px 12px -4px, rgba(0, 0, 0, 0.06) 0px 1px 32px -8px',
-    three: 'rgba(0, 0, 0, 0.1) 0px 1px 24px -8px, rgba(0, 0, 0, 0.06) 0px 1px 64px -16px',
-    four: 'rgba(0, 0, 0, 0.1) 0px 1px 48px -16px, rgba(0, 0, 0, 0.06) 0px 1px 128px -32px',
-    button: '3px 3px 18px -6px #00000040',
-    buttonHover: '3px 3px 32px -6px #00000050',
+      '1px 1px 18px -5px rgba(174,198,211,.35), 1px 1px 5px -2px rgb(174, 198, 211, .25)',
+    two:
+      '1px 1px 28px -10px rgba(174,198,211,.4), 1px 1px 13px -4px rgb(174, 198, 211, .25)',
+    three:
+      '1px 1px 38px -15px rgba(174,198,211,.45), 1px 1px 20px -8px rgb(174, 198, 211, .25)',
+    four:
+      '1px 1px 48px -15px rgba(174,198,211,.45), 1px 1px 26px -4px rgb(174, 198, 211, .25)',
+    button: '3px 3px 18px -6px rgba(0,0,0,.25)',
+    buttonHover: '3px 3px 28px -10px rgba(0,0,0,.25)',
   },
   radius: {
     one: '3px',
@@ -59,10 +62,10 @@ export const theme = {
     error: '#f14941',
     text: {
       heading: '#2c2f3b',
-      paragraph: '#4b4f61',
-      one: '#4b4f61',
-      two: '#4b4f61aa',
-      three: '#4b4f6170',
+      paragraph: '#646b8a',
+      one: '#646b8a',
+      two: '#646b8aaa',
+      three: '#646b8a70',
       light: {
         one: '#ffffff',
         two: '#ffffffbf',

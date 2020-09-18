@@ -50,7 +50,7 @@ const Header = ({
       scrollHeight={scrollHeight}
       scrollColor={scrollColor}
     >
-      <Container>
+      <Container size="lg">
         <InnerContainer color={color} scrolled={window.scrollY > 50}>
           {children}
         </InnerContainer>

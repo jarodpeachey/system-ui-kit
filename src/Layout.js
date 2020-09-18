@@ -174,9 +174,6 @@ const Layout = ({ children, component }) => {
                       left: -16px;
                       position: relative;
                       background: white;
-                      :hover {
-                        background: ${theme.color.primary}10;
-                      }
                     `}
                     to="/components/container"
                   >
@@ -211,6 +208,7 @@ const Layout = ({ children, component }) => {
                       pathnameIncludes('header')
                     }
                     customStyles={`
+                      border: none;
                       border-top: 1px solid ${theme.color.gray.two};
                       width: calc(100% + 32px);
                       left: -16px;
@@ -222,9 +220,6 @@ const Layout = ({ children, component }) => {
                       width: calc(100% + 32px);
                       left: -16px;
                       position: relative;
-                      :hover {
-                        background: ${theme.color.primary}10;
-                      }
                     `}
                     bodyStyles={`
                       width: calc(100% + 32px);
@@ -450,6 +445,7 @@ const Layout = ({ children, component }) => {
                       pathnameIncludes('tabs')
                     }
                     customStyles={`
+                      border: none;
                       border-top: 1px solid ${theme.color.gray.two};
                       width: calc(100% + 32px);
                       left: -16px;
@@ -461,9 +457,6 @@ const Layout = ({ children, component }) => {
                       width: calc(100% + 32px);
                       left: -16px;
                       position: relative;
-                      :hover {
-                        background: ${theme.color.primary}10;
-                      }
                     `}
                     bodyStyles={`
                       width: calc(100% + 32px);
@@ -623,6 +616,7 @@ const Layout = ({ children, component }) => {
                       pathnameIncludes('modal')
                     }
                     customStyles={`
+                      border: none;
                       border-top: 1px solid ${theme.color.gray.two};
                       width: calc(100% + 32px);
                       left: -16px;
@@ -634,9 +628,6 @@ const Layout = ({ children, component }) => {
                       width: calc(100% + 32px);
                       left: -16px;
                       position: relative;
-                      :hover {
-                        background: ${theme.color.primary}10;
-                      }
                     `}
                     bodyStyles={`
                       width: calc(100% + 32px);
@@ -866,6 +857,7 @@ const Layout = ({ children, component }) => {
                       pathnameIncludes('slider')
                     }
                     customStyles={`
+                      border: none;
                       border-top: 1px solid ${theme.color.gray.two};
                       border-bottom: 1px solid ${theme.color.gray.two};
                       width: calc(100% + 32px);
@@ -878,9 +870,6 @@ const Layout = ({ children, component }) => {
                       width: calc(100% + 32px);
                       left: -16px;
                       position: relative;
-                      :hover {
-                        background: ${theme.color.primary}10;
-                      }
                     `}
                     bodyStyles={`
                       width: calc(100% + 32px);

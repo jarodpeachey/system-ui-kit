@@ -288,7 +288,7 @@ const StyledInput = styled.input`
           : props.state === 'error'
           ? props.theme.color.error
           : props.theme.color.primary};
-    box-shadow: ${(props) => props.theme.shadow.button};
+    // box-shadow: ${(props) => props.theme.shadow.button};
   }
   ${(props) =>
     props.variant === 'filled'
