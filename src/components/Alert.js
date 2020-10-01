@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   align-items: center;
   margin: ${(props) => props.theme.spacing.three}px 0;
   padding: 16px 24px;
-  font-size: 18px;
+  
   background: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
@@ -121,7 +121,7 @@ const CloseButton = styled.div`
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 16px;
   margin-left: auto;
   color: ${(props) => props.theme.color.text.light.two};
   padding-right: 24px;

@@ -14,6 +14,9 @@ export const theme = {
       '1px 1px 48px -15px rgba(174,198,211,.45), 1px 1px 26px -4px rgb(174, 198, 211, .25)',
     button: '3px 3px 18px -6px rgba(0,0,0,.25)',
     buttonHover: '3px 3px 28px -10px rgba(0,0,0,.25)',
+    dropdown: '1px 1px 12px -4px #2f557c20, 0px 0px 32px -6px #2f557c10',
+    header:
+      '0px 4px 10px 0px #00000010, 0px 20px 20px -10px #00000010',
   },
   radius: {
     one: '5px',
@@ -31,14 +34,21 @@ export const theme = {
     seven: 60,
   },
   fontSize: {
+    base: 16,
     h1: 40,
-    h2: 34,
-    h3: 28,
+    h2: 32,
+    h3: 26,
     h4: 22,
     h5: 20,
     h6: 18,
     p: 18,
-    small: 16,
+    button: 16,
+  },
+  fontWeight: {
+    heading: 600,
+    display: 800,
+    body: 500,
+    button: 500,
   },
   color: {
     primary: '#3676ea',

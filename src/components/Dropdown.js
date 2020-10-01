@@ -65,7 +65,7 @@ const SubMenuWrapper = styled.div`
   left: ${(props) => (props.align !== 'right' ? 0 : null)};
   right: ${(props) => (props.align === 'right' ? 0 : null)};
   z-index: 999;
-  filter: drop-shadow(0px 0px 5px #00000015);
+  // filter: drop-shadow(0px 0px 5px #00000015);
   // ::after {
   //   display: block;
   //   content: '';
@@ -91,6 +91,7 @@ const SubMenu = styled.div`
   border-radius: ${(props) => props.theme.radius.one};
   background: #ffffff;
   padding: 8px 0;
+  box-shadow: ${(props) => props.theme.shadow.dropdown};
   min-width: 150px;
     right: ${(props) => (props.align === 'right' ? '0' : null)};
     left: ${(props) =>

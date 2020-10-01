@@ -114,7 +114,7 @@ const Wrapper = styled.div`
   &.scrolled {
     min-height: ${(props) =>
       props.scrollHeight ? `${props.scrollHeight}px` : null};
-    box-shadow: 0 0 4px 0 rgba(17,22,26,0.08), 0 2px 4px 0 rgba(17,22,26, 0.03), 0 4px 8px 0 rgba(17,22,26, 0.03);
+    box-shadow: ${props => props.theme.shadow.header};
         background: ${(props) =>
           props.scrollColor === 'primary'
             ? props.theme.color.primary

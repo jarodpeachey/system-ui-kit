@@ -42,10 +42,10 @@ const Wrapper = styled.div`
     !(props.show && props.hide) &&
     css`
       display: ${props.hide ? 'block' : 'none'};
-      @media (min-width: ${(props) => props.show}px) {
+      @media (min-width: ${props.show}px) {
         display: block;
       }
-      @media (min-width: ${(props) => props.hide}px) {
+      @media (min-width: ${props.hide}px) {
         display: none;
       }
     `};

@@ -8,16 +8,16 @@ const Flex = ({
   id,
   customStyles,
   flexDirection,
-  hAlign,
-  vAlign,
+  justifyContent = 'flex-start',
+  alignItems = 'center',
 }) => (
   <Wrapper
     className={className}
     id={id}
     customStyles={customStyles}
     flexDirection={flexDirection}
-    hAlign={hAlign}
-    vAlign={vAlign}
+    justifyContent={justifyContent}
+    alignItems={alignItems}
   >
     {children}
   </Wrapper>
@@ -28,48 +28,8 @@ const Wrapper = styled.div`
   // flex-wrap: wrap;
   flex-direction: ${(props) =>
     props.flexDirection === 'column' ? 'column' : 'row'};
-  align-items: ${(props) =>
-    props.vAlign === 'stretch'
-      ? 'stretch'
-      : props.vAlign === 'flex-start'
-      ? 'flex-start'
-      : props.vAlign === 'flex-end'
-      ? 'flex-end'
-      : 'center'};
-  justify-content: ${(props) =>
-    props.hAlign === 'space-evenly'
-      ? 'space-evenly'
-      : props.hAlign === 'flex-start'
-      ? 'flex-start'
-      : props.hAlign === 'flex-end'
-      ? 'flex-end'
-      : props.hAlign === 'space-around'
-      ? 'space-around'
-      : props.hAlign === 'space-between'
-      ? 'space-between'
-      : 'center'};
-  ${(props) =>
-    props.direction === 'vertical' &&
-    css`
-      align-items: ${props.hAlign === 'stretch'
-        ? 'stretch'
-        : props.hAlign === 'flex-start'
-        ? 'flex-start'
-        : props.hAlign === 'flex-end'
-        ? 'flex-end'
-        : 'center'};
-      justify-content: ${props.vAlign === 'space-evenly'
-        ? 'space-evenly'
-        : props.vAlign === 'flex-start'
-        ? 'flex-start'
-        : props.vAlign === 'flex-end'
-        ? 'flex-end'
-        : props.vAlign === 'space-around'
-        ? 'space-around'
-        : props.vAlign === 'space-between'
-        ? 'space-between'
-        : 'center'};
-    `};
+  align-items: ${(props) => props.alignItems};
+  justify-content: ${(props) => props.justifyContent};
   ${(props) => props.customStyles}
 `;
 

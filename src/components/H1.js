@@ -48,7 +48,7 @@ const Wrapper = styled.h1`
       : props.color === 'light-three'
       ? props.theme.color.text.light.three
       : props.theme.color.text.heading}};
-  font-weight: ${(props) => (props.display ? '800' : '700')};
+  font-weight: ${(props) => (props.display ? props.theme.fontWeight.display : props.theme.fontWeight.heading)};
   margin-bottom: 32px;
   font-size: ${(props) =>
     props.display ? props.theme.fontSize.h1 + 4 : props.theme.fontSize.h1}px;

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from '@reach/router';
 import { theme } from '../theme';
-import Hero from '../components/Hero';
+
 import Section from '../components/Section';
 import Button from '../components/Button';
 import { Row, Column } from '@react-tiny-grid/core';
@@ -31,7 +31,7 @@ const Example = () => (
     <Helmet>
       <title>System - React UI Kit</title>
     </Helmet>
-    <Hero background="#ffffff">
+    <Section spacing={64} background="#ffffff">
       <H1 display>
         Speed up development <Span color="primary">without sacrificing</Span>{' '}
         your brand
@@ -43,7 +43,7 @@ const Example = () => (
       </Paragraph>
       <br />
       <Button color="primary">Build your UI Kit</Button>
-    </Hero>
+    </Section>
     <Section background={theme.color.gray.one}>
       <Container>
         <Row spacing={[16]} breakpoints={[769, 960]}>
@@ -167,28 +167,6 @@ const Example = () => (
         </Row>
       </Container>
     </Section>
-    {/* <Section background={`${theme.color.error}10`}>
-      <Container>
-        <Heading
-          type="h3"
-          className="mt-none"
-          customStyles={`color: ${theme.color.error};`}
-        >
-          <FontAwesomeIcon
-            icon="exclamation-circle"
-            style={{ marginRight: 10 }}
-          />
-          Construction Notice
-        </Heading>
-        <Paragraph className="mb-5" style={{ color: theme.color.error }}>
-          System UI Kit is still in development, but feel free to browse the
-          site and look at the components I've already completed!
-        </Paragraph>
-        <Button link="/components" color="error">
-          See Components
-        </Button>
-      </Container>
-    </Section> */}
   </Layout>
 );
 

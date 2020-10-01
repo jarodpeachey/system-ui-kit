@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from '@reach/router';
 import { theme } from './theme';
-import Hero from './components/Hero';
+
 import Section from './components/Section';
 import Button from './components/Button';
 import { Row, Column } from '@react-tiny-grid/core';
@@ -29,12 +29,13 @@ const App = ({}) => (
     <Helmet>
       <title>System - React UI Kit</title>
     </Helmet>
-    <Hero
+    <Section
       background={`linear-gradient(
         to right,
         ${theme.color.primary},
         ${theme.color.secondary}
       )`}
+      spacing={120}
     >
       <H1 display color="light-one" className="center">
         React Development Made Easy
@@ -43,7 +44,7 @@ const App = ({}) => (
         A modern UI Kit built to speed up your development proccess, while still
         allowing you room to customize and grow.
       </H4>
-    </Hero>
+    </Section>
     <Section>
       <Container>
         <Alert
@@ -152,28 +153,6 @@ const App = ({}) => (
         </Flex>
       </Container>
     </Section>
-    {/* <Section background={`${theme.color.error}10`}>
-      <Container>
-        <Heading
-          type="h3"
-          className="mt-none"
-          customStyles={`color: ${theme.color.error};`}
-        >
-          <FontAwesomeIcon
-            icon="exclamation-circle"
-            style={{ marginRight: 10 }}
-          />
-          Construction Notice
-        </Heading>
-        <Paragraph className="mb-5" style={{ color: theme.color.error }}>
-          System UI Kit is still in development, but feel free to browse the
-          site and look at the components I've already completed!
-        </Paragraph>
-        <Button link="/components" color="error">
-          See Components
-        </Button>
-      </Container>
-    </Section> */}
     <Section background={`${theme.color.success}10`}>
       <Container>
         <H2 color="success" type="h2" className="mt-none center">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Hero from '../components/Hero';
+
 import Section from '../components/Section';
 import Button from '../components/Button';
 import { Row, Column } from '@react-tiny-grid/core';
@@ -12,7 +12,6 @@ import { Link } from '@reach/router';
 import Container from '../components/Container';
 import Notification from '../components/Notification';
 import Layout from '../Layout';
-import Heading from '../components/Heading';
 import { theme } from '../theme';
 import Code from '../components/Code';
 import Hidden from '../components/Hidden';

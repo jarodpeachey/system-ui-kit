@@ -43,9 +43,9 @@ const StyledParagraph = styled.p`
     props.size === 'sm'
       ? props.theme.fontSize.small
       : props.size === 'lg'
-      ? props.theme.fontSize.h5
+      ? props.theme.fontSize.p + 4
       : props.theme.fontSize.p}px;
-  font-weight: 400;
+  font-weight: ${(props) => props.theme.fontWeight.body};
   ${(props) =>
     props.customStyles &&
     css`

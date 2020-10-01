@@ -31,7 +31,7 @@ const Button = ({ children, className = '', onClick, link, color }) => (
 const StyledButton = styled.button`
   padding: 12px 24px;
   border-radius: 100px;
-  font-size: 16px;
+  font-size: ${props => props.theme.fontSize.base}px;
   cursor: pointer;
   border-radius: ${(props) => props.theme.radius.one};
   transition: all 0.15s;

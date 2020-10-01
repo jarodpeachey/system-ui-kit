@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Hero from '../components/Hero';
+
 import Section from '../components/Section';
 import Button from '../components/Button';
 import IconButton from '../components/IconButton';

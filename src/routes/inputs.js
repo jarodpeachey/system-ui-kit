@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { Helmet } from 'react-helmet';
 import { theme } from '../theme';
-import Hero from '../components/Hero';
+
 import Section from '../components/Section';
 import Button from '../components/Button';
 import OutlinedButton from '../components/OutlinedButton';

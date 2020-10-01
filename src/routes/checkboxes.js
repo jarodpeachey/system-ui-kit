@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Hero from '../components/Hero';
+
 import Section from '../components/Section';
 import { Row, Column } from '@react-tiny-grid/core';
 import H1 from '../components/H1';
