@@ -13,11 +13,8 @@ const Notification = ({ children, className, id, color, time = 2000 }) => {
   useEffect(() => {
     setTimeout(() => {
       setAnimate(true);
-      console.log('Setting animate');
 
       setTimeout(() => {
-        console.log('Setting show false;');
-
         setShowNotification(false);
       }, 250);
     }, time);
@@ -60,7 +57,7 @@ const NotificationWrapper = styled.div`
   transition: 0.1s;
   margin: ${(props) => props.theme.spacing.three}px 0;
   padding: ${(props) => props.theme.spacing.three}px
-    ${(props) => props.theme.spacing.five}px;
+    ${(props) => props.theme.spacing.six}px;
   background: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary

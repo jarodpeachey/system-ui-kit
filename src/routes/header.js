@@ -41,7 +41,7 @@ const HeaderRoute = ({}) => {
           <div
             style={{
               fontFamily: 'monospace',
-              background: theme.color.gray.nine,
+              background: theme.color.gray.six,
               padding: 16,
               borderRadius: 3,
               color: 'white',
@@ -54,7 +54,7 @@ const HeaderRoute = ({}) => {
           <div
             style={{
               fontFamily: 'monospace',
-              background: theme.color.gray.nine,
+              background: theme.color.gray.six,
               padding: 16,
               borderRadius: 3,
               color: 'white',

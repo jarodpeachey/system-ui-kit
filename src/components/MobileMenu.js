@@ -30,7 +30,6 @@ const MobileMenu = ({ children, className, id, open, customStyles }) => {
     };
   });
 
-  console.log(children.length);
   return (
     <>
       {/* <MobileMenuToggle

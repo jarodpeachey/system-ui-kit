@@ -24,7 +24,6 @@ import Code from '../components/Code';
 import Hidden from '../components/Hidden';
 import Flex from '../components/Flex';
 import SubTitle from '../components/SubTitle';
-import Small from '../components/Small';
 import Strong from '../components/Strong';
 import Span from '../components/Span';
 
@@ -83,7 +82,7 @@ const TypographyComponents = ({}) => {
                   }}
                 >
                   <H1 type="h1" className="m-none">
-                    Heading One
+                    Heading
                   </H1>
                 </td>
               </tr>
@@ -105,7 +104,7 @@ const TypographyComponents = ({}) => {
                   }}
                 >
                   <H2 type="h2" className="m-none">
-                    Heading Two
+                    Heading
                   </H2>
                 </td>
               </tr>
@@ -127,7 +126,7 @@ const TypographyComponents = ({}) => {
                   }}
                 >
                   <H3 type="h3" className="m-none">
-                    Heading Three
+                    Heading
                   </H3>
                 </td>
               </tr>
@@ -149,7 +148,7 @@ const TypographyComponents = ({}) => {
                   }}
                 >
                   <H4 type="h4" className="m-none">
-                    Heading Four
+                    Heading
                   </H4>
                 </td>
               </tr>
@@ -171,7 +170,7 @@ const TypographyComponents = ({}) => {
                   }}
                 >
                   <H5 type="h5" className="m-none">
-                    Heading Five
+                    Heading
                   </H5>
                 </td>
               </tr>
@@ -193,7 +192,7 @@ const TypographyComponents = ({}) => {
                   }}
                 >
                   <H6 type="h6" className="m-none">
-                    Heading Six
+                    Heading
                   </H6>
                 </td>
               </tr>
@@ -378,12 +377,12 @@ const TypographyComponents = ({}) => {
           <br />
           <Row spacing={[0, 6]} breakpoints={[769]}>
             <div widths={[2]}>
-              <Small>
+              <Paragraph size="sm">
                 <Strong>Title</Strong>
-              </Small>
+              </Paragraph>
             </div>
             <div widths={[10]}>
-              <H5 type="h5" className="m-none" display="title">
+              <H5 type="h5" className="m-none">
                 About
               </H5>
             </div>
@@ -391,9 +390,9 @@ const TypographyComponents = ({}) => {
           <br />
           <Row spacing={[0, 6]} breakpoints={[769]}>
             <div widths={[2]}>
-              <Small display="title">
+              <Paragraph size="sm">
                 <Strong>Heading</Strong>
-              </Small>
+              </Paragraph>
             </div>
             <div widths={[10]}>
               <H2 type="h2" className="m-none">
@@ -404,9 +403,9 @@ const TypographyComponents = ({}) => {
           <br />
           <Row spacing={[0, 6]} breakpoints={[769]}>
             <div widths={[2]}>
-              <Small display="title">
+              <Paragraph size="sm">
                 <Strong>Subtitle</Strong>
-              </Small>
+              </Paragraph>
             </div>
             <div widths={[10]}>
               <SubTitle className="m-none">
@@ -421,9 +420,9 @@ const TypographyComponents = ({}) => {
           <br />
           <Row spacing={[0, 6]} breakpoints={[769]}>
             <div widths={[2]}>
-              <Small display="title">
+              <Paragraph size="sm">
                 <Strong>Paragraph</Strong>
-              </Small>
+              </Paragraph>
             </div>
             <div widths={[10]}>
               <Paragraph className="m-none">

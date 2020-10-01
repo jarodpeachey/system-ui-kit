@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Input = ({
   className,
   id,
+  customStyles,
   placeholder = '',
   onChange,
   onFocus,
@@ -33,8 +34,6 @@ const Input = ({
     setInputValue(value);
   }, [value]);
 
-  console.log(variant);
-
   const customOnChange = (e) => {
     setInputValue(e.target.value);
 
@@ -54,7 +53,6 @@ const Input = ({
   };
 
   const increment = () => {
-    console.log('Increasing.');
     setInputValue(value + 1);
   };
 
@@ -92,6 +90,7 @@ const Input = ({
             onChange={customOnChange}
             onFocus={customOnFocus}
             onBlur={customOnBlur}
+            customStyles={customStyles}
           />
           <Icon size={size}>{icon}</Icon>
           {type === 'number' && (
@@ -127,6 +126,7 @@ const Input = ({
             onChange={customOnChange}
             onFocus={customOnFocus}
             onBlur={customOnBlur}
+            customStyles={customStyles}
           />
           {type === 'number' && (
             <NumberButtons focus={focus}>
@@ -265,12 +265,12 @@ const StyledInput = styled.input`
       : '13px 15px'};
   font-size: ${(props) =>
     props.size === 'xs'
-      ? '13px'
-      : props.size === 'small'
       ? '14px'
+      : props.size === 'small'
+      ? '16px'
       : props.size === 'large'
-      ? '17px'
-      : '15px'};
+      ? '18px'
+      : '16px'};
   transition-duration: 0.1s;
   display: inline-block;
   width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
@@ -319,7 +319,7 @@ const StyledInput = styled.input`
               ? props.theme.color.success
               : props.state === 'error'
               ? props.theme.color.error
-              : props.theme.color.gray.four};
+              : props.theme.color.gray.three};
         `};
 
   :focus ~ div svg {
@@ -338,6 +338,8 @@ const StyledInput = styled.input`
   &::-webkit-inner-spin-button {
     margin: 0;
   }
+
+  ${(props) => props.customStyles}
 `;
 
 export default Input;

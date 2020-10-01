@@ -18,5 +18,5 @@ export const calculateColor = (color, colorTheme) => {
   if (color === 'success') return colorTheme.success;
   if (color === 'error') return colorTheme.error;
 
-  return colorTheme.gray.eight;
+  return colorTheme.gray.six;
 };

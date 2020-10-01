@@ -17,8 +17,6 @@ const DatePicker = (props) => {
     }
   };
 
-  console.log(props);
-
   const CustomInput = ({ value, onClick }) => {
     return <Input value={value} onClick={onClick} />;
   };

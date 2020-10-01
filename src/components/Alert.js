@@ -3,7 +3,16 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { pSBC } from '../utils/color';
 
-const Alert = ({ children, className, id, color, variant, icon, close }) => {
+const Alert = ({
+  children,
+  className,
+  id,
+  customStyles,
+  color,
+  variant,
+  icon,
+  close,
+}) => {
   const [showAlert, setShowAlert] = useState(true);
 
   const onClick = () => {
@@ -14,6 +23,7 @@ const Alert = ({ children, className, id, color, variant, icon, close }) => {
     <Wrapper
       className={className}
       id={id}
+      customStyles={customStyles}
       icon={!!icon}
       show={showAlert}
       color={color}
@@ -36,6 +46,7 @@ const Wrapper = styled.div`
   align-items: center;
   margin: ${(props) => props.theme.spacing.three}px 0;
   padding: 16px 24px;
+  font-size: 18px;
   background: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
@@ -45,7 +56,7 @@ const Wrapper = styled.div`
       ? props.theme.color.success
       : props.color === 'error'
       ? props.theme.color.error
-      : props.theme.color.gray.eight};
+      : props.theme.color.gray.six};
   color: white;
   ${(props) =>
     props.variant === 'light' &&
@@ -100,6 +111,7 @@ const Wrapper = styled.div`
   padding-right: 0;
   padding-right: 0;
   padding-left: ${(props) => (props.icon ? '0' : '24px')};
+  ${(props) => props.customStyles}
 `;
 
 const CloseButton = styled.div`
@@ -117,6 +129,7 @@ const CloseButton = styled.div`
     color: ${(props) => props.theme.color.text.light.one};
   }
 `;
+
 const Icon = styled.div`
   width: 40px;
   height: 100%;

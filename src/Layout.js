@@ -68,7 +68,7 @@ library.add(
   faMousePointer,
 );
 
-const Layout = ({ children, component }) => {
+const Layout = ({ children, component, example }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -76,12 +76,15 @@ const Layout = ({ children, component }) => {
       <Wrapper>
         <Header
           fixed
-          color={component ? 'primary' : 'transparent'}
+          color={component ? 'primary' : example ? 'white' : 'transparent'}
           scrollColor="primary"
           height={component ? 55 : 105}
           scrollHeight={component ? 55 : 65}
         >
-          <H1 customStyles={'font-size: 32px; position: relative; top: -1px;'} className="m-none">
+          <H1
+            customStyles={'font-size: 32px; position: relative; top: -1px;'}
+            className="m-none"
+          >
             System
           </H1>
           <Mobile>

@@ -23,6 +23,7 @@ import Checkbox from '../components/Checkbox';
 import Badge from '../components/Badge';
 import Code from '../components/Code';
 import Collapse from '../components/Collapse';
+import DatePicker from '../components/DatePicker';
 
 const Components = () => (
   <Layout component>
@@ -191,42 +192,70 @@ const Components = () => (
             padding: 16,
           }}
         >
-          <Flex direction="vertical" hAlign="start">
-            <Checkbox checked className="mr-2">
-              Default
-            </Checkbox>
-            <br />
-            <Checkbox checked color="primary" className="mr-2">
-              Primary
-            </Checkbox>
-            <br />
-            <Checkbox checked className="mr-2" color="secondary">
-              Secondary
-            </Checkbox>
-            <br />
-            <Checkbox checked className="mr-2" color="success">
-              Success
-            </Checkbox>
-            <br />
-            <Checkbox checked className="mr-2" color="error">
-              Error
-            </Checkbox>
-            <br />
-          </Flex>
+          <Checkbox onChange={(checked) => console.log(checked)} checked className="mr-2">
+            Default
+          </Checkbox>
+          <br />
+          <Checkbox
+            onChange={(checked) => console.log(checked)}
+            checked
+            color="primary"
+            className="mr-2"
+          >
+            Primary
+          </Checkbox>
+          <br />
+          <Checkbox
+            onChange={(checked) => console.log(checked)}
+            checked
+            className="mr-2"
+            color="secondary"
+          >
+            Secondary
+          </Checkbox>
+          <br />
+          <Checkbox
+            onChange={(checked) => console.log(checked)}
+            checked
+            className="mr-2"
+            color="success"
+          >
+            Success
+          </Checkbox>
+          <br />
+          <Checkbox
+            onChange={(checked) => console.log(checked)}
+            checked
+            className="mr-2"
+            color="error"
+          >
+            Error
+          </Checkbox>
+          <br />
         </div>
         <br />
         <br />
         <H2>Collapse</H2>
-        <Collapse startOpen={true}>
+        <Collapse padding={12}>
           <div>
-            <H5 className="m-none">This is the title</H5>
+            <H5 className="m-none" customStyles="padding: 16px;">
+              This is the title
+            </H5>
           </div>
           <div>
-            <Paragraph className="mt-none">
-              <div style={{ padding: '16px' }}>This is the content</div>
+            <Paragraph customStyles="padding: 16px;" className="mt-none">
+              This is the content
             </Paragraph>
           </div>
         </Collapse>
+        <br />
+        <br />
+        <H2>Date Picker</H2>
+        <DatePicker
+          showTodayButton={false}
+          timePicker={false}
+          variant="filled"
+        />
       </Container>
     </Section>
   </Layout>

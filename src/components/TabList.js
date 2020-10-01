@@ -16,7 +16,6 @@ const TabList = ({
     <Wrapper customStyles={customStyles}>
       <Flex hAlign="start">
         {children.map((child) => {
-          console.log(child.type.name);
           let newProps = {
             ...child.props,
             onClick: onClick,

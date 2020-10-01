@@ -8,7 +8,6 @@ const H5 = ({
   customStyles,
   display,
   color,
-  uppercase,
 }) => {
   return (
     <Wrapper
@@ -17,7 +16,7 @@ const H5 = ({
       customStyles={customStyles}
       color={color}
       display={display}
-      uppercase={uppercase}
+
     >
       {children}
     </Wrapper>
@@ -47,7 +46,7 @@ const Wrapper = styled.h5`
       : props.color === 'light-three'
       ? props.theme.color.text.light.three
       : props.theme.color.text.heading}};
-  text-transform: ${(props) => (props.uppercase ? 'uppercase' : null)};
+
   font-weight: 600;
   margin-bottom: 32px;
   font-size: ${(props) =>

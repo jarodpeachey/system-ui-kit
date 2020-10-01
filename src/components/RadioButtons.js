@@ -38,8 +38,6 @@ const RadioButtons = ({
   return (
     <Wrapper className={className} id={id}>
       {children.forEach((child, index) => {
-        console.log(child);
-
         newChildren.push(
           <RadioButton
             onChange={(e) => customOnChange(e)}

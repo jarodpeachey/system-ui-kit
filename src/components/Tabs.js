@@ -21,14 +21,12 @@ const Tabs = ({
   );
 
   const customOnClick = (newValue) => {
-    console.log('Custom onClick!');
     setSelectedTab(newValue);
 
     onChange(newValue);
   };
 
   useEffect(() => {
-    console.log('Value is: ', value);
     setSelectedTab(value);
   }, [value]);
 
@@ -36,7 +34,6 @@ const Tabs = ({
     <Wrapper className={className} id={id} customStyles={customStyles}>
       <Flex direction={vertical ? 'vertical' : 'horizontal'} hAlign="start">
         {children.map((child) => {
-          console.log(child.type.name);
           let newProps = {
             ...child.props,
             onClick: customOnClick,

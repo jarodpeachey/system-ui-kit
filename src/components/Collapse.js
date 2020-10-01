@@ -12,6 +12,7 @@ const Collapse = ({
   customStyles,
   titleStyles,
   bodyStyles,
+  padding = 16,
 }) => {
   const [open, setOpen] = useState(startOpen);
   const [hover, setHover] = useState(false);
@@ -20,7 +21,6 @@ const Collapse = ({
   const bodyChildren = useRef();
 
   useEffect(() => {
-    console.log(bodyChildren.current.children[0].clientHeight);
   });
 
   const onClick = () => {
@@ -34,8 +34,14 @@ const Collapse = ({
   };
 
   return (
-    <Wrapper className={className} id={id} customStyles={customStyles}>
+    <Wrapper
+      padding={padding}
+      className={className}
+      id={id}
+      customStyles={customStyles}
+    >
       <Title
+        padding={padding}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onClick={onClick}
@@ -44,7 +50,7 @@ const Collapse = ({
       >
         <Flex hAlign="space-between">
           <span>{children[0]}</span>
-          <Toggle hover={hover} open={open}>
+          <Toggle padding={padding} hover={hover} open={open}>
             <FontAwesomeIcon
               style={{
                 fontSize: 14,
@@ -58,6 +64,7 @@ const Collapse = ({
         </Flex>
       </Title>
       <Body
+        padding={padding}
         customStyles={bodyStyles}
         open={open}
         height={
@@ -74,7 +81,7 @@ const Collapse = ({
 
 const Wrapper = styled.div`
   border: 1px solid ${theme.color.gray.two};
-  padding: 0px 16px;
+  // padding: 0px ${(props) => props.padding}px;
   position: relative;
   ${(props) => props.customStyles}
 `;
@@ -82,7 +89,7 @@ const Wrapper = styled.div`
 const Toggle = styled.div`
   transform: rotate(${(props) => (props.open ? '90deg' : '0deg')});
   border-radius: 99px;
-  padding: 16px;
+  // padding: ${(props) => props.padding}px;
   transition: color 0.15s ease-out, border 0.15s ease-out,
     transform 0.15s ease-in-out;
   height: 30px;
@@ -94,13 +101,13 @@ const Toggle = styled.div`
     ${(props) =>
       props.hover
         ? props.theme.color.gray.one
-        : props.theme.color.gray.five} !important;
+        : props.theme.color.gray.six} !important;
   * {
     color: 1px solid
       ${(props) =>
         props.hover
           ? props.theme.color.gray.one
-          : props.theme.color.gray.five} !important;
+          : props.theme.color.gray.six} !important;
   }
 `;
 
@@ -118,10 +125,11 @@ const Title = styled.button`
   padding: 0px;
   outline: none;
   cursor: pointer;
-  padding: 16px;
-  padding: 10px 16px;
-  width: calc(100% + 32px);
-  left: -16px;
+  // padding: 10px;
+  // padding-left: ${(props) => props.padding}px;
+  // padding-right: ${(props) => props.padding}px;
+  // width: calc(100% + ${(props) => props.padding * 2}px);
+  // left: -${(props) => props.padding}px;
   position: relative;
   :hover {
     background: ${theme.color.gray.one};
@@ -136,8 +144,8 @@ const Body = styled.div`
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
-  width: calc(100% + 32px);
-  left: -16px;
+  // width: calc(100% + ${(props) => props.padding * 2}px);
+  // left: -${(props) => props.padding}px;
   position: relative;
   max-height: ${(props) => (props.open ? `${props.height}px` : '0')} !important;
   ${(props) => props.customStyles}

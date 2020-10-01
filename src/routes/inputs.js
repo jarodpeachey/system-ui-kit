@@ -81,13 +81,6 @@ const Inputs = ({}) => {
             style={{
               height: 60,
               width: '100%',
-              background: theme.color.gray.five,
-            }}
-          ></div>
-          <div
-            style={{
-              height: 60,
-              width: '100%',
               background: theme.color.gray.six,
             }}
           ></div>
@@ -95,21 +88,7 @@ const Inputs = ({}) => {
             style={{
               height: 60,
               width: '100%',
-              background: theme.color.gray.seven,
-            }}
-          ></div>
-          <div
-            style={{
-              height: 60,
-              width: '100%',
-              background: theme.color.gray.eight,
-            }}
-          ></div>
-          <div
-            style={{
-              height: 60,
-              width: '100%',
-              background: theme.color.gray.nine,
+              background: theme.color.gray.six,
             }}
           ></div>
           <H2 className="mt-none" type="h2">
@@ -690,9 +669,6 @@ const Inputs = ({}) => {
               <Checkbox
                 value="checked"
                 checked
-                onChange={(e) => {
-                  console.log('Target from parent: ', e.target);
-                }}
               >
                 Checked
               </Checkbox>
@@ -714,7 +690,6 @@ const Inputs = ({}) => {
             }}
           > */}
               <RadioButtons
-                onChange={(e) => console.log(e)}
                 name="radio-buttons"
               >
                 <RadioButton value="one">Radio button</RadioButton>

@@ -18,7 +18,6 @@ const Select = ({ children, className, id, size, variant }) => {
   };
 
   const onChange = (e) => {
-    console.log(e);
     setSelectedValue(e[0]);
     setSelectedLabel(e[1]);
     setOpen(false);
@@ -47,8 +46,6 @@ const Select = ({ children, className, id, size, variant }) => {
       </SelectWrapper>
       <SelectMenu open={open}>
         {children.forEach((child) => {
-          console.log(child);
-
           newChildren.push(
             <Option
               {...child.props}

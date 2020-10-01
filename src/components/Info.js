@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { ThemeContext } from '../theme';
-import H3 from './H3';
+import H4 from './H4';
 
 const Info = ({
   children,
@@ -31,7 +31,7 @@ const Info = ({
         </Icon>
       )}
       <div>
-        {title && <H3 type="h3">{title}</H3>}
+        {title && <H4>{title}</H4>}
         {children}
       </div>
     </StyledInfo>

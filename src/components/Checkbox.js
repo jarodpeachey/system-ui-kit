@@ -19,18 +19,11 @@ const Checkbox = ({
 
   const customOnChange = (e) => {
     setInputChecked(!inputChecked);
-    console.log(inputChecked);
 
-    console.log('Target from component: ', e.target);
     e.target.checked = !inputChecked;
-    onChange &&
-      onChange({
-        ...e,
-        target: {
-          ...e.target,
-          checked: !inputChecked,
-        },
-      });
+    if (onChange) {
+      onChange(!inputChecked);
+    }
   };
 
   useEffect(() => {
@@ -96,19 +89,19 @@ const CheckboxWrapper = styled.label`
     border-radius: 2px;
     border: 1px solid
       ${(props) =>
-        props.disabled ? props.theme.color.gray.two : props.theme.color.gray.four};
+        props.disabled
+          ? props.theme.color.gray.two
+          : props.theme.color.gray.three};
     background: #ffffff;
     transition: 0.1s;
   }
   input:checked ~ .checkmark {
     background: ${(props) =>
-      props.disabled
-        ? props.theme.color.gray.four
-        : props.theme.color.primary};
+      props.disabled ? props.theme.color.gray.two : props.theme.color.primary};
     border: 1px solid
       ${(props) =>
         props.disabled
-          ? props.theme.color.gray.four
+          ? props.theme.color.gray.two
           : props.theme.color.primary};
   }
   .icon {
@@ -129,15 +122,17 @@ const CheckboxWrapper = styled.label`
   //   box-shadow: 0px 0px 0px 3px ${(props) =>
     props.theme.color.primary}30 !important;
   // }
-    input:hover ~ .checkmark {
-    border: 1px solid ${(props) =>
-      props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.gray.four};
+  input:hover ~ .checkmark {
+    border: 1px solid
+      ${(props) =>
+        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.gray.two};
   }
-    input:checked:hover ~ .checkmark {
-    border: 1px solid ${(props) =>
-      props.disabled
-        ? props.theme.color.gray.four
-        : `${props.theme.color.primary}`};
+  input:checked:hover ~ .checkmark {
+    border: 1px solid
+      ${(props) =>
+        props.disabled
+          ? props.theme.color.gray.two
+          : `${props.theme.color.primary}`};
   }
 `;
 

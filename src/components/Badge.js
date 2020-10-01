@@ -2,31 +2,37 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Badge = ({ children, className, id, color = '', icon, rounded }) => {
+const Badge = ({
+  children,
+  className,
+  id,
+  customStyles,
+  color = '',
+  rounded,
+}) => {
   return (
     <Wrapper
       className={className}
       id={id}
-      icon={!!icon}
       rounded={rounded}
       color={color}
+      customStyles={customStyles}
     >
-      {icon && <Icon>{icon}</Icon>}
-      <div>{children}</div>
+      {children}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: fit-content;
-  align-items: flex-start;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: ${(props) => props.theme.spacing.three}px;
   margin-bottom: ${(props) => props.theme.spacing.three}px;
-  margin-left: ${(props) => props.theme.spacing.one}px;
-  margin-right: ${(props) => props.theme.spacing.one}px;
-  padding: 2px ${(props) => props.theme.spacing.two}px;
+  padding: 2px 12px;
+  text-align: center;
   background: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
@@ -37,15 +43,11 @@ const Wrapper = styled.div`
       : props.color === 'error'
       ? props.theme.color.error
       : props.color === 'dark'
-      ? props.theme.color.gray.eight
+      ? props.theme.color.gray.six
       : props.theme.color.gray.two};
-  div {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: ${(props) => (props.color === '' ? '' : 'white')};
-  }
-  border-radius: ${(props) => (props.rounded ? '999px' : '3px')};
-  padding-left: ${(props) => (props.icon ? '0' : '8px')};
+  color: ${(props) => (props.color === '' ? '' : 'white')};
+  border-radius: ${(props) => (props.rounded ? '999px' : props.theme.radius.one)};
+  // padding-left: ${(props) => (props.icon ? '0' : '8px')};
 `;
 
 const CloseButton = styled.div`

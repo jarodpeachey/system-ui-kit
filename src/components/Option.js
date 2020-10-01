@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
 const Option = ({ children, className, id, value, selected, onClick }) => {
-  console.log(selected);
   return (
     <Wrapper
       className={className}

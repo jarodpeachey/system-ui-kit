@@ -15,7 +15,6 @@ const Toggle = ({ children, className, id, onChange, checked, variant }) => {
   };
 
   useEffect(() => {
-    console.log(inputChecked);
   }, [inputChecked]);
 
   return (

@@ -15,10 +15,6 @@ const Hero = ({ children, className, id, background }) => (
 const Wrapper = styled.div`
   position: relative;
   padding: 120px 0;
-  p {
-    line-height: 30px;
-    font-size: 24px !important;
-  }
 `;
 
 const Background = styled.div`

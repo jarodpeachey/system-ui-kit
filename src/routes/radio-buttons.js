@@ -23,7 +23,6 @@ import Code from '../components/Code';
 import RadioButton from '../components/RadioButton';
 import Flex from '../components/Flex';
 import RadioButtons from '../components/RadioButtons';
-import Small from '../components/Small';
 import Strong from '../components/Strong';
 
 const RadioButtonsPage = ({}) => {
@@ -94,7 +93,7 @@ const RadioButtonsPage = ({}) => {
                   display="title"
                   color="default"
                 >
-                  <Small>Default</Small>
+                  <Paragraph size="sm">Default</Paragraph>
                 </Strong>
                 <RadioButtons color="default" name="default">
                   <RadioButton checked className="mr-2">
@@ -114,7 +113,7 @@ const RadioButtonsPage = ({}) => {
                   display="title"
                   color="primary"
                 >
-                  <Small type="small">Primary</Small>
+                  <Paragraph size="sm" type="small">Primary</Paragraph>
                 </Strong>
                 <RadioButtons color="primary" name="primary">
                   <RadioButton checked className="mr-2">
@@ -134,7 +133,7 @@ const RadioButtonsPage = ({}) => {
                   display="title"
                   color="secondary"
                 >
-                  <Small type="small">Secondary</Small>
+                  <Paragraph size="sm" type="small">Secondary</Paragraph>
                 </Strong>
                 <RadioButtons color="secondary" name="secondary">
                   <RadioButton checked className="mr-2">
@@ -154,7 +153,7 @@ const RadioButtonsPage = ({}) => {
                   display="title"
                   color="success"
                 >
-                  <Small type="small">Success</Small>
+                  <Paragraph size="sm" type="small">Success</Paragraph>
                 </Strong>
                 <RadioButtons color="success" name="success">
                   <RadioButton checked className="mr-2">
@@ -174,7 +173,7 @@ const RadioButtonsPage = ({}) => {
                   display="title"
                   color="error"
                 >
-                  <Small type="small">Error</Small>
+                  <Paragraph size="sm" type="small">Error</Paragraph>
                 </Strong>
                 <RadioButtons color="error" name="error">
                   <RadioButton checked className="mr-2">

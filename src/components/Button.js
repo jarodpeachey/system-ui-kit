@@ -77,7 +77,6 @@ const StyledButton = styled.button`
     props.color === 'dark'
       ? props.theme.shadow.button
       : '3px 3px 18px -6px #0000001a'};
-  font-family: 'Poppins';
   font-weight: 500;
   outline: none;
   padding: 12px 24px;
@@ -88,14 +87,13 @@ const StyledButton = styled.button`
   letter-spacing: 1.4px;
   padding: ${(props) =>
     props.size === 'small'
-      ? '6px 18px'
+      ? '8px 18px'
       : props.size === 'large'
-      ? '18px 30px'
-      : '12px 26px'};
+      ? '20px 30px'
+      : '14px 26px'};
 
-  height: ${(props) => (props.size === 'large' ? '54px' : null)};
   font-size: ${(props) =>
-    props.size === 'small' ? '14px' : props.size === 'large' ? '18px' : '16px'};
+    props.size === 'small' ? '16px' : props.size === 'large' ? '18px' : '18px'};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
@@ -116,7 +114,7 @@ const StyledButton = styled.button`
       : props.color === 'white'
       ? 'white'
       : props.color === 'dark'
-      ? props.theme.color.gray.eight
+      ? props.theme.color.gray.six
       : props.theme.color.gray.two};
   color: ${(props) =>
     props.color === 'white'
@@ -163,8 +161,8 @@ const StyledButton = styled.button`
         : props.color === 'white'
         ? pSBC('#ffffff', -25)
         : props.color === 'dark'
-        ? pSBC(props.theme.color.gray.eight, -25)
-        : props.theme.color.gray.three};
+        ? pSBC(props.theme.color.gray.six, -25)
+        : pSBC(props.theme.color.gray.two, -10)};
     // color: ${(props) => (props.color === 'white' ? 'initial' : 'white')};
   }
 
@@ -209,8 +207,8 @@ const StyledButton = styled.button`
           : props.color === 'white'
           ? 'white'
           : props.color === 'dark'
-          ? props.theme.color.gray.eight
-          : props.theme.color.gray.three};
+          ? props.theme.color.gray.six
+          : pSBC(props.theme.color.gray.two, -0)};
       :hover {
         box-shadow: ${props.theme.shadow.button};
         background: ${props.color === 'primary'
@@ -224,8 +222,8 @@ const StyledButton = styled.button`
           : props.color === 'white'
           ? 'white'
           : props.color === 'dark'
-          ? props.theme.color.gray.eight
-          : props.theme.color.gray.three};
+          ? props.theme.color.gray.six
+          : props.theme.color.gray.two};
         color: ${props.color === 'white'
           ? 'initial'
           : props.color
@@ -304,7 +302,6 @@ const StyledLink = styled(Link)`
     props.color === 'dark'
       ? props.theme.shadow.button
       : '3px 3px 18px -6px #0000001a'};
-  font-family: 'Poppins';
   font-weight: 500;
   outline: none;
   padding: 12px 24px;
@@ -320,9 +317,8 @@ const StyledLink = styled(Link)`
       ? '18px 30px'
       : '12px 26px'};
 
-  height: ${(props) => (props.size === 'large' ? '54px' : null)};
   font-size: ${(props) =>
-    props.size === 'small' ? '14px' : props.size === 'large' ? '18px' : '16px'};
+    props.size === 'small' ? '16px' : props.size === 'large' ? '18px' : '18px'};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
@@ -343,7 +339,7 @@ const StyledLink = styled(Link)`
       : props.color === 'white'
       ? 'white'
       : props.color === 'dark'
-      ? props.theme.color.gray.eight
+      ? props.theme.color.gray.six
       : props.theme.color.gray.two};
   color: ${(props) =>
     props.color === 'white'
@@ -390,8 +386,8 @@ const StyledLink = styled(Link)`
         : props.color === 'white'
         ? pSBC('#ffffff', -25)
         : props.color === 'dark'
-        ? pSBC(props.theme.color.gray.eight, -25)
-        : props.theme.color.gray.three};
+        ? pSBC(props.theme.color.gray.six, -25)
+        : pSBC(props.theme.color.gray.two, -10)};
     // color: ${(props) => (props.color === 'white' ? 'initial' : 'white')};
   }
 
@@ -436,8 +432,8 @@ const StyledLink = styled(Link)`
           : props.color === 'white'
           ? 'white'
           : props.color === 'dark'
-          ? props.theme.color.gray.eight
-          : props.theme.color.gray.three};
+          ? props.theme.color.gray.six
+          : pSBC(props.theme.color.gray.two, -10)};
       :hover {
         box-shadow: ${props.theme.shadow.button};
         background: ${props.color === 'primary'
@@ -451,8 +447,8 @@ const StyledLink = styled(Link)`
           : props.color === 'white'
           ? 'white'
           : props.color === 'dark'
-          ? props.theme.color.gray.eight
-          : props.theme.color.gray.three};
+          ? props.theme.color.gray.six
+          : props.theme.color.gray.two};
         color: ${props.color === 'white'
           ? 'initial'
           : props.color
@@ -531,7 +527,6 @@ const StyledA = styled.a`
     props.color === 'dark'
       ? props.theme.shadow.button
       : '3px 3px 18px -6px #0000001a'};
-  font-family: 'Poppins';
   font-weight: 500;
   outline: none;
   padding: 12px 24px;
@@ -547,9 +542,8 @@ const StyledA = styled.a`
       ? '18px 30px'
       : '12px 26px'};
 
-  height: ${(props) => (props.size === 'large' ? '54px' : null)};
   font-size: ${(props) =>
-    props.size === 'small' ? '14px' : props.size === 'large' ? '18px' : '16px'};
+    props.size === 'small' ? '16px' : props.size === 'large' ? '18px' : '18px'};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
@@ -570,7 +564,7 @@ const StyledA = styled.a`
       : props.color === 'white'
       ? 'white'
       : props.color === 'dark'
-      ? props.theme.color.gray.eight
+      ? props.theme.color.gray.six
       : props.theme.color.gray.two};
   color: ${(props) =>
     props.color === 'white'
@@ -617,8 +611,8 @@ const StyledA = styled.a`
         : props.color === 'white'
         ? pSBC('#ffffff', -25)
         : props.color === 'dark'
-        ? pSBC(props.theme.color.gray.eight, -25)
-        : props.theme.color.gray.three};
+        ? pSBC(props.theme.color.gray.six, -25)
+        : pSBC(props.theme.color.gray.two, -10)};
     // color: ${(props) => (props.color === 'white' ? 'initial' : 'white')};
   }
 
@@ -663,8 +657,8 @@ const StyledA = styled.a`
           : props.color === 'white'
           ? 'white'
           : props.color === 'dark'
-          ? props.theme.color.gray.eight
-          : props.theme.color.gray.three};
+          ? props.theme.color.gray.six
+          : pSBC(props.theme.color.gray.two, -10)};
       :hover {
         box-shadow: ${props.theme.shadow.button};
         background: ${props.color === 'primary'
@@ -678,8 +672,8 @@ const StyledA = styled.a`
           : props.color === 'white'
           ? 'white'
           : props.color === 'dark'
-          ? props.theme.color.gray.eight
-          : props.theme.color.gray.three};
+          ? props.theme.color.gray.six
+          : props.theme.color.gray.two};
         color: ${props.color === 'white'
           ? 'initial'
           : props.color
