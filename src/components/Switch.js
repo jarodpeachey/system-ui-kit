@@ -264,8 +264,8 @@ function (Component) {
     }
 
     this.$onDragStart(event.clientX);
-    window.addEventListener("mousemove", this.$onMouseMove);
-    window.addEventListener("mouseup", this.$onMouseUp);
+    typeof window !== 'undefined' && window.addEventListener("mousemove", this.$onMouseMove);
+    typeof window !== 'undefined' && window.addEventListener("mouseup", this.$onMouseUp);
   };
 
   Switch.prototype.$onMouseMove = function $onMouseMove(event) {
@@ -275,8 +275,8 @@ function (Component) {
 
   Switch.prototype.$onMouseUp = function $onMouseUp(event) {
     this.$onDragStop(event);
-    window.removeEventListener("mousemove", this.$onMouseMove);
-    window.removeEventListener("mouseup", this.$onMouseUp);
+    typeof window !== 'undefined' && window.removeEventListener("mousemove", this.$onMouseMove);
+    typeof window !== 'undefined' && window.removeEventListener("mouseup", this.$onMouseUp);
   };
 
   Switch.prototype.$onTouchStart = function $onTouchStart(event) {

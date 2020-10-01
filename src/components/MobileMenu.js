@@ -23,10 +23,14 @@ const MobileMenu = ({ children, className, id, open, customStyles }) => {
       document.getElementById('header').classList.remove('scrolled');
     }
 
-    window.addEventListener('scroll', onScroll);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', onScroll);
+    }
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', onScroll);
+      }
     };
   });
 
@@ -70,16 +74,16 @@ const Wrapper = styled.div`
   // transform: translateY(${(props) => (props.open ? '0' : '-100%')});
   z-index: 998;
   transition-delay: backdrop-filter 0.5s;
-    -webkit-transition: max-height 0.3s ${(props) =>
-      props.open ? 'ease-in' : 'ease-out'};
-  -moz-transition: max-height 0.3s ${(props) =>
-    props.open ? 'ease-in' : 'ease-out'};
-  -ms-transition: max-height 0.3s ${(props) =>
-    props.open ? 'ease-in' : 'ease-out'};
-  -o-transition: max-height 0.3s ${(props) =>
-    props.open ? 'ease-in' : 'ease-out'};
-  transition: max-height 0.3s ${(props) =>
-    props.open ? 'ease-in' : 'ease-out'};
+  -webkit-transition: max-height 0.3s
+    ${(props) => (props.open ? 'ease-in' : 'ease-out')};
+  -moz-transition: max-height 0.3s
+    ${(props) => (props.open ? 'ease-in' : 'ease-out')};
+  -ms-transition: max-height 0.3s
+    ${(props) => (props.open ? 'ease-in' : 'ease-out')};
+  -o-transition: max-height 0.3s
+    ${(props) => (props.open ? 'ease-in' : 'ease-out')};
+  transition: max-height 0.3s
+    ${(props) => (props.open ? 'ease-in' : 'ease-out')};
   max-height: ${(props) => (props.open ? '100%' : '0')} !important;
   height: 100%;
 

@@ -32,10 +32,14 @@ const Header = ({
       document.getElementById('header').classList.remove('scrolled');
     }
 
-    window.addEventListener('scroll', onScroll);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', onScroll);
+    }
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', onScroll);
+      }
     };
   });
 

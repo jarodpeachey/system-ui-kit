@@ -1,5 +1,6 @@
 export const pathnameIncludes = (test) => {
-  if (window.location.pathname.includes(test)) return true;
+  if (typeof window !== 'undefined' && window.location.pathname.includes(test))
+    return true;
 
   return false;
 };
