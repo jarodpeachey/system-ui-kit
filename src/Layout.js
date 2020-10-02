@@ -42,8 +42,6 @@ import H4 from './components/H4';
 import H5 from './components/H5';
 import H6 from './components/H6';
 import { Row, Column } from '@react-tiny-grid/core';
-import Button from './components/Button';
-import InternalLink from './components/InternalLink';
 import Collapse from './components/Collapse';
 import { pathnameIncludes } from './utils/pathnameIncludes';
 import { Link } from '@reach/router';
@@ -99,18 +97,18 @@ const Layout = ({ children, component, example }) => {
                 <Link to="/">Home</Link>
               </MenuItem>
               <MenuItem submenu>
-                <InternalLink to="/components">Components</InternalLink>
+                <Link to="/components">Components</Link>
                 <SubMenu>
                   <SubMenuItem>
-                    <InternalLink to="/components/layout">Layout</InternalLink>
+                    <Link to="/components/layout">Layout</Link>
                   </SubMenuItem>
                   <SubMenuItem>
-                    <InternalLink to="/components/inputs">Inputs</InternalLink>
+                    <Link to="/components/inputs">Inputs</Link>
                   </SubMenuItem>
                   <SubMenuItem>
-                    <InternalLink to="/components/display">
+                    <Link to="/components/display">
                       Display
-                    </InternalLink>
+                    </Link>
                   </SubMenuItem>
                 </SubMenu>
               </MenuItem>
@@ -131,16 +129,16 @@ const Layout = ({ children, component, example }) => {
               <a href="/">Home</a>
             </MobileMenuItem>
             <MobileMenuItem submenu>
-              <InternalLink to="/components">Components</InternalLink>
+              <Link to="/components">Components</Link>
               <MobileSubMenu>
                 <MobileSubMenuItem>
-                  <InternalLink to="/components/layout">Layout</InternalLink>
+                  <Link to="/components/layout">Layout</Link>
                 </MobileSubMenuItem>
                 <MobileSubMenuItem>
-                  <InternalLink to="/components/inputs">Inputs</InternalLink>
+                  <Link to="/components/inputs">Inputs</Link>
                 </MobileSubMenuItem>
                 <MobileSubMenuItem>
-                  <InternalLink to="/components/display">Display</InternalLink>
+                  <Link to="/components/display">Display</Link>
                 </MobileSubMenuItem>
               </MobileSubMenu>
             </MobileMenuItem>
@@ -166,7 +164,7 @@ const Layout = ({ children, component, example }) => {
                   }}
                 >
                   <H6 className="m-none">Getting Started</H6>
-                  <InternalLink
+                  <Link
                     className="no-styling"
                     customStyles={`
                       color: inherit;
@@ -181,8 +179,8 @@ const Layout = ({ children, component, example }) => {
                     to="/components/container"
                   >
                     Quick Start
-                  </InternalLink>
-                  <InternalLink
+                  </Link>
+                  <Link
                     className="no-styling"
                     customStyles={`
                           color: inherit;
@@ -200,7 +198,7 @@ const Layout = ({ children, component, example }) => {
                     to="/components/container"
                   >
                     Theming
-                  </InternalLink>
+                  </Link>
                   <Collapse
                     startOpen={
                       pathnameIncludes('section') ||
@@ -234,7 +232,7 @@ const Layout = ({ children, component, example }) => {
                       <H6 className="m-none">Layout</H6>
                     </div>
                     <div>
-                      <InternalLink
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -267,8 +265,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/section"
                       >
                         Section
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -301,8 +299,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/container"
                       >
                         Container
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -335,8 +333,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/grid"
                       >
                         Grid
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -369,8 +367,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/flex"
                       >
                         Flex
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -403,8 +401,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/hidden"
                       >
                         Hidden
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -437,7 +435,7 @@ const Layout = ({ children, component, example }) => {
                         to="/components/header"
                       >
                         Header
-                      </InternalLink>
+                      </Link>
                     </div>
                   </Collapse>
                   <Collapse
@@ -471,7 +469,7 @@ const Layout = ({ children, component, example }) => {
                       <H6 className="m-none">Navigation</H6>
                     </div>
                     <div>
-                      <InternalLink
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -504,8 +502,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/menu"
                       >
                         Menu
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -538,8 +536,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/mobile-menu"
                       >
                         Mobile Menu
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -572,8 +570,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/dropdown"
                       >
                         Dropdown
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -606,7 +604,7 @@ const Layout = ({ children, component, example }) => {
                         to="/components/tabs"
                       >
                         Tabs
-                      </InternalLink>
+                      </Link>
                     </div>
                   </Collapse>
                   <Collapse
@@ -642,7 +640,7 @@ const Layout = ({ children, component, example }) => {
                       <H6 className="m-none">Display</H6>
                     </div>
                     <div>
-                      <InternalLink
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -675,8 +673,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/alert"
                       >
                         Alert
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -709,8 +707,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/notification"
                       >
                         Notification
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -743,8 +741,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/badge"
                       >
                         Badge
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -777,8 +775,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/info"
                       >
                         Info
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -811,8 +809,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/modal"
                       >
                         Modal
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -845,7 +843,7 @@ const Layout = ({ children, component, example }) => {
                         to="/components/typography"
                       >
                         Typography
-                      </InternalLink>
+                      </Link>
                     </div>
                   </Collapse>
                   <Collapse
@@ -884,7 +882,7 @@ const Layout = ({ children, component, example }) => {
                       <H6 className="m-none">Input</H6>
                     </>
                     <>
-                      <InternalLink
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -917,8 +915,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/button"
                       >
                         Button
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -951,8 +949,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/input"
                       >
                         Input
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -985,8 +983,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/textarea"
                       >
                         Text Area
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -1019,8 +1017,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/select"
                       >
                         Select
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -1053,8 +1051,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/checkboxes"
                       >
                         Checkboxes
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -1087,8 +1085,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/radio-buttons"
                       >
                         Radio Buttons
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -1121,8 +1119,8 @@ const Layout = ({ children, component, example }) => {
                         to="/components/toggle"
                       >
                         Toggle
-                      </InternalLink>
-                      <InternalLink
+                      </Link>
+                      <Link
                         className="no-styling"
                         customStyles={`
                           color: inherit;
@@ -1155,7 +1153,7 @@ const Layout = ({ children, component, example }) => {
                         to="/components/slider"
                       >
                         Slider
-                      </InternalLink>
+                      </Link>
                     </>
                   </Collapse>
                 </div>

@@ -27,6 +27,7 @@ import DatePicker from '../components/DatePicker';
 import Dropdown from '../components/Dropdown';
 import DropdownItem from '../components/DropdownItem';
 import Hidden from '../components/Hidden';
+import Input from '../components/Input';
 
 const Components = () => (
   <Layout component>
@@ -157,15 +158,15 @@ const Components = () => (
         <br />
         <H5 className="mb-3">Sizes</H5>
         <Paragraph>
-          You can choose between small, default and large button sizes.
+          You can choose between sm, default and lg button sizes.
         </Paragraph>
-        <Button className="mr-2" color="primary" size="large">
+        <Button className="mr-2" color="primary" size="lg">
           Large
         </Button>
         <Button className="mr-2" color="primary">
           Default
         </Button>
-        <Button className="mr-2" color="primary" size="small">
+        <Button className="mr-2" color="primary" size="sm">
           Small
         </Button>
         <br />
@@ -442,82 +443,230 @@ const Components = () => (
         <br />
         <H5 className="mb-3">Sizes</H5>
         <Paragraph>
-          You can choose between small, default and large button sizes.
+          You can choose between sm, default and lg button sizes.
         </Paragraph>
-        <IconButton className="mr-2" color="primary" size="large">
+        <IconButton className="mr-2" color="primary" size="lg">
           <FontAwesomeIcon icon="check" />
         </IconButton>
         <IconButton className="mr-2" color="primary">
           <FontAwesomeIcon icon="check" />
         </IconButton>
-        <IconButton className="mr-2" color="primary" size="small">
+        <IconButton className="mr-2" color="primary" size="sm">
           <FontAwesomeIcon icon="check" />
         </IconButton>
         <br />
         <br />
         <H2>Info</H2>
-        <Row spacing={[12]} breakpoints={[576, 960]}>
+        <Row spacing={[12]} breakpoints={[960, 1200]}>
           <Column widths={[6, 4]}>
             <Info
               color="primary"
-              icon={<FontAwesomeIcon icon="check" />}
-              variant="filled"
+              icon={<FontAwesomeIcon icon="globe" />}
               title="Info One"
-            >
-              <Paragraph>This is an information box. Look at it.</Paragraph>
-            </Info>
+              content="This is an information box. Look at it."
+              align="center"
+            />
           </Column>
           <Column widths={[6, 4]}>
             <Info
               color="primary"
-              icon={<FontAwesomeIcon icon="check" />}
-              variant="filled"
+              icon={<FontAwesomeIcon icon="globe" />}
               title="Info One"
-            >
-              <Paragraph>This is an information box. Look at it.</Paragraph>
-            </Info>
+              content="This is an information box. Look at it."
+              align="center"
+            />
           </Column>
           <Column widths={[6, 4]}>
             <Info
               color="primary"
-              icon={<FontAwesomeIcon icon="check" />}
-              variant="filled"
+              icon={<FontAwesomeIcon icon="globe" />}
               title="Info One"
-            >
-              <Paragraph>This is an information box. Look at it.</Paragraph>
-            </Info>
+              content="This is an information box. Look at it."
+              align="center"
+            />
           </Column>
           <Column widths={[6, 4]}>
             <Info
               color="primary"
-              icon={<FontAwesomeIcon icon="check" />}
-              variant="filled"
+              icon={<FontAwesomeIcon icon="globe" />}
               title="Info One"
-            >
-              <Paragraph>This is an information box. Look at it.</Paragraph>
-            </Info>
+              content="This is an information box. Look at it."
+              align="center"
+            />
           </Column>
           <Column widths={[6, 4]}>
             <Info
               color="primary"
-              icon={<FontAwesomeIcon icon="check" />}
-              variant="filled"
+              icon={<FontAwesomeIcon icon="globe" />}
               title="Info One"
-            >
-              <Paragraph>This is an information box. Look at it.</Paragraph>
-            </Info>
+              content="This is an information box. Look at it."
+              align="center"
+            />
           </Column>
           <Column widths={[6, 4]}>
             <Info
               color="primary"
-              icon={<FontAwesomeIcon icon="check" />}
-              variant="filled"
+              icon={<FontAwesomeIcon icon="globe" />}
               title="Info One"
-            >
-              <Paragraph>This is an information box. Look at it.</Paragraph>
-            </Info>
+              content="This is an information box. Look at it."
+              align="center"
+            />
           </Column>
         </Row>
+        <br />
+        <br />
+        <H2>Input</H2>
+        <H5>Size</H5>
+        <Row spacing={[12]} breakpoints={[576, 769]}>
+          <Column widths={[6, 4]}>
+            <Input className="mb-2" size="xs" fullWidth placeholder="X-Small" />
+            <div />
+            <Input className="mb-2" size="sm" fullWidth placeholder="Small" />
+            <div />
+            <Input className="mb-2" fullWidth placeholder="Default" />
+            <div />
+            <Input className="mb-2" size="lg" fullWidth placeholder="Large" />
+          </Column>
+          <Column widths={[6, 4]}>
+            <Input
+              className="mb-2"
+              variant="filled"
+              size="xs"
+              fullWidth
+              placeholder="X-Small"
+            />
+            <div />
+            <Input
+              className="mb-2"
+              variant="filled"
+              size="sm"
+              fullWidth
+              placeholder="Small"
+            />
+            <div />
+            <Input
+              className="mb-2"
+              variant="filled"
+              fullWidth
+              placeholder="Default"
+            />
+            <div />
+            <Input
+              className="mb-2"
+              variant="filled"
+              size="lg"
+              fullWidth
+              placeholder="Large"
+            />
+          </Column>
+          <Column widths={[6, 4]}>
+            <Input
+              className="mb-2"
+              size="xs"
+              fullWidth
+              placeholder="X-Small"
+              icon={<FontAwesomeIcon icon="heart" />}
+            />
+            <div />
+            <Input
+              className="mb-2"
+              size="sm"
+              fullWidth
+              placeholder="Small"
+              icon={<FontAwesomeIcon icon="heart" />}
+            />
+            <div />
+            <Input
+              className="mb-2"
+              fullWidth
+              placeholder="Default"
+              icon={<FontAwesomeIcon icon="heart" />}
+            />
+            <div />
+            <Input
+              className="mb-2"
+              size="lg"
+              fullWidth
+              placeholder="Large"
+              icon={<FontAwesomeIcon icon="heart" />}
+            />
+          </Column>
+        </Row>
+        <H5>State</H5>
+        <Row spacing={[12]} breakpoints={[576, 769]}>
+          <Column widths={[6, 4]}>
+            <Input className="mb-2" fullWidth placeholder="Default" />
+            <div />
+            <Input
+              className="mb-2"
+              fullWidth
+              placeholder="Success"
+              state="success"
+            />
+            <div />
+            <Input
+              className="mb-2"
+              fullWidth
+              placeholder="Error"
+              state="error"
+            />
+          </Column>
+          <Column widths={[6, 4]}>
+            <Input
+              className="mb-2"
+              variant="filled"
+              fullWidth
+              placeholder="Default"
+            />
+            <div />
+            <Input
+              className="mb-2"
+              variant="filled"
+              fullWidth
+              placeholder="Success"
+              state="success"
+            />
+            <div />
+            <Input
+              className="mb-2"
+              variant="filled"
+              fullWidth
+              placeholder="Error"
+              state="error"
+            />
+          </Column>
+          <Column widths={[6, 4]}>
+            <Input
+              className="mb-2"
+              icon={<FontAwesomeIcon icon="heart" />}
+              fullWidth
+              placeholder="Default"
+            />
+            <div />
+            <Input
+              className="mb-2"
+              icon={<FontAwesomeIcon icon="heart" />}
+              fullWidth
+              placeholder="Success"
+              state="success"
+            />
+            <div />
+            <Input
+              className="mb-2"
+              icon={<FontAwesomeIcon icon="heart" />}
+              fullWidth
+              placeholder="Error"
+              state="error"
+            />
+          </Column>
+        </Row>
+        <H5>Type</H5>
+        <Input
+          type="number"
+          color="primary"
+          className="mb-2"
+          defaultValue={3}
+        />
       </Container>
     </Section>
   </Layout>

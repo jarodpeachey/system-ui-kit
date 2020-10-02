@@ -31,18 +31,20 @@ const Example = () => (
     <Helmet>
       <title>System - React UI Kit</title>
     </Helmet>
-    <Section spacing={64} background="#ffffff">
-      <H1 display>
-        Speed up development <Span color="primary">without sacrificing</Span>{' '}
-        your brand
-      </H1>
-      <Paragraph customStyles="max-width: 600px;" size="lg">
-        SystemUI is a fully-customizable UI kit that doesn't box you in with
-        default styling. Speed up the development process, without losing your
-        brand's image and personality.
-      </Paragraph>
-      <br />
-      <Button color="primary">Build your UI Kit</Button>
+    <Section spacing={120} background="#ffffff">
+      <Container>
+        <H1 display>
+          Speed up development <Span color="primary">without sacrificing</Span>{' '}
+          your brand
+        </H1>
+        <Paragraph customStyles="max-width: 600px;" size="lg">
+          SystemUI is a fully-customizable UI kit that doesn't box you in with
+          default styling. Speed up the development process, without losing your
+          brand's image and personality.
+        </Paragraph>
+        <br />
+        <Button color="primary">Build your UI Kit</Button>
+      </Container>
     </Section>
     <Section background={theme.color.gray.one}>
       <Container>

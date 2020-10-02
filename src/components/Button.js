@@ -77,23 +77,23 @@ const StyledButton = styled.button`
     props.color === 'dark'
       ? props.theme.shadow.button
       : '3px 3px 18px -6px #0000001a'};
-  font-weight: ${props => props.theme.fontWeight.button};
+  font-weight: ${(props) => props.theme.fontWeight.button};
   outline: none;
   padding: 12px 24px;
   border: none;
   width: ${(props) => (props.fullWidth ? '100%' : null)};
-  font-size: ${props => props.theme.fontSize.base}px;
+  font-size: ${(props) => props.theme.fontSize.base}px;
   // font-weight: 500;
   letter-spacing: 1.4px;
   padding: ${(props) =>
-    props.size === 'small'
+    props.size === 'sm'
       ? '8px 18px'
-      : props.size === 'large'
+      : props.size === 'lg'
       ? '20px 30px'
       : '14px 26px'};
 
   font-size: ${(props) =>
-    props.size === 'small' ? '15px' : props.size === 'large' ? '18px' : '16px'};
+    props.size === 'sm' ? '15px' : props.size === 'lg' ? '18px' : '16px'};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
@@ -302,23 +302,23 @@ const StyledLink = styled(Link)`
     props.color === 'dark'
       ? props.theme.shadow.button
       : '3px 3px 18px -6px #0000001a'};
-  font-weight: ${props => props.theme.fontWeight.button};
+  font-weight: ${(props) => props.theme.fontWeight.button};
   outline: none;
   padding: 12px 24px;
   border: none;
   width: ${(props) => (props.fullWidth ? '100%' : null)};
-  font-size: ${props => props.theme.fontSize.base}px;
+  font-size: ${(props) => props.theme.fontSize.base}px;
   // font-weight: 500;
   letter-spacing: 1.4px;
   padding: ${(props) =>
-    props.size === 'small'
+    props.size === 'sm'
       ? '6px 18px'
-      : props.size === 'large'
+      : props.size === 'lg'
       ? '18px 30px'
       : '12px 26px'};
 
   font-size: ${(props) =>
-    props.size === 'small' ? '15px' : props.size === 'large' ? '18px' : '16px'};
+    props.size === 'sm' ? '15px' : props.size === 'lg' ? '18px' : '16px'};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
@@ -527,23 +527,23 @@ const StyledA = styled.a`
     props.color === 'dark'
       ? props.theme.shadow.button
       : '3px 3px 18px -6px #0000001a'};
-  font-weight: ${props => props.theme.fontWeight.button};
+  font-weight: ${(props) => props.theme.fontWeight.button};
   outline: none;
   padding: 12px 24px;
   border: none;
   width: ${(props) => (props.fullWidth ? '100%' : null)};
-  font-size: ${props => props.theme.fontSize.base}px;
+  font-size: ${(props) => props.theme.fontSize.base}px;
   // font-weight: 500;
   letter-spacing: 1.4px;
   padding: ${(props) =>
-    props.size === 'small'
+    props.size === 'sm'
       ? '6px 18px'
-      : props.size === 'large'
+      : props.size === 'lg'
       ? '18px 30px'
       : '12px 26px'};
 
   font-size: ${(props) =>
-    props.size === 'small' ? '15px' : props.size === 'large' ? '18px' : '16px'};
+    props.size === 'sm' ? '15px' : props.size === 'lg' ? '18px' : '16px'};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;

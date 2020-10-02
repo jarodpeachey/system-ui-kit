@@ -37,13 +37,15 @@ const App = ({}) => (
       )`}
       spacing={120}
     >
-      <H1 display color="light-one" className="center">
-        React Development Made Easy
-      </H1>
-      <H4 className="center" color="light-two">
-        A modern UI Kit built to speed up your development proccess, while still
-        allowing you room to customize and grow.
-      </H4>
+      <Container>
+        <H1 display color="light-one" className="center">
+          React Development Made Easy
+        </H1>
+        <H4 className="center" color="light-two">
+          A modern UI Kit built to speed up your development proccess, while
+          still allowing you room to customize and grow.
+        </H4>
+      </Container>
     </Section>
     <Section>
       <Container>
@@ -60,12 +62,7 @@ const App = ({}) => (
     </Section>
     <Section className="pt-none">
       <Container>
-        <H5
-          uppercase
-          type="h5"
-          color="primary"
-          className="center my-none"
-        >
+        <H5 uppercase type="h5" color="primary" className="center my-none">
           Built For You
         </H5>
         <H2 type="h2" className="center mt-3">

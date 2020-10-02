@@ -48,7 +48,7 @@ const Wrapper = styled.h6`
       : props.theme.color.text.heading}};
 
   font-weight: 600;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
   font-size: ${(props) =>
     props.uppercase ? props.theme.fontSize.h6 - 1 : props.theme.fontSize.h6}px;
   ${(props) =>

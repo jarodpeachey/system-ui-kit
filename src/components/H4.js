@@ -50,7 +50,7 @@ const Wrapper = styled.h4`
       : props.theme.color.text.heading}};
   font-weight: ${(props) => (props.display ? props.theme.fontWeight.display : props.theme.fontWeight.heading)};
 
-  margin-bottom: 34px;
+  margin-bottom: 18px;
   font-size: ${(props) =>
     props.display ? props.theme.fontSize.h4 + 4 : props.theme.fontSize.h4}px;
   ${(props) =>

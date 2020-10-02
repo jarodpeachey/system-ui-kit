@@ -1,63 +1,88 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { theme } from '../theme';
 import { pSBC } from '../utils/color';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Input = ({
-  className,
-  id,
-  customStyles,
-  placeholder = '',
-  onChange,
-  onFocus,
-  onBlur,
-  size,
-  variant,
-  label,
-  fullWidth,
-  state,
-  icon,
-  type,
-  defaultValue,
-  color,
-  value,
-}) => {
+const Input = (
+  {
+    className,
+    id,
+    customStyles,
+    inputStyles,
+    placeholder = '',
+    onChange,
+    onFocus,
+    onBlur,
+    size,
+    variant,
+    label,
+    fullWidth,
+    state,
+    icon,
+    type,
+    defaultValue,
+    color,
+    value,
+  },
+  ...props
+) => {
   const [hover, setHover] = useState(false);
   const [focus, setFocus] = useState(false);
   const [inputValue, setInputValue] = useState(
     value || defaultValue || (type === 'number' ? 0 : ''),
   );
 
+  if (type === 'number') {
+    console.log(inputValue);
+  }
+
   useEffect(() => {
-    setInputValue(value);
+    if (value) {
+      setInputValue(value);
+    }
   }, [value]);
+
+  useEffect(() => {
+    if (type === 'number') {
+      console.log('Input value', inputValue);
+    }
+  }, [inputValue]);
 
   const customOnChange = (e) => {
     setInputValue(e.target.value);
 
-    onChange(e);
+    if (onChange) {
+      onChange(e);
+    }
   };
 
   const customOnFocus = (e) => {
     setFocus(true);
 
-    onFocus(e);
+    if (onFocus) {
+      onFocus(e);
+    }
   };
 
   const customOnBlur = (e) => {
     setFocus(false);
 
-    onBlur(e);
+
+    if (onBlur) {
+      onBlur(e);
+    }
   };
 
   const increment = () => {
-    setInputValue(value + 1);
+    console.log(inputValue);
+    setInputValue(inputValue + 1);
   };
 
   const decrement = () => {
-    setInputValue(value - 1);
+    console.log(inputValue);
+    setInputValue(inputValue - 1);
   };
 
   return (
@@ -65,6 +90,8 @@ const Input = ({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       fullWidth={fullWidth}
+      customStyles={customStyles}
+      className={className}
     >
       {label && (
         <Label state={state} size={size}>
@@ -74,7 +101,6 @@ const Input = ({
       {icon && (
         <>
           <StyledInput
-            className={className}
             id={id}
             color={color}
             unselectable="on"
@@ -90,7 +116,8 @@ const Input = ({
             onChange={customOnChange}
             onFocus={customOnFocus}
             onBlur={customOnBlur}
-            customStyles={customStyles}
+            customStyles={inputStyles}
+            {...props}
           />
           <Icon size={size}>{icon}</Icon>
           {type === 'number' && (
@@ -98,11 +125,18 @@ const Input = ({
               <NumberButton focus={focus} onClick={() => increment()}>
                 <FontAwesomeIcon
                   icon="chevron-down"
-                  style={{ transform: 'rotate(180deg)', fontSize: 13 }}
+                  style={{
+                    color: theme.color.gray.five,
+                    transform: 'rotate(180deg)',
+                    fontSize: 13,
+                  }}
                 />
               </NumberButton>
               <NumberButton focus={focus} onClick={() => decrement()}>
-                <FontAwesomeIcon icon="chevron-down" style={{ fontSize: 13 }} />
+                <FontAwesomeIcon
+                  icon="chevron-down"
+                  style={{ color: theme.color.gray.five, fontSize: 13 }}
+                />
               </NumberButton>
             </NumberButtons>
           )}
@@ -111,7 +145,6 @@ const Input = ({
       {!icon && (
         <>
           <StyledInput
-            className={className}
             id={id}
             color={color}
             unselectable="on"
@@ -126,18 +159,26 @@ const Input = ({
             onChange={customOnChange}
             onFocus={customOnFocus}
             onBlur={customOnBlur}
-            customStyles={customStyles}
+            customStyles={inputStyles}
+            {...props}
           />
           {type === 'number' && (
             <NumberButtons focus={focus}>
               <NumberButton focus={focus} onClick={() => increment()}>
                 <FontAwesomeIcon
                   icon="chevron-down"
-                  style={{ transform: 'rotate(180deg)', fontSize: 13 }}
+                  style={{
+                    color: theme.color.gray.five,
+                    transform: 'rotate(180deg)',
+                    fontSize: 13,
+                  }}
                 />
               </NumberButton>
               <NumberButton focus={focus} onClick={() => decrement()}>
-                <FontAwesomeIcon icon="chevron-down" style={{ fontSize: 13 }} />
+                <FontAwesomeIcon
+                  icon="chevron-down"
+                  style={{ color: theme.color.gray.five, fontSize: 13 }}
+                />
               </NumberButton>
             </NumberButtons>
           )}
@@ -151,14 +192,8 @@ const Wrapper = styled.div`
   display: block;
   position: relative;
   width: fit-content;
-  -webkit-user-select: none; /* Chrome/Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+ */
-
-  /* Rules below not implemented in browsers yet */
-  -o-user-select: none;
-  user-select: none;
   width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
+  ${(props) => props.customStyles}
 `;
 
 const NumberButtons = styled.div`
@@ -210,25 +245,25 @@ const Icon = styled.div`
   left: ${(props) =>
     props.size === 'xs'
       ? '10px'
-      : props.size === 'small'
+      : props.size === 'sm'
       ? '12px'
-      : props.size === 'large'
+      : props.size === 'lg'
       ? '18px'
       : '16px'};
   top: ${(props) =>
     props.size === 'xs'
-      ? 'calc(50% - 14px)'
-      : props.size === 'small'
-      ? 'calc(50% - 16px)'
-      : props.size === 'large'
-      ? 'calc(50% - 19px)'
-      : 'calc(50% - 17px)'};
+      ? 'calc(50% - 10px)'
+      : props.size === 'sm'
+      ? 'calc(50% - 12px)'
+      : props.size === 'lg'
+      ? 'calc(50% - 17px)'
+      : 'calc(50% - 15px)'};
   font-size: ${(props) =>
     props.size === 'xs'
       ? '15px'
-      : props.size === 'small'
+      : props.size === 'sm'
       ? '17px'
-      : props.size === 'large'
+      : props.size === 'lg'
       ? '22px'
       : '20px'};
   font-weight: 400;
@@ -258,17 +293,17 @@ const StyledInput = styled.input`
   padding: ${(props) =>
     props.size === 'xs'
       ? '4px 8px'
-      : props.size === 'small'
+      : props.size === 'sm'
       ? '8px 12px'
-      : props.size === 'large'
+      : props.size === 'lg'
       ? '16px 18px'
       : '13px 15px'};
   font-size: ${(props) =>
     props.size === 'xs'
       ? '14px'
-      : props.size === 'small'
+      : props.size === 'sm'
       ? '16px'
-      : props.size === 'large'
+      : props.size === 'lg'
       ? '18px'
       : '16px'};
   transition-duration: 0.1s;
@@ -328,9 +363,9 @@ const StyledInput = styled.input`
     props.withIcon
       ? props.size === 'xs'
         ? '30px'
-        : props.size === 'small'
+        : props.size === 'sm'
         ? '37px'
-        : props.size === 'large'
+        : props.size === 'lg'
         ? '50px'
         : '46px'
       : ''};
