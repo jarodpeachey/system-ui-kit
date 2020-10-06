@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: fit-content;
-  font-size: ${props => props.theme.fontSize.base}px;
+  font-size: ${(props) => props.theme.fontSize.small}px;
   margin-top: ${(props) => props.theme.spacing.three}px;
   margin-bottom: ${(props) => props.theme.spacing.three}px;
   padding: 2px 12px;
@@ -46,7 +46,8 @@ const Wrapper = styled.div`
       ? props.theme.color.gray.six
       : props.theme.color.gray.two};
   color: ${(props) => (props.color === '' ? '' : 'white')};
-  border-radius: ${(props) => (props.rounded ? '999px' : props.theme.radius.one)};
+  border-radius: ${(props) =>
+    props.rounded ? '999px' : props.theme.radius.one};
   // padding-left: ${(props) => (props.icon ? '0' : '8px')};
 `;
 

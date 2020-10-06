@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const SubMenuItem = ({ children, className, id }) => (
-  <Wrapper className={className} id={id}>
+const SubMenuItem = ({ children, className, id, customStyles }) => (
+  <Wrapper className={className} id={id} customStyles={customStyles}>
     {children}
   </Wrapper>
 );
@@ -12,10 +12,10 @@ const Wrapper = styled.div`
   a {
     display: block;
     width: 100%;
-    padding: 8px 24px;
+    padding: 8px 16px;
     text-decoration: none;
     background: none;
-    transition-duration: 0.15s !important;
+    transition-duration: 0.1s;
     color: initial !important;
     font-weight: normal !important;
     width: 100%;
@@ -31,6 +31,8 @@ const Wrapper = styled.div`
       background: ${(props) => props.theme.color.gray.one};
     }
   }
+
+  ${(props) => props.customStyles}
 `;
 
 export default SubMenuItem;

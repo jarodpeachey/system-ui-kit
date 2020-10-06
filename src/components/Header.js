@@ -6,11 +6,13 @@ import Container from './Container';
 const Header = ({
   children,
   className,
+  customStyles,
   color,
   scrollColor,
   height,
   scrollHeight,
   fixed,
+  fullWidth,
 }) => {
   const [scroll, setScroll] = useState(
     typeof window !== 'undefined' && window.scrollY,
@@ -53,8 +55,16 @@ const Header = ({
       height={height}
       scrollHeight={scrollHeight}
       scrollColor={scrollColor}
+      customStyles={customStyles}
     >
-      <Container size="lg">
+      <Container
+        customStyles={
+          fullWidth
+            ? 'padding-left: 24px; padding-right: 24px; width: 100%;'
+            : null
+        }
+        maxWidth={fullWidth ? 99999 : null}
+      >
         <InnerContainer color={color} scrolled={window.scrollY > 50}>
           {children}
         </InnerContainer>
@@ -64,7 +74,7 @@ const Header = ({
 };
 
 const Wrapper = styled.div`
-  transition: all 0.3s, border-bottom .15s ease .3s;
+  transition: all 0.3s, border-bottom 0.15s ease 0.3s;
   position: ${(props) => (props.fixed ? 'fixed' : '')};
   display: flex;
   align-items: center;
@@ -79,6 +89,8 @@ const Wrapper = styled.div`
       ? props.theme.color.secondary
       : props.color === 'transparent'
       ? 'transparent'
+      : props.color === 'dark'
+      ? props.theme.color.gray.six
       : 'white'};
   h1,
   h2,
@@ -89,42 +101,41 @@ const Wrapper = styled.div`
   .menu-item,
   .menu-item a,
   div {
-    transition: all .3s;
+    transition: all 0.3s;
     color: ${(props) =>
-      props.color === 'primary'
-        ? 'white'
-        : props.color === 'secondary'
-        ? 'white'
-        : props.color === 'transparent'
+      props.color === 'primary' ||
+      props.color === 'secondary' ||
+      props.color === 'dark' ||
+      props.color === 'transparent'
         ? 'white'
         : null};
   }
   span {
     background: ${(props) =>
-      props.color === 'primary'
+      props.color === 'primary' ||
+      props.color === 'secondary' ||
+      props.color === 'dark' ||
+      props.color === 'transparent'
         ? 'white'
-        : props.color === 'secondary'
-        ? 'white'
-        : props.color === 'transparent'
-        ? 'white'
-        : props.theme.color.text.heading} !important;
-  }
+        : null} !important;
   }
 
   &.scrolled {
     min-height: ${(props) =>
       props.scrollHeight ? `${props.scrollHeight}px` : null};
-    box-shadow: ${props => props.theme.shadow.header};
-        background: ${(props) =>
-          props.scrollColor === 'primary'
-            ? props.theme.color.primary
-            : props.scrollColor === 'secondary'
-            ? props.theme.color.secondary
-            : props.scrollColor === 'transparent'
-            ? 'transparent'
-            : props.scrollColor === 'white'
-            ? '#ffffff'
-            : null};
+    box-shadow: ${(props) => props.theme.shadow.header};
+    background: ${(props) =>
+      props.scrollColor === 'primary'
+        ? props.theme.color.primary
+        : props.scrollColor === 'secondary'
+        ? props.theme.color.secondary
+        : props.scrollColor === 'transparent'
+        ? 'transparent'
+        : props.scrollColor === 'white'
+        ? '#ffffff'
+        : props.scrollColor === 'dark'
+        ? props.theme.color.gray.six
+        : null};
     h1,
     h2,
     h3,
@@ -136,13 +147,17 @@ const Wrapper = styled.div`
     span,
     div {
       color: ${(props) =>
-        props.scrollColor === 'primary' || props.scrollColor === 'secondary'
+        props.scrollColor === 'primary' ||
+        props.scrollColor === 'secondary' ||
+        props.scrollColor === 'dark'
           ? 'white'
           : props.theme.color.text.heading};
     }
     span {
       background: ${(props) =>
-        props.scrollColor === 'primary' || props.scrollColor === 'secondary'
+        props.scrollColor === 'primary' ||
+        props.scrollColor === 'secondary' ||
+        props.scrollColor === 'dark'
           ? 'white'
           : props.theme.color.text.heading} !important;
     }
@@ -195,6 +210,7 @@ const Wrapper = styled.div`
           : 'white'} !important;
     }
   }
+  ${(props) => props.customStyles}
 `;
 
 const InnerContainer = styled.div`

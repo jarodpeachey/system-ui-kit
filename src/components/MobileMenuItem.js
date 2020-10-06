@@ -52,7 +52,7 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  transition-duration: 0.15s !important;
+  transition-duration: 0.1s;
   width: 100%;
   svg {
     color: ${(props) => props.theme.color.text.heading} !important;
@@ -65,7 +65,7 @@ const Wrapper = styled.div`
       padding: 12px 16px;
       cursor: pointer;
       border-radius: ${props.theme.radius.one};
-      transition-duration: 0.15s !important;
+      transition-duration: 0.1s;
       :hover {
         background: ${'#435a8e10'};
       }
@@ -88,7 +88,7 @@ const Wrapper = styled.div`
         ? '#435a8e10'
         : 'transparent'};
     border-radius: ${(props) => props.theme.radius.one};
-    transition-duration: 0.15s !important;
+    transition-duration: 0.1s;
     :hover {
       background: ${(props) =>
         props.submenu ? 'transparent' : '#435a8e10'};

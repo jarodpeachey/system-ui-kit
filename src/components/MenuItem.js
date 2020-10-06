@@ -66,18 +66,28 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  transition-duration: 0.15s !important;
+  display: flex;
+  align-items: stretch;
+  a {
+    opacity: 1;
+  }
+  :hover a {
+    opacity: 0.8;
+  }
+
   a {
     display: block;
     width: fit-content;
-    padding: ${(props) => (props.square ? '12px' : '12px 18px')};
+    color: ${(props) => props.theme.color.text.paragraph};
+    padding: 12px 18px;
+    border: none;
+    height: 100%;
     text-decoration: none;
-    cursor: pointer;
-    background: ${(props) => (props.open ? '#00000007' : 'transparent')};
+    transition-duration: 0.1s;
+    // background: ${(props) => (props.open ? '#00000007' : 'transparent')};
     border-radius: ${(props) => props.theme.radius.one};
-    transition-duration: 0.15s !important;
     :hover {
-      background: #00000007;
+      // background: #00000009;
     }
   }
   ${(props) => props.customStyles}

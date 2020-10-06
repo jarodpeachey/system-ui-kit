@@ -8,6 +8,7 @@ import { theme } from '../theme';
 
 import Section from '../components/Section';
 import H2 from '../components/H2';
+import H4 from '../components/H4';
 import Button from '../components/Button';
 import IconButton from '../components/IconButton';
 import Info from '../components/Info';
@@ -28,6 +29,9 @@ import Dropdown from '../components/Dropdown';
 import DropdownItem from '../components/DropdownItem';
 import Hidden from '../components/Hidden';
 import Input from '../components/Input';
+import Header from '../components/Header';
+import Menu from '../components/Menu';
+import MenuItem from '../components/MenuItem';
 
 const Components = () => (
   <Layout component>
@@ -667,6 +671,91 @@ const Components = () => (
           className="mb-2"
           defaultValue={3}
         />
+        <br />
+        <br />
+        <H2>Menu</H2>
+        <H5>Colors</H5>
+        <Header
+          customStyles="div {width: 100%;} margin: 0 0 12px 0; border-radius: 5px;"
+          height={60}
+          fullWidth
+          color="primary"
+        >
+          <Flex
+            alignItems="center"
+            justifyContent="space-between"
+            customStyles="width: 100%;"
+          >
+            <H4 className="m-none">SystemUI</H4>
+            <Menu>
+              <MenuItem>
+                <a href="/">Home</a>
+              </MenuItem>
+              <MenuItem>
+                <a href="/">About</a>
+              </MenuItem>
+              <MenuItem>
+                <IconButton link="/" color="white" variant="plain">
+                  <FontAwesomeIcon icon="check" />
+                </IconButton>
+              </MenuItem>
+            </Menu>
+          </Flex>
+        </Header>
+        <Header
+          customStyles="div {width: 100%;} margin: 0 0 12px 0; border-radius: 5px;"
+          height={60}
+          fullWidth
+          color="secondary"
+        >
+          <Flex
+            alignItems="center"
+            justifyContent="space-between"
+            customStyles="width: 100%;"
+          >
+            <H4 className="m-none">SystemUI</H4>
+            <Menu>
+              <MenuItem>
+                <a href="/">Home</a>
+              </MenuItem>
+              <MenuItem>
+                <a href="/">About</a>
+              </MenuItem>
+              <MenuItem>
+                <IconButton link="/" color="white" variant="plain">
+                  <FontAwesomeIcon icon="check" />
+                </IconButton>
+              </MenuItem>
+            </Menu>
+          </Flex>
+        </Header>
+        <Header
+          customStyles="div {width: 100%;} margin: 0 0 12px 0; border-radius: 5px;"
+          height={60}
+          fullWidth
+          color="white"
+        >
+          <Flex
+            alignItems="center"
+            justifyContent="space-between"
+            customStyles="width: 100%;"
+          >
+            <H4 className="m-none">SystemUI</H4>
+            <Menu>
+              <MenuItem>
+                <a href="/">Home</a>
+              </MenuItem>
+              <MenuItem>
+                <a href="/">About</a>
+              </MenuItem>
+              <MenuItem>
+                <IconButton link="/" variant="plain">
+                  <FontAwesomeIcon icon="check" />
+                </IconButton>
+              </MenuItem>
+            </Menu>
+          </Flex>
+        </Header>
       </Container>
     </Section>
   </Layout>

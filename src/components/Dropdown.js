@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: fit-content;
   z-index: 999;
-  transition-duration: 0.15s !important;
+  transition-duration: 0.1s;
   a {
     display: block;
     width: fit-content;
@@ -42,7 +42,7 @@ const Wrapper = styled.div`
     background: ${(props) =>
       props.open ? props.theme.color.gray.two : 'transparent'};
     border-radius: ${(props) => props.theme.radius.one};
-    transition-duration: 0.15s !important;
+    transition-duration: 0.1s;
     :hover {
       background: ${(props) => props.theme.color.gray.two};
     }

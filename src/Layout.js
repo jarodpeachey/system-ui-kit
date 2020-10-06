@@ -45,6 +45,8 @@ import { Row, Column } from '@react-tiny-grid/core';
 import Collapse from './components/Collapse';
 import { pathnameIncludes } from './utils/pathnameIncludes';
 import { Link } from '@reach/router';
+import Flex from './components/Flex';
+import Paragraph from './components/Paragraph';
 
 library.add(
   faQuestionCircle,
@@ -85,12 +87,6 @@ const Layout = ({ children, component, example }) => {
           >
             System
           </H1>
-          <Mobile>
-            <MobileMenuToggle
-              open={mobileMenuOpen}
-              toggleFunction={() => setMobileMenuOpen(!mobileMenuOpen)}
-            />
-          </Mobile>
           <Tablet>
             <Menu>
               <MenuItem>
@@ -100,14 +96,39 @@ const Layout = ({ children, component, example }) => {
                 <Link to="/components">Components</Link>
                 <SubMenu>
                   <SubMenuItem>
-                    <Link to="/components/layout">Layout</Link>
+                    <Link to="/components/layout">
+                      <Flex justifyContent="flex-start" alignItems="flex-start">
+                        <FontAwesomeIcon icon="globe" style={{color: theme.color.primary, fontSize: 24, marginRight: 8}} />
+                        <div>
+                          <Paragraph className="mt-none" customStyles="font-weight: bold;">
+                            Layout
+                          </Paragraph>
+                        </div>
+                      </Flex>
+                    </Link>
                   </SubMenuItem>
                   <SubMenuItem>
-                    <Link to="/components/inputs">Inputs</Link>
+                    <Link to="/components/layout">
+                      <Flex justifyContent="flex-start" alignItems="flex-start">
+                        <FontAwesomeIcon icon="globe" style={{color: theme.color.primary, fontSize: 24, marginRight: 8}} />
+                        <div>
+                          <Paragraph className="mt-none" customStyles="font-weight: bold;">
+                            Layout
+                          </Paragraph>
+                        </div>
+                      </Flex>
+                    </Link>
                   </SubMenuItem>
                   <SubMenuItem>
-                    <Link to="/components/display">
-                      Display
+                    <Link to="/components/layout">
+                      <Flex justifyContent="flex-start" alignItems="flex-start">
+                        <FontAwesomeIcon icon="globe" style={{color: theme.color.primary, fontSize: 24, marginRight: 8}} />
+                        <div>
+                          <Paragraph className="mt-none" customStyles="font-weight: bold;">
+                            Layout
+                          </Paragraph>
+                        </div>
+                      </Flex>
                     </Link>
                   </SubMenuItem>
                 </SubMenu>
@@ -122,6 +143,12 @@ const Layout = ({ children, component, example }) => {
               </MenuItem>
             </Menu>
           </Tablet>
+          <Mobile>
+            <MobileMenuToggle
+              open={mobileMenuOpen}
+              toggleFunction={() => setMobileMenuOpen(!mobileMenuOpen)}
+            />
+          </Mobile>
         </Header>
         <Mobile>
           <MobileMenu open={mobileMenuOpen}>

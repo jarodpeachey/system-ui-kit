@@ -51,7 +51,7 @@ const ToggleWrapper = styled.div`
         ? props.theme.color.primary
         : props.theme.color.gray.four};
   padding: ${(props) => (props.filled ? '1px' : '2px')};
-  transition: 0.15s ease-in;
+  transition: 0.1s ease-in;
   background: ${(props) => (props.filled ? props.theme.color.primary : null)};
   :hover {
     border: 1px solid

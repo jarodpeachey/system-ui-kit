@@ -23,10 +23,12 @@ const StyledContainer = styled.div`
   @media (min-width: 576px) {
     padding-left: 32px;
     padding-right: 32px;
+    ${(props) => props.customStyles}
   }
   @media (min-width: 769px) {
     padding-left: 64px;
     padding-right: 64px;
+    ${(props) => props.customStyles}
   }
   ${(props) => props.customStyles}
 `;

@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     text-decoration: none;
     cursor: pointer;
     background: none !important;
-    transition-duration: 0.15s !important;
+    transition-duration: 0.1s;
     color: initial !important;
     font-weight: normal !important;
     border-radius: 0 !important;
