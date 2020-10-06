@@ -58,11 +58,14 @@ const Header = ({
       customStyles={customStyles}
     >
       <Container
-        customStyles={
-          fullWidth
-            ? 'padding-left: 24px; padding-right: 24px; width: 100%;'
-            : null
-        }
+        customStyles={`
+          position: relative;
+          ${
+            fullWidth
+              ? 'padding-left: 24px; padding-right: 24px; width: 100%;'
+              : ''
+          }
+        `}
         maxWidth={fullWidth ? 99999 : null}
       >
         <InnerContainer color={color} scrolled={window.scrollY > 50}>
@@ -110,7 +113,7 @@ const Wrapper = styled.div`
         ? 'white'
         : null};
   }
-  span {
+  .mobile-menu-toggle span {
     background: ${(props) =>
       props.color === 'primary' ||
       props.color === 'secondary' ||
@@ -153,61 +156,13 @@ const Wrapper = styled.div`
           ? 'white'
           : props.theme.color.text.heading};
     }
-    span {
+    .mobile-menu-toggle span {
       background: ${(props) =>
         props.scrollColor === 'primary' ||
         props.scrollColor === 'secondary' ||
         props.scrollColor === 'dark'
           ? 'white'
           : props.theme.color.text.heading} !important;
-    }
-  }
-  &.open {
-    box-shadow: none !important;
-    border-bottom: 2px solid ${(props) => props.theme.color.gray.one};
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    div,
-    .menu-item,
-    .menu-item a {
-      color: ${(props) =>
-        props.color === 'transparent' ? props.theme.color.text.heading : null};
-    }
-    transition: background 0s;
-    span {
-      background: ${(props) =>
-        props.color === 'transparent'
-          ? props.theme.color.text.heading
-          : null} !important;
-    }
-  }
-  &.open.scrolled {
-    box-shadow: none !important;
-    border-bottom: none !important;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    div,
-    .menu-item,
-    .menu-item a {
-      color: ${(props) =>
-        props.scrollColor === 'transparent'
-          ? props.theme.color.text.heading
-          : 'white'};
-    }
-    transition: background 0s;
-    span {
-      background: ${(props) =>
-        props.scrollColor === 'transparent'
-          ? props.theme.color.text.heading
-          : 'white'} !important;
     }
   }
   ${(props) => props.customStyles}
@@ -217,13 +172,7 @@ const InnerContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: 0.3s;
-`;
-
-const Close = styled.div`
-  font-size: 20px;
-  font-weight: 600;
-  color: white;
+  position: relative;
 `;
 
 Header.propTypes = {

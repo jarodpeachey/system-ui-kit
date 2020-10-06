@@ -43,7 +43,7 @@ const StyledParagraph = styled.p`
     props.size === 'sm'
       ? props.theme.fontSize.small
       : props.size === 'lg'
-      ? props.theme.fontSize.p + 4
+      ? props.theme.fontSize.p + 2
       : props.theme.fontSize.p}px;
   font-weight: ${(props) => props.theme.fontWeight.body};
   ${(props) =>

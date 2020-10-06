@@ -47,7 +47,7 @@ export const theme = {
   fontWeight: {
     heading: 600,
     display: 800,
-    body: 500,
+    body: 400,
     button: 600,
   },
   color: {

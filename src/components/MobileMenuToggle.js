@@ -20,7 +20,7 @@ const MobileMenuToggle = ({
   };
   return (
     <Wrapper
-      className={className}
+      className={`mobile-menu-toggle ${className}`}
       id={id}
       customStyles={customStyles}
       onClick={customToggle}
@@ -44,7 +44,7 @@ const Wrapper = styled.div`
     display: block;
   }
   transform: rotate(0deg);
-    transition: all .15s ease-out;
+  transition: all 0.15s ease-out;
   cursor: pointer;
   margin-left: auto;
   position: ${(props) => (props.open ? 'relative' : 'static')};
@@ -71,7 +71,7 @@ const Wrapper = styled.div`
     top: calc(50% - 2px);
     left: 0;
     transform-origin: left center;
-        opacity: ${(props) => (props.open ? 0 : 1)};
+    opacity: ${(props) => (props.open ? 0 : 1)};
   }
   span:nth-child(3) {
     top: ${(props) => (props.open ? '0' : 'calc(90% - 4px)')};

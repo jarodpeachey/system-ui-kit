@@ -10,7 +10,7 @@ const Modal = ({ children, title, toggleFunction, noClose, noHeader }) => {
     setClose(true);
     setTimeout(() => {
       toggleFunction();
-    }, 170);
+    }, 200);
   };
   return (
     <>
@@ -64,13 +64,13 @@ const background = keyframes`
     background: transparent;
   }
   to {
-    background: #4b4f6120;
+    background: #00000045;
   }
 `;
 
 const backgroundClose = keyframes`
   from {
-    background: #4b4f6120;
+    background: #00000045;
   }
   to {
     background: transparent;
@@ -80,21 +80,22 @@ const backgroundClose = keyframes`
 
 const ModalWrapper = styled.div`
   position: fixed;
-  width: 100vw;
+  // width: 100vw;
   height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 99999999 !important;
-  animation: ${background} 170ms forwards;
+  animation: ${background} 200ms forwards;
   transition: background 0.17s ease-out;
 `;
 
 const ModalWrapperClose = styled.div`
   position: fixed;
-  width: 100vw;
+  // width: 100vw;
   height: 100%;
   top: 0;
   left: 0;
@@ -102,14 +103,8 @@ const ModalWrapperClose = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 99999999 !important;
-  animation: ${backgroundClose} 170ms forwards;
+  animation: ${backgroundClose} 200ms forwards;
   transition: background 0.17s ease-out;
-`;
-
-const Title = styled.h2`
-  position: absolute;
-  top: 32px;
-  left: 32px;
 `;
 
 const CloseButton = styled.div`
@@ -121,18 +116,23 @@ const CloseButton = styled.div`
   justify-content: center;
   font-size: 20px;
   margin-left: auto;
-  color: ${(props) => props.theme.color.two};
+  color: ${(props) => props.theme.color.gray.four};
   :hover {
-    color: ${(props) => props.theme.color.one};
+    color: ${(props) => props.theme.color.gray.five};
   }
 `;
 
 const zoom = keyframes`
-  from {
+  0% {
     transform: scale(0.8);
+    opacity: 0;
   }
-  to {
+  60% {
+    opacity: 1;
+  }
+  100% {
     transform: scale(1);
+    opacity: 1;
   }
 `;
 
@@ -141,53 +141,57 @@ const zoomOut = keyframes`
     transform: scale(1);
     opacity: 1;
   }
-  80% {
+  70% {
     opacity: 0;
   }
-  to {
-    transform: scale(0.6);
+  100% {
+    transform: scale(0.9);
     opacity: 0;
   }
 `;
 
 const StyledModal = styled.div`
-  max-width: 100%;
+  max-width: 95%;
   margin: 0 auto;
   min-width: 300px;
   @media (min-width: 576px) {
     min-width: 400px;
   }
-  width: ${(props) => (props.full ? '90%' : 'fit-content')};
-  max-width: 1200px;
-  height: ${(props) => (props.full ? 'fit-content' : 'fit-content')};
-  animation: ${zoom} 170ms forwards;
+  @media (min-width: 1000px) {
+    max-width: 1200px;
+  }
+  width: fit-content;
+  height: fit-content;
+  animation: ${zoom} 200ms forwards;
   position: relative;
   border-radius: 5px;
   z-index: 999;
   padding: 32px;
   background: white;
   border-radius: 5px;
-  box-shadow: ${(props) => props.theme.shadow.three};
+  box-shadow: ${(props) => props.theme.shadow.four};
 `;
 
 const StyledModalClose = styled.div`
-  max-width: 100%;
+  max-width: 95%;
   margin: 0 auto;
   min-width: 300px;
   @media (min-width: 576px) {
     min-width: 400px;
   }
-  width: ${(props) => (props.full ? '90%' : 'fit-content')};
-  max-width: 1200px;
-  height: ${(props) => (props.full ? 'fit-content' : 'fit-content')};
-  animation: ${zoomOut} 245ms forwards;
+  @media (min-width: 1000px) {
+    max-width: 1200px;
+  }
+  width: fit-content;
+  height: fit-content;
+  animation: ${zoomOut} 200ms forwards;
   position: relative;
   border-radius: 5px;
   z-index: 999;
   padding: 32px;
   background: white;
   border-radius: 5px;
-  box-shadow: ${(props) => props.theme.shadow.three};
+  box-shadow: ${(props) => props.theme.shadow.four};
 `;
 
 export default Modal;

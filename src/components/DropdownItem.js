@@ -20,7 +20,7 @@ const Wrapper = styled.div`
     background: ${(props) => props.theme.color.gray.one};
   }
   :active {
-    background: ${theme.color.primary};
+    background: ${(props) => props.theme.color.gray.two};
     color: white;
   }
 `;

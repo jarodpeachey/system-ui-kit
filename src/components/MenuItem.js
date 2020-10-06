@@ -103,24 +103,24 @@ const SubMenuWrapper = styled.div`
   position: absolute;
   min-width: calc(100% + 40px);
   top: calc(100%);
-  padding-top: 14px;
+  // padding-top: 8px;
   margin: 0 auto;
-  left: ${(props) => (props.align !== 'right' ? 0 : null)};
-  right: ${(props) => (props.align === 'right' ? 0 : null)};
+  left: ${(props) => (props.align !== 'right' ? '18px' : null)};
+  right: ${(props) => (props.align === 'right' ? '18px' : null)};
   z-index: 999;
   // filter: drop-shadow(0px 0px 5px #00000010);
-  ::after {
-    display: block;
-    content: '';
-    position: absolute;
-    right: ${(props) => (props.align === 'right' ? '20px' : null)};
-    left: ${(props) => (props.align !== 'right' ? '20px' : null)};
-    top: 8px;
-    width: 12px;
-    height: 12px;
-    transform: rotate(45deg);
-    background: white;
-  }
+  // ::after {
+  //   display: block;
+  //   content: '';
+  //   position: absolute;
+  //   right: ${(props) => (props.align === 'right' ? '20px' : null)};
+  //   left: ${(props) => (props.align !== 'right' ? '20px' : null)};
+  //   top: 8px;
+  //   width: 12px;
+  //   height: 12px;
+  //   transform: rotate(45deg);
+  //   background: white;
+  // }
 `;
 
 export default MenuItem;

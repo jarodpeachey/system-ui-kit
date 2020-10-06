@@ -47,6 +47,7 @@ import { pathnameIncludes } from './utils/pathnameIncludes';
 import { Link } from '@reach/router';
 import Flex from './components/Flex';
 import Paragraph from './components/Paragraph';
+import Hidden from './components/Hidden';
 
 library.add(
   faQuestionCircle,
@@ -87,7 +88,7 @@ const Layout = ({ children, component, example }) => {
           >
             System
           </H1>
-          <Tablet>
+          <Hidden show={769}>
             <Menu>
               <MenuItem>
                 <Link to="/">Home</Link>
@@ -96,40 +97,13 @@ const Layout = ({ children, component, example }) => {
                 <Link to="/components">Components</Link>
                 <SubMenu>
                   <SubMenuItem>
-                    <Link to="/components/layout">
-                      <Flex justifyContent="flex-start" alignItems="flex-start">
-                        <FontAwesomeIcon icon="globe" style={{color: theme.color.primary, fontSize: 24, marginRight: 8}} />
-                        <div>
-                          <Paragraph className="mt-none" customStyles="font-weight: bold;">
-                            Layout
-                          </Paragraph>
-                        </div>
-                      </Flex>
-                    </Link>
+                    <Link to="/components/layout">Layout</Link>
                   </SubMenuItem>
                   <SubMenuItem>
-                    <Link to="/components/layout">
-                      <Flex justifyContent="flex-start" alignItems="flex-start">
-                        <FontAwesomeIcon icon="globe" style={{color: theme.color.primary, fontSize: 24, marginRight: 8}} />
-                        <div>
-                          <Paragraph className="mt-none" customStyles="font-weight: bold;">
-                            Layout
-                          </Paragraph>
-                        </div>
-                      </Flex>
-                    </Link>
+                    <Link to="/components/layout">Layout</Link>
                   </SubMenuItem>
                   <SubMenuItem>
-                    <Link to="/components/layout">
-                      <Flex justifyContent="flex-start" alignItems="flex-start">
-                        <FontAwesomeIcon icon="globe" style={{color: theme.color.primary, fontSize: 24, marginRight: 8}} />
-                        <div>
-                          <Paragraph className="mt-none" customStyles="font-weight: bold;">
-                            Layout
-                          </Paragraph>
-                        </div>
-                      </Flex>
-                    </Link>
+                    <Link to="/components/layout">Layout</Link>
                   </SubMenuItem>
                 </SubMenu>
               </MenuItem>
@@ -142,35 +116,33 @@ const Layout = ({ children, component, example }) => {
                 </a>
               </MenuItem>
             </Menu>
-          </Tablet>
-          <Mobile>
+          </Hidden>
+          <Hidden hide={769}>
             <MobileMenuToggle
               open={mobileMenuOpen}
               toggleFunction={() => setMobileMenuOpen(!mobileMenuOpen)}
             />
-          </Mobile>
+            <MobileMenu open={mobileMenuOpen}>
+              <MobileMenuItem>
+                <a href="/">Home</a>
+              </MobileMenuItem>
+              <MobileMenuItem submenu>
+                Components
+                <MobileSubMenu>
+                  <MobileSubMenuItem>
+                    <Link to="/components/layout">Layout</Link>
+                  </MobileSubMenuItem>
+                  <MobileSubMenuItem>
+                    <Link to="/components/inputs">Inputs</Link>
+                  </MobileSubMenuItem>
+                  <MobileSubMenuItem>
+                    <Link to="/components/display">Display</Link>
+                  </MobileSubMenuItem>
+                </MobileSubMenu>
+              </MobileMenuItem>
+            </MobileMenu>
+          </Hidden>
         </Header>
-        <Mobile>
-          <MobileMenu open={mobileMenuOpen}>
-            <MobileMenuItem>
-              <a href="/">Home</a>
-            </MobileMenuItem>
-            <MobileMenuItem submenu>
-              <Link to="/components">Components</Link>
-              <MobileSubMenu>
-                <MobileSubMenuItem>
-                  <Link to="/components/layout">Layout</Link>
-                </MobileSubMenuItem>
-                <MobileSubMenuItem>
-                  <Link to="/components/inputs">Inputs</Link>
-                </MobileSubMenuItem>
-                <MobileSubMenuItem>
-                  <Link to="/components/display">Display</Link>
-                </MobileSubMenuItem>
-              </MobileSubMenu>
-            </MobileMenuItem>
-          </MobileMenu>
-        </Mobile>
 
         {component ? (
           <>

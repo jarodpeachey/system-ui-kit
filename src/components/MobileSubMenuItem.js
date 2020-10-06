@@ -12,18 +12,12 @@ const Wrapper = styled.div`
   a {
     display: block;
     width: 100%;
-    padding: 8px 24px;
+    padding: 12px 16px;
     text-decoration: none;
     cursor: pointer;
-    background: none !important;
     transition-duration: 0.1s;
-    color: initial !important;
-    font-weight: normal !important;
-    border-radius: 0 !important;
-    :hover,
-    :focus {
-      color: ${(props) => props.theme.color.primary} !important;
-    }
+    font-weight: 600;
+    color: white;
   }
 `;
 

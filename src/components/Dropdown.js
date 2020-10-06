@@ -91,7 +91,7 @@ const SubMenu = styled.div`
   border-radius: ${(props) => props.theme.radius.one};
   background: #ffffff;
   padding: 8px 0;
-  box-shadow: ${(props) => props.theme.shadow.dropdown};
+  box-shadow: ${(props) => props.theme.shadow.four};
   min-width: 150px;
     right: ${(props) => (props.align === 'right' ? '0' : null)};
     left: ${(props) =>

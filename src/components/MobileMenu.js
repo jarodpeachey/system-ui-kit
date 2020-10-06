@@ -1,108 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Container from './Container';
 
-const MobileMenu = ({ children, className, id, open, customStyles }) => {
-  const [scroll, setScroll] = useState(
-    typeof window !== 'undefined' && window.scrollY,
-  );
-  const onScroll = () => {
-    setScroll(window.scrollY);
-
-    if (window.scrollY > 50) {
-      document.getElementById('header').classList.add('scrolled');
-    } else {
-      document.getElementById('header').classList.remove('scrolled');
-    }
-  };
-
-  useEffect(() => {
-    if (window.scrollY > 50) {
-      document.getElementById('header').classList.add('scrolled');
-    } else {
-      document.getElementById('header').classList.remove('scrolled');
-    }
-
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', onScroll);
-    }
-
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('scroll', onScroll);
-      }
-    };
-  });
-
-  return (
-    <>
-      {/* <MobileMenuToggle
-        scrolled={scroll}
-        onClick={() => toggleFunction()}
-        open={open}
-      >
-        <MobileMenuRotate open={open}>
-          <span />
-          <span />
-          <span />
-        </MobileMenuRotate>
-      </MobileMenuToggle> */}
-      <Wrapper
-        children={children.length}
-        scrolled={scroll > 50}
-        className={`${className}`}
-        id={`${id} mobile-menu`}
-        customStyles={customStyles}
-        open={open}
-      >
-        <InnerWrapper scrolled={scroll > 50} open={open}>
-          <Container>{children}</Container>
-        </InnerWrapper>
-      </Wrapper>
-    </>
-  );
-};
+const MobileMenu = ({ children, className, customStyles, open }) => (
+  <>
+    <Wrapper
+      className={className}
+      id="mobile-menu"
+      customStyles={customStyles}
+      open={open}
+    >
+      {children}
+    </Wrapper>
+  </>
+);
 
 const Wrapper = styled.div`
-  position: fixed;
-  // top: 0;
-  left: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 999;
   width: 100%;
-  top: 0;
-  transition: max-height 0.3s, background 0.3s;
-  overflow: hidden;
-  // transform: translateY(${(props) => (props.open ? '0' : '-100%')});
-  z-index: 998;
-  transition-delay: backdrop-filter 0.5s;
-  -webkit-transition: max-height 0.3s
-    ${(props) => (props.open ? 'ease-in' : 'ease-out')};
-  -moz-transition: max-height 0.3s
-    ${(props) => (props.open ? 'ease-in' : 'ease-out')};
-  -ms-transition: max-height 0.3s
-    ${(props) => (props.open ? 'ease-in' : 'ease-out')};
-  -o-transition: max-height 0.3s
-    ${(props) => (props.open ? 'ease-in' : 'ease-out')};
-  transition: max-height 0.3s
-    ${(props) => (props.open ? 'ease-in' : 'ease-out')};
-  max-height: ${(props) => (props.open ? '100%' : '0')} !important;
-  height: 100%;
+  height: fit-content;
+  left: 0;
+  border-radius: ${(props) => props.theme.radius.two};
+  margin: 1.6em auto 0;
+  visibility: hidden;
+  background: ${(props) => props.theme.color.gray.six};
+  opacity: 0;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out, visibility 0s 0.1s;
+  transform: scale(0.95);
+  padding: 1.5em;
 
-  ${(props) => props.customStyles}
-`;
-
-const InnerWrapper = styled.div`
-  overflow-y: auto;
-  height: 100%;
-  padding: 12px;
-  background: #fffffff9;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.03),
-    0 4px 16px -6px rgba(0, 0, 0, 0.5);
-  padding: 12px 0;
-  padding-top: ${(props) => (props.scrolled ? '75px' : '107px')};
-  > div {
-    padding-top: 12px;
-    border-top: 2px solid ${(props) => props.theme.color.gray.one};
-  }
+  ${(props) =>
+    props.open &&
+    css`
+      transition: transform 0.1s ease-out, opacity 0.1s ease-out,
+        visibility 0s 0s;
+      transform: scale(1);
+      visibility: visible;
+      opacity: 1;
+    `}
 `;
 
 // max-height: calc(

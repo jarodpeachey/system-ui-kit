@@ -9,10 +9,16 @@ const SubMenuItem = ({ children, className, id, customStyles }) => (
 
 const Wrapper = styled.div`
   width: 100%;
+  margin: 0;
+  cursor: pointer;
+  :hover {
+    background: ${(props) => props.theme.color.gray.one};
+  }
   a {
+    width: 100%;
+    padding: 12px 18px;
     display: block;
     width: 100%;
-    padding: 8px 16px;
     text-decoration: none;
     background: none;
     transition-duration: 0.1s;
@@ -23,12 +29,12 @@ const Wrapper = styled.div`
     margin: 0;
     width: 100%;
     cursor: pointer;
-    :active {
-      background: ${(props) => props.theme.color.primary};
-      color: white;
-    }
     :hover {
       background: ${(props) => props.theme.color.gray.one};
+    }
+    :active {
+      background: ${(props) => props.theme.color.gray.two};
+      color: white;
     }
   }
 

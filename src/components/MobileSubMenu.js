@@ -3,14 +3,19 @@ import styled from 'styled-components';
 
 const MobileSubMenu = ({ children, className, id }) => (
   <Wrapper className={className} id={id}>
-    {children}
+    <InnerWrapper>{children}</InnerWrapper>
   </Wrapper>
 );
 
 const Wrapper = styled.div`
-  padding: 8px 0;
+  padding-top: 12px;
+`;
+
+const InnerWrapper = styled.div`
+  padding: 12px;
   width: 100%;
-  // box-shadow: ${(props) => props.theme.shadow.one};
+  background: #ffffff10;
+  border-radius: ${(props) => props.theme.radius.one};
 `;
 
 export default MobileSubMenu;

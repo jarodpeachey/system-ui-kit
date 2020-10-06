@@ -54,7 +54,6 @@ const Collapse = ({
             <FontAwesomeIcon
               style={{
                 fontSize: 14,
-                color: hover ? theme.color.gray.six : theme.color.gray.four,
                 transition: '.15s ease-out',
                 fontWeight: 400,
               }}
@@ -92,9 +91,11 @@ const Toggle = styled.div`
   // padding: ${(props) => props.padding}px;
   transition: color 0.15s ease-out, border 0.15s ease-out,
     transform 0.15s ease-in-out;
-  height: 30px;
-  width: 30px;
   display: flex;
+  height: 16px;
+  margin-top: 3px;
+  margin-left: 6px;
+  width: 16px;
   align-items: center;
   justify-content: center;
   color: 1px solid
