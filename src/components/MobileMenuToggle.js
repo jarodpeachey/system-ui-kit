@@ -44,7 +44,7 @@ const Wrapper = styled.div`
     display: block;
   }
   transform: rotate(0deg);
-  transition: all 0.15s ease-out;
+  transition: all 0.1s ease-out;
   cursor: pointer;
   margin-left: auto;
   position: ${(props) => (props.open ? 'relative' : 'static')};
@@ -61,7 +61,7 @@ const Wrapper = styled.div`
     left: 0;
     transform: rotate(0deg);
     transition: ${(props) =>
-      props.open ? 'all 0.15s ease-in' : 'all 0.15s ease-out'};
+      props.open ? 'all 0.1s ease-in' : 'all 0.1s ease-out'};
   }
 
   span:nth-child(1) {
@@ -90,7 +90,7 @@ const MobileMenuRotate = styled.div`
   height: 100%;
   width: 100%;
   transition: ${(props) =>
-    props.open ? 'all 0.15s ease-in-out' : 'all 0.15s ease-in-out'};
+    props.open ? 'all 0.1s ease-in-out' : 'all 0.1s ease-in-out'};
   transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'none')};
 `;
 export default MobileMenuToggle;

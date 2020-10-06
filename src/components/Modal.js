@@ -75,7 +75,6 @@ const backgroundClose = keyframes`
   to {
     background: transparent;
   }
-
 `;
 
 const ModalWrapper = styled.div`
@@ -90,7 +89,7 @@ const ModalWrapper = styled.div`
   justify-content: center;
   z-index: 99999999 !important;
   animation: ${background} 200ms forwards;
-  transition: background 0.17s ease-out;
+  transition: background 0.2s ease-out;
 `;
 
 const ModalWrapperClose = styled.div`
@@ -104,7 +103,7 @@ const ModalWrapperClose = styled.div`
   justify-content: center;
   z-index: 99999999 !important;
   animation: ${backgroundClose} 200ms forwards;
-  transition: background 0.17s ease-out;
+  transition: background 0.2s ease-out;
 `;
 
 const CloseButton = styled.div`

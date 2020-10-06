@@ -429,9 +429,9 @@ function (Component) {
       outline: 0,
       boxShadow: $hasOutline ? activeBoxShadow : boxShadow,
       border: 0,
-      WebkitTransition: $isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
-      MozTransition: $isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.15s",
-      transition: $isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.15s"
+      WebkitTransition: $isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.1s",
+      MozTransition: $isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.1s",
+      transition: $isDragging ? null : "background-color 0.25s, transform 0.25s, box-shadow 0.1s"
     };
     var inputStyle = {
       border: 0,

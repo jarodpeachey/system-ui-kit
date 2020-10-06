@@ -87,9 +87,9 @@ const StyledButton = styled.button`
   letter-spacing: 1.4px;
   padding: ${(props) =>
     props.size === 'sm'
-      ? '8px 18px'
+      ? '10px 20px'
       : props.size === 'lg'
-      ? '20px 30px'
+      ? '18px 32px'
       : '14px 26px'};
 
   font-size: ${(props) =>
@@ -312,10 +312,10 @@ const StyledLink = styled(Link)`
   letter-spacing: 1.4px;
   padding: ${(props) =>
     props.size === 'sm'
-      ? '6px 18px'
+      ? '10px 20px'
       : props.size === 'lg'
-      ? '18px 30px'
-      : '12px 26px'};
+      ? '18px 32px'
+      : '14px 26px'};
 
   font-size: ${(props) =>
     props.size === 'sm' ? '15px' : props.size === 'lg' ? '18px' : '16px'};
@@ -537,10 +537,10 @@ const StyledA = styled.a`
   letter-spacing: 1.4px;
   padding: ${(props) =>
     props.size === 'sm'
-      ? '6px 18px'
+      ? '10px 20px'
       : props.size === 'lg'
-      ? '18px 30px'
-      : '12px 26px'};
+      ? '18px 32px'
+      : '14px 26px'};
 
   font-size: ${(props) =>
     props.size === 'sm' ? '15px' : props.size === 'lg' ? '18px' : '16px'};

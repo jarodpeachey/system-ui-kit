@@ -787,12 +787,18 @@ const Components = () => {
                 bottom.
               </Paragraph>
               {/* <Line /> */}
-              <Flex justifyContent="space-between" customStyles="margin-top: 24px;">
-                <Button color="primary">Save</Button>
+              <Flex
+                justifyContent="space-between"
+                customStyles="margin-top: 36px;"
+              >
+                <Button color="primary" size="sm">
+                  Save
+                </Button>
                 <Button
                   onClick={() => setModalOpen(!modalOpen)}
                   color="primary"
                   variant="plain"
+                  size="sm"
                 >
                   Cancel
                 </Button>

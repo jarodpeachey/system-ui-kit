@@ -34,7 +34,7 @@ const StyledButton = styled.button`
   font-size: ${props => props.theme.fontSize.base}px;
   cursor: pointer;
   border-radius: ${(props) => props.theme.radius.one};
-  transition: all 0.15s;
+  transition: all 0.1s;
   :hover, :focus
  {
     box-shadow: 0px 8px 26px -14px ${(props) => (props.color === 'primary' ? props.theme.color.primary : props.color === 'secondary' ? props.theme.color.secondary : props.color === 'error' ? props.theme.color.error : props.color === 'success' ? props.theme.color.success : '#aaa')};

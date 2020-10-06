@@ -77,7 +77,7 @@ const Header = ({
 };
 
 const Wrapper = styled.div`
-  transition: all 0.3s, border-bottom 0.15s ease 0.3s;
+  transition: all 0.3s, border-bottom 0.1s ease 0.3s;
   position: ${(props) => (props.fixed ? 'fixed' : '')};
   display: flex;
   align-items: center;

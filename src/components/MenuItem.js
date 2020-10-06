@@ -25,7 +25,7 @@ const MenuItem = ({
             top: 1,
             left: 6,
             transform: `${showSubMenu ? 'rotate(180deg)' : 'none'}`,
-            transitionDuration: '.15s',
+            transitionDuration: '.1s',
           }}
           icon="chevron-down"
         />

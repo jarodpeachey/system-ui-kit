@@ -82,11 +82,11 @@ const Wrapper = styled.div`
 `;
 
 const MobileSubMenuWrapper = styled.div`
-  -webkit-transition: all 0.15s;
-  -moz-transition: all 0.15s;
-  -ms-transition: all 0.15s;
-  -o-transition: all 0.15s;
-  transition: all 0.15s;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -ms-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
   overflow: hidden;
   max-height: ${(props) => (props.open ? '130px' : '0')} !important;
 `;

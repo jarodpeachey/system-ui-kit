@@ -54,7 +54,7 @@ const Collapse = ({
             <FontAwesomeIcon
               style={{
                 fontSize: 14,
-                transition: '.15s ease-out',
+                transition: '.1s ease-out',
                 fontWeight: 400,
               }}
               icon="chevron-right"
@@ -89,8 +89,8 @@ const Toggle = styled.div`
   transform: rotate(${(props) => (props.open ? '90deg' : '0deg')});
   border-radius: 99px;
   // padding: ${(props) => props.padding}px;
-  transition: color 0.15s ease-out, border 0.15s ease-out,
-    transform 0.15s ease-in-out;
+  transition: color 0.1s ease-out, border 0.1s ease-out,
+    transform 0.1s ease-in-out;
   display: flex;
   height: 16px;
   margin-top: 3px;

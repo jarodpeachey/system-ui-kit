@@ -106,7 +106,7 @@ const StyledTextArea = styled.textarea`
       : props.size === 'large'
       ? '17px'
       : '15px'};
-  transition: border 0.15s;
+  transition: border 0.1s;
   display: inline-block;
   resize: vertical;
   width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};

@@ -27,14 +27,14 @@ const Wrapper = styled.div`
   visibility: hidden;
   background: ${(props) => props.theme.color.gray.six};
   opacity: 0;
-  transition: transform 0.1s ease-out, opacity 0.1s ease-out, visibility 0s 0.1s;
+  transition: transform 0.1s, opacity 0.1s, visibility 0s 0.1s;
   transform: scale(0.95);
   padding: 1.5em;
 
   ${(props) =>
     props.open &&
     css`
-      transition: transform 0.1s ease-out, opacity 0.1s ease-out,
+      transition: transform 0.1s, opacity 0.1s,
         visibility 0s 0s;
       transform: scale(1);
       visibility: visible;
