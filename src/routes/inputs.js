@@ -6,12 +6,9 @@ import { theme } from '../theme';
 
 import Section from '../components/Section';
 import Button from '../components/Button';
-import OutlinedButton from '../components/OutlinedButton';
 import IconButton from '../components/IconButton';
-import OutlinedIconButton from '../components/OutlinedIconButton';
 import Input from '../components/Input';
 import TextArea from '../components/TextArea';
-import OutlinedInput from '../components/OutlinedInput';
 import Checkbox from '../components/Checkbox';
 import { Row, Column } from '@react-tiny-grid/core';
 import RadioButtons from '../components/RadioButtons';
@@ -660,7 +657,7 @@ const Inputs = ({}) => {
           </Row>
           <H2>Text Area</H2>
           <TextArea />
-          <Row breakpoints={[476, 960]} spacing={[24]}>
+          <Row breakpoints={[476, 960]} spacing={[32]}>
             <Column widths={[6, 4]}>
               <H3>Checkboxes</H3>
               <Checkbox id="test" value="unchecked">
@@ -807,14 +804,15 @@ const Inputs = ({}) => {
               </Button>
             </div>
           </div>
-          <Flex hAlign="flex-start">
+          {/* <Flex hAlign="flex-start"> */}
             <div
               style={{
                 background: 'white',
                 borderRadius: 3,
                 width: '150px',
                 height: '150px',
-                marginRight: 48,
+                marginBottom: 32,
+                marginTop: 32,
                 boxShadow: theme.shadow.one,
               }}
             ></div>
@@ -824,7 +822,8 @@ const Inputs = ({}) => {
                 borderRadius: 3,
                 width: '150px',
                 height: '150px',
-                marginRight: 48,
+                marginBottom: 32,
+                marginTop: 32,
                 boxShadow: theme.shadow.two,
               }}
             ></div>
@@ -834,7 +833,8 @@ const Inputs = ({}) => {
                 borderRadius: 3,
                 width: '150px',
                 height: '150px',
-                marginRight: 48,
+                marginBottom: 32,
+                marginTop: 32,
                 boxShadow: theme.shadow.three,
               }}
             ></div>
@@ -844,11 +844,12 @@ const Inputs = ({}) => {
                 borderRadius: 3,
                 width: '150px',
                 height: '150px',
-                marginRight: 48,
+                marginBottom: 32,
+                marginTop: 32,
                 boxShadow: theme.shadow.four,
               }}
             ></div>
-          </Flex>
+          {/* </Flex> */}
           <br />
           <br />
           <br />

@@ -4,18 +4,38 @@ import React from 'react';
 export const theme = {
   shadow: {
     // one: '3px 3px 18px -6px #00000010',
-    one:
-      '1px 1px 18px -5px rgba(174,198,211,.35), 1px 1px 5px -2px rgb(174, 198, 211, .25)',
-    two:
-      '1px 1px 28px -10px rgba(174,198,211,.4), 1px 1px 13px -4px rgb(174, 198, 211, .25)',
-    three:
-      '1px 1px 38px -15px rgba(174,198,211,.45), 1px 1px 20px -8px rgb(174, 198, 211, .25)',
-    four:
-      '1px 1px 48px -15px rgba(174,198,211,.45), 1px 1px 26px -4px rgb(174, 198, 211, .25)',
-    button: '3px 3px 18px -6px rgba(0,0,0,.25)',
-    buttonHover: '3px 3px 28px -10px rgba(0,0,0,.25)',
+    one: `
+      1px 2px 2px rgba(0, 0, 0, .04),
+      1px 2px 8px rgba(0, 0, 0, .08)
+    `,
+    two: `
+      1px 2px 8px rgba(0, 0, 0, .04),
+      2px 4px 16px rgba(0, 0, 0, .08)
+    `,
+    three: `
+      1px 2px 8px rgba(0, 0, 0, .04),
+      2px 4px 16px rgba(0, 0, 0, .05),
+      4px 8px 32px rgba(0, 0, 0, .08)
+    `,
+    four: `
+      2px 4px 16px rgba(0, 0, 0, .04),
+      4px 8px 32px rgba(0, 0, 0, .05),
+      8px 16px 48px rgba(0, 0, 0, .06),
+      12px 24px 64px rgba(0, 0, 0, .06),
+      12px 24px 120px rgba(0, 0, 0, .10)
+    `,
+    // button: '3px 3px 18px -6px rgba(0,0,0,.25)',
+    // buttonHover: '3px 3px 28px -10px rgba(0,0,0,.25)',
     dropdown: '1px 1px 12px -4px #2f557c20, 0px 0px 32px -6px #2f557c10',
     header: '0px 4px 10px 0px #00000010, 0px 20px 20px -10px #00000010',
+    button: `
+      1px 2px 2px rgba(0, 0, 0, .04),
+      1px 2px 8px rgba(0, 0, 0, .08)
+    `,
+    buttonHover: `
+      1px 2px 8px rgba(0, 0, 0, .04),
+      2px 4px 16px rgba(0, 0, 0, .08)
+    `,
   },
   radius: {
     one: '5px',

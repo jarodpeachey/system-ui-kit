@@ -49,15 +49,77 @@ const slideDown = keyframes`
 `;
 
 const NotificationWrapper = styled.div`
-  animation: ${(props) => (props.animate ? slideDown : slideUp)} 0.3s;
   display: flex;
   align-items: center;
+  margin: ${(props) => props.theme.spacing.three}px 0;
+  padding: 16px 24px;
+
+  background: ${(props) =>
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.color === 'secondary'
+      ? props.theme.color.secondary
+      : props.color === 'success'
+      ? props.theme.color.success
+      : props.color === 'error'
+      ? props.theme.color.error
+      : props.theme.color.gray.six};
+  color: white;
+  ${(props) =>
+    props.variant === 'light' &&
+    css`
+      background: ${props.color === 'primary'
+        ? props.theme.color.primary
+        : props.color === 'secondary'
+        ? props.theme.color.secondary
+        : props.color === 'success'
+        ? props.theme.color.success
+        : props.color === 'error'
+        ? props.theme.color.error
+        : props.theme.color.text.heading}15;
+      color: ${pSBC(
+        `${
+          props.color === 'primary'
+            ? props.theme.color.primary
+            : props.color === 'secondary'
+            ? props.theme.color.secondary
+            : props.color === 'success'
+            ? props.theme.color.success
+            : props.color === 'error'
+            ? props.theme.color.error
+            : props.theme.color.text.heading
+        }`,
+        -25,
+      )};
+      span {
+        color: ${pSBC(
+          `${
+            props.color === 'primary'
+              ? props.theme.color.primary
+              : props.color === 'secondary'
+              ? props.theme.color.secondary
+              : props.color === 'success'
+              ? props.theme.color.success
+              : props.color === 'error'
+              ? props.theme.color.error
+              : props.theme.color.text.heading
+          }`,
+          -25,
+        )};
+      }
+    `};
+  ${(props) =>
+    props.variant === 'light' &&
+    !props.color &&
+    css`
+      border: 1px solid #efefef;
+    `};
+  border-radius: ${(props) => props.theme.radius.one};
+
+  animation: ${(props) => (props.animate ? slideDown : slideUp)} 0.3s;
   transform: ${(props) =>
     props.animate ? 'translateY(200px)' : 'translateY(0)'};
   transition: 0.1s;
-  margin: ${(props) => props.theme.spacing.three}px 0;
-  padding: ${(props) => props.theme.spacing.three}px
-    ${(props) => props.theme.spacing.six}px;
   background: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
@@ -71,10 +133,10 @@ const NotificationWrapper = styled.div`
   * {
     color: ${(props) => (props.color ? 'white' : null)};
   }
-  color: ${(props) => (props.color ? 'white' : null)};
-  border-radius: ${(props) => props.theme.radius.one};
   z-index: 999999;
   position: relative;
+  box-shadow: ${(props) => props.theme.shadow.four};
+  ${(props) => props.customStyles};
 `;
 
 const Wrapper = styled.div`

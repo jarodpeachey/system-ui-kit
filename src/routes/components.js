@@ -33,9 +33,11 @@ import Header from '../components/Header';
 import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
 import Modal from '../components/Modal';
+import Notification from '../components/Notification';
 
 const Components = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
 
   return (
     <Layout component>
@@ -805,6 +807,24 @@ const Components = () => {
               </Flex>
             </Modal>
           )}
+          <br />
+          <br />
+          <H2>Notification</H2>
+          <Button
+            onClick={() => {
+              setShowNotification(true);
+              setTimeout(() => {
+                setShowNotification(false);
+              }, 2500);
+            }}
+          >
+            Open
+          </Button>
+          {showNotification && (
+            <Notification color="primary">A notification</Notification>
+          )}
+          <br/><br/>
+          {/* <H2></H2> */}
         </Container>
       </Section>
     </Layout>
