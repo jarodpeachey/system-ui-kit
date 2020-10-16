@@ -108,19 +108,6 @@ const SubMenuWrapper = styled.div`
   left: ${(props) => (props.align !== 'right' ? '18px' : null)};
   right: ${(props) => (props.align === 'right' ? '18px' : null)};
   z-index: 999;
-  // filter: drop-shadow(0px 0px 5px #00000010);
-  // ::after {
-  //   display: block;
-  //   content: '';
-  //   position: absolute;
-  //   right: ${(props) => (props.align === 'right' ? '20px' : null)};
-  //   left: ${(props) => (props.align !== 'right' ? '20px' : null)};
-  //   top: 8px;
-  //   width: 12px;
-  //   height: 12px;
-  //   transform: rotate(45deg);
-  //   background: white;
-  // }
 `;
 
 export default MenuItem;

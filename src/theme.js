@@ -5,36 +5,32 @@ export const theme = {
   shadow: {
     // one: '3px 3px 18px -6px #00000010',
     one: `
-      1px 2px 2px rgba(0, 0, 0, .04),
-      1px 2px 8px rgba(0, 0, 0, .08)
+      rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px
     `,
     two: `
-      1px 2px 8px rgba(0, 0, 0, .04),
-      2px 4px 16px rgba(0, 0, 0, .08)
+      rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px
     `,
     three: `
-      1px 2px 8px rgba(0, 0, 0, .04),
-      2px 4px 16px rgba(0, 0, 0, .05),
-      4px 8px 32px rgba(0, 0, 0, .08)
+      rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+      rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
     `,
     four: `
-      2px 4px 16px rgba(0, 0, 0, .04),
-      4px 8px 32px rgba(0, 0, 0, .05),
-      8px 16px 48px rgba(0, 0, 0, .06),
-      12px 24px 64px rgba(0, 0, 0, .06),
-      12px 24px 120px rgba(0, 0, 0, .10)
+      rgba(0, 0, 0, 0.25) 0px 25px 50px -12px
     `,
-    // button: '3px 3px 18px -6px rgba(0,0,0,.25)',
-    // buttonHover: '3px 3px 28px -10px rgba(0,0,0,.25)',
     dropdown: '1px 1px 12px -4px #2f557c20, 0px 0px 32px -6px #2f557c10',
-    header: '0px 4px 10px 0px #00000010, 0px 20px 20px -10px #00000010',
+    header: `
+      rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px
+    `,
     button: `
-      1px 2px 2px rgba(0, 0, 0, .04),
-      1px 2px 8px rgba(0, 0, 0, .08)
+      rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px
     `,
     buttonHover: `
-      1px 2px 8px rgba(0, 0, 0, .04),
-      2px 4px 16px rgba(0, 0, 0, .08)
+      rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px
     `,
   },
   radius: {
@@ -74,18 +70,18 @@ export const theme = {
     primary: '#3676ea',
     secondary: '#09a8d8',
     gray: {
-      one: '#f7f7fb',
+      one: '#f7f7fb', // Light backgrounds, hover state for secondary
       // two: '#eaedf1',
       // two: '#efeff2',
       // three: '#d9dce0',
-      two: '#E0E0E4',
+      two: '#e7ebef', // Button and badge backgrounds
       // four: '#c5c8cc',
       // four: '#d2d2d7',
       // five: '#aab1b9',
-      three: '#C9C9CD',
-      four: '#9A9A9F',
+      three: '#c8ccd0', // Main border colors
+      four: '#93999e', // Hover border color, icon colors
       five: '#5A5A69',
-      six: '#252538',
+      six: '#252538', // Dark backgrounds for alerts, buttons
 
       // eight: ' #111111',
       // seven: ' #333333',

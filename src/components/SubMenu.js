@@ -21,8 +21,7 @@ const Wrapper = styled.div`
     opacity: 1;
   }
   width: 100%;
-  box-shadow: ${(props) => props.theme.shadow.four};
-  // box-shadow: ${(props) => props.theme.shadow.one};
+  box-shadow: ${(props) => props.theme.shadow.two};
 `;
 
 export default SubMenu;

@@ -62,14 +62,14 @@ const Wrapper = styled.div`
     props.variant === 'light' &&
     css`
       background: ${props.color === 'primary'
-        ? props.theme.color.primary
+        ? `${props.theme.color.primary}10`
         : props.color === 'secondary'
-        ? props.theme.color.secondary
+        ? `${props.theme.color.secondary}10`
         : props.color === 'success'
-        ? props.theme.color.success
+        ? `${props.theme.color.success}10`
         : props.color === 'error'
-        ? props.theme.color.error
-        : props.theme.color.text.heading}15;
+        ? `${props.theme.color.error}10`
+        : props.theme.color.gray.one};
       color: ${pSBC(
         `${
           props.color === 'primary'
@@ -82,7 +82,7 @@ const Wrapper = styled.div`
             ? props.theme.color.error
             : props.theme.color.text.heading
         }`,
-        -25,
+        -35,
       )};
       span {
         color: ${pSBC(

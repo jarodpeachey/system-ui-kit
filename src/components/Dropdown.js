@@ -9,7 +9,7 @@ const Dropdown = ({ children, className, id, align }) => {
 
   return (
     <>
-      <Wrapper
+      <DropdownWrapper
         className={className}
         id={id}
         onClick={() => {
@@ -21,12 +21,12 @@ const Dropdown = ({ children, className, id, align }) => {
         <SubMenuWrapper align={align} open={show}>
           <SubMenu align={align}>{children[1]}</SubMenu>
         </SubMenuWrapper>
-      </Wrapper>
+      </DropdownWrapper>
     </>
   );
 };
 
-const Wrapper = styled.div`
+const DropdownWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -91,7 +91,7 @@ const SubMenu = styled.div`
   border-radius: ${(props) => props.theme.radius.one};
   background: #ffffff;
   padding: 8px 0;
-  box-shadow: ${(props) => props.theme.shadow.four};
+  box-shadow: ${(props) => props.theme.shadow.one};
   min-width: 150px;
     right: ${(props) => (props.align === 'right' ? '0' : null)};
     left: ${(props) =>

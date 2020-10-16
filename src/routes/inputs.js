@@ -78,7 +78,7 @@ const Inputs = ({}) => {
             style={{
               height: 60,
               width: '100%',
-              background: theme.color.gray.six,
+              background: theme.color.gray.five,
             }}
           ></div>
           <div
