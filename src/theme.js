@@ -3,7 +3,6 @@ import React from 'react';
 
 export const theme = {
   shadow: {
-    // one: '3px 3px 18px -6px #00000010',
     one: `
       rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
       rgba(0, 0, 0, 0.06) 0px 2px 4px -1px
@@ -18,11 +17,6 @@ export const theme = {
     `,
     four: `
       rgba(0, 0, 0, 0.25) 0px 25px 50px -12px
-    `,
-    dropdown: '1px 1px 12px -4px #2f557c20, 0px 0px 32px -6px #2f557c10',
-    header: `
-      rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px
     `,
     button: `
       rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
@@ -62,6 +56,12 @@ export const theme = {
     large: '1.125rem',
     small: '.9375rem',
     base: '1.065rem',
+    display: {
+      h1: '2.575rem',
+      h2: '2.075rem',
+      h3: '1.7rem',
+      h4: '1.575rem',
+    },
   },
   fontWeight: {
     heading: 600,

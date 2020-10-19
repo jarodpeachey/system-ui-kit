@@ -77,12 +77,19 @@ const SelectWrapper = styled.div`
   padding: ${(props) =>
     props.size === 'xs'
       ? '4px 8px'
-      : props.size === 'small'
+      : props.size === 'sm'
       ? '8px 12px'
-      : props.size === 'large'
+      : props.size === 'lg'
       ? '16px 18px'
       : '13px 15px'};
-  font-size: ${(props) => props.theme.fontSize.base};
+  font-size: ${(props) =>
+    props.size === 'xs'
+      ? '14px'
+      : props.size === 'sm'
+      ? '16px'
+      : props.size === 'lg'
+      ? '18px'
+      : '16px'};
   display: inline-flex;
   align-items: center;
   justify-content: space-between;

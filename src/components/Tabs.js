@@ -32,7 +32,7 @@ const Tabs = ({
 
   return (
     <Wrapper className={className} id={id} customStyles={customStyles}>
-      <Flex direction={vertical ? 'vertical' : 'horizontal'} hAlign="start">
+      <Flex flexDirection={vertical ? 'column' : 'row'}>
         {children.map((child) => {
           let newProps = {
             ...child.props,

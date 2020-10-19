@@ -7,14 +7,14 @@ import { Row, Column } from '@react-tiny-grid/core';
 import { theme } from '../theme';
 
 import Section from '../components/Section';
+import Layout from '../Layout';
 import H2 from '../components/H2';
 import H4 from '../components/H4';
 import Button from '../components/Button';
 import IconButton from '../components/IconButton';
+import Toggle from '../components/Toggle';
 import Info from '../components/Info';
 import Container from '../components/Container';
-import Layout from '../Layout';
-import SubTitle from '../components/SubTitle';
 import Paragraph from '../components/Paragraph';
 import Alert from '../components/Alert';
 import H5 from '../components/H5';
@@ -39,10 +39,14 @@ import RadioButtons from '../components/RadioButtons';
 import Select from '../components/Select';
 import Option from '../components/Option';
 import Slider from '../components/Slider';
+import TabContent from '../components/TabContent';
+import Tab from '../components/Tab';
+import Tabs from '../components/Tabs';
 
 const Components = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
+  const [activeTab, setActiveTab] = useState('design');
 
   return (
     <Layout component>
@@ -858,6 +862,49 @@ const Components = () => {
           <Slider initial={28} color="secondary" max={100} />
           <Slider initial={63} color="success" max={100} />
           <Slider initial={47} color="error" max={100} />
+          <br />
+          <br />
+          <H2>Switch</H2>
+          <Toggle onChange={(checked) => console.log(checked)} />
+          <br/><br/>
+          <H2>Tabs</H2>
+            <Tabs
+              onChange={(value) => setActiveTab(value)}
+              value={activeTab}
+              customStyles='margin-bottom: 16px;'
+            >
+              <Tab activeStyles={`box-shadow: ${theme.shadow.three}`} name="design">Design</Tab>
+              <Tab activeStyles={`box-shadow: ${theme.shadow.three}`} name="develop">Develop</Tab>
+              <Tab activeStyles={`box-shadow: ${theme.shadow.three}`} name="launch">Launch</Tab>
+            </Tabs>
+            <TabContent customStyles={`box-shadow: ${theme.shadow.one}`} name="design" value={activeTab}>
+              <Paragraph className="m-none">
+                Mustache cliche tempor, williamsburg carles vegan helvetica.
+                Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+              </Paragraph>
+              <Paragraph>
+                Mustache cliche tempor, williamsburg carles vegan helvetica.
+                Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+              </Paragraph>
+            </TabContent>
+            <TabContent customStyles={`box-shadow: ${theme.shadow.one}`} name="develop" value={activeTab}>
+              <Paragraph className="m-none">
+                Duisf sidfu ao fdl sidf dif df asdflkdj alsfksfs klsjfs lskfjs flksjlksjdf. Flkjasdf jkdl lsa kd fkkjj fkdj. Kufdkn jk.
+              </Paragraph>
+              <Paragraph>
+                Duisf sidfu ao fdl sidf dif df asdflkdj alsfksfs klsjfs lskfjs flksjlksjdf. Flkjasdf jkdl lsa kd fkkjj fkdj. Kufdkn jk.
+              </Paragraph>
+            </TabContent>
+            <TabContent customStyles={`box-shadow: ${theme.shadow.one}`} name="launch" value={activeTab}>
+              <Paragraph className="m-none">
+                Mustache cliche tempor, williamsburg carles vegan helvetica.
+                Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+              </Paragraph>
+              <Paragraph>
+                Mustache cliche tempor, williamsburg carles vegan helvetica.
+                Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+              </Paragraph>
+            </TabContent>
         </Container>
       </Section>
     </Layout>

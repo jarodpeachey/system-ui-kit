@@ -10,7 +10,7 @@ const Tab = ({
   name,
   customStyles,
   fullWidth,
-  indicatorColor,
+  color,
   activeStyles,
   vertical
 }) => {
@@ -23,7 +23,7 @@ const Tab = ({
       onClick={() => onClick(name)}
       active={active}
       fullWidth={fullWidth}
-      indicatorColor={indicatorColor}
+      color={color}
       vertical={vertical}
     >
       {children}
