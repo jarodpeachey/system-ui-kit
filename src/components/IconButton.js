@@ -80,7 +80,6 @@ const StyledIconButton = styled.button`
   font-weight: ${(props) => props.theme.fontWeight.button};
   outline: none;
   border: none;
-  font-size: ${(props) => props.theme.fontSize.base}px;
   // font-weight: 500;
   letter-spacing: 1.4px;
   width: ${(props) =>
@@ -89,7 +88,11 @@ const StyledIconButton = styled.button`
     props.size === 'small' ? '36px' : props.size === 'large' ? '62px' : '48px'};
 
   font-size: ${(props) =>
-    props.size === 'small' ? '15px' : props.size === 'large' ? '18px' : '16px'};
+    props.size === 'sm'
+      ? `${props.theme.fontSize.small}`
+      : props.size === 'lg'
+      ? `${props.theme.fontSize.large}`
+      : `${props.theme.fontSize.button}`};
   border-radius: ${(props) =>
     props.rounded ? '999px' : props.theme.radius.one};
   cursor: pointer;
@@ -302,7 +305,6 @@ const StyledLink = styled(Link)`
   font-weight: ${(props) => props.theme.fontWeight.button};
   outline: none;
   border: none;
-  font-size: ${(props) => props.theme.fontSize.base}px;
   // font-weight: 500;
   letter-spacing: 1.4px;
   width: ${(props) =>
@@ -311,7 +313,11 @@ const StyledLink = styled(Link)`
     props.size === 'small' ? '36px' : props.size === 'large' ? '62px' : '48px'};
 
   font-size: ${(props) =>
-    props.size === 'small' ? '15px' : props.size === 'large' ? '18px' : '16px'};
+    props.size === 'sm'
+      ? `${props.theme.fontSize.small}`
+      : props.size === 'lg'
+      ? `${props.theme.fontSize.large}`
+      : `${props.theme.fontSize.button}`};
   border-radius: ${(props) =>
     props.rounded ? '999px' : props.theme.radius.one};
   cursor: pointer;
@@ -524,7 +530,6 @@ const StyledA = styled.a`
   font-weight: ${(props) => props.theme.fontWeight.button};
   outline: none;
   border: none;
-  font-size: ${(props) => props.theme.fontSize.base}px;
   // font-weight: 500;
   letter-spacing: 1.4px;
   width: ${(props) =>
@@ -533,7 +538,11 @@ const StyledA = styled.a`
     props.size === 'small' ? '36px' : props.size === 'large' ? '62px' : '48px'};
 
   font-size: ${(props) =>
-    props.size === 'small' ? '15px' : props.size === 'large' ? '18px' : '16px'};
+    props.size === 'sm'
+      ? `${props.theme.fontSize.small}`
+      : props.size === 'lg'
+      ? `${props.theme.fontSize.large}`
+      : `${props.theme.fontSize.button}`};
   border-radius: ${(props) =>
     props.rounded ? '999px' : props.theme.radius.one};
   cursor: pointer;

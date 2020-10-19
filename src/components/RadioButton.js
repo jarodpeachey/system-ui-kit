@@ -54,6 +54,7 @@ const RadioButtonWrapper = styled.label`
   display: ${(props) => (props.inline ? 'inline-flex' : 'flex')};
   align-items: center;
   cursor: ${(props) => (props.disabled ? '' : 'pointer')};
+  font-size: ${(props) => props.theme.fontSize.label};
   input {
     position: absolute;
     opacity: 0;
@@ -83,9 +84,7 @@ const RadioButtonWrapper = styled.label`
     transition: all 0.1s;
     border: 1px solid
       ${(props) =>
-        props.disabled
-          ? 'rgb(230, 230, 230)'
-          : props.theme.color.primary};
+        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.primary};
   }
   .icon {
     background: white;
@@ -98,15 +97,15 @@ const RadioButtonWrapper = styled.label`
   // input:checked ~ .icon {
   //   display: block;
   // }
-    input:hover ~ .checkmark {
-    border: 1px solid ${(props) =>
-      props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.gray.four};
+  input:hover ~ .checkmark {
+    border: 1px solid
+      ${(props) =>
+        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.gray.four};
   }
-    input:checked:hover ~ .checkmark {
-    border: 1px solid ${(props) =>
-      props.disabled
-        ? 'rgb(230, 230, 230)'
-        : `${props.theme.color.primary}`};
+  input:checked:hover ~ .checkmark {
+    border: 1px solid
+      ${(props) =>
+        props.disabled ? 'rgb(230, 230, 230)' : `${props.theme.color.primary}`};
   }
   input:checked ~ .checkmark > .icon {
     background: ${(props) => props.theme.color.primary};

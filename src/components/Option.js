@@ -25,6 +25,7 @@ const Wrapper = styled.div`
   }
   color: ${(props) => (props.active ? 'white' : '')};
   background: ${(props) => (props.active ? props.theme.color.primary : '')};
+  font-size: ${(props) => props.theme.fontSize.base};
   :active {
     background: ${(props) => props.theme.color.primary};
     color: white;

@@ -68,6 +68,7 @@ const CheckboxWrapper = styled.label`
   display: flex;
   align-items: center;
   cursor: ${(props) => (props.disabled ? '' : 'pointer')};
+  font-size: ${(props) => props.theme.fontSize.label};
   input {
     position: absolute;
     opacity: 0;

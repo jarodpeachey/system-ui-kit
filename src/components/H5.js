@@ -49,8 +49,7 @@ const Wrapper = styled.h5`
 
   font-weight: 600;
   margin-bottom: 14px;
-  font-size: ${(props) =>
-    props.uppercase ? props.theme.fontSize.h5 - 1 : props.theme.fontSize.h5}px;
+  font-size: ${(props) => props.theme.fontSize.h5};
   ${(props) =>
     props.customStyles &&
     css`

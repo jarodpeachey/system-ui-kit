@@ -68,6 +68,7 @@ const Wrapper = styled.div`
   align-items: center;
   display: flex;
   align-items: stretch;
+  font-size: ${(props) => props.theme.fontSize.base};
   a {
     opacity: 1;
   }
@@ -84,6 +85,7 @@ const Wrapper = styled.div`
     height: 100%;
     text-decoration: none;
     transition-duration: 0.1s;
+    font-size: ${(props) => props.theme.fontSize.base};
     // background: ${(props) => (props.open ? '#00000007' : 'transparent')};
     border-radius: ${(props) => props.theme.radius.one};
     :hover {

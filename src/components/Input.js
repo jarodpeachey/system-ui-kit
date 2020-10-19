@@ -69,7 +69,6 @@ const Input = (
   const customOnBlur = (e) => {
     setFocus(false);
 
-
     if (onBlur) {
       onBlur(e);
     }
@@ -274,6 +273,7 @@ const Label = styled.label`
   width: ${(props) => (props.fullWidth ? '100%' : 'fit-content')};
   margin-bottom: 8px;
   font-weight: 600;
+  font-size: ${(props) => props.theme.fontSize.label};
   color: ${(props) =>
     props.state === 'success'
       ? props.theme.color.success

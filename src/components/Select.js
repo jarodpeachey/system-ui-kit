@@ -6,7 +6,7 @@ import Option from './Option';
 import { theme } from '../theme';
 import Span from './Span';
 
-const Select = ({ children, className, id, size, variant }) => {
+const Select = ({ children, className, id, variant, onChange }) => {
   const newChildren = [];
 
   const [open, setOpen] = useState(false);
@@ -17,10 +17,15 @@ const Select = ({ children, className, id, size, variant }) => {
     setOpen(!open);
   };
 
-  const onChange = (e) => {
+  const customOnChange = (e) => {
+    console.log(e);
     setSelectedValue(e[0]);
     setSelectedLabel(e[1]);
     setOpen(false);
+
+    if (onChange) {
+      onChange(e[0]);
+    }
   };
 
   return (
@@ -29,7 +34,6 @@ const Select = ({ children, className, id, size, variant }) => {
         className={className}
         id={id}
         open={open}
-        size={size}
         variant={variant}
         onClick={toggleOpen}
       >
@@ -39,7 +43,7 @@ const Select = ({ children, className, id, size, variant }) => {
             marginLeft: 12,
             transform: `${open ? 'rotate(180deg)' : 'none'}`,
             transition: 'all .1s ease-in-out',
-            fontSize: 14
+            fontSize: 14,
           }}
           icon="chevron-down"
         />
@@ -50,7 +54,7 @@ const Select = ({ children, className, id, size, variant }) => {
             <Option
               {...child.props}
               selected={selectedValue === child.props.value}
-              onClick={(e) => onChange(e)}
+              onClick={(e) => customOnChange(e)}
             >
               {child.props.children}
             </Option>,
@@ -78,14 +82,7 @@ const SelectWrapper = styled.div`
       : props.size === 'large'
       ? '16px 18px'
       : '13px 15px'};
-  font-size: ${(props) =>
-    props.size === 'xs'
-      ? '13px'
-      : props.size === 'small'
-      ? '14px'
-      : props.size === 'large'
-      ? '17px'
-      : '15px'};
+  font-size: ${(props) => props.theme.fontSize.base};
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -96,12 +93,12 @@ const SelectWrapper = styled.div`
   border: ${(props) =>
     props.open
       ? `1px solid ${props.theme.color.primary}`
-      : `1px solid ${props.theme.color.gray.four}`};
+      : `1px solid ${props.theme.color.gray.three}`};
   :hover {
     border: ${(props) =>
       props.open
         ? `1px solid ${props.theme.color.primary}`
-        : `1px solid ${props.theme.color.gray.four}`};
+        : `1px solid ${props.theme.color.gray.three}`};
   }
   ${(props) =>
     props.variant === 'filled' &&

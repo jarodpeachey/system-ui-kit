@@ -52,7 +52,7 @@ const Wrapper = styled.h3`
 
   margin-bottom: 24px;
   font-size: ${(props) =>
-    props.display ? props.theme.fontSize.h3 + 4 : props.theme.fontSize.h3}px;
+    props.display ? props.theme.fontSize.display.h3 : props.theme.fontSize.h3};
   ${(props) =>
     props.customStyles &&
     css`

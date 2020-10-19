@@ -28,10 +28,9 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: fit-content;
-  font-size: ${(props) => props.theme.fontSize.small}px;
-  margin-top: ${(props) => props.theme.spacing.three}px;
-  margin-bottom: ${(props) => props.theme.spacing.three}px;
-  padding: 2px 12px;
+  font-size: ${(props) => props.theme.fontSize.small};
+  line-height: ${(props) => props.theme.fontSize.small};
+  padding: 5px 12px 6px;
   text-align: center;
   background: ${(props) =>
     props.color === 'primary'

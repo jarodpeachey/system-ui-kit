@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 0;
   cursor: pointer;
+  font-size: ${(props) => props.theme.fontSize.base};
   :hover {
     background: ${(props) => props.theme.color.gray.one};
   }
@@ -19,6 +20,7 @@ const Wrapper = styled.div`
     padding: 12px 18px;
     display: block;
     width: 100%;
+    font-size: ${(props) => props.theme.fontSize.base};
     text-decoration: none;
     background: none;
     transition-duration: 0.1s;

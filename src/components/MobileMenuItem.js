@@ -52,6 +52,7 @@ const Wrapper = styled.div`
   align-items: center;
   transition-duration: 0.1s;
   width: 100%;
+  font-size: ${(props) => props.theme.fontSize.base};
   color: white;
 
   ${(props) =>
@@ -74,6 +75,7 @@ const Wrapper = styled.div`
     color: white;
     cursor: pointer;
     font-weight: 600;
+    font-size: ${(props) => props.theme.fontSize.base};
     background: ${(props) =>
       props.submenu ? 'transparent' : props.open ? '#435a8e10' : 'transparent'};
     border-radius: ${(props) => props.theme.radius.one};

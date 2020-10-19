@@ -82,7 +82,6 @@ const StyledButton = styled.button`
   padding: 12px 24px;
   border: none;
   width: ${(props) => (props.fullWidth ? '100%' : null)};
-  font-size: ${(props) => props.theme.fontSize.base}px;
   // font-weight: 500;
   letter-spacing: 1.4px;
   padding: ${(props) =>
@@ -93,7 +92,11 @@ const StyledButton = styled.button`
       : '14px 26px'};
 
   font-size: ${(props) =>
-    props.size === 'sm' ? '15px' : props.size === 'lg' ? '18px' : '16px'};
+    props.size === 'sm'
+      ? `${props.theme.fontSize.small}`
+      : props.size === 'lg'
+      ? `${props.theme.fontSize.large}`
+      : `${props.theme.fontSize.button}`};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
@@ -208,7 +211,7 @@ const StyledButton = styled.button`
           ? 'white'
           : props.color === 'dark'
           ? props.theme.color.gray.six
-          : pSBC(props.theme.color.gray.two, -0)};
+          : pSBC(props.theme.color.gray.two, -10)};
       :hover {
         box-shadow: ${props.theme.shadow.button};
         background: ${props.color === 'primary'
@@ -307,7 +310,6 @@ const StyledLink = styled(Link)`
   padding: 12px 24px;
   border: none;
   width: ${(props) => (props.fullWidth ? '100%' : null)};
-  font-size: ${(props) => props.theme.fontSize.base}px;
   // font-weight: 500;
   letter-spacing: 1.4px;
   padding: ${(props) =>
@@ -318,7 +320,11 @@ const StyledLink = styled(Link)`
       : '14px 26px'};
 
   font-size: ${(props) =>
-    props.size === 'sm' ? '15px' : props.size === 'lg' ? '18px' : '16px'};
+    props.size === 'sm'
+      ? `${props.theme.fontSize.small}`
+      : props.size === 'lg'
+      ? `${props.theme.fontSize.large}`
+      : `${props.theme.fontSize.button}`};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;
@@ -532,7 +538,6 @@ const StyledA = styled.a`
   padding: 12px 24px;
   border: none;
   width: ${(props) => (props.fullWidth ? '100%' : null)};
-  font-size: ${(props) => props.theme.fontSize.base}px;
   // font-weight: 500;
   letter-spacing: 1.4px;
   padding: ${(props) =>
@@ -543,7 +548,11 @@ const StyledA = styled.a`
       : '14px 26px'};
 
   font-size: ${(props) =>
-    props.size === 'sm' ? '15px' : props.size === 'lg' ? '18px' : '16px'};
+    props.size === 'sm'
+      ? `${props.theme.fontSize.small}`
+      : props.size === 'lg'
+      ? `${props.theme.fontSize.large}`
+      : `${props.theme.fontSize.button}`};
   border-radius: ${(props) => props.theme.radius.one};
   cursor: pointer;
   transition: all 0.25s;

@@ -53,6 +53,7 @@ const NotificationWrapper = styled.div`
   align-items: center;
   margin: ${(props) => props.theme.spacing.three}px 0;
   padding: 16px 24px;
+  font-size: ${(props) => props.theme.fontSize.alert};
 
   background: ${(props) =>
     props.color === 'primary'
@@ -65,55 +66,6 @@ const NotificationWrapper = styled.div`
       ? props.theme.color.error
       : props.theme.color.gray.six};
   color: white;
-  ${(props) =>
-    props.variant === 'light' &&
-    css`
-      background: ${props.color === 'primary'
-        ? props.theme.color.primary
-        : props.color === 'secondary'
-        ? props.theme.color.secondary
-        : props.color === 'success'
-        ? props.theme.color.success
-        : props.color === 'error'
-        ? props.theme.color.error
-        : props.theme.color.text.heading}15;
-      color: ${pSBC(
-        `${
-          props.color === 'primary'
-            ? props.theme.color.primary
-            : props.color === 'secondary'
-            ? props.theme.color.secondary
-            : props.color === 'success'
-            ? props.theme.color.success
-            : props.color === 'error'
-            ? props.theme.color.error
-            : props.theme.color.text.heading
-        }`,
-        -25,
-      )};
-      span {
-        color: ${pSBC(
-          `${
-            props.color === 'primary'
-              ? props.theme.color.primary
-              : props.color === 'secondary'
-              ? props.theme.color.secondary
-              : props.color === 'success'
-              ? props.theme.color.success
-              : props.color === 'error'
-              ? props.theme.color.error
-              : props.theme.color.text.heading
-          }`,
-          -25,
-        )};
-      }
-    `};
-  ${(props) =>
-    props.variant === 'light' &&
-    !props.color &&
-    css`
-      border: 1px solid #efefef;
-    `};
   border-radius: ${(props) => props.theme.radius.one};
 
   animation: ${(props) => (props.animate ? slideDown : slideUp)} 0.3s;
@@ -135,7 +87,7 @@ const NotificationWrapper = styled.div`
   }
   z-index: 999999;
   position: relative;
-  box-shadow: ${(props) => props.theme.shadow.four};
+  box-shadow: ${(props) => props.theme.shadow.three};
   ${(props) => props.customStyles};
 `;
 

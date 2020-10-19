@@ -34,6 +34,11 @@ import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
 import Modal from '../components/Modal';
 import Notification from '../components/Notification';
+import RadioButton from '../components/RadioButton';
+import RadioButtons from '../components/RadioButtons';
+import Select from '../components/Select';
+import Option from '../components/Option';
+import Slider from '../components/Slider';
 
 const Components = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -823,8 +828,36 @@ const Components = () => {
           {showNotification && (
             <Notification color="primary">A notification</Notification>
           )}
-          <br/><br/>
-          {/* <H2></H2> */}
+          <br />
+          <br />
+          <H2>Radio Buttons</H2>
+          <RadioButtons name="radio-buttons">
+            <RadioButton value="one">Radio button</RadioButton>
+            <RadioButton value="two">Another radio button</RadioButton>
+            <RadioButton disabled value="three">
+              Disabled. Go ahead, try and click me 😉
+            </RadioButton>
+          </RadioButtons>
+          <br />
+          <br />
+          <H2>Select</H2>
+          <Select value="one">
+            <Option value="one">One</Option>
+            <Option value="two">Two</Option>
+            <Option value="three">Three</Option>
+          </Select>
+          <Select variant="filled" value="one">
+            <Option value="one">One</Option>
+            <Option value="two">Two</Option>
+            <Option value="three">Three</Option>
+          </Select>
+          <br />
+          <br />
+          <H2>Slider</H2>
+          <Slider initial={82} max={100} />
+          <Slider initial={28} color="secondary" max={100} />
+          <Slider initial={63} color="success" max={100} />
+          <Slider initial={47} color="error" max={100} />
         </Container>
       </Section>
     </Layout>

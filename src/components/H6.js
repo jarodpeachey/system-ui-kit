@@ -1,14 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const H6 = ({
-  children,
-  className,
-  id,
-  customStyles,
-  display,
-  color,
-}) => {
+const H6 = ({ children, className, id, customStyles, display, color }) => {
   return (
     <Wrapper
       className={className}
@@ -16,7 +9,6 @@ const H6 = ({
       customStyles={customStyles}
       color={color}
       display={display}
-
     >
       {children}
     </Wrapper>
@@ -49,8 +41,7 @@ const Wrapper = styled.h6`
 
   font-weight: 600;
   margin-bottom: 12px;
-  font-size: ${(props) =>
-    props.uppercase ? props.theme.fontSize.h6 - 1 : props.theme.fontSize.h6}px;
+  font-size: ${(props) => props.theme.fontSize.h5};
   ${(props) =>
     props.customStyles &&
     css`

@@ -26,6 +26,7 @@ const Wrapper = styled.div`
   margin: 1.6em auto 0;
   visibility: hidden;
   background: ${(props) => props.theme.color.gray.six};
+  box-shadow: ${(props) => props.theme.shadow.four};
   opacity: 0;
   transition: transform 0.1s, opacity 0.1s, visibility 0s 0.1s;
   transform: scale(0.95);
@@ -34,8 +35,7 @@ const Wrapper = styled.div`
   ${(props) =>
     props.open &&
     css`
-      transition: transform 0.1s, opacity 0.1s,
-        visibility 0s 0s;
+      transition: transform 0.1s, opacity 0.1s, visibility 0s 0s;
       transform: scale(1);
       visibility: visible;
       opacity: 1;

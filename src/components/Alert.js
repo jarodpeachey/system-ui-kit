@@ -46,7 +46,8 @@ const Wrapper = styled.div`
   align-items: center;
   margin: ${(props) => props.theme.spacing.three}px 0;
   padding: 16px 24px;
-  
+  font-size: ${(props) => props.theme.fontSize.alert};
+
   background: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
