@@ -16,7 +16,8 @@ const H6 = ({ children, className, id, customStyles, display, color }) => {
 };
 
 const Wrapper = styled.h6`
-  color: ${(props) =>
+font-family: ${props => props.theme.fontFamily.heading};  
+color: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
       : props.color === 'secondary'

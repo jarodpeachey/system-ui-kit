@@ -41,6 +41,7 @@ const Alert = ({
 };
 
 const Wrapper = styled.div`
+  font-family: ${(props) => props.theme.fontFamily.body};
   width: 100%;
   display: ${(props) => (props.show ? 'flex' : 'none')};
   align-items: center;
@@ -115,6 +116,7 @@ const Wrapper = styled.div`
 `;
 
 const CloseButton = styled.div`
+  font-family: ${(props) => props.theme.fontFamily.body};
   width: 40px;
   height: 100%;
   display: flex;
@@ -125,8 +127,8 @@ const CloseButton = styled.div`
   margin-left: auto;
   color: ${(props) => props.theme.color.text.p};
   padding-right: 24px;
-  opacity: .8;
-  transition: .2s;
+  opacity: 0.8;
+  transition: 0.2s;
   :hover {
     opacity: 1;
   }

@@ -92,9 +92,14 @@ export const theme = {
     },
   },
   fontWeight: {
-    heading: 700,
+    heading: 600,
     body: 400,
     button: 700,
+  },
+  fontFamily: {
+    heading: 'Rubik',
+    button: 'Rubik',
+    body: 'DM Sans',
   },
   color: {
     primary: '#3676ea',

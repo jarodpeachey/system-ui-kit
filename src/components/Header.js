@@ -108,10 +108,9 @@ const Wrapper = styled.div`
     background: ${(props) =>
       props.color === 'primary' ||
       props.color === 'secondary' ||
-      props.color === 'dark' ||
-      props.color === 'transparent'
+      props.color === 'dark'
         ? 'white'
-        : null} !important;
+        : props.theme.color.text.heading} !important;
   }
 
   &.scrolled {

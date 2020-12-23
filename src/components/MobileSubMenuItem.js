@@ -8,9 +8,11 @@ const MobileSubMenuItem = ({ children, className, id }) => (
 );
 
 const Wrapper = styled.div`
+  font-family: ${(props) => props.theme.fontFamily.body};
   width: 100%;
   font-size: ${(props) => props.theme.fontSize.base};
   a {
+    font-family: ${(props) => props.theme.fontFamily.body};
     display: block;
     width: 100%;
     padding: 12px 16px;

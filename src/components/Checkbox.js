@@ -55,6 +55,7 @@ const Checkbox = ({
 };
 
 const CheckboxWrapper = styled.label`
+  font-family: ${(props) => props.theme.fontFamily.body};
   width: fit-content;
   opacity: ${(props) => (props.disabled ? '.7' : '1')};
   display: block;

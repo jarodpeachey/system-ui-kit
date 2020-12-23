@@ -100,7 +100,7 @@ const Layout = ({ children, component, example }) => {
                   </SubMenuItem>
                 </SubMenu>
               </MenuItem>
-              <Button>Sign Up</Button>
+              <Button size="sm">Sign Up</Button>
             </Menu>
           </Hidden>
           <Hidden hide={769}>

@@ -1,7 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Paragraph = ({ children, className, id, color, customStyles, subheading }) => {
+const Paragraph = ({
+  children,
+  className,
+  id,
+  color,
+  customStyles,
+  subheading,
+}) => {
   return (
     <StyledParagraph
       className={className}
@@ -16,6 +23,7 @@ const Paragraph = ({ children, className, id, color, customStyles, subheading })
 };
 
 const StyledParagraph = styled.p`
+font-family: ${(props) => props.theme.fontFamily.body};
   color: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary

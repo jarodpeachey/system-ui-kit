@@ -47,6 +47,7 @@ const MobileMenuItem = ({ children, className, id, submenu, align, icon }) => {
 };
 
 const Wrapper = styled.div`
+  font-family: ${(props) => props.theme.fontFamily.body};
   position: relative;
   display: flex;
   align-items: center;
@@ -68,6 +69,7 @@ const Wrapper = styled.div`
       }
     `};
   a {
+    font-family: ${(props) => props.theme.fontFamily.body};
     display: ${(props) => (props.submenu ? 'inline-block' : 'block')};
     width: ${(props) => (props.submenu ? 'fit-content' : '100%')};
     padding: ${(props) => (props.submenu ? 0 : '12px 16px')};

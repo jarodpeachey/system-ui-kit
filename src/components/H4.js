@@ -25,7 +25,8 @@ const H4 = ({
 };
 
 const Wrapper = styled.h4`
-  color: ${(props) =>
+font-family: ${props => props.theme.fontFamily.heading};  
+color: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
       : props.color === 'secondary'

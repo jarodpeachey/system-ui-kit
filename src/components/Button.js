@@ -53,6 +53,7 @@ const Button = ({
 );
 
 const StyledButton = styled.button`
+  font-family: ${(props) => props.theme.fontFamily.button};
   font-weight: ${(props) => props.theme.fontWeight.button};
   outline: none;
   padding: ${(props) => (props.size === 'sm' ? '12px 24px' : '18px 30px')};

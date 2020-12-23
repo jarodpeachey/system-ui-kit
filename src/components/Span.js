@@ -25,7 +25,8 @@ const Span = ({
 };
 
 const StyledSpan = styled.span`
-  color: ${(props) =>
+font-family: ${props => props.theme.fontFamily.heading};  
+color: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
       : props.color === 'secondary'

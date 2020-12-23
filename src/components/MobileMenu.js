@@ -17,12 +17,12 @@ const MobileMenu = ({ children, className, customStyles, open }) => (
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 100%;
+  top: calc(100% + 24px);
   z-index: 999;
   width: 100%;
   height: fit-content;
   left: 0;
-  border-radius: ${(props) => props.theme.radius.two};
+  border-radius: ${(props) => props.theme.radius.two}px;
   margin: 1.6em auto 0;
   visibility: hidden;
   background: ${(props) => props.theme.color.gray.six};

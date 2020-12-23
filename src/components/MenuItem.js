@@ -61,11 +61,14 @@ const MenuItem = ({
 };
 
 const Wrapper = styled.div`
+  position: relative;
+  font-family: ${(props) => props.theme.fontFamily.body};
   font-size: ${(props) => props.theme.fontSize.base}px;
   line-height: ${(props) => props.theme.lineHeight.p}px;
   color: ${(props) => props.theme.color.text.paragraph};
 
   a {
+    font-family: ${(props) => props.theme.fontFamily.body};
     font-size: ${(props) => props.theme.fontSize.base}px;
     line-height: ${(props) => props.theme.lineHeight.p}px;
     color: ${(props) => props.theme.color.text.paragraph};
@@ -85,10 +88,9 @@ const SubMenuWrapper = styled.div`
   position: absolute;
   min-width: calc(100% + 40px);
   top: calc(100%);
-  // padding-top: 8px;
   margin: 0 auto;
-  left: ${(props) => (props.align !== 'right' ? '18px' : null)};
-  right: ${(props) => (props.align === 'right' ? '18px' : null)};
+  right: ${(props) => (props.align !== 'left' ? '0' : null)};
+  left: ${(props) => (props.align === 'left' ? '0' : null)};
   z-index: 999;
 `;
 

@@ -25,7 +25,8 @@ const Strong = ({
 };
 
 const StyledStrong = styled.strong`
-  color: ${(props) =>
+font-family: ${props => props.theme.fontFamily.heading};  
+color: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
       : props.color === 'secondary'

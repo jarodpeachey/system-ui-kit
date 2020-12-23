@@ -24,6 +24,7 @@ const Badge = ({
 };
 
 const Wrapper = styled.div`
+  font-family: ${(props) => props.theme.fontFamily.body};
   display: inline-flex;
   align-items: center;
   justify-content: center;
