@@ -333,7 +333,7 @@ const StyledInput = styled.input`
             : props.state === 'error'
             ? props.theme.color.error
             : null};
-          border-radius: ${props.theme.radius.one};
+          border-radius: ${props.theme.radius.one}px;
           background: ${props.theme.color.gray.one};
           :focus {
             outline: none;
@@ -348,7 +348,7 @@ const StyledInput = styled.input`
           border: 1px solid ${props.theme.color.gray.one};
         `
       : css`
-          border-radius: ${props.theme.radius.one};
+          border-radius: ${props.theme.radius.one}px;
           border: 1px solid
             ${props.state === 'success'
               ? props.theme.color.success

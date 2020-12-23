@@ -30,7 +30,7 @@ const HeaderRoute = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mb-3">Header</H2>
+          <H2 >Header</H2>
           <Paragraph>
             The Header component is wrapper for your website's navigation.
           </Paragraph>
@@ -46,7 +46,7 @@ const HeaderRoute = ({}) => {
           >
             import Header from "system-ui";
           </div>
-          <H3 className="mb-none">Usage</H3>
+          <H3 className="">Usage</H3>
           <div
             style={{
               fontFamily: 'monospace',

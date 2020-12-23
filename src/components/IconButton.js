@@ -89,12 +89,12 @@ const StyledIconButton = styled.button`
 
   font-size: ${(props) =>
     props.size === 'sm'
-      ? `${props.theme.fontSize.small}`
+      ? `${props.theme.fontSize.base}`
       : props.size === 'lg'
       ? `${props.theme.fontSize.large}`
       : `${props.theme.fontSize.button}`};
   border-radius: ${(props) =>
-    props.rounded ? '999px' : props.theme.radius.one};
+    props.rounded ? '999px' : props.theme.radius.one}px;
   cursor: pointer;
   transition: all 0.25s;
   // text-transform: uppercase;
@@ -314,12 +314,12 @@ const StyledLink = styled(Link)`
 
   font-size: ${(props) =>
     props.size === 'sm'
-      ? `${props.theme.fontSize.small}`
+      ? `${props.theme.fontSize.base}`
       : props.size === 'lg'
       ? `${props.theme.fontSize.large}`
       : `${props.theme.fontSize.button}`};
   border-radius: ${(props) =>
-    props.rounded ? '999px' : props.theme.radius.one};
+    props.rounded ? '999px' : props.theme.radius.one}px;
   cursor: pointer;
   transition: all 0.25s;
   // text-transform: uppercase;
@@ -539,12 +539,12 @@ const StyledA = styled.a`
 
   font-size: ${(props) =>
     props.size === 'sm'
-      ? `${props.theme.fontSize.small}`
+      ? `${props.theme.fontSize.base}`
       : props.size === 'lg'
       ? `${props.theme.fontSize.large}`
       : `${props.theme.fontSize.button}`};
   border-radius: ${(props) =>
-    props.rounded ? '999px' : props.theme.radius.one};
+    props.rounded ? '999px' : props.theme.radius.one}px;
   cursor: pointer;
   transition: all 0.25s;
   // text-transform: uppercase;

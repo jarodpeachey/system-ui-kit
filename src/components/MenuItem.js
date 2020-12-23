@@ -10,7 +10,6 @@ const MenuItem = ({
   id,
   customStyles,
   submenu,
-  square,
   align,
 }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
@@ -34,10 +33,9 @@ const MenuItem = ({
     return (
       <>
         <Wrapper
-          className={`${className} menu-item`}
+          className={`${className}`}
           id={id}
           customStyles={customStyles}
-          square={square}
           onMouseEnter={() => {
             setShowSubMenu(true);
           }}
@@ -55,7 +53,7 @@ const MenuItem = ({
     );
   } else {
     return (
-      <Wrapper className={`${className} menu-item`} id={id} square={square}>
+      <Wrapper className={`${className} menu-item`} id={id}>
         {children}
       </Wrapper>
     );
@@ -63,34 +61,16 @@ const MenuItem = ({
 };
 
 const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  display: flex;
-  align-items: stretch;
-  font-size: ${(props) => props.theme.fontSize.base};
-  a {
-    opacity: 1;
-  }
-  :hover a {
-    opacity: 0.8;
-  }
+  font-size: ${(props) => props.theme.fontSize.base}px;
+  line-height: ${(props) => props.theme.lineHeight.p}px;
+  color: ${(props) => props.theme.color.text.paragraph};
 
   a {
-    display: block;
-    width: fit-content;
+    font-size: ${(props) => props.theme.fontSize.base}px;
+    line-height: ${(props) => props.theme.lineHeight.p}px;
     color: ${(props) => props.theme.color.text.paragraph};
-    padding: 12px 18px;
-    border: none;
-    height: 100%;
+    padding: 12px;
     text-decoration: none;
-    transition-duration: 0.1s;
-    font-size: ${(props) => props.theme.fontSize.base};
-    // background: ${(props) => (props.open ? '#00000007' : 'transparent')};
-    border-radius: ${(props) => props.theme.radius.one};
-    :hover {
-      // background: #00000009;
-    }
   }
   ${(props) => props.customStyles}
 `;

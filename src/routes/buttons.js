@@ -38,77 +38,77 @@ const Buttons = ({}) => {
       <Section>
         <Container>
           <H3>Color</H3>
-          <Button className="mr-2">default</Button>
-          <Button className="mr-2" color="primary">
+          <Button className="">default</Button>
+          <Button className="" color="primary">
             primary
           </Button>
-          <Button className="mr-2" color="secondary">
+          <Button className="" color="secondary">
             secondary
           </Button>
-          <Button className="mr-2" color="success">
+          <Button className="" color="success">
             success
           </Button>
-          <Button className="mr-2" color="error">
+          <Button className="" color="error">
             error
           </Button>
           <br />
-          <H3 className="mb-none">Outlined</H3>
+          <H3 className="">Outlined</H3>
           <Paragraph>
             Use an outlined button to indicate a secondary action.
           </Paragraph>
-          <Button className="mr-2" variant="outlined">
+          <Button className="" variant="outlined">
             default
           </Button>
-          <Button className="mr-2" variant="outlined" color="primary">
+          <Button className="" variant="outlined" color="primary">
             primary
           </Button>
-          <Button className="mr-2" variant="outlined" color="secondary">
+          <Button className="" variant="outlined" color="secondary">
             secondary
           </Button>
-          <Button className="mr-2" variant="outlined" color="success">
+          <Button className="" variant="outlined" color="success">
             success
           </Button>
-          <Button className="mr-2" variant="outlined" color="error">
+          <Button className="" variant="outlined" color="error">
             error
           </Button>
           <br />
-          <H3 className="mb-none">Plain</H3>
+          <H3 className="">Plain</H3>
           <Paragraph>
             Use a plain button to indicate an action that's not important.
           </Paragraph>
-          <Button className="mr-2" variant="plain">
+          <Button className="" variant="plain">
             default
           </Button>
-          <Button className="mr-2" variant="plain" color="primary">
+          <Button className="" variant="plain" color="primary">
             primary
           </Button>
-          <Button className="mr-2" variant="plain" color="secondary">
+          <Button className="" variant="plain" color="secondary">
             secondary
           </Button>
-          <Button className="mr-2" variant="plain" color="success">
+          <Button className="" variant="plain" color="success">
             success
           </Button>
-          <Button className="mr-2" variant="plain" color="error">
+          <Button className="" variant="plain" color="error">
             error
           </Button>
           <br />
-          <H3 type="h3" className="mb-none">
+          <H3 type="h3" className="">
             Sizes
           </H3>
           <Paragraph>
             You can choose between small, default and large button sizes.
           </Paragraph>
-          <Button className="mr-2" color="primary" size="large">
+          <Button className="" color="primary" size="large">
             Large
           </Button>
-          <Button className="mr-2" color="primary">
+          <Button className="" color="primary">
             Default
           </Button>
-          <Button className="mr-2" color="primary" size="small">
+          <Button className="" color="primary" size="sm">
             Small
           </Button>
           <br />
-          <H3 className="mb-none">Props</H3>
+          <H3 className="">Props</H3>
           <Paragraph>
             Props available to customize the <Code>{'<Button />'}</Code>{' '}
             component.

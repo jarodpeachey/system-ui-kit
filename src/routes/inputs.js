@@ -88,92 +88,92 @@ const Inputs = ({}) => {
               background: theme.color.gray.six,
             }}
           ></div>
-          <H2 className="mt-none" type="h2">
+          <H2 className="" type="h2">
             Button
           </H2>
-          <H4 type="h4" className="mb-none">
+          <H4 type="h4" className="">
             Variant
           </H4>
-          <Paragraph className="mt-2">
+          <Paragraph className="">
             The variant prop is used to change the appearance of a button.
           </Paragraph>
-          <Button className="mr-2 mb-2" color="primary">
+          <Button className=" " color="primary">
             Filled
           </Button>
-          <Button className="mr-2 mb-2" color="primary" variant="outlined">
+          <Button className=" " color="primary" variant="outlined">
             Outlined
           </Button>
-          <Button className="mr-2 mb-2" variant="plain" color="primary">
+          <Button className=" " variant="plain" color="primary">
             Plain
           </Button>
           <br />
           <br />
-          <H4 type="h4" className="mb-none">
+          <H4 type="h4" className="">
             Size
           </H4>
-          <Paragraph className="mt-2">
+          <Paragraph className="">
             The size prop is used to change the size of a button.
           </Paragraph>
-          <Button className="mr-2 mb-2" color="primary" size="large">
+          <Button className=" " color="primary" size="large">
             Large
           </Button>
-          <Button className="mr-2 mb-2" color="primary">
+          <Button className=" " color="primary">
             Default
           </Button>
-          <Button className="mr-2 mb-2" color="primary" size="small">
+          <Button className=" " color="primary" size="sm">
             Small
           </Button>
           <br />
           <br />
-          <H4 type="h4" className="mb-none">
+          <H4 type="h4" className="">
             Color
           </H4>
-          <Paragraph className="mt-2">
+          <Paragraph className="">
             The color prop is used to change the color of a button.
           </Paragraph>
-          <Button className="mr-2 mb-2">Default</Button>
-          <Button className="mr-2 mb-2" color="primary">
+          <Button className=" ">Default</Button>
+          <Button className=" " color="primary">
             Primary
           </Button>
-          <Button className="mr-2 mb-2" color="secondary">
+          <Button className=" " color="secondary">
             Secondary
           </Button>
-          <Button className="mr-2 mb-2" color="success">
+          <Button className=" " color="success">
             Success
           </Button>
-          <Button className="mr-2 mb-2" color="error">
+          <Button className=" " color="error">
             Error
           </Button>
           <div />
-          <Button className="mr-2 mb-2" variant="outlined">
+          <Button className=" " variant="outlined">
             Default
           </Button>
-          <Button className="mr-2 mb-2" variant="outlined" color="primary">
+          <Button className=" " variant="outlined" color="primary">
             Primary
           </Button>
-          <Button className="mr-2 mb-2" variant="outlined" color="secondary">
+          <Button className=" " variant="outlined" color="secondary">
             Secondary
           </Button>
-          <Button className="mr-2 mb-2" variant="outlined" color="success">
+          <Button className=" " variant="outlined" color="success">
             Success
           </Button>
-          <Button className="mr-2 mb-2" variant="outlined" color="error">
+          <Button className=" " variant="outlined" color="error">
             Error
           </Button>
           <div />
-          <Button className="mr-2 mb-2" variant="plain">
+          <Button className=" " variant="plain">
             Default
           </Button>
-          <Button className="mr-2 mb-2" variant="plain" color="primary">
+          <Button className=" " variant="plain" color="primary">
             Primary
           </Button>
-          <Button className="mr-2 mb-2" variant="plain" color="secondary">
+          <Button className=" " variant="plain" color="secondary">
             Secondary
           </Button>
-          <Button className="mr-2 mb-2" variant="plain" color="success">
+          <Button className=" " variant="plain" color="success">
             Success
           </Button>
-          <Button className="mr-2 mb-2" variant="plain" color="error">
+          <Button className=" " variant="plain" color="error">
             Error
           </Button>
           <div
@@ -184,51 +184,51 @@ const Inputs = ({}) => {
               borderRadius: 3,
             }}
           >
-            <Button className="mr-2 mb-2" color="white">
+            <Button className=" " color="white">
               White
             </Button>
-            <Button className="mr-2 mb-2" color="primary">
+            <Button className=" " color="primary">
               Primary
             </Button>
-            <Button className="mr-2 mb-2" color="secondary">
+            <Button className=" " color="secondary">
               Secondary
             </Button>
-            <Button className="mr-2 mb-2" color="success">
+            <Button className=" " color="success">
               Success
             </Button>
-            <Button className="mr-2 mb-2" color="error">
+            <Button className=" " color="error">
               Error
             </Button>
             <div />
-            <Button className="mr-2 mb-2" variant="outlined" color="white">
+            <Button className=" " variant="outlined" color="white">
               White
             </Button>
-            <Button className="mr-2 mb-2" variant="outlined" color="primary">
+            <Button className=" " variant="outlined" color="primary">
               Primary
             </Button>
-            <Button className="mr-2 mb-2" variant="outlined" color="secondary">
+            <Button className=" " variant="outlined" color="secondary">
               Secondary
             </Button>
-            <Button className="mr-2 mb-2" variant="outlined" color="success">
+            <Button className=" " variant="outlined" color="success">
               Success
             </Button>
-            <Button className="mr-2 mb-2" variant="outlined" color="error">
+            <Button className=" " variant="outlined" color="error">
               Error
             </Button>
             <div />
-            <Button className="mr-2 mb-2" variant="plain" color="white">
+            <Button className=" " variant="plain" color="white">
               White
             </Button>
-            <Button className="mr-2 mb-2" variant="plain" color="primary">
+            <Button className=" " variant="plain" color="primary">
               Primary
             </Button>
-            <Button className="mr-2 mb-2" variant="plain" color="secondary">
+            <Button className=" " variant="plain" color="secondary">
               Secondary
             </Button>
-            <Button className="mr-2 mb-2" variant="plain" color="success">
+            <Button className=" " variant="plain" color="success">
               Success
             </Button>
-            <Button className="mr-2 mb-2" variant="plain" color="error">
+            <Button className=" " variant="plain" color="error">
               Error
             </Button>
           </div>
@@ -236,28 +236,28 @@ const Inputs = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 className="mt-none" type="h2">
+          <H2 className="" type="h2">
             IconButton
           </H2>
           <Paragraph>
             The IconButton element extends all the props from the Button
             component. It also adds a new circle prop.
           </Paragraph>
-          <H4 type="h4" className="mb-none">
+          <H4 type="h4" className="">
             Variant
           </H4>
-          <Paragraph className="mt-2">
+          <Paragraph className="">
             The variant prop is used to change the appearance of a button.
           </Paragraph>
-          <IconButton className="mr-2 mb-2" color="primary">
+          <IconButton className=" " color="primary">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
-          <IconButton circle className="mr-2 mb-2" color="primary">
+          <IconButton circle className=" " color="primary">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
           <IconButton
             circle
-            className="mr-2 mb-2"
+            className=" "
             color="primary"
             variant="outlined"
           >
@@ -265,7 +265,7 @@ const Inputs = ({}) => {
           </IconButton>
           <IconButton
             circle
-            className="mr-2 mb-2"
+            className=" "
             variant="plain"
             color="primary"
           >
@@ -273,51 +273,51 @@ const Inputs = ({}) => {
           </IconButton>
           <br />
           <br />
-          <H4 type="h4" className="mb-none">
+          <H4 type="h4" className="">
             Size
           </H4>
-          <Paragraph className="mt-2">
+          <Paragraph className="">
             The size prop is used to change the size of a button.
           </Paragraph>
-          <IconButton circle className="mr-2 mb-2" color="primary" size="large">
+          <IconButton circle className=" " color="primary" size="large">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
-          <IconButton circle className="mr-2 mb-2" color="primary">
+          <IconButton circle className=" " color="primary">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
-          <IconButton circle className="mr-2 mb-2" color="primary" size="small">
+          <IconButton circle className=" " color="primary" size="sm">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
           <br />
           <br />
-          <H4 type="h4" className="mb-none">
+          <H4 type="h4" className="">
             Color
           </H4>
-          <Paragraph className="mt-2">
+          <Paragraph className="">
             The color prop is used to change the color of a button.
           </Paragraph>
-          <IconButton circle className="mr-2 mb-2">
+          <IconButton circle className=" ">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
-          <IconButton circle className="mr-2 mb-2" color="primary">
+          <IconButton circle className=" " color="primary">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
-          <IconButton circle className="mr-2 mb-2" color="secondary">
+          <IconButton circle className=" " color="secondary">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
-          <IconButton circle className="mr-2 mb-2" color="success">
+          <IconButton circle className=" " color="success">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
-          <IconButton circle className="mr-2 mb-2" color="error">
+          <IconButton circle className=" " color="error">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
           <div />
-          <IconButton circle className="mr-2 mb-2" variant="outlined">
+          <IconButton circle className=" " variant="outlined">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
           <IconButton
             circle
-            className="mr-2 mb-2"
+            className=" "
             variant="outlined"
             color="primary"
           >
@@ -325,7 +325,7 @@ const Inputs = ({}) => {
           </IconButton>
           <IconButton
             circle
-            className="mr-2 mb-2"
+            className=" "
             variant="outlined"
             color="secondary"
           >
@@ -333,7 +333,7 @@ const Inputs = ({}) => {
           </IconButton>
           <IconButton
             circle
-            className="mr-2 mb-2"
+            className=" "
             variant="outlined"
             color="success"
           >
@@ -341,19 +341,19 @@ const Inputs = ({}) => {
           </IconButton>
           <IconButton
             circle
-            className="mr-2 mb-2"
+            className=" "
             variant="outlined"
             color="error"
           >
             <FontAwesomeIcon icon="heart" />
           </IconButton>
           <div />
-          <IconButton circle className="mr-2 mb-2" variant="plain">
+          <IconButton circle className=" " variant="plain">
             <FontAwesomeIcon icon="heart" />
           </IconButton>
           <IconButton
             circle
-            className="mr-2 mb-2"
+            className=" "
             variant="plain"
             color="primary"
           >
@@ -361,7 +361,7 @@ const Inputs = ({}) => {
           </IconButton>
           <IconButton
             circle
-            className="mr-2 mb-2"
+            className=" "
             variant="plain"
             color="secondary"
           >
@@ -369,7 +369,7 @@ const Inputs = ({}) => {
           </IconButton>
           <IconButton
             circle
-            className="mr-2 mb-2"
+            className=" "
             variant="plain"
             color="success"
           >
@@ -377,7 +377,7 @@ const Inputs = ({}) => {
           </IconButton>
           <IconButton
             circle
-            className="mr-2 mb-2"
+            className=" "
             variant="plain"
             color="error"
           >
@@ -391,25 +391,25 @@ const Inputs = ({}) => {
               borderRadius: 3,
             }}
           >
-            <IconButton circle className="mr-2 mb-2" color="white">
+            <IconButton circle className=" " color="white">
               <FontAwesomeIcon icon="heart" />
             </IconButton>
-            <IconButton circle className="mr-2 mb-2" color="primary">
+            <IconButton circle className=" " color="primary">
               <FontAwesomeIcon icon="heart" />
             </IconButton>
-            <IconButton circle className="mr-2 mb-2" color="secondary">
+            <IconButton circle className=" " color="secondary">
               <FontAwesomeIcon icon="heart" />
             </IconButton>
-            <IconButton circle className="mr-2 mb-2" color="success">
+            <IconButton circle className=" " color="success">
               <FontAwesomeIcon icon="heart" />
             </IconButton>
-            <IconButton circle className="mr-2 mb-2" color="error">
+            <IconButton circle className=" " color="error">
               <FontAwesomeIcon icon="heart" />
             </IconButton>
             <div />
             <IconButton
               circle
-              className="mr-2 mb-2"
+              className=" "
               variant="outlined"
               color="white"
             >
@@ -417,7 +417,7 @@ const Inputs = ({}) => {
             </IconButton>
             <IconButton
               circle
-              className="mr-2 mb-2"
+              className=" "
               variant="outlined"
               color="primary"
             >
@@ -425,7 +425,7 @@ const Inputs = ({}) => {
             </IconButton>
             <IconButton
               circle
-              className="mr-2 mb-2"
+              className=" "
               variant="outlined"
               color="secondary"
             >
@@ -433,7 +433,7 @@ const Inputs = ({}) => {
             </IconButton>
             <IconButton
               circle
-              className="mr-2 mb-2"
+              className=" "
               variant="outlined"
               color="success"
             >
@@ -441,7 +441,7 @@ const Inputs = ({}) => {
             </IconButton>
             <IconButton
               circle
-              className="mr-2 mb-2"
+              className=" "
               variant="outlined"
               color="error"
             >
@@ -450,7 +450,7 @@ const Inputs = ({}) => {
             <div />
             <IconButton
               circle
-              className="mr-2 mb-2"
+              className=" "
               variant="plain"
               color="white"
             >
@@ -458,7 +458,7 @@ const Inputs = ({}) => {
             </IconButton>
             <IconButton
               circle
-              className="mr-2 mb-2"
+              className=" "
               variant="plain"
               color="primary"
             >
@@ -466,7 +466,7 @@ const Inputs = ({}) => {
             </IconButton>
             <IconButton
               circle
-              className="mr-2 mb-2"
+              className=" "
               variant="plain"
               color="secondary"
             >
@@ -474,7 +474,7 @@ const Inputs = ({}) => {
             </IconButton>
             <IconButton
               circle
-              className="mr-2 mb-2"
+              className=" "
               variant="plain"
               color="success"
             >
@@ -482,7 +482,7 @@ const Inputs = ({}) => {
             </IconButton>
             <IconButton
               circle
-              className="mr-2 mb-2"
+              className=" "
               variant="plain"
               color="error"
             >
@@ -493,30 +493,30 @@ const Inputs = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 className="mt-none" type="h2">
+          <H2 className="" type="h2">
             Text Field
           </H2>
           <H4 type="h4">Size</H4>
           <Row spacing={[12]} breakpoints={[576, 769]}>
             <Column widths={[6, 3]}>
               <Input
-                className="mb-2"
+                className=""
                 size="xs"
                 fullWidth
                 placeholder="X-Small"
               />
               <div />
               <Input
-                className="mb-2"
-                size="small"
+                className=""
+                size="sm"
                 fullWidth
                 placeholder="Small"
               />
               <div />
-              <Input className="mb-2" fullWidth placeholder="Default" />
+              <Input className="" fullWidth placeholder="Default" />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 size="large"
                 fullWidth
                 placeholder="Large"
@@ -524,7 +524,7 @@ const Inputs = ({}) => {
             </Column>
             <Column widths={[6, 3]}>
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 size="xs"
                 fullWidth
@@ -532,22 +532,22 @@ const Inputs = ({}) => {
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
-                size="small"
+                size="sm"
                 fullWidth
                 placeholder="Small"
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 fullWidth
                 placeholder="Default"
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 size="large"
                 fullWidth
@@ -556,7 +556,7 @@ const Inputs = ({}) => {
             </Column>
             <Column widths={[6, 3]}>
               <Input
-                className="mb-2"
+                className=""
                 size="xs"
                 fullWidth
                 placeholder="X-Small"
@@ -564,22 +564,22 @@ const Inputs = ({}) => {
               />
               <div />
               <Input
-                className="mb-2"
-                size="small"
+                className=""
+                size="sm"
                 fullWidth
                 placeholder="Small"
                 icon={<FontAwesomeIcon icon="heart" />}
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 fullWidth
                 placeholder="Default"
                 icon={<FontAwesomeIcon icon="heart" />}
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 size="large"
                 fullWidth
                 placeholder="Large"
@@ -590,17 +590,17 @@ const Inputs = ({}) => {
           <H4 type="h4">State</H4>
           <Row spacing={[12]} breakpoints={[576, 769]}>
             <Column widths={[6, 3]}>
-              <Input className="mb-2" fullWidth placeholder="Default" />
+              <Input className="" fullWidth placeholder="Default" />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 fullWidth
                 placeholder="Success"
                 state="success"
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 fullWidth
                 placeholder="Error"
                 state="error"
@@ -608,14 +608,14 @@ const Inputs = ({}) => {
             </Column>
             <Column widths={[6, 3]}>
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 fullWidth
                 placeholder="Default"
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 fullWidth
                 placeholder="Success"
@@ -623,7 +623,7 @@ const Inputs = ({}) => {
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 fullWidth
                 placeholder="Error"
@@ -632,14 +632,14 @@ const Inputs = ({}) => {
             </Column>
             <Column widths={[6, 3]}>
               <Input
-                className="mb-2"
+                className=""
                 icon={<FontAwesomeIcon icon="heart" />}
                 fullWidth
                 placeholder="Default"
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 icon={<FontAwesomeIcon icon="heart" />}
                 fullWidth
                 placeholder="Success"
@@ -647,7 +647,7 @@ const Inputs = ({}) => {
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 icon={<FontAwesomeIcon icon="heart" />}
                 fullWidth
                 placeholder="Error"
@@ -787,14 +787,14 @@ const Inputs = ({}) => {
             >
               <Button
                 color="primary"
-                className="mr-3"
+                className=""
                 customStyles="font-weight: 400;"
               >
                 Click me
               </Button>
               <Button
                 color="primary"
-                className="mr-3"
+                className=""
                 customStyles="font-weight: 500;"
               >
                 Click me

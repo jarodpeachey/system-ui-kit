@@ -37,7 +37,7 @@ const SectionRoute = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H1 className="mb-none">Section</H1>
+          <H1 className="">Section</H1>
           <Paragraph>
             The section component allows you to seperate content vertically
             using padding and background color.
@@ -54,7 +54,7 @@ const SectionRoute = ({}) => {
           >
             {"import Section from 'system-ui';"}
           </div>
-          <H3 className="mb-none">Usage</H3>
+          <H3 className="">Usage</H3>
           <div
             style={{
               fontFamily: 'monospace',
@@ -70,7 +70,7 @@ const SectionRoute = ({}) => {
           <Section spacing={52} background="#f7f7f7">
             <div className="center">A large section</div>
           </Section>
-          <H3 className="mb-none">Props</H3>
+          <H3 className="">Props</H3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <th

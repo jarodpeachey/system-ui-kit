@@ -66,7 +66,7 @@ const NotificationWrapper = styled.div`
       ? props.theme.color.error
       : props.theme.color.gray.six};
   color: white;
-  border-radius: ${(props) => props.theme.radius.one};
+  border-radius: ${(props) => props.theme.radius.one}px;
 
   animation: ${(props) => (props.animate ? slideDown : slideUp)} 0.3s;
   transform: ${(props) =>

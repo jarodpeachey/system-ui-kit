@@ -60,7 +60,7 @@ const Wrapper = styled.div`
     css`
       padding: 12px 16px;
       cursor: pointer;
-      border-radius: ${props.theme.radius.one};
+      border-radius: ${props.theme.radius.one}px;
       transition-duration: 0.1s;
       svg {
         color: #ffffff90;
@@ -78,7 +78,7 @@ const Wrapper = styled.div`
     font-size: ${(props) => props.theme.fontSize.base};
     background: ${(props) =>
       props.submenu ? 'transparent' : props.open ? '#435a8e10' : 'transparent'};
-    border-radius: ${(props) => props.theme.radius.one};
+    border-radius: ${(props) => props.theme.radius.one}px;
     transition-duration: 0.1s;
   }
 `;

@@ -28,8 +28,8 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: fit-content;
-  font-size: ${(props) => props.theme.fontSize.small};
-  line-height: ${(props) => props.theme.fontSize.small};
+  font-size: ${(props) => props.theme.fontSize.base - 1}px;
+  line-height: ${(props) => props.theme.fontSize.base - 1}px;
   padding: 5px 12px 6px;
   text-align: center;
   background: ${(props) =>
@@ -46,32 +46,8 @@ const Wrapper = styled.div`
       : props.theme.color.gray.two};
   color: ${(props) => (props.color === '' ? '' : 'white')};
   border-radius: ${(props) =>
-    props.rounded ? '999px' : props.theme.radius.one};
+    props.rounded ? '999px' : props.theme.radius.one}px;
   // padding-left: ${(props) => (props.icon ? '0' : '8px')};
-`;
-
-const CloseButton = styled.div`
-  width: 40px;
-  height: 100%;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: white;
-  margin-left: auto;
-  padding-right: 14px;
-`;
-const Icon = styled.div`
-  width: 40px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: white;
-  margin-right: 14px;
-  padding-left: 14px;
 `;
 
 export default Badge;

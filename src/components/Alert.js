@@ -44,9 +44,8 @@ const Wrapper = styled.div`
   width: 100%;
   display: ${(props) => (props.show ? 'flex' : 'none')};
   align-items: center;
-  margin: ${(props) => props.theme.spacing.three}px 0;
   padding: 16px 24px;
-  font-size: ${(props) => props.theme.fontSize.alert};
+  font-size: ${(props) => props.theme.fontSize.base};
 
   background: ${(props) =>
     props.color === 'primary'
@@ -108,7 +107,7 @@ const Wrapper = styled.div`
     css`
       border: 1px solid #efefef;
     `};
-  border-radius: ${(props) => props.theme.radius.one};
+  border-radius: ${(props) => props.theme.radius.one}px;
   padding-right: 0;
   padding-right: 0;
   padding-left: ${(props) => (props.icon ? '0' : '24px')};
@@ -124,10 +123,12 @@ const CloseButton = styled.div`
   justify-content: center;
   font-size: 16px;
   margin-left: auto;
-  color: ${(props) => props.theme.color.text.light.two};
+  color: ${(props) => props.theme.color.text.p};
   padding-right: 24px;
+  opacity: .8;
+  transition: .2s;
   :hover {
-    color: ${(props) => props.theme.color.text.light.one};
+    opacity: 1;
   }
 `;
 

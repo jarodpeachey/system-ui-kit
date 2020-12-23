@@ -31,7 +31,7 @@ const GridRoute = () => {
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mb-3">Grid System</H2>
+          <H2 >Grid System</H2>
           <Paragraph>
             The grid system consists of two components, Row and Column. They
             allow you to create responsive layouts.
@@ -48,7 +48,7 @@ const GridRoute = () => {
           >
             import Row from "system-ui";
           </div>
-          <H3 className="mb-none">Usage</H3>
+          <H3 className="">Usage</H3>
           <div
             style={{
               fontFamily: 'monospace',

@@ -129,7 +129,7 @@ const Example = () => (
           </div> */}
         </Row>
         <Flex>
-          <Button className="mt-4" color="primary" link="/components">
+          <Button className="" color="primary" link="/components">
             View Components
           </Button>
         </Flex>

@@ -49,21 +49,21 @@ const RadioButtonsPage = ({}) => {
           >
             <Flex>
               <RadioButtons inline color="primary" name="radios-one">
-                <RadioButton checked className="mr-2"></RadioButton>
+                <RadioButton checked className=""></RadioButton>
                 <RadioButton
                   checked
                   color="primary"
-                  className="mr-2"
+                  className=""
                 ></RadioButton>
-                <RadioButton className="mr-2" color="secondary"></RadioButton>
+                <RadioButton className="" color="secondary"></RadioButton>
                 <RadioButton
                   disabled
-                  className="mr-2"
+                  className=""
                   color="success"
                 ></RadioButton>
                 <RadioButton
                   disabled
-                  className="mr-2"
+                  className=""
                   color="error"
                 ></RadioButton>
               </RadioButtons>
@@ -87,102 +87,102 @@ const RadioButtonsPage = ({}) => {
             }}
           >
             <Flex hAlign="start">
-              <div className="mr-4">
+              <div className="">
                 <Strong
-                  className="mb-3 display-block"
+                  className=" display-block"
                   display="title"
                   color="default"
                 >
                   <Paragraph size="sm">Default</Paragraph>
                 </Strong>
                 <RadioButtons color="default" name="default">
-                  <RadioButton checked className="mr-2">
+                  <RadioButton checked className="">
                     Option one
                   </RadioButton>
-                  <RadioButton checked color="default" className="mr-2">
+                  <RadioButton checked color="default" className="">
                     Option two
                   </RadioButton>
-                  <RadioButton checked className="mr-2">
+                  <RadioButton checked className="">
                     Option three
                   </RadioButton>
                 </RadioButtons>
               </div>
-              <div className="mr-4">
+              <div className="">
                 <Strong
-                  className="mb-3 display-block"
+                  className=" display-block"
                   display="title"
                   color="primary"
                 >
                   <Paragraph size="sm" type="small">Primary</Paragraph>
                 </Strong>
                 <RadioButtons color="primary" name="primary">
-                  <RadioButton checked className="mr-2">
+                  <RadioButton checked className="">
                     Option one
                   </RadioButton>
-                  <RadioButton checked color="primary" className="mr-2">
+                  <RadioButton checked color="primary" className="">
                     Option two
                   </RadioButton>
-                  <RadioButton checked className="mr-2">
+                  <RadioButton checked className="">
                     Option three
                   </RadioButton>
                 </RadioButtons>
               </div>
-              <div className="mr-4">
+              <div className="">
                 <Strong
-                  className="mb-3 display-block"
+                  className=" display-block"
                   display="title"
                   color="secondary"
                 >
                   <Paragraph size="sm" type="small">Secondary</Paragraph>
                 </Strong>
                 <RadioButtons color="secondary" name="secondary">
-                  <RadioButton checked className="mr-2">
+                  <RadioButton checked className="">
                     Option one
                   </RadioButton>
-                  <RadioButton checked color="secondary" className="mr-2">
+                  <RadioButton checked color="secondary" className="">
                     Option two
                   </RadioButton>
-                  <RadioButton checked className="mr-2">
+                  <RadioButton checked className="">
                     Option three
                   </RadioButton>
                 </RadioButtons>
               </div>
-              <div className="mr-4">
+              <div className="">
                 <Strong
-                  className="mb-3 display-block"
+                  className=" display-block"
                   display="title"
                   color="success"
                 >
                   <Paragraph size="sm" type="small">Success</Paragraph>
                 </Strong>
                 <RadioButtons color="success" name="success">
-                  <RadioButton checked className="mr-2">
+                  <RadioButton checked className="">
                     Option one
                   </RadioButton>
-                  <RadioButton checked color="success" className="mr-2">
+                  <RadioButton checked color="success" className="">
                     Option two
                   </RadioButton>
-                  <RadioButton checked className="mr-2">
+                  <RadioButton checked className="">
                     Option three
                   </RadioButton>
                 </RadioButtons>
               </div>
-              <div className="mr-4">
+              <div className="">
                 <Strong
-                  className="mb-3 display-block"
+                  className=" display-block"
                   display="title"
                   color="error"
                 >
                   <Paragraph size="sm" type="small">Error</Paragraph>
                 </Strong>
                 <RadioButtons color="error" name="error">
-                  <RadioButton checked className="mr-2">
+                  <RadioButton checked className="">
                     Option one
                   </RadioButton>
-                  <RadioButton checked color="error" className="mr-2">
+                  <RadioButton checked color="error" className="">
                     Option two
                   </RadioButton>
-                  <RadioButton checked className="mr-2">
+                  <RadioButton checked className="">
                     Option three
                   </RadioButton>
                 </RadioButtons>
@@ -199,23 +199,23 @@ const RadioButtonsPage = ({}) => {
             }}
           >
             <Flex direction="vertical" hAlign="start">
-              <RadioButton checked className="mr-2">
+              <RadioButton checked className="">
                 Default
               </RadioButton>
               <br />
-              <RadioButton checked color="primary" className="mr-2">
+              <RadioButton checked color="primary" className="">
                 Primary
               </RadioButton>
               <br />
-              <RadioButton checked className="mr-2" color="secondary">
+              <RadioButton checked className="" color="secondary">
                 Secondary
               </RadioButton>
               <br />
-              <RadioButton checked className="mr-2" color="success">
+              <RadioButton checked className="" color="success">
                 Success
               </RadioButton>
               <br />
-              <RadioButton checked className="mr-2" color="error">
+              <RadioButton checked className="" color="error">
                 Error
               </RadioButton>
               <br />

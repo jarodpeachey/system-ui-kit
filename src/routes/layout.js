@@ -39,7 +39,7 @@ const LayoutComponents = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H2 type="h2" className="mt-none">Grid</H2>
+          <H2 type="h2" className="">Grid</H2>
           <Row breakpoints={[769]} spacing={[8]}>
             <div widths={[1]}>
               <Demo>1</Demo>
@@ -112,7 +112,7 @@ const LayoutComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 type="h2" className="m-none">Flex</H2>
+          <H2 type="h2" className="">Flex</H2>
           <Paragraph>
             The <Code>{'<Flex />'}</Code> component allows you to add a simple
             flex element. Also known as Grid Lite.
@@ -131,13 +131,13 @@ const LayoutComponents = ({}) => {
             style={{ height: 200, background: theme.color.gray.one }}
             direction="horizontal"
           >
-            <Button color="primary" className="m-2">
+            <Button color="primary" className="">
               Test
             </Button>
-            <Button color="primary" className="m-2">
+            <Button color="primary" className="">
               Test
             </Button>
-            <Button color="primary" className="m-2">
+            <Button color="primary" className="">
               Test
             </Button>
           </Flex>
@@ -157,13 +157,13 @@ const LayoutComponents = ({}) => {
             vAlign="stretch"
             hAlign="space-evenly"
           >
-            <Button color="primary" className="m-2">
+            <Button color="primary" className="">
               Test
             </Button>
-            <Button color="primary" className="m-2">
+            <Button color="primary" className="">
               Test
             </Button>
-            <Button color="primary" className="m-2">
+            <Button color="primary" className="">
               Test
             </Button>
           </Flex>
@@ -171,14 +171,14 @@ const LayoutComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 type="h2" className="m-none">Container</H2>
+          <H2 type="h2" className="">Container</H2>
           <Paragraph>
             The container element can be set to 4 preset sizes: xs, sm, md and
             lg. The max-width can also be set using a custom prop:{' '}
             <Code>{'maxWidth={900}'}</Code>
           </Paragraph>
           <div
-            className="mb-4"
+            
             style={{
               background: 'white',
               border: '1px solid #efefef',
@@ -201,7 +201,7 @@ const LayoutComponents = ({}) => {
                   justifyContent: 'center',
                 }}
               >
-                <H5 type="h5" className="m-none">Default</H5>
+                <H5 type="h5" className="">Default</H5>
               </div>
             </Container>
           </div>
@@ -229,7 +229,7 @@ const LayoutComponents = ({}) => {
                   justifyContent: 'center',
                 }}
               >
-                <H5 type="h5" className="m-none">Small</H5>
+                <H5 type="h5" className="">Small</H5>
               </div>
             </Container>
           </div>
@@ -237,7 +237,7 @@ const LayoutComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 type="h2" className="m-none">Hidden</H2>
+          <H2 type="h2" className="">Hidden</H2>
           <Paragraph>
             The <Code>{'<Hidden />'}</Code> component allows you to create
             elements that are only shown on mobile, tablet, or desktop.

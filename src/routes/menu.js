@@ -35,7 +35,7 @@ const MenuRoute = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mb-3">Menu</H2>
+          <H2 >Menu</H2>
           <Paragraph>
             The Menu component is used to allow the user to navigate the website
             on desktop.
@@ -52,7 +52,7 @@ const MenuRoute = ({}) => {
           >
             import Menu from "system-ui";
           </div>
-          <H3 className="mb-none">Usage</H3>
+          <H3 className="">Usage</H3>
           <div
             style={{
               borderRadius: 3,
@@ -92,7 +92,7 @@ const MenuRoute = ({}) => {
             {`  </MenuItem>`} <br />
             {`</Menu>`} <br />
           </div>
-          <H3 className="mb-none"></H3>
+          <H3 className=""></H3>
           <H3>Props</H3>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>

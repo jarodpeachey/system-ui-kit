@@ -15,7 +15,7 @@ const Modal = ({ children, title, toggleFunction, noClose, noHeader }) => {
       <StyledModal close={close} noHeader={noHeader}>
         {!noHeader && (
           <Flex customStyles={`padding-bottom: 32px;`} hAlign="space-between">
-            {title && !noHeader && <H3 className="m-none">{title}</H3>}
+            {title && !noHeader && <H3 className="">{title}</H3>}
             {!noClose && (
               <CloseButton onClick={customToggleFunction}>
                 <FontAwesomeIcon icon="times" />

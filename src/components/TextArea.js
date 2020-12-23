@@ -128,7 +128,7 @@ const StyledTextArea = styled.textarea`
   ${(props) =>
     props.variant === 'filled'
       ? css`
-          border-radius: ${props.theme.radius.one};
+          border-radius: ${props.theme.radius.one}px;
           background: ${props.theme.color.gray.one};
           color: ${props.state === 'success'
             ? props.theme.color.success
@@ -154,7 +154,7 @@ const StyledTextArea = styled.textarea`
           border: 1px solid ${props.theme.color.gray.one};
         `
       : css`
-          border-radius: ${props.theme.radius.one};
+          border-radius: ${props.theme.radius.one}px;
           border: 1px solid
             ${props.state === 'success'
               ? props.theme.color.success

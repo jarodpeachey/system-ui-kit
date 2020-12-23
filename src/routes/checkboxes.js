@@ -47,14 +47,14 @@ const Checkboxes = ({}) => {
             }}
           >
             <Flex>
-              <Checkbox checked className="mr-2"></Checkbox>
-              <Checkbox checked color="primary" className="mr-2"></Checkbox>
-              <Checkbox className="mr-2" color="secondary"></Checkbox>
-              <Checkbox disabled className="mr-2" color="success"></Checkbox>
+              <Checkbox checked className=""></Checkbox>
+              <Checkbox checked color="primary" className=""></Checkbox>
+              <Checkbox className="" color="secondary"></Checkbox>
+              <Checkbox disabled className="" color="success"></Checkbox>
               <Checkbox
                 disabled
                 checked
-                className="mr-2"
+                className=""
                 color="error"
               ></Checkbox>
             </Flex>
@@ -70,11 +70,11 @@ const Checkboxes = ({}) => {
             }}
           >
             {/* <Flex> */}
-              <Checkbox checked className="mr-2"></Checkbox>
-              <Checkbox checked color="primary" className="mr-2"></Checkbox>
-              <Checkbox checked className="mr-2" color="secondary"></Checkbox>
-              <Checkbox checked className="mr-2" color="success"></Checkbox>
-              <Checkbox checked className="mr-2" color="error"></Checkbox>
+              <Checkbox checked className=""></Checkbox>
+              <Checkbox checked color="primary" className=""></Checkbox>
+              <Checkbox checked className="" color="secondary"></Checkbox>
+              <Checkbox checked className="" color="success"></Checkbox>
+              <Checkbox checked className="" color="error"></Checkbox>
             {/* </Flex> */}
           </div>
           <br />
@@ -87,23 +87,23 @@ const Checkboxes = ({}) => {
             }}
           >
             <Flex direction="vertical" hAlign="start">
-              <Checkbox checked className="mr-2">
+              <Checkbox checked className="">
                 Default
               </Checkbox>
               <br />
-              <Checkbox checked color="primary" className="mr-2">
+              <Checkbox checked color="primary" className="">
                 Primary
               </Checkbox>
               <br />
-              <Checkbox checked className="mr-2" color="secondary">
+              <Checkbox checked className="" color="secondary">
                 Secondary
               </Checkbox>
               <br />
-              <Checkbox checked className="mr-2" color="success">
+              <Checkbox checked className="" color="success">
                 Success
               </Checkbox>
               <br />
-              <Checkbox checked className="mr-2" color="error">
+              <Checkbox checked className="" color="error">
                 Error
               </Checkbox>
               <br />

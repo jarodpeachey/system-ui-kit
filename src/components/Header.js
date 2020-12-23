@@ -57,17 +57,7 @@ const Header = ({
       scrollColor={scrollColor}
       customStyles={customStyles}
     >
-      <Container
-        customStyles={`
-          position: relative;
-          ${
-            fullWidth
-              ? 'padding-left: 24px; padding-right: 24px; width: 100%;'
-              : ''
-          }
-        `}
-        maxWidth={fullWidth ? 99999 : null}
-      >
+      <Container>
         <InnerContainer color={color} scrolled={window.scrollY > 50}>
           {children}
         </InnerContainer>
@@ -78,13 +68,14 @@ const Header = ({
 
 const Wrapper = styled.div`
   transition: all 0.3s, border-bottom 0.1s ease 0.3s;
+  padding: 16px 0;
   position: ${(props) => (props.fixed ? 'fixed' : '')};
   display: flex;
   align-items: center;
   top: 0;
   width: 100%;
   z-index: 999;
-  min-height: ${(props) => `${props.height}px` || 'fit-content'};
+  height: ${(props) => `${props.height}px` || 'fit-content'};
   background: ${(props) =>
     props.color === 'primary'
       ? props.theme.color.primary
@@ -92,8 +83,6 @@ const Wrapper = styled.div`
       ? props.theme.color.secondary
       : props.color === 'transparent'
       ? 'transparent'
-      : props.color === 'dark'
-      ? props.theme.color.gray.six
       : 'white'};
   h1,
   h2,
@@ -105,6 +94,8 @@ const Wrapper = styled.div`
   .menu-item a,
   div {
     transition: all 0.3s;
+    margin-bottom: 0;
+    margin-top: 0;
     color: ${(props) =>
       props.color === 'primary' ||
       props.color === 'secondary' ||

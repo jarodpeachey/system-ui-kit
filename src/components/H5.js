@@ -46,10 +46,10 @@ const Wrapper = styled.h5`
       : props.color === 'light-three'
       ? props.theme.color.text.light.three
       : props.theme.color.text.heading}};
-
+  line-height: ${(props) => props.theme.lineHeight.h5}px;
   font-weight: 600;
   margin-bottom: 14px;
-  font-size: ${(props) => props.theme.fontSize.h5};
+  font-size: ${(props) => props.theme.fontSize.h5}px;
   ${(props) =>
     props.customStyles &&
     css`

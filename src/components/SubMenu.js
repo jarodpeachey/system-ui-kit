@@ -13,7 +13,7 @@ const SubMenu = ({ children, className, id, customStyles, dark }) => (
 );
 
 const Wrapper = styled.div`
-  border-radius: ${(props) => props.theme.radius.one};
+  border-radius: ${(props) => props.theme.radius.one}px;
   background: ${(props) => (props.dark ? props.theme.color.gray.six : 'white')};
   padding: 8px 0;
   opacity: 1;

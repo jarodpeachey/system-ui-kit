@@ -45,7 +45,7 @@ const NavigationComponents = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H2 type="h2" className="mt-none">
+          <H2 type="h2" className="">
             Menu
           </H2>
           {/* <Menu>
@@ -66,7 +66,7 @@ const NavigationComponents = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 type="h2" className="mt-none">
+          <H2 type="h2" className="">
             Tabs
           </H2>
           {/* <div
@@ -90,7 +90,7 @@ const NavigationComponents = ({}) => {
               <Tab name="launch">Launch</Tab>
             </Tabs>
             <TabContent name="design" value={activeTabOne}>
-              <Paragraph className="m-none">
+              <Paragraph className="">
                 Cosby sweater eu banh mi, qui irure. Amet lorem et luctus. Sed
                 eget nulla ac metus porttitor tristique ac quis mauris. Praesent
                 condimentum justo in sapien semper,{' '}
@@ -107,7 +107,7 @@ const NavigationComponents = ({}) => {
               </Paragraph>
             </TabContent>
             <TabContent name="develop" value={activeTabOne}>
-              <Paragraph className="m-none">
+              <Paragraph className="">
                 Cras ornare luctus lectus vel varius. Sed neque risus, pharetra
                 vitae pellentesque vitae, scelerisque at nunc. Vestibulum
                 maximus fermentum nisi nec luctus. Maecenas vitae purus
@@ -122,7 +122,7 @@ const NavigationComponents = ({}) => {
               </Paragraph>
             </TabContent>
             <TabContent name="launch" value={activeTabOne}>
-              <Paragraph className="m-none">
+              <Paragraph className="">
                 Cosby sweater eu banh mi, qui irure terry richardson ex squid.
                 Aliquip placeat salvia cillum iphone. Seitan aliquip quis
                 cardigan american apparel, butcher voluptate nisi qui.
@@ -151,7 +151,7 @@ const NavigationComponents = ({}) => {
             </div>
             <div widths={[9]}>
               <TabContent name="design" value={activeTabTwo}>
-                <Paragraph className="m-none">
+                <Paragraph className="">
                   Cosby sweater eu banh mi, qui irure. Amet lorem et luctus. Sed
                   eget nulla ac metus porttitor tristique ac quis mauris.
                   Praesent condimentum justo in sapien semper,
@@ -169,7 +169,7 @@ const NavigationComponents = ({}) => {
                 </Paragraph>
               </TabContent>
               <TabContent name="develop" value={activeTabTwo}>
-                <Paragraph className="m-none">
+                <Paragraph className="">
                   Cras ornare luctus lectus vel varius. Sed neque risus,
                   pharetra vitae pellentesque vitae, scelerisque at nunc.
                   Vestibulum maximus fermentum nisi nec luctus. Maecenas vitae
@@ -184,7 +184,7 @@ const NavigationComponents = ({}) => {
                 </Paragraph>
               </TabContent>
               <TabContent name="launch" value={activeTabTwo}>
-                <Paragraph className="m-none">
+                <Paragraph className="">
                   Cosby sweater eu banh mi, qui irure terry richardson ex squid.
                   Aliquip placeat salvia cillum iphone. Seitan aliquip quis
                   cardigan american apparel, butcher voluptate nisi qui.

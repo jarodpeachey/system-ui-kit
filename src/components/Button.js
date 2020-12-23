@@ -2,9 +2,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { Link } from '@reach/router';
 import { theme } from '../theme';
 import { pSBC } from '../utils/color';
-import { Link } from '@reach/router';
 
 const Button = ({
   children,
@@ -20,7 +20,7 @@ const Button = ({
   external,
 }) => (
   <>
-    {link && external ? (
+    {link ? (
       <StyledA
         to={link}
         className={`no-styling ${className}`}
@@ -35,21 +35,6 @@ const Button = ({
       >
         {children}
       </StyledA>
-    ) : link ? (
-      <StyledLink
-        to={link}
-        className={`no-styling ${className}`}
-        id={id}
-        color={color}
-        size={size}
-        variant={variant}
-        onClick={onClick || null}
-        link
-        customStyles={customStyles}
-        fullWidth={fullWidth}
-      >
-        {children}
-      </StyledLink>
     ) : (
       <StyledButton
         className={className}
@@ -68,42 +53,17 @@ const Button = ({
 );
 
 const StyledButton = styled.button`
-  box-shadow: ${(props) =>
-    props.color === 'primary' ||
-    props.color === 'secondary' ||
-    props.color === 'success' ||
-    props.color === 'error' ||
-    props.color === 'white' ||
-    props.color === 'dark'
-      ? props.theme.shadow.button
-      : '3px 3px 18px -6px #0000001a'};
   font-weight: ${(props) => props.theme.fontWeight.button};
   outline: none;
-  padding: 12px 24px;
+  padding: ${(props) => (props.size === 'sm' ? '12px 24px' : '18px 30px')};
   border: none;
   width: ${(props) => (props.fullWidth ? '100%' : null)};
-  // font-weight: 500;
-  letter-spacing: 1.4px;
-  padding: ${(props) =>
-    props.size === 'sm'
-      ? '10px 20px'
-      : props.size === 'lg'
-      ? '18px 32px'
-      : '14px 26px'};
-
-  font-size: ${(props) =>
-    props.size === 'sm'
-      ? `${props.theme.fontSize.small}`
-      : props.size === 'lg'
-      ? `${props.theme.fontSize.large}`
-      : `${props.theme.fontSize.button}`};
-  border-radius: ${(props) => props.theme.radius.one};
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: ${(props) => props.theme.radius.one}px;
   cursor: pointer;
   transition: all 0.25s;
-  // text-transform: uppercase;
-  :active {
-    box-shadow: none !important;
-  }
+  letter-spacing: 1px;
 
   background: ${(props) =>
     props.color === 'primary'
@@ -143,15 +103,9 @@ const StyledButton = styled.button`
   }
   border: 1px solid transparent;
   :hover {
-    box-shadow: ${(props) =>
-      props.color === 'primary' ||
-      props.color === 'secondary' ||
-      props.color === 'success' ||
-      props.color === 'error' ||
-      props.color === 'white' ||
-      props.color === 'dark'
-        ? props.theme.shadow.buttonHover
-        : '3px 3px 18px -6px #00000021'};
+    box-shadow: 1px 3px 8px -4px rgba(34, 34, 34, 0.06274509803921569),
+      1px 3px 20px -10px rgba(34, 34, 34, 0.06274509803921569);
+
     background: ${(props) =>
       props.color === 'primary'
         ? pSBC(props.theme.color.primary, -25)
@@ -166,7 +120,6 @@ const StyledButton = styled.button`
         : props.color === 'dark'
         ? pSBC(props.theme.color.gray.six, -25)
         : pSBC(props.theme.color.gray.two, -10)};
-    // color: ${(props) => (props.color === 'white' ? 'initial' : 'white')};
   }
 
   ${(props) =>
@@ -213,7 +166,8 @@ const StyledButton = styled.button`
           ? props.theme.color.gray.six
           : pSBC(props.theme.color.gray.two, -10)};
       :hover {
-        box-shadow: ${props.theme.shadow.button};
+        box-shadow: 1px 3px 8px -4px rgba(34, 34, 34, 0.06274509803921569),
+          1px 3px 20px -10px rgba(34, 34, 34, 0.06274509803921569);
         background: ${props.color === 'primary'
           ? props.theme.color.primary
           : props.color === 'secondary'
@@ -296,42 +250,17 @@ const StyledButton = styled.button`
 `;
 
 const StyledLink = styled(Link)`
-  box-shadow: ${(props) =>
-    props.color === 'primary' ||
-    props.color === 'secondary' ||
-    props.color === 'success' ||
-    props.color === 'error' ||
-    props.color === 'white' ||
-    props.color === 'dark'
-      ? props.theme.shadow.button
-      : '3px 3px 18px -6px #0000001a'};
   font-weight: ${(props) => props.theme.fontWeight.button};
   outline: none;
-  padding: 12px 24px;
+  padding: 18px 24px;
   border: none;
   width: ${(props) => (props.fullWidth ? '100%' : null)};
-  // font-weight: 500;
-  letter-spacing: 1.4px;
-  padding: ${(props) =>
-    props.size === 'sm'
-      ? '10px 20px'
-      : props.size === 'lg'
-      ? '18px 32px'
-      : '14px 26px'};
-
-  font-size: ${(props) =>
-    props.size === 'sm'
-      ? `${props.theme.fontSize.small}`
-      : props.size === 'lg'
-      ? `${props.theme.fontSize.large}`
-      : `${props.theme.fontSize.button}`};
-  border-radius: ${(props) => props.theme.radius.one};
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: ${(props) => props.theme.radius.one}px;
   cursor: pointer;
   transition: all 0.25s;
-  // text-transform: uppercase;
-  :active {
-    box-shadow: none !important;
-  }
+  letter-spacing: 1px;
 
   background: ${(props) =>
     props.color === 'primary'
@@ -371,15 +300,9 @@ const StyledLink = styled(Link)`
   }
   border: 1px solid transparent;
   :hover {
-    box-shadow: ${(props) =>
-      props.color === 'primary' ||
-      props.color === 'secondary' ||
-      props.color === 'success' ||
-      props.color === 'error' ||
-      props.color === 'white' ||
-      props.color === 'dark'
-        ? props.theme.shadow.buttonHover
-        : '3px 3px 18px -6px #00000021'};
+    box-shadow: 1px 3px 8px -4px rgba(34, 34, 34, 0.06274509803921569),
+      1px 3px 20px -10px rgba(34, 34, 34, 0.06274509803921569);
+
     background: ${(props) =>
       props.color === 'primary'
         ? pSBC(props.theme.color.primary, -25)
@@ -394,7 +317,6 @@ const StyledLink = styled(Link)`
         : props.color === 'dark'
         ? pSBC(props.theme.color.gray.six, -25)
         : pSBC(props.theme.color.gray.two, -10)};
-    // color: ${(props) => (props.color === 'white' ? 'initial' : 'white')};
   }
 
   ${(props) =>
@@ -441,7 +363,8 @@ const StyledLink = styled(Link)`
           ? props.theme.color.gray.six
           : pSBC(props.theme.color.gray.two, -10)};
       :hover {
-        box-shadow: ${props.theme.shadow.button};
+        box-shadow: 1px 3px 8px -4px rgba(34, 34, 34, 0.06274509803921569),
+          1px 3px 20px -10px rgba(34, 34, 34, 0.06274509803921569);
         background: ${props.color === 'primary'
           ? props.theme.color.primary
           : props.color === 'secondary'
@@ -524,42 +447,17 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledA = styled.a`
-  box-shadow: ${(props) =>
-    props.color === 'primary' ||
-    props.color === 'secondary' ||
-    props.color === 'success' ||
-    props.color === 'error' ||
-    props.color === 'white' ||
-    props.color === 'dark'
-      ? props.theme.shadow.button
-      : '3px 3px 18px -6px #0000001a'};
   font-weight: ${(props) => props.theme.fontWeight.button};
   outline: none;
-  padding: 12px 24px;
+  padding: 18px 24px;
   border: none;
   width: ${(props) => (props.fullWidth ? '100%' : null)};
-  // font-weight: 500;
-  letter-spacing: 1.4px;
-  padding: ${(props) =>
-    props.size === 'sm'
-      ? '10px 20px'
-      : props.size === 'lg'
-      ? '18px 32px'
-      : '14px 26px'};
-
-  font-size: ${(props) =>
-    props.size === 'sm'
-      ? `${props.theme.fontSize.small}`
-      : props.size === 'lg'
-      ? `${props.theme.fontSize.large}`
-      : `${props.theme.fontSize.button}`};
-  border-radius: ${(props) => props.theme.radius.one};
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: ${(props) => props.theme.radius.one}px;
   cursor: pointer;
   transition: all 0.25s;
-  // text-transform: uppercase;
-  :active {
-    box-shadow: none !important;
-  }
+  letter-spacing: 1px;
 
   background: ${(props) =>
     props.color === 'primary'
@@ -599,15 +497,9 @@ const StyledA = styled.a`
   }
   border: 1px solid transparent;
   :hover {
-    box-shadow: ${(props) =>
-      props.color === 'primary' ||
-      props.color === 'secondary' ||
-      props.color === 'success' ||
-      props.color === 'error' ||
-      props.color === 'white' ||
-      props.color === 'dark'
-        ? props.theme.shadow.buttonHover
-        : '3px 3px 18px -6px #00000021'};
+    box-shadow: 1px 3px 8px -4px rgba(34, 34, 34, 0.06274509803921569),
+      1px 3px 20px -10px rgba(34, 34, 34, 0.06274509803921569);
+
     background: ${(props) =>
       props.color === 'primary'
         ? pSBC(props.theme.color.primary, -25)
@@ -622,7 +514,6 @@ const StyledA = styled.a`
         : props.color === 'dark'
         ? pSBC(props.theme.color.gray.six, -25)
         : pSBC(props.theme.color.gray.two, -10)};
-    // color: ${(props) => (props.color === 'white' ? 'initial' : 'white')};
   }
 
   ${(props) =>
@@ -669,7 +560,8 @@ const StyledA = styled.a`
           ? props.theme.color.gray.six
           : pSBC(props.theme.color.gray.two, -10)};
       :hover {
-        box-shadow: ${props.theme.shadow.button};
+        box-shadow: 1px 3px 8px -4px rgba(34, 34, 34, 0.06274509803921569),
+          1px 3px 20px -10px rgba(34, 34, 34, 0.06274509803921569);
         background: ${props.color === 'primary'
           ? props.theme.color.primary
           : props.color === 'secondary'

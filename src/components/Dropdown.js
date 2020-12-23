@@ -41,7 +41,7 @@ const DropdownWrapper = styled.div`
     cursor: pointer;
     background: ${(props) =>
       props.open ? props.theme.color.gray.two : 'transparent'};
-    border-radius: ${(props) => props.theme.radius.one};
+    border-radius: ${(props) => props.theme.radius.one}px;
     transition-duration: 0.1s;
     :hover {
       background: ${(props) => props.theme.color.gray.two};
@@ -88,7 +88,7 @@ const SubMenu = styled.div`
   top: calc(100%);
   // padding-top: 20px;
   z-index: 999;
-  border-radius: ${(props) => props.theme.radius.one};
+  border-radius: ${(props) => props.theme.radius.one}px;
   background: #ffffff;
   padding: 8px 0;
   box-shadow: ${(props) => props.theme.shadow.one};

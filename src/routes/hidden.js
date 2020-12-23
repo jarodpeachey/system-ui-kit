@@ -32,7 +32,7 @@ const HiddenRoute = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mb-3">Hidden</H2>
+          <H2 >Hidden</H2>
           <Paragraph>
             The Hidden component allows you to hide and display content based on
             the screen width.
@@ -49,7 +49,7 @@ const HiddenRoute = ({}) => {
           >
             import Hidden from "system-ui";
           </div>
-          <H3 className="mb-none">Usage</H3>
+          <H3 className="">Usage</H3>
           <div
             style={{
               fontFamily: 'monospace',

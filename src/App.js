@@ -24,60 +24,32 @@ import Paragraph from './components/Paragraph';
 import Input from './components/Input';
 import Flex from './components/Flex';
 
-const App = ({}) => (
+const App = () => (
   <Layout>
     <Helmet>
       <title>System - React UI Kit</title>
     </Helmet>
-    <Section
-      background={`linear-gradient(
-        to right,
-        ${theme.color.primary},
-        ${theme.color.secondary}
-      )`}
-      spacing={120}
-    >
+    <Section>
       <Container>
-        <H1 display color="light-one" className="center">
-          React Development Made Easy
-        </H1>
-        <H4 className="center" color="light-two">
+        <H1 customStyles="max-width: 500px;" display>React Development Made Easy</H1>
+        <Paragraph customStyles="max-width: 500px;" subheading>
           A modern UI Kit built to speed up your development proccess, while
           still allowing you room to customize and grow.
-        </H4>
+        </Paragraph>
       </Container>
     </Section>
     <Section>
       <Container>
-        <Alert
-          color="success"
-          variant="light"
-          icon={<FontAwesomeIcon icon="question-circle" />}
-          style={{ maxWidth: 780, margin: '0 auto' }}
-        >
-          <strong>Did you know?</strong> This website is built completely with
-          System. Not a shred of custom CSS!
-        </Alert>
-      </Container>
-    </Section>
-    <Section className="pt-none">
-      <Container>
-        <H5 uppercase type="h5" color="primary" className="center my-none">
-          Built For You
-        </H5>
-        <H2 type="h2" className="center mt-3">
-          What is System?
-        </H2>
-        <Container>
-          <Paragraph className="center" style={{ maxWidth: 780 }}>
+        <Container small>
+          <H2 type="h2" customStyles="text-align: center; max-width: 600px;
+          margin-left: auto; margin-right: auto;">
+            What is System?
+          </H2>
+          <Paragraph subheading customStyles="text-align: center; max-width: 600px;
+          margin-left: auto; margin-right: auto;">
             System is a UI Kit like none other. It's dead-simple to get up and
             running, and offers advanced customization options that are easier
             than most other UI kits.
-          </Paragraph>
-          <Paragraph className="center mb-7" style={{ maxWidth: 780 }}>
-            With System, you can easily create a website for your product,
-            without spending the time and money to do it. System allows you to
-            focus on developing and marketing your product.
           </Paragraph>
         </Container>
         <Row spacing={[24, 32]} breakpoints={[769, 960]}>
@@ -144,7 +116,7 @@ const App = ({}) => (
           </div> */}
         </Row>
         <Flex>
-          <Button className="mt-4" color="primary" link="/components">
+          <Button className="" color="primary" link="/components">
             View Components
           </Button>
         </Flex>
@@ -152,10 +124,10 @@ const App = ({}) => (
     </Section>
     <Section background={`${theme.color.success}10`}>
       <Container>
-        <H2 color="success" type="h2" className="mt-none center">
+        <H2 color="success" type="h2" className=" center">
           Join the waiting list!
         </H2>
-        <SubTitle className="mb-5 center" style={{ color: theme.color.error }}>
+        <SubTitle className=" center" style={{ color: theme.color.error }}>
           Sign up to be notified when System is launched, and get a nice
           discount to go with it!
         </SubTitle>

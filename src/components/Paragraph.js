@@ -1,14 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Paragraph = ({ children, className, id, color, customStyles, size }) => {
+const Paragraph = ({ children, className, id, color, customStyles, subheading }) => {
   return (
     <StyledParagraph
       className={className}
       id={id}
       customStyles={customStyles}
       color={color}
-      size={size}
+      subheading={subheading}
     >
       {children}
     </StyledParagraph>
@@ -38,13 +38,11 @@ const StyledParagraph = styled.p`
       : props.color === 'light-three'
       ? props.theme.color.text.light.three
       : props.theme.color.text.paragraph}};
-        line-height: 1.7;
   font-size: ${(props) =>
-    props.size === 'sm'
-      ? props.theme.fontSize.small
-      : props.size === 'lg'
-      ? props.theme.fontSize.p + 2
-      : props.theme.fontSize.p};
+    props.subheading
+      ? props.theme.fontSize.subheading
+      : props.theme.fontSize.p}px;
+  line-height: ${(props) => props.theme.lineHeight.p}px;
   font-weight: ${(props) => props.theme.fontWeight.body};
   ${(props) =>
     props.customStyles &&

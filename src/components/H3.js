@@ -18,7 +18,6 @@ const H3 = ({
       color={color}
       darkBackground={darkBackground}
       display={display}
-
     >
       {children}
     </Wrapper>
@@ -48,11 +47,13 @@ const Wrapper = styled.h3`
       : props.color === 'light-three'
       ? props.theme.color.text.light.three
       : props.theme.color.text.heading}};
-  font-weight: ${(props) => (props.display ? props.theme.fontWeight.display : props.theme.fontWeight.heading)};
-
+  font-weight: ${(props) =>
+    props.display
+      ? props.theme.fontWeight.display
+      : props.theme.fontWeight.heading};
+  line-height: ${(props) => props.theme.lineHeight.h3}px;
   margin-bottom: 24px;
-  font-size: ${(props) =>
-    props.display ? props.theme.fontSize.display.h3 : props.theme.fontSize.h3};
+  font-size: ${(props) => props.theme.fontSize.h3}px;
   ${(props) =>
     props.customStyles &&
     css`

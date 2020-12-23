@@ -41,6 +41,7 @@ import H3 from './components/H3';
 import H4 from './components/H4';
 import H5 from './components/H5';
 import H6 from './components/H6';
+import Button from './components/Button';
 import { Row, Column } from '@react-tiny-grid/core';
 import Collapse from './components/Collapse';
 import { pathnameIncludes } from './utils/pathnameIncludes';
@@ -75,19 +76,11 @@ const Layout = ({ children, component, example }) => {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <Header
-          fixed
-          color={component ? 'primary' : example ? 'white' : 'transparent'}
-          scrollColor="primary"
-          height={component ? 55 : 105}
-          scrollHeight={component ? 55 : 65}
-        >
-          <H1
-            customStyles={'font-size: 32px; position: relative; top: -1px;'}
-            className="m-none"
-          >
+        <Header fixed color="white" scrollColor="white" scrollHeight={45}>
+          <H2 customStyles={'position: relative; top: -1px;'} className="">
             System
-          </H1>
+          </H2>
+
           <Hidden show={769}>
             <Menu>
               <MenuItem>
@@ -107,14 +100,7 @@ const Layout = ({ children, component, example }) => {
                   </SubMenuItem>
                 </SubMenu>
               </MenuItem>
-              <MenuItem square>
-                <a href="/">
-                  <FontAwesomeIcon
-                    icon="heart"
-                    style={{ width: 20, height: 20, fontSize: 24 }}
-                  />
-                </a>
-              </MenuItem>
+              <Button>Sign Up</Button>
             </Menu>
           </Hidden>
           <Hidden hide={769}>
@@ -162,7 +148,7 @@ const Layout = ({ children, component, example }) => {
                     padding: '32px 16px',
                   }}
                 >
-                  <H6 className="m-none">Getting Started</H6>
+                  <H6 className="">Getting Started</H6>
                   <Link
                     className="no-styling"
                     customStyles={`
@@ -228,7 +214,7 @@ const Layout = ({ children, component, example }) => {
                     `}
                   >
                     <div>
-                      <H6 className="m-none">Layout</H6>
+                      <H6 className="">Layout</H6>
                     </div>
                     <div>
                       <Link
@@ -465,7 +451,7 @@ const Layout = ({ children, component, example }) => {
                     `}
                   >
                     <div>
-                      <H6 className="m-none">Navigation</H6>
+                      <H6 className="">Navigation</H6>
                     </div>
                     <div>
                       <Link
@@ -636,7 +622,7 @@ const Layout = ({ children, component, example }) => {
                     `}
                   >
                     <div>
-                      <H6 className="m-none">Display</H6>
+                      <H6 className="">Display</H6>
                     </div>
                     <div>
                       <Link
@@ -878,7 +864,7 @@ const Layout = ({ children, component, example }) => {
                     `}
                   >
                     <>
-                      <H6 className="m-none">Input</H6>
+                      <H6 className="">Input</H6>
                     </>
                     <>
                       <Link

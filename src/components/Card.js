@@ -11,8 +11,9 @@ const Card = ({ children, className, id, customStyles }) => {
 
 const StyledCard = styled.div`
   box-shadow: ${(props) => props.theme.shadow.four};
-  padding: 40px;
+  padding: ${(props) => props.theme.spacing.desktop * 2}px;
   background: #ffffff;
+  border-radius: ${(props) => props.theme.radius.two}px;
 `;
 
 export default Card;

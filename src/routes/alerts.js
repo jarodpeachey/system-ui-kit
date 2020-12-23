@@ -37,14 +37,14 @@ const Alerts = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H3 className="m-none">Color</H3>
+          <H3 className="">Color</H3>
           <Alert>This is a default alert</Alert>
           <Alert color="primary">This is a primary alert</Alert>
           <Alert color="secondary">This is a secondary alert</Alert>
           <Alert color="success">This is a success alert</Alert>
           <Alert color="error">This is an error alert</Alert>
           <br />
-          <H3 className="mb-none">Light</H3>
+          <H3 className="">Light</H3>
           <Paragraph>
             Use a light alert to display information that's not as important.
           </Paragraph>
@@ -62,7 +62,7 @@ const Alerts = ({}) => {
             This is an error alert
           </Alert>
           <br />
-          <H3 type="h3" className="mb-none">
+          <H3 type="h3" className="">
             With Icon
           </H3>
           <Paragraph>
@@ -76,7 +76,7 @@ const Alerts = ({}) => {
             Error
           </Alert>
           <br />
-          <H3 className="mb-none">Closable</H3>
+          <H3 className="">Closable</H3>
           <Paragraph>
             Pass in a <Code>close</Code> prop to allow users to close the alert.
           </Paragraph>
@@ -84,7 +84,7 @@ const Alerts = ({}) => {
             This is an alert that you can close.
           </Alert>
           <br />
-          <H3 className="mb-none">Props</H3>
+          <H3 className="">Props</H3>
           <Paragraph>
             Props available to customize the <Code>{'<Alert />'}</Code>{' '}
             component.

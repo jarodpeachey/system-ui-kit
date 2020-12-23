@@ -36,7 +36,7 @@ const Display = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H2 type="h2" className="m-none">
+          <H2 type="h2" className="">
             Alert
           </H2>
           <Alert color="primary">Default</Alert>
@@ -54,23 +54,23 @@ const Display = ({}) => {
             With close button
           </Alert>
           <br />
-          {/* <Heading type="h4" className="mb-none">Size</Heading>
-        <Paragraph className="mt-2">
+          {/* <Heading type="h4" className="">Size</Heading>
+        <Paragraph className="">
           The size prop is used to change the size of a button.
         </Paragraph>
         <Button
-          className="mr-2" color="primary" size="large">
+          className="" color="primary" size="large">
           Large
         </Button>
         <Button
-          className="mr-2" color="primary">Default</Button>
+          className="" color="primary">Default</Button>
         <Button
-          className="mr-2" color="primary" size="small">
+          className="" color="primary" size="sm">
           Small
         </Button>
         <br />
         <br /> */}
-          <H4 type="h4" className="mb-none">
+          <H4 type="h4" className="">
             Color
           </H4>
           <Paragraph p>
@@ -139,7 +139,7 @@ const Display = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 type="h2" className="m-none">
+          <H2 type="h2" className="">
             Notification
           </H2>
           <Paragraph>
@@ -147,7 +147,7 @@ const Display = ({}) => {
             disappears after a certain amount of time.
           </Paragraph>
           <Button
-            className="mr-2"
+            className=""
             onClick={() => {
               setShowNotificationOne(true);
               setTimeout(() => {
@@ -158,7 +158,7 @@ const Display = ({}) => {
             Open
           </Button>
           <Button
-            className="mr-2"
+            className=""
             color="primary"
             onClick={() => {
               setShowNotificationTwo(true);
@@ -170,7 +170,7 @@ const Display = ({}) => {
             Open Primary
           </Button>
           <Button
-            className="mr-2"
+            className=""
             color="secondary"
             onClick={() => {
               setShowNotificationThree(true);
@@ -182,7 +182,7 @@ const Display = ({}) => {
             Open Secondary
           </Button>
           <Button
-            className="mr-2"
+            className=""
             color="success"
             onClick={() => {
               setShowNotificationFour(true);
@@ -194,7 +194,7 @@ const Display = ({}) => {
             Open Success
           </Button>
           <Button
-            className="mr-2"
+            className=""
             color="error"
             onClick={() => {
               setShowNotificationFive(true);
@@ -224,7 +224,7 @@ const Display = ({}) => {
       </Section>
       <Section>
         <Container>
-          <H2 type="h2" className="m-none">
+          <H2 type="h2" className="">
             Badge
           </H2>
           <Badge>Default</Badge>
@@ -232,7 +232,7 @@ const Display = ({}) => {
           <Badge color="secondary">Secondary</Badge>
           <Badge color="success">Success</Badge>
           <Badge color="error">Error</Badge>
-          <H4 className="mb-none">Rounded</H4>
+          <H4 className="">Rounded</H4>
           <Badge rounded>Default</Badge>
           <Badge rounded color="primary">
             Primary

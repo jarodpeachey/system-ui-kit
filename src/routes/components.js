@@ -55,15 +55,15 @@ const Components = () => {
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mt-none">Alert</H2>
-          <H5 className="mb-3">Color</H5>
+          <H2 className="">Alert</H2>
+          <H5 >Color</H5>
           <Alert>This is a default alert</Alert>
           <Alert color="primary">This is a primary alert</Alert>
           <Alert color="secondary">This is a secondary alert</Alert>
           <Alert color="success">This is a success alert</Alert>
           <Alert color="error">This is an error alert</Alert>
           <br />
-          <H5 className="mb-3">Light</H5>
+          <H5 >Light</H5>
           <Alert variant="light">This is a default alert</Alert>
           <Alert variant="light" color="primary">
             This is a primary alert
@@ -78,7 +78,7 @@ const Components = () => {
             This is an error alert
           </Alert>
           <br />
-          <H5 className="mb-3">With Icon</H5>
+          <H5 >With Icon</H5>
           <Alert
             icon={<FontAwesomeIcon icon="exclamation-circle" />}
             color="error"
@@ -86,21 +86,21 @@ const Components = () => {
             Error
           </Alert>
           <br />
-          <H5 className="mb-3">Closable</H5>
+          <H5 >Closable</H5>
           <Alert icon={<FontAwesomeIcon icon="bell" />} close>
             This is an alert that you can close.
           </Alert>
           <br />
           <br />
           <H2>Badge</H2>
-          <H5 className="mb-3">Color</H5>
+          <H5 >Color</H5>
           <Badge>Default</Badge>
           <Badge color="dark">Dark</Badge>
           <Badge color="primary">Primary</Badge>
           <Badge color="secondary">Secondary</Badge>
           <Badge color="success">Success</Badge>
           <Badge color="error">Error</Badge>
-          <H5 className="mb-3">Rounded</H5>
+          <H5 >Rounded</H5>
           <Badge rounded>Default</Badge>
           <Badge rounded color="dark">
             Dark
@@ -120,78 +120,78 @@ const Components = () => {
           <br />
           <br />
           <H2>Button</H2>
-          <H5 className="mb-3">Color</H5>
-          <Button className="mr-2">Default</Button>
-          <Button className="mr-2" color="dark">
+          <H5 >Color</H5>
+          <Button className="">Default</Button>
+          <Button className="" color="dark">
             Dark
           </Button>
-          <Button className="mr-2" color="primary">
+          <Button className="" color="primary">
             Primary
           </Button>
-          <Button className="mr-2" color="secondary">
+          <Button className="" color="secondary">
             Secondary
           </Button>
-          <Button className="mr-2" color="success">
+          <Button className="" color="success">
             Success
           </Button>
-          <Button className="mr-2" color="error">
+          <Button className="" color="error">
             Error
           </Button>
           <br />
-          <H5 className="mb-3">Outlined</H5>
-          <Button className="mr-2" variant="outlined">
+          <H5 >Outlined</H5>
+          <Button className="" variant="outlined">
             Default
           </Button>
-          <Button className="mr-2" variant="outlined" color="dark">
+          <Button className="" variant="outlined" color="dark">
             Dark
           </Button>
-          <Button className="mr-2" variant="outlined" color="primary">
+          <Button className="" variant="outlined" color="primary">
             Primary
           </Button>
-          <Button className="mr-2" variant="outlined" color="secondary">
+          <Button className="" variant="outlined" color="secondary">
             Secondary
           </Button>
-          <Button className="mr-2" variant="outlined" color="success">
+          <Button className="" variant="outlined" color="success">
             Success
           </Button>
-          <Button className="mr-2" variant="outlined" color="error">
+          <Button className="" variant="outlined" color="error">
             Error
           </Button>
           <br />
-          <H5 className="mb-3">Plain</H5>
-          <Button className="mr-2" variant="plain">
+          <H5 >Plain</H5>
+          <Button className="" variant="plain">
             Default
           </Button>
-          <Button className="mr-2" variant="plain" color="primary">
+          <Button className="" variant="plain" color="primary">
             Primary
           </Button>
-          <Button className="mr-2" variant="plain" color="secondary">
+          <Button className="" variant="plain" color="secondary">
             Secondary
           </Button>
-          <Button className="mr-2" variant="plain" color="success">
+          <Button className="" variant="plain" color="success">
             Success
           </Button>
-          <Button className="mr-2" variant="plain" color="error">
+          <Button className="" variant="plain" color="error">
             Error
           </Button>
           <br />
-          <H5 className="mb-3">Sizes</H5>
+          <H5 >Sizes</H5>
           <Paragraph>
             You can choose between sm, default and lg button sizes.
           </Paragraph>
-          <Button className="mr-2" color="primary" size="lg">
+          <Button className="" color="primary" size="lg">
             Large
           </Button>
-          <Button className="mr-2" color="primary">
+          <Button className="" color="primary">
             Default
           </Button>
-          <Button className="mr-2" color="primary" size="sm">
+          <Button className="" color="primary" size="sm">
             Small
           </Button>
           <br />
           <br />
           <H2>Checkbox</H2>
-          <H5 className="mb-3">Basic Checkboxes</H5>
+          <H5 >Basic Checkboxes</H5>
           <div
             style={{
               background: theme.color.gray.one,
@@ -200,14 +200,14 @@ const Components = () => {
             }}
           >
             <Flex>
-              <Checkbox checked className="mr-2" />
-              <Checkbox checked color="primary" className="mr-2" />
-              <Checkbox className="mr-2" color="secondary" />
-              <Checkbox disabled className="mr-2" color="success" />
-              <Checkbox disabled checked className="mr-2" color="error" />
+              <Checkbox checked className="" />
+              <Checkbox checked color="primary" className="" />
+              <Checkbox className="" color="secondary" />
+              <Checkbox disabled className="" color="success" />
+              <Checkbox disabled checked className="" color="error" />
             </Flex>
           </div>
-          <H5 className="mb-3">With Label</H5>
+          <H5 >With Label</H5>
           <div
             style={{
               background: theme.color.gray.one,
@@ -218,7 +218,7 @@ const Components = () => {
             <Checkbox
               onChange={(checked) => console.log(checked)}
               checked
-              className="mr-2"
+              className=""
             >
               Default
             </Checkbox>
@@ -227,7 +227,7 @@ const Components = () => {
               onChange={(checked) => console.log(checked)}
               checked
               color="primary"
-              className="mr-2"
+              className=""
             >
               Primary
             </Checkbox>
@@ -235,7 +235,7 @@ const Components = () => {
             <Checkbox
               onChange={(checked) => console.log(checked)}
               checked
-              className="mr-2"
+              className=""
               color="secondary"
             >
               Secondary
@@ -244,7 +244,7 @@ const Components = () => {
             <Checkbox
               onChange={(checked) => console.log(checked)}
               checked
-              className="mr-2"
+              className=""
               color="success"
             >
               Success
@@ -253,7 +253,7 @@ const Components = () => {
             <Checkbox
               onChange={(checked) => console.log(checked)}
               checked
-              className="mr-2"
+              className=""
               color="error"
             >
               Error
@@ -265,12 +265,12 @@ const Components = () => {
           <H2>Collapse</H2>
           <Collapse padding={12}>
             <div>
-              <H5 className="m-none" customStyles="padding: 16px;">
+              <H5 className="" customStyles="padding: 16px;">
                 This is the title
               </H5>
             </div>
             <div>
-              <Paragraph customStyles="padding: 16px;" className="mt-none">
+              <Paragraph customStyles="padding: 16px;" className="">
                 This is the content
               </Paragraph>
             </div>
@@ -398,84 +398,84 @@ const Components = () => {
           <br />
           <br />
           <H2>IconButton</H2>
-          <H5 className="mb-3">Color</H5>
-          <IconButton className="mr-2">
+          <H5 >Color</H5>
+          <IconButton className="">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton rounded className="mr-2" color="dark">
+          <IconButton rounded className="" color="dark">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" color="primary">
+          <IconButton className="" color="primary">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton rounded className="mr-2" color="secondary">
+          <IconButton rounded className="" color="secondary">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" color="success">
+          <IconButton className="" color="success">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" color="error">
+          <IconButton className="" color="error">
             <FontAwesomeIcon icon="check" />
           </IconButton>
           <br />
-          <H5 className="mb-3">Outlined</H5>
-          <IconButton rounded className="mr-2" variant="outlined">
+          <H5 >Outlined</H5>
+          <IconButton rounded className="" variant="outlined">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" variant="outlined" color="dark">
+          <IconButton className="" variant="outlined" color="dark">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" variant="outlined" color="primary">
+          <IconButton className="" variant="outlined" color="primary">
             <FontAwesomeIcon icon="check" />
           </IconButton>
           <IconButton
             rounded
-            className="mr-2"
+            className=""
             variant="outlined"
             color="secondary"
           >
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" variant="outlined" color="success">
+          <IconButton className="" variant="outlined" color="success">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton rounded className="mr-2" variant="outlined" color="error">
+          <IconButton rounded className="" variant="outlined" color="error">
             <FontAwesomeIcon icon="check" />
           </IconButton>
           <br />
-          <H5 className="mb-3">Plain</H5>
-          <IconButton className="mr-2" variant="plain">
+          <H5 >Plain</H5>
+          <IconButton className="" variant="plain">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" variant="plain" color="primary">
+          <IconButton className="" variant="plain" color="primary">
             <FontAwesomeIcon icon="check" />
           </IconButton>
           <IconButton
             rounded
-            className="mr-2"
+            className=""
             variant="plain"
             color="secondary"
           >
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" variant="plain" color="success">
+          <IconButton className="" variant="plain" color="success">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" variant="plain" color="error">
+          <IconButton className="" variant="plain" color="error">
             <FontAwesomeIcon icon="check" />
           </IconButton>
           <br />
-          <H5 className="mb-3">Sizes</H5>
+          <H5 >Sizes</H5>
           <Paragraph>
             You can choose between sm, default and lg button sizes.
           </Paragraph>
-          <IconButton className="mr-2" color="primary" size="lg">
+          <IconButton className="" color="primary" size="lg">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" color="primary">
+          <IconButton className="" color="primary">
             <FontAwesomeIcon icon="check" />
           </IconButton>
-          <IconButton className="mr-2" color="primary" size="sm">
+          <IconButton className="" color="primary" size="sm">
             <FontAwesomeIcon icon="check" />
           </IconButton>
           <br />
@@ -544,21 +544,21 @@ const Components = () => {
           <Row spacing={[12]} breakpoints={[576, 769]}>
             <Column widths={[6, 4]}>
               <Input
-                className="mb-2"
+                className=""
                 size="xs"
                 fullWidth
                 placeholder="X-Small"
               />
               <div />
-              <Input className="mb-2" size="sm" fullWidth placeholder="Small" />
+              <Input className="" size="sm" fullWidth placeholder="Small" />
               <div />
-              <Input className="mb-2" fullWidth placeholder="Default" />
+              <Input className="" fullWidth placeholder="Default" />
               <div />
-              <Input className="mb-2" size="lg" fullWidth placeholder="Large" />
+              <Input className="" size="lg" fullWidth placeholder="Large" />
             </Column>
             <Column widths={[6, 4]}>
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 size="xs"
                 fullWidth
@@ -566,7 +566,7 @@ const Components = () => {
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 size="sm"
                 fullWidth
@@ -574,14 +574,14 @@ const Components = () => {
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 fullWidth
                 placeholder="Default"
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 size="lg"
                 fullWidth
@@ -590,7 +590,7 @@ const Components = () => {
             </Column>
             <Column widths={[6, 4]}>
               <Input
-                className="mb-2"
+                className=""
                 size="xs"
                 fullWidth
                 placeholder="X-Small"
@@ -598,7 +598,7 @@ const Components = () => {
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 size="sm"
                 fullWidth
                 placeholder="Small"
@@ -606,14 +606,14 @@ const Components = () => {
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 fullWidth
                 placeholder="Default"
                 icon={<FontAwesomeIcon icon="heart" />}
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 size="lg"
                 fullWidth
                 placeholder="Large"
@@ -624,17 +624,17 @@ const Components = () => {
           <H5>State</H5>
           <Row spacing={[12]} breakpoints={[576, 769]}>
             <Column widths={[6, 4]}>
-              <Input className="mb-2" fullWidth placeholder="Default" />
+              <Input className="" fullWidth placeholder="Default" />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 fullWidth
                 placeholder="Success"
                 state="success"
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 fullWidth
                 placeholder="Error"
                 state="error"
@@ -642,14 +642,14 @@ const Components = () => {
             </Column>
             <Column widths={[6, 4]}>
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 fullWidth
                 placeholder="Default"
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 fullWidth
                 placeholder="Success"
@@ -657,7 +657,7 @@ const Components = () => {
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 variant="filled"
                 fullWidth
                 placeholder="Error"
@@ -666,14 +666,14 @@ const Components = () => {
             </Column>
             <Column widths={[6, 4]}>
               <Input
-                className="mb-2"
+                className=""
                 icon={<FontAwesomeIcon icon="heart" />}
                 fullWidth
                 placeholder="Default"
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 icon={<FontAwesomeIcon icon="heart" />}
                 fullWidth
                 placeholder="Success"
@@ -681,7 +681,7 @@ const Components = () => {
               />
               <div />
               <Input
-                className="mb-2"
+                className=""
                 icon={<FontAwesomeIcon icon="heart" />}
                 fullWidth
                 placeholder="Error"
@@ -693,7 +693,7 @@ const Components = () => {
           <Input
             type="number"
             color="primary"
-            className="mb-2"
+            className=""
             defaultValue={3}
           />
           <br />
@@ -711,7 +711,7 @@ const Components = () => {
               justifyContent="space-between"
               customStyles="width: 100%;"
             >
-              <H4 className="m-none">SystemUI</H4>
+              <H4 className="">SystemUI</H4>
               <Menu>
                 <MenuItem>
                   <a href="/">Home</a>
@@ -738,7 +738,7 @@ const Components = () => {
               justifyContent="space-between"
               customStyles="width: 100%;"
             >
-              <H4 className="m-none">SystemUI</H4>
+              <H4 className="">SystemUI</H4>
               <Menu>
                 <MenuItem>
                   <a href="/">Home</a>
@@ -765,7 +765,7 @@ const Components = () => {
               justifyContent="space-between"
               customStyles="width: 100%;"
             >
-              <H4 className="m-none">SystemUI</H4>
+              <H4 className="">SystemUI</H4>
               <Menu>
                 <MenuItem>
                   <a href="/">Home</a>
@@ -873,12 +873,12 @@ const Components = () => {
               value={activeTab}
               customStyles='margin-bottom: 16px;'
             >
-              <Tab activeStyles={`box-shadow: ${theme.shadow.three}`} name="design">Design</Tab>
-              <Tab activeStyles={`box-shadow: ${theme.shadow.three}`} name="develop">Develop</Tab>
-              <Tab activeStyles={`box-shadow: ${theme.shadow.three}`} name="launch">Launch</Tab>
+              <Tab activeStyles={`box-shadow: ${theme.shadow.two}`} name="design">Design</Tab>
+              <Tab activeStyles={`box-shadow: ${theme.shadow.two}`} name="develop">Develop</Tab>
+              <Tab activeStyles={`box-shadow: ${theme.shadow.two}`} name="launch">Launch</Tab>
             </Tabs>
-            <TabContent customStyles={`box-shadow: ${theme.shadow.one}`} name="design" value={activeTab}>
-              <Paragraph className="m-none">
+            <TabContent name="design" value={activeTab}>
+              <Paragraph className="">
                 Mustache cliche tempor, williamsburg carles vegan helvetica.
                 Reprehenderit butcher retro keffiyeh dreamcatcher synth.
               </Paragraph>
@@ -887,16 +887,16 @@ const Components = () => {
                 Reprehenderit butcher retro keffiyeh dreamcatcher synth.
               </Paragraph>
             </TabContent>
-            <TabContent customStyles={`box-shadow: ${theme.shadow.one}`} name="develop" value={activeTab}>
-              <Paragraph className="m-none">
+            <TabContent name="develop" value={activeTab}>
+              <Paragraph className="">
                 Duisf sidfu ao fdl sidf dif df asdflkdj alsfksfs klsjfs lskfjs flksjlksjdf. Flkjasdf jkdl lsa kd fkkjj fkdj. Kufdkn jk.
               </Paragraph>
               <Paragraph>
                 Duisf sidfu ao fdl sidf dif df asdflkdj alsfksfs klsjfs lskfjs flksjlksjdf. Flkjasdf jkdl lsa kd fkkjj fkdj. Kufdkn jk.
               </Paragraph>
             </TabContent>
-            <TabContent customStyles={`box-shadow: ${theme.shadow.one}`} name="launch" value={activeTab}>
-              <Paragraph className="m-none">
+            <TabContent name="launch" value={activeTab}>
+              <Paragraph className="">
                 Mustache cliche tempor, williamsburg carles vegan helvetica.
                 Reprehenderit butcher retro keffiyeh dreamcatcher synth.
               </Paragraph>

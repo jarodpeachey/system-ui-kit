@@ -136,7 +136,7 @@ const SelectMenu = styled.div`
   top: calc(100%);
   // padding-top: 20px;
   z-index: 999;
-  border-radius: ${(props) => props.theme.radius.one};
+  border-radius: ${(props) => props.theme.radius.one}px;
   background: #ffffff;
   padding: 8px 0;
   width: 100%;

@@ -31,7 +31,7 @@ const FlexRoute = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mb-3">Flex</H2>
+          <H2 >Flex</H2>
           <Paragraph>
             The flex component is a light version of the grid, for layouts that
             don't require a fixed width.
@@ -48,7 +48,7 @@ const FlexRoute = ({}) => {
           >
             import Flex from "system-ui";
           </div>
-          <H3 className="mb-none">Usage</H3>
+          <H3 className="">Usage</H3>
           <div
             style={{
               fontFamily: 'monospace',

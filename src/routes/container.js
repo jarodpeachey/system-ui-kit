@@ -31,7 +31,7 @@ const ContainerRoute = ({}) => {
       </Helmet>
       <Section>
         <Container>
-          <H2 className="mb-3">Container</H2>
+          <H2 >Container</H2>
           <Paragraph>
             The container component prevents your content from exceeding a
             certain width, and centers it.
@@ -48,7 +48,7 @@ const ContainerRoute = ({}) => {
           >
             import Container from "system-ui";
           </div>
-          <H3 className="mb-none">Usage</H3>
+          <H3 className="">Usage</H3>
           <div
             style={{
               fontFamily: 'monospace',

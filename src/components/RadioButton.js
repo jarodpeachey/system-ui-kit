@@ -33,7 +33,7 @@ const RadioButton = ({
         name={name}
         type="radio"
       />
-      <span className="checkmark mr-2">
+      <span className="checkmark ">
         <div className="icon" />
       </span>
       {children}

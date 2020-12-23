@@ -46,7 +46,7 @@ const Checkbox = ({
         type="checkbox"
         checked={inputChecked}
       />
-      <span className="checkmark mr-2">
+      <span className="checkmark ">
         <div className="icon">{icon}</div>
       </span>
       {children}
@@ -54,15 +54,9 @@ const Checkbox = ({
   );
 };
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin: ${(props) => props.theme.spacing.two}px 0;
-`;
-
 const CheckboxWrapper = styled.label`
   width: fit-content;
-  color: ${(props) => (props.disabled ? 'rgb(190, 190, 190)' : '')};
+  opacity: ${(props) => (props.disabled ? '.7' : '1')};
   display: block;
   position: relative;
   display: flex;
@@ -84,15 +78,13 @@ const CheckboxWrapper = styled.label`
     width: 18px;
     background-color: #eee;
     display: flex;
+    margin-right: 8px;
     position: relative;
     align-items: center;
     justify-content: center;
     border-radius: 2px;
-    border: 1px solid
-      ${(props) =>
-        props.disabled
-          ? props.theme.color.gray.two
-          : props.theme.color.gray.three};
+    border: 1px solid ${(props) => props.theme.color.gray.three};
+    opacity: ${(props) => (props.disabled ? '.7' : '1')};
     background: #ffffff;
     transition: 0.1s;
   }
@@ -123,11 +115,6 @@ const CheckboxWrapper = styled.label`
   //   box-shadow: 0px 0px 0px 3px ${(props) =>
     props.theme.color.primary}30 !important;
   // }
-  input:hover ~ .checkmark {
-    border: 1px solid
-      ${(props) =>
-        props.disabled ? 'rgb(230, 230, 230)' : props.theme.color.gray.two};
-  }
   input:checked:hover ~ .checkmark {
     border: 1px solid
       ${(props) =>

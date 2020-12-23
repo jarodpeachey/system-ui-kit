@@ -1,20 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Section = ({
-  children,
-  className,
-  id,
-  customStyles,
-  background,
-  spacing,
-}) => {
+const Section = ({ children, className, id, customStyles, background }) => {
   return (
     <StyledSection
       className={className}
       id={id}
       customStyles={customStyles}
-      spacing={spacing}
       background={background}
     >
       {children}
@@ -25,7 +17,7 @@ const Section = ({
 const StyledSection = styled.section`
   z-index: 1;
   background: ${(props) => props.background};
-  padding: ${(props) => (props.spacing ? props.spacing : 52)}px 0;
+  padding: ${(props) => props.theme.spacing.section.desktop}px 0;
   ${(props) => props.customStyles}
 `;
 
